@@ -21,7 +21,7 @@ function Header() {
                 <img
                   src="/icons/avatar.png"
                   alt=""
-                  className="bg-gray-300 p-2 w-9 rounded-xl"
+                  className="bg-gray-300 py-2 px-3 w-10 rounded-xl"
                 />
                 <div className="flex items-start flex-col">
                   <h1 className="text-xl text-black">mohamed wael</h1>

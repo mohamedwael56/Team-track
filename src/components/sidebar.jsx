@@ -60,6 +60,11 @@ function Sidebar() {
                     <img src="/icons/help.png" alt="Team Icon" />
                     support</Link>
                   </li>
+                  <li>
+                    <Link href="/team" className='flex items-center mt-20 gap-2 text-red-700'>
+                    <img src="/icons/help.png" alt="Team Icon" />
+                    log out</Link>
+                  </li>
                 </ul>
                 </div>
         </div>
