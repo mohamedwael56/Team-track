@@ -46,7 +46,7 @@ function Sidebar() {
                     shifts</Link>
                   </li>
                   <li>
-                    <Link href="/team" className='flex items-center gap-2 text-gray-500'>
+                    <Link href="/rewards" className='flex items-center gap-2 text-gray-500'>
                     <img src="/icons/store.png" alt="Team Icon" />
                     store</Link>
                   </li>
