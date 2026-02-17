@@ -11,7 +11,7 @@ function News() {
 <p className="text-gray-500">Everything new in the company will be here</p>
 </div>
 <div>
-  <Link href="/recognition" className="text-blue-900 text-xl hover:text-blue-700 transition duration-300">
+  <Link href="/news" className="text-blue-900 text-xl hover:text-blue-700 transition duration-300">
     view all
   </Link>
 </div>

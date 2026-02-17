@@ -21,7 +21,7 @@ function Sidebar() {
                     </Link>
                   </li>
                   <li>
-                    <Link href="/projects" className='flex items-center gap-2 text-gray-500'>
+                    <Link href="/tasks" className={pathname === '/tasks' ? 'flex items-center gap-2 text-blue-900 bg-gray-400 py-2 px-8 rounded-2xl ' : 'flex items-center gap-2 text-gray-500'}>
                     <img src="/icons/vector.png" alt="Projects Icon" />
                     My tasks</Link>
                   </li>
@@ -31,7 +31,7 @@ function Sidebar() {
                     lists</Link>
                   </li>
                   <li>
-                    <Link href="/team" className='flex items-center gap-2 text-gray-500'>
+                    <Link href="/attendance" className='flex items-center gap-2 text-gray-500'>
                     <img src="/icons/calendar.png" alt="Team Icon" />
                     attendance</Link>
                   </li>

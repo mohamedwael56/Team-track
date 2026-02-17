@@ -12,7 +12,10 @@ function Header() {
 
               <input type="text" placeholder="Search" className="bg-gray-100 pl-8 pr-5 py-2 rounded-xl text-black"/>
             </div>
-            <div>
+            <div className='flex items-center gap-3'>
+              <Link href='/notifications' className="bg-gray-100 cursor-pointer rounded-2xl p-3">
+                <img src="/icons/notification.png" alt="" />
+              </Link>
             <nav className="flex w-full  items-center justify-end gap-5 p-5">
               <Link
                 href="/dashboard"
