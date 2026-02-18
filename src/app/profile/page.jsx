@@ -118,8 +118,8 @@ options={{cutout:'0%',plugins:{legend:{position:'bottom'}}}}
 </div>
   </div>
   
-  <div className="flex flex-col gap-4">
-<div className="bg-gray-100  flex flex-col rounded-2xl p-5 my-4">
+  <div className="flex flex-col">
+<div className="bg-gray-100  flex flex-col rounded-2xl p-5 mt-5">
 <div className="flex justify-between items-center">
   <div className='flex flex-col'>
     <h1 className='text-black'>attendance</h1>
@@ -240,7 +240,7 @@ options={{cutout:'0%',plugins:{legend:{position:'bottom'}}}}
   <p className='text-gray-400'>100 Tasks</p>
 </div>
   </div>
-  <div className="rounded-xl flex-1 ml-2 flex justify-between border shadow-md p-3">
+  <div className="rounded-xl flex-1 h-24 bg-gray-200 items-center ml-2 flex justify-between border shadow-md p-3">
     <div className="flex flex-col text-black">
       <h1>Average Tasks</h1>
       <p>Delay (in days)</p>

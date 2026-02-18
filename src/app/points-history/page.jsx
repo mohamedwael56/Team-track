@@ -1,0 +1,171 @@
+import Header from '@/components/header'
+import Sidebar from '@/components/sidebar'
+import Link from 'next/link'
+import React from 'react'
+Link
+function page() {
+  return (
+    <div className='flex'>
+        <div className="flex-1 ml-69">
+            <Header />
+            <main>
+                <div className="bg-gray-100 rounded-2xl p-5 flex flex-col">
+<div className="flex justify-between mb-3">
+    <div className="flex items-center gap-3">
+        <Link href="#" className="text-blue-600 hover:text-blue-500">
+       Back
+        </Link>
+        <h1 className='text-xl text-black'>points history</h1>
+    </div>
+    <div className="flex items-center mb-3">
+        <button className='border bg-blue-900 flex gap-2 items-center shadow-sm rounded-2xl py-2 px-15 cursor-pointer'>
+            rewards
+        </button>
+        <button className='border bg-gray-200 text-black border-gray-300 flex gap-2 items-center shadow-sm rounded-2xl py-3 px-10 cursor-pointer'>
+            deductions
+        </button>
+         <button className='border ml-5 flex gap-2 items-center shadow-sm rounded-2xl py-3 px-4 cursor-pointer'>
+                <img src="/icons/calendar.png" alt="" />
+                <p className='text-black'>this week : 09/30/2024 - 10/06/2024 </p>
+            </button>
+    </div>
+</div>
+<hr />
+<div className="mt-5 flex flex-col" >
+    <div className="flex gap-2 text-black items-center">
+<h1 className='font-bold text-3xl'>07</h1>
+<p>DEC,2024</p>
+    </div>
+    <div className='flex gap-3'>
+    <div className="border p-5 my-5 w-80 flex justify-between rounded-2xl shadow-md">
+    <div className="flex items-center gap-3">
+<img src="/icons/frame(1).png" alt="" />
+<div className="flex flex-col">
+    <p className='text-lime-500 font-bold'>+20</p>
+    <p className='text-black'>commitment</p>
+</div>
+    </div>
+    <div className="bg-violet-200 font-bold flex items-center justify-center text-violet-500 text-xl px-4 rounded-2xl">
+320
+    </div>
+    </div>
+    <div className="border p-5 my-5 w-80 flex justify-between rounded-2xl shadow-md">
+    <div className="flex items-center gap-3">
+<img src="/icons/frame(1).png" alt="" />
+<div className="flex flex-col">
+    <p className='text-lime-500 font-bold'>+20</p>
+    <p className='text-black'>commitment</p>
+</div>
+    </div>
+    <div className="bg-violet-200 font-bold flex items-center justify-center text-violet-500 text-xl px-4 rounded-2xl">
+300
+    </div>
+    </div>
+        </div>
+</div>
+<div className="mt-5 flex flex-col" >
+    <div className="flex gap-2 text-black items-center">
+<h1 className='font-bold text-3xl'>06</h1>
+<p>DEC,2024</p>
+    </div>
+    <div className='flex gap-3'>
+    <div className="border p-5 my-5 w-80 flex justify-between rounded-2xl shadow-md">
+    <div className="flex items-center gap-3">
+<img src="/icons/frame(1).png" alt="" />
+<div className="flex flex-col">
+    <p className='text-lime-500 font-bold'>+20</p>
+    <p className='text-black'>commitment</p>
+</div>
+    </div>
+    <div className="bg-violet-200 font-bold flex items-center justify-center text-violet-500 text-xl px-4 rounded-2xl">
+280
+    </div>
+    </div>
+    <div className="border p-5 my-5 w-80 flex justify-between rounded-2xl shadow-md">
+    <div className="flex items-center gap-3">
+<img src="/icons/frame(1).png" alt="" />
+<div className="flex flex-col">
+    <p className='text-lime-500 font-bold'>+20</p>
+    <p className='text-black'>commitment</p>
+</div>
+    </div>
+    <div className="bg-violet-200 font-bold flex items-center justify-center text-violet-500 text-xl px-4 rounded-2xl">
+260
+    </div>
+    </div>
+        </div>
+</div>
+<div className="mt-5 flex flex-col" >
+    <div className="flex gap-2 text-black items-center">
+<h1 className='font-bold text-3xl'>04</h1>
+<p>DEC,2024</p>
+    </div>
+    <div className='flex gap-3'>
+    <div className="border p-5 my-5 w-80 flex justify-between rounded-2xl shadow-md">
+    <div className="flex items-center gap-3">
+<img src="/icons/frame(1).png" alt="" />
+<div className="flex flex-col">
+    <p className='text-lime-500 font-bold'>+20</p>
+    <p className='text-black'>commitment</p>
+</div>
+    </div>
+    <div className="bg-violet-200 font-bold flex items-center justify-center text-violet-500 text-xl px-4 rounded-2xl">
+240
+    </div>
+    </div>
+    <div className="border p-5 my-5 w-80 flex justify-between rounded-2xl shadow-md">
+    <div className="flex items-center gap-3">
+<img src="/icons/frame(1).png" alt="" />
+<div className="flex flex-col">
+    <p className='text-lime-500 font-bold'>+20</p>
+    <p className='text-black'>commitment</p>
+</div>
+    </div>
+    <div className="bg-violet-200 font-bold flex items-center justify-center text-violet-500 text-xl px-4 rounded-2xl">
+220
+    </div>
+    </div>
+    <div className="border p-5 my-5 w-80 flex justify-between rounded-2xl shadow-md">
+    <div className="flex items-center gap-3">
+<img src="/icons/frame(1).png" alt="" />
+<div className="flex flex-col">
+    <p className='text-lime-500 font-bold'>+20</p>
+    <p className='text-black'>commitment</p>
+</div>
+    </div>
+    <div className="bg-violet-200 font-bold flex items-center justify-center text-violet-500 text-xl px-4 rounded-2xl">
+200
+    </div>
+    </div>
+        </div>
+</div>
+<div className="mt-5 flex flex-col" >
+    <div className="flex gap-2 text-black items-center">
+<h1 className='font-bold text-3xl'>03</h1>
+<p>DEC,2024</p>
+    </div>
+    <div className='flex gap-3'>
+   
+    <div className="border p-5 my-5 w-80 flex justify-between rounded-2xl shadow-md">
+    <div className="flex items-center gap-3">
+<img src="/icons/frame(1).png" alt="" />
+<div className="flex flex-col">
+    <p className='text-lime-500 font-bold'>+20</p>
+    <p className='text-black'>commitment</p>
+</div>
+    </div>
+    <div className="bg-violet-200 font-bold flex items-center justify-center text-violet-500 text-xl px-4 rounded-2xl">
+180
+    </div>
+    </div>
+        </div>
+</div>
+                </div>
+            </main>
+        </div>
+        <Sidebar />
+    </div>
+  )
+}
+
+export default page
