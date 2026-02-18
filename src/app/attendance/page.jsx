@@ -1,5 +1,4 @@
 'use client';
-import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import Sidebar from '@/components/sidebar'
 import React from 'react'
 import Header from '@/components/header'

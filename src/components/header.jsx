@@ -18,7 +18,7 @@ function Header() {
               </Link>
             <nav className="flex w-full  items-center justify-end gap-5 p-5">
               <Link
-                href="/dashboard"
+                href="/profile"
                 className="text-gray-500 hover:text-gray-700 transition duration-300 flex gap-4 items-center"
               >
                 <img
