@@ -66,7 +66,7 @@ function Page() {
           </main>
         </div>
       </div>
-       <Sidebar />
+       <Sidebar/>
     </div>
   );
 }
