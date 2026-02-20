@@ -7,7 +7,7 @@ function Sidebar() {
     const pathname = usePathname();
   return (
     
- <aside className='gap-5 m-3 w-64 inset-0 fixed bg-gray-100 h-screen rounded-2xl shadow-lg '>
+ <aside className='gap-5 m-3 w-64 inset-0 fixed bg-gray-100 h-screen rounded-2xl z-50 shadow-lg '>
             <div className='flex flex-col gap-5 mt-5 '>
                <div className=' select-none flex  justify-start ml-8'>
                 <img src="/icons/buy2logo.png" alt="Logo" width={100}  />
@@ -26,7 +26,7 @@ function Sidebar() {
                     My tasks</Link>
                   </li>
                   <li>
-                    <Link href="/team" className='flex items-center gap-2 text-gray-500'>
+                    <Link href="/lists" className='flex items-center gap-2 text-gray-500'>
                     <img src="/icons/lists.png" alt="Team Icon" />
                     lists</Link>
                   </li>
@@ -36,12 +36,12 @@ function Sidebar() {
                     attendance</Link>
                   </li>
                   <li>
-                    <Link href="/team" className='flex items-center gap-2 text-gray-500'>
+                    <Link href="/requests" className='flex items-center gap-2 text-gray-500'>
                     <img src="/icons/post.png" alt="Team Icon" />
                     requests</Link>
                   </li>
                   <li>
-                    <Link href="/team" className='flex items-center gap-2 text-gray-500'>
+                    <Link href="/shifts" className='flex items-center gap-2 text-gray-500'>
                     <img src="/icons/clock-circle.png" alt="Team Icon" />
                     shifts</Link>
                   </li>
