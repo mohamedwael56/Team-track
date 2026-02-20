@@ -51,12 +51,12 @@ function Sidebar() {
                     store</Link>
                   </li>
                   <li>
-                    <Link href="/team" className='flex items-center gap-2 text-gray-500'>
+                    <Link href="/settings" className='flex items-center gap-2 text-gray-500'>
                     <img src="/icons/setting.png" alt="Team Icon" />
                     settings</Link>
                   </li>
                   <li>
-                    <Link href="/team" className='flex items-center gap-2 text-gray-500'>
+                    <Link href="/support" className='flex items-center gap-2 text-gray-500'>
                     <img src="/icons/help.png" alt="Team Icon" />
                     support</Link>
                   </li>
