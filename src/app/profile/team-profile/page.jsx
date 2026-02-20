@@ -9,10 +9,13 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
+import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import { Doughnut } from 'react-chartjs-2'
 import { Chart as ChartJs,Tooltip,Legend,ArcElement } from 'chart.js'
 ChartJs.register(ArcElement,Tooltip,Legend)
 function page() {
+    const percentage = 66;
+
   const data={
     labels:['matric 1','matric 2','matric 3','matric 4','matric 5',],
     datasets:[{
@@ -31,7 +34,7 @@ function page() {
       <img src="/profile/avatar.png" alt="" />
       <div className='flex flex-col'>
     <div className='flex gap-2 items-center'>
-      <h1 className='text-black text-2xl font-bold'>mohamed wael</h1>
+      <h1 className='text-black text-2xl font-bold'>saif mohamed</h1>
       <Link href='' className='text-blue-600'> full info</Link>
     </div>
     <div className="flex flex-row capitalize mt-4 gap-20 items-center">
@@ -61,86 +64,10 @@ function page() {
         </div>
         </div>
       </div>
-      <div className="bg-gray-100 w-full flex flex-col rounded-2xl p-5 my-4">
-        <div className="flex items-center justify-between">
-<div className="flex flex-col">
-  <h1 className='text-black'>My team</h1>
-  <p className='text-gray-400'>Here you can see all the members at your team.</p>
-</div>
-<div className="">
-  <Link href='/profile/my-team' className='text-blue-500'>view all</Link>
-</div>
-        </div>
-        <div className='w-250'>
-         <Swiper
-      modules={[Navigation, Pagination, Scrollbar, A11y]}
-      spaceBetween={10}
-      slidesPerView={3}
-      pagination={{ clickable: true }}
-    >
-      <SwiperSlide> 
-        <Link href='/profile/team-profile' className="flex items-center gap-2 my-5 shadow rounded-2xl border">
-          <img src="/profile/avatar.png" alt="" />
-          <div className="flex w-full flex-col my-2">
-             <div className="flex justify-between my-2 items-center">
-            <h1 className='text-black font-bold'>saif mohamed</h1>
-          <p className='text-green-500 mr-5 font-bold'>88</p>
-            </div>
-            <div className="bg-gray-200 mr-5 h-3 rounded-full">
-              <div className="bg-green-600 rounded-2xl h-3 w-3 absolute" style={{left:"calc(80% - 10px)"}}></div>
-            </div>
-          </div>
-        </Link>
-        </SwiperSlide>
-      <SwiperSlide>
-         <Link href='/profile/team-profile' className="flex items-center gap-2 my-5 shadow rounded-2xl border">
-          <img src="/profile/avatar.png" alt="" />
-          <div className="flex w-full flex-col my-2">
-            <div className="flex justify-between my-2 items-center">
-            <h1 className='text-black font-bold'>saif mohamed</h1>
-          <p className='text-green-500 mr-5 font-bold'>88</p>
-            </div>
-            <div className="bg-gray-200 mr-5 h-3 rounded-full">
-              <div className="bg-green-600 rounded-2xl h-3 w-3 absolute" style={{left:"calc(80% - 10px)"}}></div>
-            </div>
-          </div>
-        </Link>
-        </SwiperSlide>
-      <SwiperSlide>
-         <Link href='/profile/team-profile' className="flex items-center gap-2 my-5 shadow rounded-2xl border">
-          <img src="/profile/avatar.png" alt="" />
-          <div className="flex w-full flex-col my-2">
-  <div className="flex justify-between my-2 items-center">
-            <h1 className='text-black font-bold'>saif mohamed</h1>
-          <p className='text-green-500 mr-5 font-bold'>88</p>
-            </div>
-              <div className="bg-gray-200 mr-5 h-3 rounded-full">
-              <div className="bg-green-600 rounded-2xl h-3 w-3 absolute" style={{left:"calc(80% - 10px)"}}></div>
-            </div>
-          </div>
-        </Link>
-        </SwiperSlide>
-      <SwiperSlide>
-         <Link href='/profile/team-profile' className="flex items-center gap-2 my-5 shadow rounded-2xl border">
-          <img src="/profile/avatar.png" alt="" />
-          <div className="flex w-full flex-col my-2">
-  <div className="flex justify-between my-2 items-center">
-            <h1 className='text-black font-bold'>saif mohamed</h1>
-          <p className='text-green-500 mr-5 font-bold'>88</p>
-            </div>
-              <div className="bg-gray-200 mr-5 h-3 rounded-full">
-              <div className="bg-green-600 rounded-2xl h-3 w-3 absolute" style={{left:"calc(80% - 10px)"}}></div>
-            </div>
-          </div>
-        </Link>
-        </SwiperSlide>
-      
-      ...
-    </Swiper>
-       </div>
-      </div>
-<div className="bg-gray-100 rounded-2xl p-5  my-4">
-  <div className="flex flex-col ">
+   
+<div className=" rounded-2xl p-5  my-4">
+<div className="flex gap-10 justify-between">
+  <div className="flex flex-1 bg-gray-100 p-5 rounded-2xl border flex-col ">
     <div className="flex justify-between items-center">
       <div className='flex flex-col'>
       <h1 className='text-black text-xl font-bold'>rewards</h1>
@@ -150,7 +77,7 @@ function page() {
 <Link href='/rewards' className='text-blue-600'>view all</Link>
 </div>
     </div>
-    <div className='mt-3 flex flex-row gap-3'>
+    <div className='mt-3 flex flex-wrap gap-3 mx-5'>
     <img src="/profile/waffarha.png" alt="" />
     <img src="/profile/amazon.png" alt="" />
     <img src="/profile/spotify.png" alt="" />
@@ -159,11 +86,94 @@ function page() {
     <img src="/profile/amazon.png" alt="" />
     <img src="/profile/spotify.png" alt="" />
     <img src="/profile/netflix.png" alt="" />
-    <img src="/profile/waffarha.png" alt="" />
-    <img src="/profile/amazon.png" alt="" />
-    <img src="/profile/spotify.png" alt="" />
-    <img src="/profile/netflix.png" alt="" />
+   
     </div>
+  </div>
+  <div className="flex-1 flex border rounded-2xl bg-gray-100 p-5 flex-col">
+    <div className="flex justify-between">
+        <div className="flex flex-col">
+        <h1 className='text-black'>tasks</h1>
+        <p className='text-gray-400'>Attendance history analized during the month.</p>
+
+        </div>
+        <div className="text-nowrap">
+        <Link href='' className='text-blue-500'>view all</Link>
+        </div>
+    </div>
+    <div className="grid gap-10 my-5  grid-cols-4">
+<div className="flex relative text-sm items-center text-black flex-col">
+<CircularProgressbar
+  value={percentage}
+  styles={buildStyles({
+    rotation: 0.25,
+    strokeLinecap: 'butt',
+    pathTransitionDuration: 0.5,
+    pathColor: `rgb(30, 0, 250)`,
+    textColor: '#f88',
+    trailColor: '#d6d6d6',
+    backgroundColor: '#3e98c7',
+  })}
+/>
+<p className="mt-3">my day 20</p>
+<p className='absolute top-7 font-bold text-lg'>84%</p>
+</div>
+<div className="flex relative text-sm text-nowrap items-center text-black flex-col">
+<CircularProgressbar
+  value={percentage}
+  styles={buildStyles({
+    rotation: 0.25,
+    strokeLinecap: 'butt',
+    pathTransitionDuration: 0.5,
+    pathColor: `rgb(0, 250, 50)`,
+    textColor: '#f88',
+    trailColor: '#d6d6d6',
+    backgroundColor: '#3e98c7',
+  })}
+/>
+<p className="mt-3">
+  completed 20  
+</p>
+<p className='absolute top-7 font-bold text-lg'> 48%</p>
+
+</div>
+<div className="flex relative text-sm text-nowrap items-center text-black flex-col">
+<CircularProgressbar
+  value={percentage}
+  styles={buildStyles({
+    rotation: 0.25,
+    strokeLinecap: 'butt',
+    pathTransitionDuration: 0.5,
+    pathColor: `rgb(255, 0, 0)`,
+    textColor: '#f88',
+    trailColor: '#d6d6d6',
+    backgroundColor: '#3e98c7',
+  })}
+/>
+<p className="mt-3">
+  completed 20  
+</p>
+<p className='absolute top-7 font-bold text-lg'>48%</p>
+</div>
+<div className="flex relative text-sm text-nowrap items-center text-black flex-col">
+<CircularProgressbar
+  value={percentage}
+  styles={buildStyles({
+    rotation: 0.25,
+    strokeLinecap: 'butt',
+    pathTransitionDuration: 0.5,
+    pathColor: `rgb(255, 60, 0)`,
+    textColor: '#f88',
+    trailColor: '#d6d6d6',
+    backgroundColor: '#3e98c7',
+  })}
+/>
+<p className="mt-3">
+  completed 20  
+</p>
+<p className='absolute top-7 font-bold text-lg'>48%</p>
+</div>
+    </div>
+  </div>
   </div>
 </div>
 <div className="flex  justify-between items-center">
@@ -178,6 +188,11 @@ data={data}
 options={{cutout:'0%',plugins:{legend:{position:'bottom'}}}}
 />
 </div>
+<Link href="/profile/team-profile/metric" className="flex items-center justify-center  my-5">
+    <button className='bg-blue-900 rounded-2xl w-full text-white cursor-pointer px-4 py-2'>
+        + Add metric
+    </button>
+</Link>
 <div className='flex flex-col w-full text-black'>
  <div className="flex justify-between mb-2 ">
 <h1>performance</h1>
