@@ -22,7 +22,7 @@ export default function RootLayout({ children,siteDefinition }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-    <div className="flex justify-between">
+    <div className="flex justify-between bg-white">
         {children}
         <div className="w-100 mr-5 flex items-center">
      {siteDefinition}
