@@ -17,7 +17,7 @@ export const metadata = {
 function layout({ children }) {
   return (
     <html lang="en">
-        <body>
+        <body className=''>
                 <div className="layout-container">
       {children}
     </div>
