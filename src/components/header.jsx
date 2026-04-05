@@ -1,8 +1,11 @@
+'use client'
 import React from 'react'
 import Link from 'next/link'
-
+import { useState } from 'react'
 function Header() {
+  const [open, setOpen]=useState(false);
   return (
+   
       <header>
           <div className="flex justify-between items-center">
             <div className="relative pr-5">
@@ -13,9 +16,76 @@ function Header() {
               <input type="text" placeholder="Search" className="bg-gray-100 pl-8 pr-5 py-2 rounded-xl text-black"/>
             </div>
             <div className='flex items-center gap-3'>
-              <Link href='/notifications' className="bg-gray-100 cursor-pointer rounded-2xl p-3">
+              <button onClick={()=>setOpen(!open)} className="bg-gray-100 cursor-pointer rounded-2xl p-3">
                 <img src="/icons/notification.png" alt="" />
-              </Link>
+{
+    open &&(
+      <>
+      <div className='absolute right-23 mt-4 z-50 bg-white rounded-xl shadow-xl p-4 '>
+<div className="flex flex-col ">
+<div className="flex items-start gap-3 mb-2">
+    <img src="/icons/alert-outline.png" alt="" />
+    <div className="flex items-start flex-col">
+      <h1 className=" text-black text-sm">UI Task less than 8 days</h1>
+      <p className="text-gray-400 text-sm w-[350px] text-start">Phillip, your assignment is less than 8 days away from reaching</p>
+    </div>
+    </div>
+  
+  </div> 
+  <hr className='mb-2' />       
+<div className="flex flex-col ">
+<div className="flex items-start gap-3 mb-2">
+    <img src="/icons/alert-outline.png" alt="" />
+    <div className="flex items-start flex-col">
+      <h1 className=" text-black text-sm">UI Task less than 8 days</h1>
+      <p className="text-gray-400 text-sm w-[350px] text-start">Phillip, your assignment is less than 8 days away from reaching</p>
+    </div>
+    </div>
+  
+  </div> 
+  <hr className='mb-2' />       
+<div className="flex flex-col ">
+<div className="flex items-start gap-3 mb-2">
+    <img src="/icons/alert-outline.png" alt="" />
+    <div className="flex items-start flex-col">
+      <h1 className=" text-black text-sm">UI Task less than 8 days</h1>
+      <p className="text-gray-400 text-sm w-[350px] text-start">Phillip, your assignment is less than 8 days away from reaching</p>
+    </div>
+    </div>
+  
+  </div> 
+  <hr className='mb-2' />       
+<div className="flex flex-col ">
+<div className="flex items-start gap-3 mb-2">
+    <img src="/icons/alert-outline.png" alt="" />
+    <div className="flex items-start flex-col">
+      <h1 className=" text-black text-sm">UI Task less than 8 days</h1>
+      <p className="text-gray-400 text-sm w-[350px] text-start">Phillip, your assignment is less than 8 days away from reaching</p>
+    </div>
+    </div>
+  
+  </div> 
+  <hr className='mb-2' />       
+<div className="flex flex-col ">
+<div className="flex items-start gap-3 mb-2">
+    <img src="/icons/alert-outline.png" alt="" />
+    <div className="flex items-start flex-col">
+      <h1 className=" text-black text-sm">UI Task less than 8 days</h1>
+      <p className="text-gray-400 text-sm w-[350px] text-start">Phillip, your assignment is less than 8 days away from reaching</p>
+    </div>
+    </div>
+  
+  </div> 
+  <hr className='mb-2' /> 
+<Link href="/notifications" className="text-blue-600 ">
+              View more notifications
+              </Link>      
+      </div>
+
+      </>
+    )
+   }
+              </button>
             <nav className="flex w-full  items-center justify-end gap-5 p-5">
               <Link
                 href="/profile"
