@@ -13,7 +13,9 @@ import { Doughnut } from 'react-chartjs-2'
 import { Chart as ChartJs,Tooltip,Legend,ArcElement } from 'chart.js'
 ChartJs.register(ArcElement,Tooltip,Legend)
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 function Page() {
+  const router=useRouter()
   const [open,setOpen]=useState(false)
   const data={
     labels:['matric 1','matric 2','matric 3','matric 4','matric 5',],
@@ -109,13 +111,13 @@ function Page() {
         </div>
 
 
-        <div className='bg-gray-200 gap-2 rounded-2xl p-3 flex items-center'>
+        <button onClick={()=>router.push('/profile/points-history')} className='cursor-pointer bg-gray-200 gap-2 rounded-2xl p-3 flex items-center'>
       <img src="/profile/frame.png" alt="" />
       <div className='flex flex-col'>
-<p className='text-black'> Total price</p>
-<p className='text-violet-600'>2580</p>
+<p className='text-black'> Total points</p>
+<p className='text-violet-600 text-start'>2580</p>
       </div>
-        </div>
+        </button>
         </div>
       </div>
       <div className="bg-gray-100 w-full flex flex-col rounded-2xl p-5 my-4">
