@@ -12,7 +12,9 @@ import 'swiper/css/scrollbar';
 import { Doughnut } from 'react-chartjs-2'
 import { Chart as ChartJs,Tooltip,Legend,ArcElement } from 'chart.js'
 ChartJs.register(ArcElement,Tooltip,Legend)
-function page() {
+import { useState } from 'react';
+function Page() {
+  const [open,setOpen]=useState(false)
   const data={
     labels:['matric 1','matric 2','matric 3','matric 4','matric 5',],
     datasets:[{
@@ -25,6 +27,61 @@ function page() {
   <div className="flex-1 ml-69">
     <Header />
     <main>
+      {
+        open&&(
+          <>
+          <div className="fixed inset-0 bg-black opacity-50 z-60"></div>
+          <div className="sticky inset-0 flex justify-end mr-5 items-center z-60">
+            <div className="bg-white flex flex-col rounded-2xl p-5 w-100">
+            <div className="flex justify-between">
+ <h1 className='text-black text-2xl font-bold'>More details</h1>
+ <p onClick={()=>setOpen(false)} className='cursor-pointer text-3xl text-black'>×</p>
+            </div>
+             
+<div className="border flex mb-3 items-center gap-4 rounded-xl p-4 mt-5">
+<button className='relative cursor-pointer'>
+<img src="/profile/avatar.png" alt="" width={70} />
+<img className='absolute bottom-1 right-1' src="/profile/edit.png" alt="" />
+</button>
+<div className="flex flex-col">
+  <h1 className='text-black font-bold'>mohamed ahmed</h1>
+  <p className='text-gray-400'>joined : 20-03-2020</p>
+</div>
+
+</div>
+<div className="border flex items-start flex-col mb-3 rounded-xl p-4 mt-5">
+  <img src="/profile/name-tag.png" alt="" className='my-5' />
+  <div className='text-gray-400'>role</div>
+  <div className='text-black'>flutter developer</div>
+  <img src="/profile/phone-rounded.png" alt="" className='my-5' />
+  <div className='text-gray-400'>phone number</div>
+  <div className='text-black'>(+20)123456789</div>
+  <img src="/profile/mail-02.png" alt="" className='my-5' />
+  <div className='text-gray-400'>email address</div>
+  <div className='text-black'>mohamedahmed@grandtech.io</div>
+</div>
+<div className="border flex items-start flex-col mb-3 rounded-xl p-4 mt-5">
+<img src="/profile/elements.png" className='my-5'  alt="" />
+  <div className='text-gray-400'>Birthdate</div>
+  <div className='text-black'>october1,1996</div>
+<img src="/profile/location-10.png" className='my-5' alt="" />
+<div className='text-gray-400'>location</div>
+<div className='text-black'>Cairo, Egypt</div>
+
+</div>
+<div className="bg-sky-100 items-start p-5 gap-2 rounded-xl mt-5 flex">
+          <img src="/profile/left-icon.png" alt="" />
+<div className="flex flex-col">
+<div className="text-black">important notice</div>
+<div className="text-gray-500 text-xs">If any of the presented details is incorrect, please contact HR to adjust.</div>
+
+</div>
+</div>
+            </div>
+          </div>
+          </>
+        )
+      }
       <div className="bg-gray-100 rounded-2xl p-5 my-4">
         <div className='flex justify-between items-center'>
         <div className='flex items-center gap-4'>
@@ -32,7 +89,7 @@ function page() {
       <div className='flex flex-col'>
     <div className='flex gap-2 items-center'>
       <h1 className='text-black text-2xl font-bold'>mohamed wael</h1>
-      <Link href='' className='text-blue-600'> full info</Link>
+      <button onClick={()=>setOpen(true)} className='cursor-pointer text-blue-600'> full info</button>
     </div>
     <div className="flex flex-row capitalize mt-4 gap-20 items-center">
       <div className="flex flex-col ">
@@ -345,4 +402,4 @@ options={{cutout:'0%',plugins:{legend:{position:'bottom'}}}}
   )
 }
 
-export default page
+export default Page
