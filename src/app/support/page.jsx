@@ -9,8 +9,12 @@ function page() {
             <Header />
             <main>
                 <div className="bg-gray-100 p-5 flex flex-col rounded-2xl h-screen">
-            <div className="text-black mb-5 text-2xl font-bold">
-                support
+            <div className="text-black flex justify-between mb-5 text-2xl font-bold">
+                <h1>Support</h1>
+                <div className='flex gap-5'>
+                    <button className=' cursor-pointer text-indigo-500 border border-indigo-500 px-2 text-sm rounded-2xl'>frequently questions</button>
+                    <button className=' cursor-pointer text-black py-2 px-4 rounded-2xl text-sm'>report issue</button>
+                </div>
             </div>
             <hr />
              <div className="w-full relative mt-5">
