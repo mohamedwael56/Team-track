@@ -7,7 +7,7 @@ function Sidebar() {
     const pathname = usePathname();
   return (
     
- <aside className='gap-5 m-3 w-64 inset-0 fixed bg-gray-100 h-screen rounded-2xl z-50 shadow-lg '>
+ <aside className='gap-5 m-3 w-64 inset-0 fixed bg-gray-100 h-screen rounded-2xl z-40 shadow-lg '>
             <div className='flex flex-col gap-5 mt-5 '>
                <div className=' select-none flex  justify-start ml-8'>
                 <img src="/icons/buy2logo.png" alt="Logo" width={100}  />
