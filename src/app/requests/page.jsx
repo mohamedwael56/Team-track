@@ -3,6 +3,9 @@ import Header from '@/components/header'
 import React from 'react'
 import Sidebar from '@/components/sidebar'
 import Link from 'next/link'
+import { useState } from 'react';
+import MyRequests from './my-requests';
+import TeamRequests from './team-requests';
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -13,7 +16,8 @@ import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import { Doughnut } from 'react-chartjs-2'
 import { Chart as ChartJs,Tooltip,Legend,ArcElement } from 'chart.js'
 ChartJs.register(ArcElement,Tooltip,Legend)
-function page() {
+function Page() {
+    const [activeTab, setActiveTab] = useState('my-requests');
     const percentage = 66;
 
   const data={
@@ -34,12 +38,12 @@ function page() {
 Requests
     </div>
     <div className="flex mr-5">
-        <button className='px-9 cursor-pointer py-2 text-white bg-blue-900 rounded-2xl'>My Requests</button>
-        <Link href='/requests/team-requests'>
-        <button className='px-9 cursor-pointer py-2 text-gray-500 bg-gray-200 rounded-2xl'>
+        <button onClick={()=>setActiveTab('my-requests')} className={`${activeTab === 'my-requests' ? 'bg-blue-900 text-white' : 'bg-gray-200 text-gray-500'} px-9 cursor-pointer py-2 rounded-2xl`}>My Requests</button>
+      
+        <button onClick={()=>setActiveTab('team-requests')} className={`${activeTab === 'team-requests' ? 'bg-blue-900 text-white' : 'bg-gray-200 text-gray-500'} px-9 cursor-pointer py-2 rounded-2xl`}>
             Team Requests
         </button>
-        </Link>
+        
     </div>
    </div>
    <hr />
@@ -71,313 +75,12 @@ Requests
     <p>Add Request</p>
 </div>
    </div>
-   <div className="grid grid-cols-4 gap-5">
-<div className="border rounded-2xl p-5 flex flex-col">
-    <div className="flex justify-between items-center">
-<div className="bg-violet-50 text-violet-500">
-    12 Nov
-</div>
-<div className="bg-orange-100 rounded-xl items-start text-orange-500 px-5">
-Pending
-    </div>
-    </div>
-    <div className="flex flex-col">
-<div className="text-black text-lg font-bold">
-    sick leave
-</div>
-<div className="text-gray-400">09:00 Am -10:00 Am</div>
-<div className="text-gray-400">Lorem ipsum dolor sit amet </div>
-
-    </div>
-    
-</div>
-<div className="border rounded-2xl p-5 flex flex-col">
-    <div className="flex justify-between items-center">
-<div className="bg-violet-50 text-violet-500">
-    12 Nov
-</div>
-<div className="bg-orange-100 rounded-xl items-start text-orange-500 px-5">
-Pending
-    </div>
-    </div>
-    <div className="flex flex-col">
-<div className="text-black text-lg font-bold">
-    sick leave
-</div>
-<div className="text-gray-400">09:00 Am -10:00 Am</div>
-<div className="text-gray-400">Lorem ipsum dolor sit amet </div>
-
-    </div>
-    
-</div>
-<div className="border rounded-2xl p-5 flex flex-col">
-    <div className="flex justify-between items-center">
-<div className="bg-violet-50 text-violet-500">
-    12 Nov
-</div>
-<div className="bg-red-100 rounded-xl items-start text-red-500 px-5">
-rejected
-    </div>
-    </div>
-    <div className="flex flex-col">
-<div className="text-black text-lg font-bold">
-    sick leave
-</div>
-<div className="text-gray-400">09:00 Am -10:00 Am</div>
-<div className="text-gray-400">Lorem ipsum dolor sit amet </div>
-
-    </div>
-    
-</div>
-<div className="border rounded-2xl p-5 flex flex-col">
-    <div className="flex justify-between items-center">
-<div className="bg-violet-50 text-violet-500">
-    12 Nov
-</div>
-<div className="bg-orange-100 rounded-xl items-start text-orange-500 px-5">
-Pending
-    </div>
-    </div>
-    <div className="flex flex-col">
-<div className="text-black text-lg font-bold">
-    sick leave
-</div>
-<div className="text-gray-400">09:00 Am -10:00 Am</div>
-<div className="text-gray-400">Lorem ipsum dolor sit amet </div>
-
-    </div>
-    
-</div>
-<div className="border rounded-2xl p-5 flex flex-col">
-    <div className="flex justify-between items-center">
-<div className="bg-violet-50 text-violet-500">
-    12 Nov
-</div>
-<div className="bg-orange-100 rounded-xl items-start text-orange-500 px-5">
-Pending
-    </div>
-    </div>
-    <div className="flex flex-col">
-<div className="text-black text-lg font-bold">
-    sick leave
-</div>
-<div className="text-gray-400">09:00 Am -10:00 Am</div>
-<div className="text-gray-400">Lorem ipsum dolor sit amet </div>
-
-    </div>
-    
-</div>
-<div className="border rounded-2xl p-5 flex flex-col">
-    <div className="flex justify-between items-center">
-<div className="bg-violet-50 text-violet-500">
-    12 Nov
-</div>
-<div className="bg-orange-100 rounded-xl items-start text-orange-500 px-5">
-Pending
-    </div>
-    </div>
-    <div className="flex flex-col">
-<div className="text-black text-lg font-bold">
-    sick leave
-</div>
-<div className="text-gray-400">09:00 Am -10:00 Am</div>
-<div className="text-gray-400">Lorem ipsum dolor sit amet </div>
-
-    </div>
-    
-</div>
-<div className="border rounded-2xl p-5 flex flex-col">
-    <div className="flex justify-between items-center">
-<div className="bg-violet-50 text-violet-500">
-    12 Nov
-</div>
-<div className="bg-orange-100 rounded-xl items-start text-orange-500 px-5">
-Pending
-    </div>
-    </div>
-    <div className="flex flex-col">
-<div className="text-black text-lg font-bold">
-    sick leave
-</div>
-<div className="text-gray-400">09:00 Am -10:00 Am</div>
-<div className="text-gray-400">Lorem ipsum dolor sit amet </div>
-
-    </div>
-    
-</div>
-<div className="border rounded-2xl p-5 flex flex-col">
-    <div className="flex justify-between items-center">
-<div className="bg-violet-50 text-violet-500">
-    12 Nov
-</div>
-<div className="bg-orange-100 rounded-xl items-start text-orange-500 px-5">
-Pending
-    </div>
-    </div>
-    <div className="flex flex-col">
-<div className="text-black text-lg font-bold">
-    sick leave
-</div>
-<div className="text-gray-400">09:00 Am -10:00 Am</div>
-<div className="text-gray-400">Lorem ipsum dolor sit amet </div>
-
-    </div>
-    
-</div>
-<div className="border rounded-2xl p-5 flex flex-col">
-    <div className="flex justify-between items-center">
-<div className="bg-violet-50 text-violet-500">
-    12 Nov
-</div>
-<div className="bg-orange-100 rounded-xl items-start text-orange-500 px-5">
-Pending
-    </div>
-    </div>
-    <div className="flex flex-col">
-<div className="text-black text-lg font-bold">
-    sick leave
-</div>
-<div className="text-gray-400">09:00 Am -10:00 Am</div>
-<div className="text-gray-400">Lorem ipsum dolor sit amet </div>
-
-    </div>
-    
-</div>
-<div className="border rounded-2xl p-5 flex flex-col">
-    <div className="flex justify-between items-center">
-<div className="bg-violet-50 text-violet-500">
-    12 Nov
-</div>
-<div className="bg-orange-100 rounded-xl items-start text-orange-500 px-5">
-Pending
-    </div>
-    </div>
-    <div className="flex flex-col">
-<div className="text-black text-lg font-bold">
-    sick leave
-</div>
-<div className="text-gray-400">09:00 Am -10:00 Am</div>
-<div className="text-gray-400">Lorem ipsum dolor sit amet </div>
-
-    </div>
-    
-</div>
-<div className="border rounded-2xl p-5 flex flex-col">
-    <div className="flex justify-between items-center">
-<div className="bg-violet-50 text-violet-500">
-    12 Nov
-</div>
-<div className="bg-orange-100 rounded-xl items-start text-orange-500 px-5">
-Pending
-    </div>
-    </div>
-    <div className="flex flex-col">
-<div className="text-black text-lg font-bold">
-    sick leave
-</div>
-<div className="text-gray-400">09:00 Am -10:00 Am</div>
-<div className="text-gray-400">Lorem ipsum dolor sit amet </div>
-
-    </div>
-    
-</div>
-<div className="border rounded-2xl p-5 flex flex-col">
-    <div className="flex justify-between items-center">
-<div className="bg-violet-50 text-violet-500">
-    12 Nov
-</div>
-<div className="bg-orange-100 rounded-xl items-start text-orange-500 px-5">
-Pending
-    </div>
-    </div>
-    <div className="flex flex-col">
-<div className="text-black text-lg font-bold">
-    sick leave
-</div>
-<div className="text-gray-400">09:00 Am -10:00 Am</div>
-<div className="text-gray-400">Lorem ipsum dolor sit amet </div>
-
-    </div>
-    
-</div>
-<div className="border rounded-2xl p-5 flex flex-col">
-    <div className="flex justify-between items-center">
-<div className="bg-violet-50 text-violet-500">
-    12 Nov
-</div>
-<div className="bg-orange-100 rounded-xl items-start text-orange-500 px-5">
-Pending
-    </div>
-    </div>
-    <div className="flex flex-col">
-<div className="text-black text-lg font-bold">
-    sick leave
-</div>
-<div className="text-gray-400">09:00 Am -10:00 Am</div>
-<div className="text-gray-400">Lorem ipsum dolor sit amet </div>
-
-    </div>
-    
-</div>
-<div className="border rounded-2xl p-5 flex flex-col">
-    <div className="flex justify-between items-center">
-<div className="bg-violet-50 text-violet-500">
-    12 Nov
-</div>
-<div className="bg-orange-100 rounded-xl items-start text-orange-500 px-5">
-Pending
-    </div>
-    </div>
-    <div className="flex flex-col">
-<div className="text-black text-lg font-bold">
-    sick leave
-</div>
-<div className="text-gray-400">09:00 Am -10:00 Am</div>
-<div className="text-gray-400">Lorem ipsum dolor sit amet </div>
-
-    </div>
-    
-</div>
-<div className="border rounded-2xl p-5 flex flex-col">
-    <div className="flex justify-between items-center">
-<div className="bg-violet-50 text-violet-500">
-    12 Nov
-</div>
-<div className="bg-orange-100 rounded-xl items-start text-orange-500 px-5">
-Pending
-    </div>
-    </div>
-    <div className="flex flex-col">
-<div className="text-black text-lg font-bold">
-    sick leave
-</div>
-<div className="text-gray-400">09:00 Am -10:00 Am</div>
-<div className="text-gray-400">Lorem ipsum dolor sit amet </div>
-
-    </div>
-    
-</div>
-<div className="border rounded-2xl p-5 flex flex-col">
-    <div className="flex justify-between items-center">
-<div className="bg-violet-50 text-violet-500">
-    12 Nov
-</div>
-<div className="bg-orange-100 rounded-xl items-start text-orange-500 px-5">
-Pending
-    </div>
-    </div>
-    <div className="flex flex-col">
-<div className="text-black text-lg font-bold">
-    sick leave
-</div>
-<div className="text-gray-400">09:00 Am -10:00 Am</div>
-<div className="text-gray-400">Lorem ipsum dolor sit amet </div>
-
-    </div>
-    
-</div>
-
-   </div>
+   
+{
+activeTab === 'my-requests' && <MyRequests />}
+{
+activeTab === 'team-requests' && <TeamRequests />
+}
       </div>
    
 
@@ -390,4 +93,4 @@ Pending
   )
 }
 
-export default page
+export default Page
