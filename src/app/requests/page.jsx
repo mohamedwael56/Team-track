@@ -13,10 +13,12 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
+import { useRouter } from 'next/navigation';
 import { Doughnut } from 'react-chartjs-2'
 import { Chart as ChartJs,Tooltip,Legend,ArcElement } from 'chart.js'
 ChartJs.register(ArcElement,Tooltip,Legend)
 function Page() {
+  const router = useRouter();
     const [activeTab, setActiveTab] = useState('my-requests');
     const percentage = 66;
 
@@ -70,10 +72,24 @@ Requests
     <button className='cursor-pointer'>Loan Of Use</button>
     <button className='cursor-pointer'> Reimbursement</button>
 </div>
-<div className="bg-blue-900 cursor-pointer flex items-center px-6 py-2 text-white rounded-xl">
+<div onClick={()=>{router.push('/requests/add-request')}} className='bg-blue-900 cursor-pointer flex items-center px-6 py-2 text-white rounded-xl'>
     <p className='mr-4 text-lg'>+</p>
     <p>Add Request</p>
+      
 </div>
+ {/*
+<div className="relative group">
+   <button className='bg-gray-300 flex items-center px-6 py-2 text-gray-600 rounded-xl'>
+    <p className='mr-4 text-lg'>+</p>
+    <p>Add Request</p>
+    <div className="absolute opacity-0 group-hover:opacity-100 bottom-full left-1/2 mb-1 pointer-events-none -translate-x-1/2 transition duration-200">
+      <div className="bg-black capitalize text-xs text-nowrap rounded-xl p-4 text-white">
+        your leave balance is full.
+      </div>
+    </div>
+    </button>
+</div>
+*/}
    </div>
    
 {
