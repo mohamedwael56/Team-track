@@ -5,24 +5,34 @@ import Header from '@/components/header'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
+import DeleteMessage from '@/components/DeleteMessage'
+import ConfirmMessage from '@/components/ConfirmMessage'
+import EditComments from './Edit-comments'
 function Page() {
+    const [modalType,setModalType]=useState(null)
     const [comments,setComments]=useState()
     const router = useRouter()
-    const [open,setOpen]=useState(false)
-    const [open1,setOpen1]=useState(false)
-    const [open2,setOpen2]=useState(false)
-    const [deleteFile,setDeleteFile]=useState(false)
-    const [confirmDeleteFile,setConfirmDeleteFile]=useState(false)
-        const [deleteTask,setDeleteTask]=useState(false)
-        const [confirmDeleteTask,setConfirmDeleteTask]=useState(false)
-        const [editText,setEditText]=useState('')
-        const[clickedEdit,setClickedEdit]=useState(false)
-       const [text,setText]=useState('Lorem ipsum dolor, sit amet consectetur adipisicing elit.')
-     const changeText=()=>{
-        setText(editText)
-        setClickedEdit(false)
-      
-     }
+     
+     const peopleComments=[
+        {
+            id:1,
+            img:'/avatar(4).png',
+            name:'Ahmed Mahmoud',
+            text:'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas, voluptate.',
+        },
+        {
+            id:2,
+            img:'/avatar(4).png',
+            name:'Ahmed Mahmoud',
+            text:'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas, voluptate.',
+        },
+        {
+            id:3,
+            img:'/avatar(4).png',
+            name:'Ahmed Mahmoud',
+            text:'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas, voluptate.',
+        },
+     ]
        return (
 
     <div className='flex'>
@@ -40,275 +50,33 @@ function Page() {
 <h1 className='text-black text-xl select-none'>comments</h1>
 <button onClick={()=>setComments(false)} className='text-zinc-900 cursor-pointer text-3xl'>×</button>
     </div>
-    <div className="flex mt-7 justify-between">
-<div className="flex gap-2 items-center">
-<img src="/avatar(4).png" alt="" />
-<div className="flex flex-col">
-    <h1 className='text-black font-bold'>Ahmed Mahmoud</h1>
-    <p className='text-zinc-800'>{text}</p>
-{
-    clickedEdit&&(
-       <>
-      <textarea className=' text-black bg-gray-200 py-2 px-5' onChange={(e)=>setEditText(e.target.value)} />
-    <div className="flex mt-5 gap-2">
-    <button onClick={()=>setClickedEdit(false)} className='w-full cursor-pointer bg-red-600 text-white rounded-xl py-2'>discard</button>
-    <button onClick={changeText} className='w-full cursor-pointer text-white rounded-xl py-2 bg-blue-900'>save</button>
-    </div>
-    </>
-    )
-}
-</div>
-</div>
-<div className="flex flex-col items-end">
-    <div className="flex gap-5 items-center text-gray-400">
-<p>3m ago</p>
-<button onClick={()=>setOpen(!open)} className='cursor-pointer text-xl' >⋮</button>
-    </div>
-     {open && (
-        <div className="bg-white border flex flex-col gap-2 px-3 absolute mt-6 right-10 w-25 text-black border-gray-300 py-2 z-50 shadow-xl rounded-xl">
-       <button onClick={()=>setClickedEdit(true)} className='cursor-pointer flex items-center gap-2 '>
-        <img className='w-4' src="/icons/edit-02.png" alt="" />
-        Edit</button>
-       <button onClick={()=>setDeleteTask(true)} className='cursor-pointer flex items-center gap-2'>
-        <img className='w-4' src="/icons/delete-03.png" alt="" />
-        Delete</button>
-        {confirmDeleteTask&&(
-        <>
-        <div className='fixed inset-0 bg-black z-60 opacity-50 '></div>
-        <div className='fixed flex justify-center items-center z-60 p-5 inset-0'>
-        <div className="flex flex-col items-center justify-center w-100 bg-gray-100 p-5 rounded-2xl">
-        <img src="/icons/icon(5).png" alt="" className='my-5' />
-    <h1 className='text-black my-3 font-bold'>Done!</h1>
-    <p className='text-gray-500 mx-5 '> Task is deleted successfully  </p>
-    <button onClick={()=>setConfirmDeleteTask(false)} className='w-full text-white cursor-pointer border rounded-2xl mt-7 bg-blue-900 py-3'>Got it</button>     
-        </div>
-        </div>
-        
-        </>
-    )}
-         {deleteTask&&(
-        <>
-        <div className='fixed inset-0 bg-black z-60 opacity-50 '></div>
-        <div className='fixed flex justify-center items-center z-60 p-5 inset-0'>
-        <div className="flex flex-col items-center justify-center bg-gray-100 p-5 rounded-2xl">
-       
-        <img src="/icons/delete-03.png" alt="" className='bg-red-100 p-5 rounded-full my-5 ' />
-    <h1 className='text-black my-3 font-bold'>Delete task ?</h1>
-        <p className='text-gray-500 '>Are you sure you want to delete this task ? </p>
-        <p className='text-gray-500 '>this action is irreversible</p>
-<div className='flex gap-2 w-full mt-5'>
-<button onClick={()=>setDeleteTask(false)} className='w-full cursor-pointer border rounded-2xl border-indigo-500 text-indigo-500'>cancel</button>
-<button onClick={()=>{setConfirmDeleteTask(true) 
-setDeleteTask(false)}} className='w-full bg-red-500 py-3 rounded-xl text-white cursor-pointer'>delete</button>
-</div>
+    
+        {
+            peopleComments.map((comment)=>{
+                return(
+                    <>
+                    <div key={comment.id} className="flex mt-7 justify-between">
+    
+            <EditComments comment={comment} setModalType={setModalType} modalType={modalType} />
+
             
-        </div>
-        </div>
-        
-        </>
-    )}
-         
-        </div>
-      )}
+               </div>
 
-    <div className="flex gap-5 mr-5 text-black items-center">
-       <div className="flex gap-2 items-center">
-        <img src="/tasks/like.png" alt="" />
-        <p>7.9M</p>
-       </div>
-       <div className="flex gap-2 items-center">
-        <img src="/tasks/vector.png" alt="" />
-        <p>reply</p>
-       </div>
-    </div>
-</div>
-    </div>
-    <div className="flex mt-7 justify-between">
-<div className="flex gap-2 items-center">
-<img src="/avatar(4).png" alt="" />
-<div className="flex flex-col">
-    <h1 className='text-black font-bold'>Ahmed Mahmoud</h1>
-    <p className='text-zinc-800'>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                </>
+                )
+            })
+        }
+    
 
-</div>
-
-</div>
-<div className="flex flex-col items-end">
-    <div className="flex gap-5 items-center text-gray-400">
-<p>3m ago</p>
-<button onClick={()=>setOpen1(!open1)} className='cursor-pointer text-xl' >⋮</button>
-    </div>
-     {open1 && (
-        <div className="bg-white border flex flex-col gap-2 px-3 absolute mt-6 right-10 w-25 text-black border-gray-300 py-2 z-50 shadow-xl rounded-xl">
-       <button className='cursor-pointer flex items-center gap-2 '>
-        <img className='w-4' src="/icons/edit-02.png" alt="" />
-        Edit</button>
-       <button onClick={()=>setDeleteTask(true)} className='cursor-pointer flex items-center gap-2'>
-        <img className='w-4' src="/icons/delete-03.png" alt="" />
-        Delete</button>
-        {confirmDeleteTask&&(
-        <>
-        <div className='fixed inset-0 bg-black z-60 opacity-50 '></div>
-        <div className='fixed flex justify-center items-center z-60 p-5 inset-0'>
-        <div className="flex flex-col items-center justify-center w-100 bg-gray-100 p-5 rounded-2xl">
-        <img src="/icons/icon(5).png" alt="" className='my-5' />
-    <h1 className='text-black my-3 font-bold'>Done!</h1>
-    <p className='text-gray-500 mx-5 '> Task is deleted successfully  </p>
-    <button onClick={()=>setConfirmDeleteTask(false)} className='w-full text-white cursor-pointer border rounded-2xl mt-7 bg-blue-900 py-3'>Got it</button>     
-        </div>
-        </div>
-        
-        </>
-    )}
-   
-         {deleteTask&&(
-        <>
-        <div className='fixed inset-0 bg-black z-60 opacity-50 '></div>
-        <div className='fixed flex justify-center items-center z-60 p-5 inset-0'>
-        <div className="flex flex-col items-center justify-center bg-gray-100 p-5 rounded-2xl">
-       
-        <img src="/icons/delete-03.png" alt="" className='bg-red-100 p-5 rounded-full my-5 ' />
-    <h1 className='text-black my-3 font-bold'>Delete task ?</h1>
-        <p className='text-gray-500 '>Are you sure you want to delete this task ? </p>
-        <p className='text-gray-500 '>this action is irreversible</p>
-<div className='flex gap-2 w-full mt-5'>
-<button onClick={()=>setDeleteTask(false)} className='w-full cursor-pointer border rounded-2xl border-indigo-500 text-indigo-500'>cancel</button>
-<button onClick={()=>{setConfirmDeleteTask(true) 
-setDeleteTask(false)}} className='w-full bg-red-500 py-3 rounded-xl text-white cursor-pointer'>delete</button>
-</div>
-            
-        </div>
-        </div>
-        
-        </>
-    )}
-        </div>
-      )}
-          
-    <div className="flex gap-5 mr-5 text-black items-center">
-       <div className="flex gap-2 items-center">
-        <img src="/tasks/like.png" alt="" />
-        <p>7.9M</p>
-       </div>
-       <div className="flex gap-2 items-center">
-        <img src="/tasks/vector.png" alt="" />
-        <p>reply</p>
-       </div>
-    </div>
-</div>
-    </div>
-    <div className="flex mt-7 justify-between">
-<div className="flex gap-2 items-center">
-<img src="/avatar(4).png" alt="" />
-<div className="flex flex-col">
-    <h1 className='text-black font-bold'>Ahmed Mahmoud</h1>
-    <p className='text-zinc-800'>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-</div>
-</div>
-<div className="flex flex-col items-end">
-    <div className="flex gap-5 items-center text-gray-400">
-<p>3m ago</p>
-<button onClick={()=>setOpen2(!open2)} className='cursor-pointer text-xl' >⋮</button>
-    </div>
-     {open2 && (
-        <div className="bg-white border flex flex-col gap-2 px-3 absolute mt-6 right-10 w-25 text-black border-gray-300 py-2 z-50 shadow-xl rounded-xl">
-       <button className='cursor-pointer flex items-center gap-2 '>
-        <img className='w-4' src="/icons/edit-02.png" alt="" />
-        Edit</button>
-       <button onClick={()=>setDeleteTask(true)} className='cursor-pointer flex items-center gap-2'>
-        <img className='w-4' src="/icons/delete-03.png" alt="" />
-        Delete</button>
-        {confirmDeleteTask&&(
-        <>
-        <div className='fixed inset-0 bg-black z-60 opacity-50 '></div>
-        <div className='fixed flex justify-center items-center z-60 p-5 inset-0'>
-        <div className="flex flex-col items-center justify-center w-100 bg-gray-100 p-5 rounded-2xl">
-        <img src="/icons/icon(5).png" alt="" className='my-5' />
-    <h1 className='text-black my-3 font-bold'>Done!</h1>
-    <p className='text-gray-500 mx-5 '> Task is deleted successfully  </p>
-    <button onClick={()=>setConfirmDeleteTask(false)} className='w-full text-white cursor-pointer border rounded-2xl mt-7 bg-blue-900 py-3'>Got it</button>     
-        </div>
-        </div>
-        
-        </>
-    )}
-         {deleteTask&&(
-        <>
-        <div className='fixed inset-0 bg-black z-60 opacity-50 '></div>
-        <div className='fixed flex justify-center items-center z-60 p-5 inset-0'>
-        <div className="flex flex-col items-center justify-center bg-gray-100 p-5 rounded-2xl">
-       
-        <img src="/icons/delete-03.png" alt="" className='bg-red-100 p-5 rounded-full my-5 ' />
-    <h1 className='text-black my-3 font-bold'>Delete task ?</h1>
-        <p className='text-gray-500 '>Are you sure you want to delete this task ? </p>
-        <p className='text-gray-500 '>this action is irreversible</p>
-<div className='flex gap-2 w-full mt-5'>
-<button onClick={()=>setDeleteTask(false)} className='w-full cursor-pointer border rounded-2xl border-indigo-500 text-indigo-500'>cancel</button>
-<button onClick={()=>{setConfirmDeleteTask(true) 
-setDeleteTask(false)}} className='w-full bg-red-500 py-3 rounded-xl text-white cursor-pointer'>delete</button>
-</div>
-            
-        </div>
-        </div>
-        
-        </>
-    )}
-        </div>
-      )}
-
-    <div className="flex gap-5 mr-5 text-black items-center">
-       <div className="flex gap-2 items-center">
-        <img src="/tasks/like.png" alt="" />
-        <p>7.9M</p>
-       </div>
-       <div className="flex gap-2 items-center">
-        <img src="/tasks/vector.png" alt="" />
-        <p>reply</p>
-       </div>
-    </div>
-</div>
-    </div>
+  
   
    
     </div>
       </div>
-        </>)
-    }
-     {confirmDeleteFile&&(
-        <>
-        <div className='fixed inset-0 bg-black z-60 opacity-50 '></div>
-        <div className='fixed flex justify-center items-center z-60 p-5 inset-0'>
-        <div className="flex flex-col items-center justify-center w-100 bg-gray-100 p-5 rounded-2xl">
-        <img src="/icons/icon(5).png" alt="" className='my-5' />
-    <h1 className='text-black my-3 font-bold'>Done!</h1>
-    <p className='text-gray-500 mx-5 '> Task is deleted successfully  </p>
-    <button onClick={()=>setConfirmDeleteFile(false)} className='w-full text-white cursor-pointer border rounded-2xl mt-7 bg-blue-900 py-3'>Got it</button>     
-        </div>
-        </div>
-        
-        </>
-    )}
-{deleteFile&&(
-        <>
-        <div className='fixed inset-0 bg-black z-60 opacity-50 '></div>
-        <div className='fixed flex justify-center items-center z-60 p-5 inset-0'>
-        <div className="flex flex-col items-center justify-center bg-gray-100 p-5 rounded-2xl">
-       
-        <img src="/icons/delete-03.png" alt="" className='bg-red-100 p-5 rounded-full my-5 ' />
-    <h1 className='text-black my-3 font-bold'>Delete task ?</h1>
-        <p className='text-gray-500 '>Are you sure you want to delete this task ? </p>
-        <p className='text-gray-500 '>this action is irreversible</p>
-<div className='flex gap-2 w-full mt-5'>
-<button onClick={()=>setDeleteFile(false)} className='w-full cursor-pointer border rounded-2xl border-indigo-500 text-indigo-500'>cancel</button>
-<button onClick={()=>{setConfirmDeleteFile(true) 
-setDeleteFile(false)}} className='w-full bg-red-500 py-3 rounded-xl text-white cursor-pointer'>delete</button>
-</div>
-            
-        </div>
-        </div>
-        
-        </>
-    )}
+        </>)}
+    
+   <ConfirmMessage text={{ title: 'Done!', description: 'Task is deleted successfully' }} show={modalType==='ConfirmMessage'} onClose={() => setModalType(null)} />
+<DeleteMessage text={{ title: 'Delete File ?', description: 'Are you sure you want to delete this file?' }} show={modalType==='deleteFile'} onClose={() => setModalType(null)} onConfirm={() => {setModalType('ConfirmMessage') }} />
 <div className='flex flex-col gap-5 m-5 bg-white rounded-2xl p-5'>
 
 <div className='flex justify-between mb-2'>
@@ -318,7 +86,7 @@ setDeleteFile(false)}} className='w-full bg-red-500 py-3 rounded-xl text-white c
 </div>
 <div className='flex gap-2 items-center'>
 <button onClick={()=>{router.push('/tasks/edit-task')}} className='cursor-pointer'><img src="/icons/edit-02.png" alt="" /></button>
-<button onClick={()=>setDeleteFile(true)} className='cursor-pointer'><img src="/icons/delete-03.png" alt="" /></button>
+<button onClick={()=>setModalType('deleteFile')} className='cursor-pointer'><img src="/icons/delete-03.png" alt="" /></button>
 <button onClick={()=>setComments(true)} className='cursor-pointer'><img src="/icons/comments.svg" alt="" /></button>
 </div>
 </div>
