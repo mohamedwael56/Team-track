@@ -7,72 +7,65 @@ import Autocomplete from '@mui/joy/Autocomplete';
 import TaskCard from './TaskCard';
 
 function Page() {
+    
      const lists=[
 {
 id:'1',
-            title:'Revision 1: Fixing Navbar at Dashboard Page',
+            label:'Revision 1: My design requests',
             name:'ahmed mohamed',
             img:"/ellipse.png"
 },
 {
     id:'2',
-            title:'Revision 1: Fixing Navbar at Dashboard Page',
+            label:'Revision 2: development team tasks',
             name:'ahmed mohamed',
             img:"/ellipse.png"
 },
 {
     id:'3',
-            title:'Revision 1: Fixing Navbar at Dashboard Page',
+            label:'Revision 3: backend bugs team',
             name:'ahmed mohamed',
             img:"/ellipse.png"
 },
 {
     id:'4',
-            title:'Revision 1: Fixing Navbar at Dashboard Page',
+            label:'Revision 4: list for developers',
             name:'ahmed mohamed',
             img:"/ellipse.png"
 },
 {
     id:'5',
-            title:'Revision 1: Fixing Navbar at Dashboard Page',
+            label:'Revision 5: any list for now',
             name:'ahmed mohamed',
             img:"/ellipse.png"
 },
 {
     id:'6',
-            title:'Revision 1: Fixing Navbar at Dashboard Page',
+            label:'Revision 6: draft tasks for dev ops',
             name:'ahmed mohamed',
             img:"/ellipse.png"
 },
 {
     id:'7',
-            title:'Revision 1: Fixing Navbar at Dashboard Page',
+            label:'Revision 7: list for developers',
             name:'ahmed mohamed',
             img:"/ellipse.png"
 },
 {
     id:'8',
-            title:'Revision 1: Fixing Navbar at Dashboard Page',
+            label:'Revision 8: Fixing Navbar at Dashboard Page',
             name:'ahmed mohamed',
             img:"/ellipse.png"
 },
 {
       id:'9',
-            title:'Revision 1: Fixing Navbar at Dashboard Page',
+            label:'Revision 9: Fixing Navbar at Dashboard Page',
             name:'ahmed mohamed',
             img:"/ellipse.png"
 },
 
     ]
 
-    const options = [
-  { id:'1', label: 'My design requests', year: 1994 },
-  { id:'2', label: 'development team tasks', year: 1994 },
-  { id:'3', label: 'backend bugs team', year: 1994 },
-  { id:'4', label: 'list for developers', year: 1994 },
-  { id:'5', label: 'any list for now', year: 1994 },
-  { id:'6', label: 'draft tasks for dev ops', year: 1994 },
-  { id:'7', label: 'list for developers', year: 1994 },]
     return (
     <div className='flex '>
       <div className='flex-1 ml-69 p-5 gap-5 '>
@@ -87,8 +80,9 @@ id:'1',
 <hr />
 <form onClick={()=>{console.log('a7a')}} className='flex mb-5'>
   <Autocomplete
-      placeholder="Combo box"
-      options={options}
+      placeholder="Select task"
+      options={lists}
+      getOptionLabel={(option) => option.label}
       sx={{ width: '100%',height:50,text:700 }}
     />
 

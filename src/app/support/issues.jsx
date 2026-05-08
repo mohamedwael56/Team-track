@@ -2,6 +2,137 @@
 import {useState} from 'react'
 import { useRouter } from 'next/navigation'
 function Issues() {
+
+    const issues=[{
+        id:1,
+        subject:'How to uninstall the...',
+        ticketId:'334533',
+        status:'open',
+        submitted:'mar23,2022'
+    },
+{
+        id:2,
+        subject:'How to uninstall the...',
+        ticketId:'334533',
+        status:'open',
+        submitted:'mar23,2022'
+    },
+{
+        id:3,
+        subject:'How to uninstall the...',
+        ticketId:'334533',
+        status:'open',
+        submitted:'mar23,2022'
+
+},
+{
+        id:4,
+        subject:'How to uninstall the...',
+        ticketId:'334533',
+        status:'in progress',
+        submitted:'mar23,2022'
+    },
+{
+        id:5,
+        subject:'How to uninstall the...',
+        ticketId:'334533',
+        status:'in progress',
+        submitted:'mar23,2022'
+    },
+{
+        id:6,
+        subject:'How to uninstall the...',
+        ticketId:'334533',
+        status:'in progress',
+        submitted:'mar23,2022'
+    },
+{
+        id:7,
+        subject:'How to uninstall the...',
+        ticketId:'334533',
+        status:'Solved',
+        submitted:'mar23,2022'
+    },
+{
+        id:8,
+        subject:'How to uninstall the...',
+        ticketId:'334533',
+        status:'Solved',
+        submitted:'mar23,2022'
+    },
+{
+        id:9,
+        subject:'How to uninstall the...',
+        ticketId:'334533',
+        status:'Solved',
+        submitted:'mar23,2022'
+    },
+    {
+        id:10,
+        subject:'How to uninstall the...',
+        ticketId:'334533',
+        status:'open',
+        submitted:'mar23,2022'
+    },
+{
+        id:11,
+        subject:'How to uninstall the...',
+        ticketId:'334533',
+        status:'open',
+        submitted:'mar23,2022'
+    },
+{
+        id:12,
+        subject:'How to uninstall the...',
+        ticketId:'334533',
+        status:'open',
+        submitted:'mar23,2022'
+
+},
+{
+        id:13,
+        subject:'How to uninstall the...',
+        ticketId:'334533',
+        status:'in progress',
+        submitted:'mar23,2022'
+    },
+{
+        id:14,
+        subject:'How to uninstall the...',
+        ticketId:'334533',
+        status:'in progress',
+        submitted:'mar23,2022'
+    },
+{
+        id:15,
+        subject:'How to uninstall the...',
+        ticketId:'334533',
+        status:'in progress',
+        submitted:'mar23,2022'
+    },
+{
+        id:16,
+        subject:'How to uninstall the...',
+        ticketId:'334533',
+        status:'Solved',
+        submitted:'mar23,2022'
+    },
+{
+        id:17,
+        subject:'How to uninstall the...',
+        ticketId:'334533',
+        status:'Solved',
+        submitted:'mar23,2022'
+    },
+{
+        id:18,
+        subject:'How to uninstall the...',
+        ticketId:'334533',
+        status:'Solved',
+        submitted:'mar23,2022'
+    },
+
+]
     const router = useRouter();
     const [open , setOpen] = useState(false)
   return (
@@ -135,240 +266,29 @@ function Issues() {
     <div className="mt-5 flex flex-col">
         <h1 className='text-black font-bold'>my tickets</h1>
         <div className="grid grid-cols-3 gap-2">
-            <button onClick={()=>setOpen(true)} className=" cursor-pointer shadow-ms py-5 px-4 border flex justify-between rounded-xl">
+           {
+            issues.map((card)=>{
+                return(
+                <>
+                      <button key={card.id} onClick={()=>setOpen(true)} className=" cursor-pointer shadow-ms py-5 px-4 border flex justify-between rounded-xl">
         <div className=" flex items-center gap-3">
 <img src="/support/frame-1.png" alt="" />
 <div className="flex flex-col ">
-<p className='text-black font-bold'>How to uninstall the...</p>
-<p className='text-gray-400 text-start'>334533</p>
+<p className='text-black font-bold'>{card.subject}</p>
+<p className='text-gray-400 text-start'>{card.ticketId}</p>
 </div>
         </div>
         <div className="flex justify-end gap-2 flex-col">
-        <p className='bg-blue-200 text-blue-900 font-bold rounded-lg flex justify-center '>open</p>
-        <p className='text-gray-400'>mar23,2022</p>
+        <p className={`${card.status === 'open' && 'bg-blue-200 text-blue-900' } ${card.status === 'Solved' && 'bg-green-100 text-green-500'} ${card.status === 'in progress' && 'bg-orange-100 text-orange-500'} font-bold rounded-lg flex justify-center px-2 `}>{card.status}</p>
+        <p className='text-gray-400'>{card.submitted}</p>
         </div>
             </button>
-            <div className="shadow-ms py-5 px-4 border flex justify-between rounded-xl">
-        <div className=" flex items-center gap-3">
-<img src="/support/frame-1.png" alt="" />
-<div className="flex flex-col ">
-<p className='text-black font-bold'>How to uninstall the...</p>
-<p className='text-gray-400'>334533</p>
-</div>
-        </div>
-        <div className="flex justify-end gap-2 flex-col">
-        <p className='bg-blue-200 text-blue-900 font-bold rounded-lg flex justify-center '>open</p>
-        <p className='text-gray-400'>mar23,2022</p>
-        </div>
-            </div>
-            <div className="shadow-ms py-5 px-4 border flex justify-between rounded-xl">
-        <div className=" flex items-center gap-3">
-<img src="/support/frame-1.png" alt="" />
-<div className="flex flex-col ">
-<p className='text-black font-bold'>How to uninstall the...</p>
-<p className='text-gray-400'>334533</p>
-</div>
-        </div>
-        <div className="flex justify-end gap-2 flex-col">
-        <p className='bg-blue-200 text-blue-900 font-bold rounded-lg flex justify-center '>open</p>
-        <p className='text-gray-400'>mar23,2022</p>
-        </div>
-            </div>
-            <div className="shadow-ms py-5 px-4 border flex justify-between rounded-xl">
-        <div className=" flex items-center gap-3">
-<img src="/support/frame-1.png" alt="" />
-<div className="flex flex-col ">
-<p className='text-black font-bold'>How to uninstall the...</p>
-<p className='text-gray-400'>334533</p>
-</div>
-        </div>
-        <div className="flex justify-end gap-2 flex-col">
-        <p className='bg-orange-100 text-orange-500 font-bold rounded-lg flex justify-center px-2 '>in progress</p>
-        <p className='text-gray-400'>mar23,2022</p>
-        </div>
-            </div>
-            <div className="shadow-ms py-5 px-4 border flex justify-between rounded-xl">
-        <div className=" flex items-center gap-3">
-<img src="/support/frame-1.png" alt="" />
-<div className="flex flex-col ">
-<p className='text-black font-bold'>How to uninstall the...</p>
-<p className='text-gray-400'>334533</p>
-</div>
-        </div>
-        <div className="flex justify-end gap-2 flex-col">
-        <p className='bg-orange-100 text-orange-500 font-bold rounded-lg flex justify-center px-2 '>in progress</p>
-        <p className='text-gray-400'>mar23,2022</p>
-        </div>
-            </div>
-            <div className="shadow-ms py-5 px-4 border flex justify-between rounded-xl">
-        <div className=" flex items-center gap-3">
-<img src="/support/frame-1.png" alt="" />
-<div className="flex flex-col ">
-<p className='text-black font-bold'>How to uninstall the...</p>
-<p className='text-gray-400'>334533</p>
-</div>
-        </div>
-        <div className="flex justify-end gap-2 flex-col">
-        <p className='bg-orange-100 text-orange-500 font-bold rounded-lg flex justify-center px-2'>in progress</p>
-        <p className='text-gray-400'>mar23,2022</p>
-        </div>
-            </div>
-            <div className="shadow-ms py-5 px-4 border flex justify-between rounded-xl">
-        <div className=" flex items-center gap-3">
-<img src="/support/frame-1.png" alt="" />
-<div className="flex flex-col ">
-<p className='text-black font-bold'>How to uninstall the...</p>
-<p className='text-gray-400'>334533</p>
-</div>
-        </div>
-        <div className="flex justify-end gap-2 flex-col">
-        <p className='bg-green-200 text-green-500 font-bold rounded-lg flex justify-center '>solved</p>
-        <p className='text-gray-400'>mar23,2022</p>
-        </div>
-            </div>
-            <div className="shadow-ms py-5 px-4 border flex justify-between rounded-xl">
-        <div className=" flex items-center gap-3">
-<img src="/support/frame-1.png" alt="" />
-<div className="flex flex-col ">
-<p className='text-black font-bold'>How to uninstall the...</p>
-<p className='text-gray-400'>334533</p>
-</div>
-        </div>
-        <div className="flex justify-end gap-2 flex-col">
-        <p className='bg-green-200 px-2 text-green-500 font-bold rounded-lg flex justify-center '>solved</p>
-        <p className='text-gray-400'>mar23,2022</p>
-        </div>
-            </div>
-            <div className="shadow-ms py-5 px-4 border flex justify-between rounded-xl">
-        <div className=" flex items-center gap-3">
-<img src="/support/frame-1.png" alt="" />
-<div className="flex flex-col ">
-<p className='text-black font-bold'>How to uninstall the...</p>
-<p className='text-gray-400'>334533</p>
-</div>
-        </div>
-        <div className="flex justify-end gap-2 flex-col">
-        <p className='bg-green-200 text-green-500 font-bold rounded-lg flex justify-center px-2 '>solved</p>
-        <p className='text-gray-400'>mar23,2022</p>
-        </div>
-            </div>
-            <div className="shadow-ms py-5 px-4 border flex justify-between rounded-xl">
-        <div className=" flex items-center gap-3">
-<img src="/support/frame-1.png" alt="" />
-<div className="flex flex-col ">
-<p className='text-black font-bold'>How to uninstall the...</p>
-<p className='text-gray-400'>334533</p>
-</div>
-        </div>
-        <div className="flex justify-end gap-2 flex-col">
-        <p className='bg-blue-200 text-blue-900 font-bold rounded-lg flex justify-center '>open</p>
-        <p className='text-gray-400'>mar23,2022</p>
-        </div>
-            </div>
-            <div className="shadow-ms py-5 px-4 border flex justify-between rounded-xl">
-        <div className=" flex items-center gap-3">
-<img src="/support/frame-1.png" alt="" />
-<div className="flex flex-col ">
-<p className='text-black font-bold'>How to uninstall the...</p>
-<p className='text-gray-400'>334533</p>
-</div>
-        </div>
-        <div className="flex justify-end gap-2 flex-col">
-        <p className='bg-blue-200 text-blue-900 font-bold rounded-lg flex justify-center '>open</p>
-        <p className='text-gray-400'>mar23,2022</p>
-        </div>
-            </div>
-            <div className="shadow-ms py-5 px-4 border flex justify-between rounded-xl">
-        <div className=" flex items-center gap-3">
-<img src="/support/frame-1.png" alt="" />
-<div className="flex flex-col ">
-<p className='text-black font-bold'>How to uninstall the...</p>
-<p className='text-gray-400'>334533</p>
-</div>
-        </div>
-        <div className="flex justify-end gap-2 flex-col">
-        <p className='bg-blue-200 text-blue-900 font-bold rounded-lg flex justify-center '>open</p>
-        <p className='text-gray-400'>mar23,2022</p>
-        </div>
-            </div>
-            <div className="shadow-ms py-5 px-4 border flex justify-between rounded-xl">
-        <div className=" flex items-center gap-3">
-<img src="/support/frame-1.png" alt="" />
-<div className="flex flex-col ">
-<p className='text-black font-bold'>How to uninstall the...</p>
-<p className='text-gray-400'>334533</p>
-</div>
-        </div>
-        <div className="flex justify-end gap-2 flex-col">
-        <p className='bg-orange-100 text-orange-500 font-bold rounded-lg flex justify-center px-2 '>in progress</p>
-        <p className='text-gray-400'>mar23,2022</p>
-        </div>
-            </div>
-            <div className="shadow-ms py-5 px-4 border flex justify-between rounded-xl">
-        <div className=" flex items-center gap-3">
-<img src="/support/frame-1.png" alt="" />
-<div className="flex flex-col ">
-<p className='text-black font-bold'>How to uninstall the...</p>
-<p className='text-gray-400'>334533</p>
-</div>
-        </div>
-        <div className="flex justify-end gap-2 flex-col">
-        <p className='bg-orange-100 text-orange-500 font-bold rounded-lg flex justify-center px-2 '>in progress</p>
-        <p className='text-gray-400'>mar23,2022</p>
-        </div>
-            </div>
-            <div className="shadow-ms py-5 px-4 border flex justify-between rounded-xl">
-        <div className=" flex items-center gap-3">
-<img src="/support/frame-1.png" alt="" />
-<div className="flex flex-col ">
-<p className='text-black font-bold'>How to uninstall the...</p>
-<p className='text-gray-400'>334533</p>
-</div>
-        </div>
-        <div className="flex justify-end gap-2 flex-col">
-        <p className='bg-orange-100 text-orange-500 font-bold rounded-lg flex justify-center px-2'>in progress</p>
-        <p className='text-gray-400'>mar23,2022</p>
-        </div>
-            </div>
-            <div className="shadow-ms py-5 px-4 border flex justify-between rounded-xl">
-        <div className=" flex items-center gap-3">
-<img src="/support/frame-1.png" alt="" />
-<div className="flex flex-col ">
-<p className='text-black font-bold'>How to uninstall the...</p>
-<p className='text-gray-400'>334533</p>
-</div>
-        </div>
-        <div className="flex justify-end gap-2 flex-col">
-        <p className='bg-green-200 text-green-500 font-bold rounded-lg flex justify-center '>solved</p>
-        <p className='text-gray-400'>mar23,2022</p>
-        </div>
-            </div>
-            <div className="shadow-ms py-5 px-4 border flex justify-between rounded-xl">
-        <div className=" flex items-center gap-3">
-<img src="/support/frame-1.png" alt="" />
-<div className="flex flex-col ">
-<p className='text-black font-bold'>How to uninstall the...</p>
-<p className='text-gray-400'>334533</p>
-</div>
-        </div>
-        <div className="flex justify-end gap-2 flex-col">
-        <p className='bg-green-200 px-2 text-green-500 font-bold rounded-lg flex justify-center '>solved</p>
-        <p className='text-gray-400'>mar23,2022</p>
-        </div>
-            </div>
-            <div className="shadow-ms py-5 px-4 border flex justify-between rounded-xl">
-        <div className=" flex items-center gap-3">
-<img src="/support/frame-1.png" alt="" />
-<div className="flex flex-col ">
-<p className='text-black font-bold'>How to uninstall the...</p>
-<p className='text-gray-400'>334533</p>
-</div>
-        </div>
-        <div className="flex justify-end gap-2 flex-col">
-        <p className='bg-green-200 text-green-500 font-bold rounded-lg flex justify-center px-2 '>solved</p>
-        <p className='text-gray-400'>mar23,2022</p>
-        </div>
-            </div>
+                </>
+                )
+            })
+           }
+      
+    
          
 
         </div>
