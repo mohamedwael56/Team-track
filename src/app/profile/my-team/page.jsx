@@ -14,7 +14,132 @@ import { Doughnut } from 'react-chartjs-2'
 import { Chart as ChartJs,Tooltip,Legend,ArcElement } from 'chart.js'
 ChartJs.register(ArcElement,Tooltip,Legend)
 function page() {
-    const percentage = 66;
+  const teamMembers=[
+    {
+      id:1,
+      name:'saif mohamed',
+      avatar:'/profile/avatar.png',
+      performance:88
+    },
+    {
+      id:2,
+      name:'sayed mohamed',
+      avatar:'/profile/avatar.png',
+      performance:88
+    },
+    {
+      id:3,
+      name:'mohamed mohamed',
+      avatar:'/profile/avatar.png',
+      performance:88
+    },
+    {
+      id:4,
+      name:'ahmed mohamed',
+      avatar:'/profile/avatar.png',
+      performance:88
+    },
+    {
+      id:5,
+      name:'yousef mohamed',
+      avatar:'/profile/avatar.png',
+      performance:88
+    },
+    {
+      id:6,
+      name:'omar mohamed',
+      avatar:'/profile/avatar.png',
+      performance:88
+    },
+      {
+      id:7,
+      name:'ali mohamed',
+      avatar:'/profile/avatar.png',
+      performance:88
+    },
+      {
+      id:8,
+      name:'hassan mohamed',
+      avatar:'/profile/avatar.png',
+      performance:88
+    },
+      {
+      id:9,
+      name:'mohamed mohamed',
+      avatar:'/profile/avatar.png',
+      performance:88
+    },  
+      {
+      id:10,
+      name:'hassan mohamed',
+      avatar:'/profile/avatar.png',
+      performance:88
+    },
+      {
+      id:11,
+      name:'mohamed mohamed',
+      avatar:'/profile/avatar.png',
+      performance:88
+    },
+      {
+      id:12,
+      name:'hassan mohamed',
+      avatar:'/profile/avatar.png',
+      performance:88
+    },
+      {
+      id:13,
+      name:'mohamed mohamed',
+      avatar:'/profile/avatar.png',
+      performance:88
+    },
+        {
+      id:14,
+      name:'hala mohamed',
+      avatar:'/profile/avatar.png',
+      performance:88  
+    },
+          {
+      id:15,
+      name:'sara mohamed',
+      avatar:'/profile/avatar.png',
+      performance:88  
+    },
+            {
+      id:16,
+      name:'mona mohamed',
+      avatar:'/profile/avatar.png',
+      performance:88
+    },
+
+      {
+      id:17,
+      name:'layla ali',
+      avatar:'/profile/avatar.png',
+      performance:88
+      }
+      ,
+      {
+      id:18,
+      name:'nour mohamed',
+      avatar:'/profile/avatar.png',
+      performance:88
+    },
+        {
+      id:19,
+      name:'salma mohamed',
+      avatar:'/profile/avatar.png',
+      performance:88
+    },
+          {
+      id:20,
+      name:'asmaa mohamed',
+      avatar:'/profile/avatar.png',
+      performance:88
+    },  
+
+  ];
+  const percentage = 66;
 
   const data={
     labels:['matric 1','matric 2','matric 3','matric 4','matric 5',],
@@ -49,246 +174,27 @@ function page() {
             <input type="text" placeholder="Search tasks..." className="border border-gray-300 text-zinc-950 rounded-xl px-4 py-2 w-full pl-12" />
        </div>
        <div className="grid grid-cols-3 gap-5">
-         <Link href="/profile/team-profile" className="flex relative items-center gap-2  shadow rounded-2xl border">
-          <img src="/profile/avatar.png" alt="" />
+   {
+    teamMembers.map((member)=>{
+      return(
+        <>
+ <Link key={member.id} href="/profile/team-profile" className="flex relative items-center gap-2  shadow rounded-2xl border">
+          <img src={member.avatar} alt="" />
           <div className="flex w-full flex-col my-2">
             <div className="flex justify-between my-2 items-center">
-            <h1 className='text-black font-bold'>saif mohamed</h1>
-          <p className='text-green-500 mr-5 font-bold'>88</p>
+            <h1 className='text-black font-bold capitalize'>{member.name}</h1>
+          <p className='text-green-500 mr-5 font-bold'>{member.performance}</p>
             </div>
             <div className="bg-gray-200 mr-5 h-3 rounded-full">
               <div className="bg-green-600 rounded-2xl h-3 w-3 absolute" style={{left:"calc(80% - 10px)"}}></div>
             </div>
           </div>
         </Link>
-         <Link href="/profile/team-profile" className="flex relative items-center gap-2  shadow rounded-2xl border">
-          <img src="/profile/avatar.png" alt="" />
-          <div className="flex w-full flex-col my-2">
-            <div className="flex justify-between my-2 items-center">
-            <h1 className='text-black font-bold'>saif mohamed</h1>
-          <p className='text-green-500 mr-5 font-bold'>88</p>
-            </div>
-            <div className="bg-gray-200 mr-5 h-3 rounded-full">
-              <div className="bg-green-600 rounded-2xl h-3 w-3 absolute" style={{left:"calc(80% - 10px)"}}></div>
-            </div>
-          </div>
-        </Link>
-         <Link href="/profile/team-profile" className="flex relative items-center gap-2  shadow rounded-2xl border">
-          <img src="/profile/avatar.png" alt="" />
-          <div className="flex w-full flex-col my-2">
-            <div className="flex justify-between my-2 items-center">
-            <h1 className='text-black font-bold'>saif mohamed</h1>
-          <p className='text-green-500 mr-5 font-bold'>88</p>
-            </div>
-            <div className="bg-gray-200 mr-5 h-3 rounded-full">
-              <div className="bg-green-600 rounded-2xl h-3 w-3 absolute" style={{left:"calc(80% - 10px)"}}></div>
-            </div>
-          </div>
-        </Link>
-         <Link href="/profile/team-profile" className="flex relative items-center gap-2  shadow rounded-2xl border">
-          <img src="/profile/avatar.png" alt="" />
-          <div className="flex w-full flex-col my-2">
-            <div className="flex justify-between my-2 items-center">
-            <h1 className='text-black font-bold'>saif mohamed</h1>
-          <p className='text-green-500 mr-5 font-bold'>88</p>
-            </div>
-            <div className="bg-gray-200 mr-5 h-3 rounded-full">
-              <div className="bg-green-600 rounded-2xl h-3 w-3 absolute" style={{left:"calc(80% - 10px)"}}></div>
-            </div>
-          </div>
-        </Link>
-         <Link href="/profile/team-profile" className="flex relative items-center gap-2  shadow rounded-2xl border">
-          <img src="/profile/avatar.png" alt="" />
-          <div className="flex w-full flex-col my-2">
-            <div className="flex justify-between my-2 items-center">
-            <h1 className='text-black font-bold'>saif mohamed</h1>
-          <p className='text-green-500 mr-5 font-bold'>88</p>
-            </div>
-            <div className="bg-gray-200 mr-5 h-3 rounded-full">
-              <div className="bg-green-600 rounded-2xl h-3 w-3 absolute" style={{left:"calc(80% - 10px)"}}></div>
-            </div>
-          </div>
-        </Link>
-         <Link href="/profile/team-profile" className="flex relative items-center gap-2  shadow rounded-2xl border">
-          <img src="/profile/avatar.png" alt="" />
-          <div className="flex w-full flex-col my-2">
-            <div className="flex justify-between my-2 items-center">
-            <h1 className='text-black font-bold'>saif mohamed</h1>
-          <p className='text-green-500 mr-5 font-bold'>88</p>
-            </div>
-            <div className="bg-gray-200 mr-5 h-3 rounded-full">
-              <div className="bg-green-600 rounded-2xl h-3 w-3 absolute" style={{left:"calc(80% - 10px)"}}></div>
-            </div>
-          </div>
-        </Link>
-         <Link href="/profile/team-profile" className="flex relative items-center gap-2  shadow rounded-2xl border">
-          <img src="/profile/avatar.png" alt="" />
-          <div className="flex w-full flex-col my-2">
-            <div className="flex justify-between my-2 items-center">
-            <h1 className='text-black font-bold'>saif mohamed</h1>
-          <p className='text-green-500 mr-5 font-bold'>88</p>
-            </div>
-            <div className="bg-gray-200 mr-5 h-3 rounded-full">
-              <div className="bg-green-600 rounded-2xl h-3 w-3 absolute" style={{left:"calc(80% - 10px)"}}></div>
-            </div>
-          </div>
-        </Link>
-         <Link href="/profile/team-profile" className="flex relative items-center gap-2  shadow rounded-2xl border">
-          <img src="/profile/avatar.png" alt="" />
-          <div className="flex w-full flex-col my-2">
-            <div className="flex justify-between my-2 items-center">
-            <h1 className='text-black font-bold'>saif mohamed</h1>
-          <p className='text-green-500 mr-5 font-bold'>88</p>
-            </div>
-            <div className="bg-gray-200 mr-5 h-3 rounded-full">
-              <div className="bg-green-600 rounded-2xl h-3 w-3 absolute" style={{left:"calc(80% - 10px)"}}></div>
-            </div>
-          </div>
-        </Link>
-         <Link href="/profile/team-profile" className="flex relative items-center gap-2  shadow rounded-2xl border">
-          <img src="/profile/avatar.png" alt="" />
-          <div className="flex w-full flex-col my-2">
-            <div className="flex justify-between my-2 items-center">
-            <h1 className='text-black font-bold'>saif mohamed</h1>
-          <p className='text-green-500 mr-5 font-bold'>88</p>
-            </div>
-            <div className="bg-gray-200 mr-5 h-3 rounded-full">
-              <div className="bg-green-600 rounded-2xl h-3 w-3 absolute" style={{left:"calc(80% - 10px)"}}></div>
-            </div>
-          </div>
-        </Link>
-         <Link href="/profile/team-profile" className="flex relative items-center gap-2  shadow rounded-2xl border">
-          <img src="/profile/avatar.png" alt="" />
-          <div className="flex w-full flex-col my-2">
-            <div className="flex justify-between my-2 items-center">
-            <h1 className='text-black font-bold'>saif mohamed</h1>
-          <p className='text-green-500 mr-5 font-bold'>88</p>
-            </div>
-            <div className="bg-gray-200 mr-5 h-3 rounded-full">
-              <div className="bg-green-600 rounded-2xl h-3 w-3 absolute" style={{left:"calc(80% - 10px)"}}></div>
-            </div>
-          </div>
-        </Link>
-         <Link href="/profile/team-profile" className="flex relative items-center gap-2  shadow rounded-2xl border">
-          <img src="/profile/avatar.png" alt="" />
-          <div className="flex w-full flex-col my-2">
-            <div className="flex justify-between my-2 items-center">
-            <h1 className='text-black font-bold'>saif mohamed</h1>
-          <p className='text-green-500 mr-5 font-bold'>88</p>
-            </div>
-            <div className="bg-gray-200 mr-5 h-3 rounded-full">
-              <div className="bg-green-600 rounded-2xl h-3 w-3 absolute" style={{left:"calc(80% - 10px)"}}></div>
-            </div>
-          </div>
-        </Link>
-         <Link href="/profile/team-profile" className="flex relative items-center gap-2  shadow rounded-2xl border">
-          <img src="/profile/avatar.png" alt="" />
-          <div className="flex w-full flex-col my-2">
-            <div className="flex justify-between my-2 items-center">
-            <h1 className='text-black font-bold'>saif mohamed</h1>
-          <p className='text-green-500 mr-5 font-bold'>88</p>
-            </div>
-            <div className="bg-gray-200 mr-5 h-3 rounded-full">
-              <div className="bg-green-600 rounded-2xl h-3 w-3 absolute" style={{left:"calc(80% - 10px)"}}></div>
-            </div>
-          </div>
-        </Link>
-         <Link href="/profile/team-profile" className="flex relative items-center gap-2  shadow rounded-2xl border">
-          <img src="/profile/avatar.png" alt="" />
-          <div className="flex w-full flex-col my-2">
-            <div className="flex justify-between my-2 items-center">
-            <h1 className='text-black font-bold'>saif mohamed</h1>
-          <p className='text-green-500 mr-5 font-bold'>88</p>
-            </div>
-            <div className="bg-gray-200 mr-5 h-3 rounded-full">
-              <div className="bg-green-600 rounded-2xl h-3 w-3 absolute" style={{left:"calc(80% - 10px)"}}></div>
-            </div>
-          </div>
-        </Link>
-         <Link href="/profile/team-profile" className="flex relative items-center gap-2  shadow rounded-2xl border">
-          <img src="/profile/avatar.png" alt="" />
-          <div className="flex w-full flex-col my-2">
-            <div className="flex justify-between my-2 items-center">
-            <h1 className='text-black font-bold'>saif mohamed</h1>
-          <p className='text-green-500 mr-5 font-bold'>88</p>
-            </div>
-            <div className="bg-gray-200 mr-5 h-3 rounded-full">
-              <div className="bg-green-600 rounded-2xl h-3 w-3 absolute" style={{left:"calc(80% - 10px)"}}></div>
-            </div>
-          </div>
-        </Link>
-         <Link href="/profile/team-profile" className="flex relative items-center gap-2  shadow rounded-2xl border">
-          <img src="/profile/avatar.png" alt="" />
-          <div className="flex w-full flex-col my-2">
-            <div className="flex justify-between my-2 items-center">
-            <h1 className='text-black font-bold'>saif mohamed</h1>
-          <p className='text-green-500 mr-5 font-bold'>88</p>
-            </div>
-            <div className="bg-gray-200 mr-5 h-3 rounded-full">
-              <div className="bg-green-600 rounded-2xl h-3 w-3 absolute" style={{left:"calc(80% - 10px)"}}></div>
-            </div>
-          </div>
-        </Link>
-         <Link href="/profile/team-profile" className="flex relative items-center gap-2  shadow rounded-2xl border">
-          <img src="/profile/avatar.png" alt="" />
-          <div className="flex w-full flex-col my-2">
-            <div className="flex justify-between my-2 items-center">
-            <h1 className='text-black font-bold'>saif mohamed</h1>
-          <p className='text-green-500 mr-5 font-bold'>88</p>
-            </div>
-            <div className="bg-gray-200 mr-5 h-3 rounded-full">
-              <div className="bg-green-600 rounded-2xl h-3 w-3 absolute" style={{left:"calc(80% - 10px)"}}></div>
-            </div>
-          </div>
-        </Link>
-         <Link href="/profile/team-profile" className="flex relative items-center gap-2  shadow rounded-2xl border">
-          <img src="/profile/avatar.png" alt="" />
-          <div className="flex w-full flex-col my-2">
-            <div className="flex justify-between my-2 items-center">
-            <h1 className='text-black font-bold'>saif mohamed</h1>
-          <p className='text-green-500 mr-5 font-bold'>88</p>
-            </div>
-            <div className="bg-gray-200 mr-5 h-3 rounded-full">
-              <div className="bg-green-600 rounded-2xl h-3 w-3 absolute" style={{left:"calc(80% - 10px)"}}></div>
-            </div>
-          </div>
-        </Link>
-         <Link href="/profile/team-profile" className="flex relative items-center gap-2  shadow rounded-2xl border">
-          <img src="/profile/avatar.png" alt="" />
-          <div className="flex w-full flex-col my-2">
-            <div className="flex justify-between my-2 items-center">
-            <h1 className='text-black font-bold'>saif mohamed</h1>
-          <p className='text-green-500 mr-5 font-bold'>88</p>
-            </div>
-            <div className="bg-gray-200 mr-5 h-3 rounded-full">
-              <div className="bg-green-600 rounded-2xl h-3 w-3 absolute" style={{left:"calc(80% - 10px)"}}></div>
-            </div>
-          </div>
-        </Link>
-         <Link href="/profile/team-profile" className="flex relative items-center gap-2  shadow rounded-2xl border">
-          <img src="/profile/avatar.png" alt="" />
-          <div className="flex w-full flex-col my-2">
-            <div className="flex justify-between my-2 items-center">
-            <h1 className='text-black font-bold'>saif mohamed</h1>
-          <p className='text-green-500 mr-5 font-bold'>88</p>
-            </div>
-            <div className="bg-gray-200 mr-5 h-3 rounded-full">
-              <div className="bg-green-600 rounded-2xl h-3 w-3 absolute" style={{left:"calc(80% - 10px)"}}></div>
-            </div>
-          </div>
-        </Link>
-         <Link href="/profile/team-profile" className="flex relative items-center gap-2  shadow rounded-2xl border">
-          <img src="/profile/avatar.png" alt="" />
-          <div className="flex w-full flex-col my-2">
-            <div className="flex justify-between my-2 items-center">
-            <h1 className='text-black font-bold'>saif mohamed</h1>
-          <p className='text-green-500 mr-5 font-bold'>88</p>
-            </div>
-            <div className="bg-gray-200 mr-5 h-3 rounded-full">
-              <div className="bg-green-600 rounded-2xl h-3 w-3 absolute" style={{left:"calc(80% - 10px)"}}></div>
-            </div>
-          </div>
-        </Link>
+      </>)
+   })
+   }
+        
+       
        </div>
       </div>
    

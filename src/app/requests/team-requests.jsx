@@ -15,10 +15,72 @@ import { Doughnut } from "react-chartjs-2";
 import { Chart as ChartJs, Tooltip, Legend, ArcElement } from "chart.js";
 ChartJs.register(ArcElement, Tooltip, Legend);
 function Page() {
+  const requests=[{
+    id:1,
+    name:'mohamed ahmed',
+    avatar:'/mohamed.png',
+
+  },{
+    id:2,
+    name:'mohamed ahmed',
+    avatar:'/mohamed.png',
+
+  },{
+    id:3,
+    name:'mohamed ahmed',
+    avatar:'/mohamed.png',
+
+  },{
+    id:4,
+    name:'mohamed ahmed',
+    avatar:'/mohamed.png',
+
+  },{
+    id:5,
+    name:'mohamed ahmed',
+    avatar:'/mohamed.png',
+
+  },{
+    id:6,
+    name:'mohamed ahmed',
+    avatar:'/mohamed.png',
+
+  },{
+    id:7,
+    name:'mohamed ahmed',
+    avatar:'/mohamed.png',
+
+  },{
+    id:8,
+    name:'mohamed ahmed',
+    avatar:'/mohamed.png',
+
+  },{
+    id:9,
+    name:'mohamed ahmed',
+    avatar:'/mohamed.png',
+
+  },{
+    id:10,
+    name:'mohamed ahmed',
+    avatar:'/mohamed.png',
+
+  },{
+    id:11,
+    name:'mohamed ahmed',
+    avatar:'/mohamed.png',
+
+  },{
+    id:12,
+    name:'mohamed ahmed',
+    avatar:'/mohamed.png',
+
+  },
+]
   const [open, setOpen] = useState(false);
   const [activeOption, setActiveOption] = useState("accepted");
   const [requestDetails, setRequestDetails] = useState(false);
-  const percentage = 66;
+  
 
   const data = {
     labels: ["matric 1", "matric 2", "matric 3", "matric 4", "matric 5"],
@@ -183,13 +245,16 @@ function Page() {
           </div>
         </>
       )}
-      <div className=" flex flex-col border rounded-xl p-5">
+   {
+    requests.map((request)=>{
+      return(
+        <>
+  <div key={request.id} className=" flex flex-col border rounded-xl p-5">
         <div className="flex items-center flex-row gap-2">
           <img
             onClick={() => setRequestDetails(true)}
             className="cursor-pointer"
             src="/mohamed.png"
-            alt=""
           />
           <div className="flex flex-col text-black">
             <h1 className="text-xl"> mohamed ahmed</h1>
@@ -219,215 +284,10 @@ function Page() {
           </button>
         </div>
       </div>
-      <div className="flex flex-col border rounded-xl p-5">
-        <div className="flex items-center flex-row gap-2">
-          <img src="/mohamed.png" alt="" />
-          <div className="flex flex-col text-black">
-            <h1 className="text-xl"> mohamed ahmed</h1>
-            <p className="text-gray-400 text-sm text-nowrap">
-              09/30/2024 - 10/06/2024
-            </p>
-          </div>
-        </div>
-        <div className="flex gap-4 mt-4">
-          <button className="bg-red-100 cursor-pointer text-red-500 py-2 px-5 rounded-xl flex-1">
-            reject
-          </button>
-          <button className="text-white cursor-pointer bg-blue-900 px-5 py-2 rounded-xl flex-1">
-            accept
-          </button>
-        </div>
-      </div>
-      <div className="flex flex-col border rounded-xl p-5">
-        <div className="flex items-center flex-row gap-2">
-          <img src="/mohamed.png" alt="" />
-          <div className="flex flex-col text-black">
-            <h1 className="text-xl"> mohamed ahmed</h1>
-            <p className="text-gray-400 text-sm text-nowrap">
-              09/30/2024 - 10/06/2024
-            </p>
-          </div>
-        </div>
-        <div className="flex gap-4 mt-4">
-          <button className="bg-red-100 cursor-pointer text-red-500 py-2 px-5 rounded-xl flex-1">
-            reject
-          </button>
-          <button className="text-white cursor-pointer bg-blue-900 px-5 py-2 rounded-xl flex-1">
-            accept
-          </button>
-        </div>
-      </div>
-      <div className="flex flex-col border rounded-xl p-5">
-        <div className="flex items-center flex-row gap-2">
-          <img src="/mohamed.png" alt="" />
-          <div className="flex flex-col text-black">
-            <h1 className="text-xl"> mohamed ahmed</h1>
-            <p className="text-gray-400 text-sm text-nowrap">
-              09/30/2024 - 10/06/2024
-            </p>
-          </div>
-        </div>
-        <div className="flex gap-4 mt-4">
-          <button className="bg-red-100 cursor-pointer text-red-500 py-2 px-5 rounded-xl flex-1">
-            reject
-          </button>
-          <button className="text-white cursor-pointer bg-blue-900 px-5 py-2 rounded-xl flex-1">
-            accept
-          </button>
-        </div>
-      </div>
-      <div className="flex flex-col border rounded-xl p-5">
-        <div className="flex items-center flex-row gap-2">
-          <img src="/mohamed.png" alt="" />
-          <div className="flex flex-col text-black">
-            <h1 className="text-xl"> mohamed ahmed</h1>
-            <p className="text-gray-400 text-sm text-nowrap">
-              09/30/2024 - 10/06/2024
-            </p>
-          </div>
-        </div>
-        <div className="flex gap-4 mt-4">
-          <button className="bg-red-100 cursor-pointer text-red-500 py-2 px-5 rounded-xl flex-1">
-            reject
-          </button>
-          <button className="text-white cursor-pointer bg-blue-900 px-5 py-2 rounded-xl flex-1">
-            accept
-          </button>
-        </div>
-      </div>
-      <div className="flex flex-col border rounded-xl p-5">
-        <div className="flex items-center flex-row gap-2">
-          <img src="/mohamed.png" alt="" />
-          <div className="flex flex-col text-black">
-            <h1 className="text-xl"> mohamed ahmed</h1>
-            <p className="text-gray-400 text-sm text-nowrap">
-              09/30/2024 - 10/06/2024
-            </p>
-          </div>
-        </div>
-        <div className="flex gap-4 mt-4">
-          <button className="bg-red-100 cursor-pointer text-red-500 py-2 px-5 rounded-xl flex-1">
-            reject
-          </button>
-          <button className="text-white cursor-pointer bg-blue-900 px-5 py-2 rounded-xl flex-1">
-            accept
-          </button>
-        </div>
-      </div>
-      <div className="flex flex-col border rounded-xl p-5">
-        <div className="flex items-center flex-row gap-2">
-          <img src="/mohamed.png" alt="" />
-          <div className="flex flex-col text-black">
-            <h1 className="text-xl"> mohamed ahmed</h1>
-            <p className="text-gray-400 text-sm text-nowrap">
-              09/30/2024 - 10/06/2024
-            </p>
-          </div>
-        </div>
-        <div className="flex gap-4 mt-4">
-          <button className="bg-red-100 cursor-pointer text-red-500 py-2 px-5 rounded-xl flex-1">
-            reject
-          </button>
-          <button className="text-white cursor-pointer bg-blue-900 px-5 py-2 rounded-xl flex-1">
-            accept
-          </button>
-        </div>
-      </div>
-      <div className="flex flex-col border rounded-xl p-5">
-        <div className="flex items-center flex-row gap-2">
-          <img src="/mohamed.png" alt="" />
-          <div className="flex flex-col text-black">
-            <h1 className="text-xl"> mohamed ahmed</h1>
-            <p className="text-gray-400 text-sm text-nowrap">
-              09/30/2024 - 10/06/2024
-            </p>
-          </div>
-        </div>
-        <div className="flex gap-4 mt-4">
-          <button className="bg-red-100 cursor-pointer text-red-500 py-2 px-5 rounded-xl flex-1">
-            reject
-          </button>
-          <button className="text-white cursor-pointer bg-blue-900 px-5 py-2 rounded-xl flex-1">
-            accept
-          </button>
-        </div>
-      </div>
-      <div className="flex flex-col border rounded-xl p-5">
-        <div className="flex items-center flex-row gap-2">
-          <img src="/mohamed.png" alt="" />
-          <div className="flex flex-col text-black">
-            <h1 className="text-xl"> mohamed ahmed</h1>
-            <p className="text-gray-400 text-sm text-nowrap">
-              09/30/2024 - 10/06/2024
-            </p>
-          </div>
-        </div>
-        <div className="flex gap-4 mt-4">
-          <button className="bg-red-100 cursor-pointer text-red-500 py-2 px-5 rounded-xl flex-1">
-            reject
-          </button>
-          <button className="text-white cursor-pointer bg-blue-900 px-5 py-2 rounded-xl flex-1">
-            accept
-          </button>
-        </div>
-      </div>
-      <div className="flex flex-col border rounded-xl p-5">
-        <div className="flex items-center flex-row gap-2">
-          <img src="/mohamed.png" alt="" />
-          <div className="flex flex-col text-black">
-            <h1 className="text-xl"> mohamed ahmed</h1>
-            <p className="text-gray-400 text-sm text-nowrap">
-              09/30/2024 - 10/06/2024
-            </p>
-          </div>
-        </div>
-        <div className="flex gap-4 mt-4">
-          <button className="bg-red-100 cursor-pointer text-red-500 py-2 px-5 rounded-xl flex-1">
-            reject
-          </button>
-          <button className="text-white cursor-pointer bg-blue-900 px-5 py-2 rounded-xl flex-1">
-            accept
-          </button>
-        </div>
-      </div>
-      <div className="flex flex-col border rounded-xl p-5">
-        <div className="flex items-center flex-row gap-2">
-          <img src="/mohamed.png" alt="" />
-          <div className="flex flex-col text-black">
-            <h1 className="text-xl"> mohamed ahmed</h1>
-            <p className="text-gray-400 text-sm text-nowrap">
-              09/30/2024 - 10/06/2024
-            </p>
-          </div>
-        </div>
-        <div className="flex gap-4 mt-4">
-          <button className="bg-red-100 cursor-pointer text-red-500 py-2 px-5 rounded-xl flex-1">
-            reject
-          </button>
-          <button className="text-white cursor-pointer bg-blue-900 px-5 py-2 rounded-xl flex-1">
-            accept
-          </button>
-        </div>
-      </div>
-      <div className="flex flex-col border rounded-xl p-5">
-        <div className="flex items-center flex-row gap-2">
-          <img src="/mohamed.png" alt="" />
-          <div className="flex flex-col text-black">
-            <h1 className="text-xl"> mohamed ahmed</h1>
-            <p className="text-gray-400 text-sm text-nowrap">
-              09/30/2024 - 10/06/2024
-            </p>
-          </div>
-        </div>
-        <div className="flex gap-4 mt-4">
-          <button className="bg-red-100 cursor-pointer text-red-500 py-2 px-5 rounded-xl flex-1">
-            reject
-          </button>
-          <button className="text-white cursor-pointer bg-blue-900 px-5 py-2 rounded-xl flex-1">
-            accept
-          </button>
-        </div>
-      </div>
+
+        </>
+   )})}
+    
     </div>
   );
 }
