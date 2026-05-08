@@ -11,10 +11,7 @@ function Page() {
     const [dueDate, setDueDate] = useState(null); 
     const [open, setOpen] = useState(false);
     const [tempDate,setTempDate]= useState(null)
-    const [deleteTask,setDeleteTask]=useState(false)
-    const [confirmDeleteTask,setConfirmDeleteTask]=useState(false)
-   const [updateTask,setUpdateTask]=useState(false)
-const [discardChange,setDiscardChange]=useState(false)
+   const [modalType,setModalType]=useState(null)
     const confirmDate=()=>{
     setDueDate(tempDate)
     setOpen(false)
@@ -93,16 +90,11 @@ title:'Change the icons to font awesome icons.',
 <div className='flex-1 ml-69'>
 <Header />
 <main>
+   
 <PopUp open={open}
   setOpen={setOpen}
-  deleteTask={deleteTask}
-  setDeleteTask={setDeleteTask}
-  confirmDeleteTask={confirmDeleteTask}
-  setConfirmDeleteTask={setConfirmDeleteTask}
-  updateTask={updateTask}
-  setUpdateTask={setUpdateTask}
-  discardChange={discardChange}
-  setDiscardChange={setDiscardChange}
+  modalType={modalType}
+  setModalType={setModalType}
   tempDate={tempDate}
   changeDate={changeDate}
   confirmDate={confirmDate} />
@@ -114,8 +106,8 @@ title:'Change the icons to font awesome icons.',
 <p className='text-2xl text-black '>Edit task</p>
 </div>
 <div className='flex gap-2 '>
-<button onClick={()=>setDiscardChange(true)} className="cursor-pointer text-red-500 px-4 py-2 rounded-lg">discard</button>
-<button onClick={()=>setUpdateTask(true)} className= "cursor-pointer bg-blue-900 text-white px-4 py-2 rounded-lg">Save Changes</button>
+<button onClick={()=>setModalType('discardChange')} className="cursor-pointer text-red-500 px-4 py-2 rounded-lg">discard</button>
+<button onClick={()=>setModalType('success')} className= "cursor-pointer bg-blue-900 text-white px-4 py-2 rounded-lg">Save Changes</button>
 </div>
 </div>
 <hr />
@@ -132,7 +124,7 @@ title:'Change the icons to font awesome icons.',
 
 <div key={task.id} className='bg-gray-200 rounded-2xl items-center p-3 mt-3 justify-between flex text-black'>
 <p>{task.title}</p>
-<button onClick={()=>setDeleteTask(true)} className='cursor-pointer'>
+<button onClick={() => setModalType('delete')} className='cursor-pointer'>
 <img src={task.img} alt=""  />
 </button>
 </div>

@@ -47,7 +47,7 @@ const changeDate=(newValue)=>{
     </div>
     
     <div className='bg-gray-200 rounded-xl mb-3 p-2 text-black truncate'>
-{list.title}
+{list.label}
     </div>
 <div className='flex justify-between mb-3'>
 <button onClick={()=>setOpen(true)} className='bg-gray-200 w-full text-black px-3 py-1 rounded-lg flex justify-between items-center'>
