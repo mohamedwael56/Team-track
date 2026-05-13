@@ -42,7 +42,7 @@ function sort({show,setModalType,setOpen}) {
    
     <div className="mt-auto flex gap-2 w-full">
 <button className='w-full text-lg bg-gray-200 rounded-2xl py-3 text-blue-800 cursor-pointer'>Clear</button>
-<button onClick={()=>{setModalType(null);setOpen(true)}} className='w-full bg-blue-900 text-white rounded-2xl cursor-pointer'>Apply</button>
+<button onClick={()=>{setModalType('sort-date')}} className='w-full bg-blue-900 text-white rounded-2xl cursor-pointer'>Apply</button>
     </div>
 </div>
         </div>

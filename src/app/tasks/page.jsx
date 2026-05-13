@@ -24,6 +24,7 @@ const [dueDate, setDueDate] = useState(null);
         <div className='m-5 p-5 rounded-2xl bg-gray-100'>
             <main>
                 {<DatePopUp setDueDate={setDueDate}  show={modalType==='date'} Closing={()=>setModalType('filter')} />}
+                {<DatePopUp setDueDate={setDueDate}  show={modalType==='sort-date'} Closing={()=>setModalType('null')} />}
    {
     <Filter dueDate={dueDate} setModalType={setModalType} show={modalType==='filter'}  />
    }
