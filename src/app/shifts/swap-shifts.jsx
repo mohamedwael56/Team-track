@@ -13,31 +13,37 @@ function SwapShifts() {
       site:'Capital Restaurant',
       role:'waiter',
       break:'09:00 - 09:15 am',
+      assignee:'mohamed ahmed'
   },{
-    id:1,
+    id:2,
       site:'Capital Restaurant',
       role:'waiter',
       break:'09:00 - 09:15 am',
+      assignee:'mohamed ali'
   },{
-    id:1,
+    id:3,
       site:'Capital Restaurant',
       role:'waiter',
       break:'09:00 - 09:15 am',
+      assignee:'mohamed hassan'
   },{
-    id:1,
+    id:4,
       site:'Capital Restaurant',
       role:'waiter',
       break:'09:00 - 09:15 am',
+      assignee:'mohamed mohamed'
   },{
-    id:1,
+    id:5,
       site:'Capital Restaurant',
       role:'waiter',
       break:'09:00 - 09:15 am',
+      assignee:'mohamed khaled'
   },{
-    id:1,
+    id:6,
       site:'Capital Restaurant',
       role:'waiter',
       break:'09:00 - 09:15 am',
+      assignee:'mohamed samir'
   },]
 
 
@@ -81,7 +87,7 @@ function SwapShifts() {
         icons.map((icon)=>{
           return(
             <>
-             <SwiperSlide>
+             <SwiperSlide key={icon.id}>
         <div className="bg-gray-200 w-75 rounded-2xl p-5 mx-2">
         
             <div className="flex flex-col mb-15 bg-gray-100 rounded-2xl p-3 mt-4 shadow-lg border items-center">
@@ -122,17 +128,21 @@ function SwapShifts() {
                         <img src="/shifts/briefcase.png" alt="" />
                         <p className="text-gray-400">site</p>
                     </div>
-                    <div className="text-black">Capital Restaurant</div>
+                    <div className="text-black">{icon.site}</div>
                  </div>
                  <div className="flex items-start gap-15 ">
                     <div className="flex gap-1 items-center">
                         <img src="/shifts/briefcase.png" alt="" />
                         <p className="text-gray-400">role</p>
                     </div>
-                    <div className="text-black text-start ">waiter</div>
+                    <div className="text-black text-start ">{icon.role}</div>
                  </div>
-                 <div className="flex items-start gap-12">
-                   
+                 <div className="flex items-start gap-7">
+                   <div className="flex gap-1 items-center">
+                        <img src="/shifts/briefcase.png" alt="" />
+                        <p className="text-gray-400">Assignee</p>
+                    </div>
+                    <div className="text-black text-start  ">{icon.assignee}</div>
                  </div>
                 </div>
                 
