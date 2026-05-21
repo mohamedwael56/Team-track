@@ -5,6 +5,98 @@ import Link from 'next/link'
 import Sidebar from '@/components/sidebar'
 import { useState } from 'react'
 function Page() {
+    const data=[{
+        id:1,
+        img:'/icons/noon.jpg',
+        prize:'$10 Gift Card',
+        points:'200 points to redeem'
+
+    },
+{
+        id:2,
+        img:'/icons/talabat.png',
+        prize:'$15 Gift Card',
+        points:'redeem for 300 points'
+},
+{
+        id:3,
+        img:'/icons/noon.jpg',
+        prize:'$20 Gift Card',
+        points:'redeem for 400 points'
+},
+{
+        id:4,
+        img:'/icons/talabat.png',
+        prize:'$25 Gift Card',
+        points:'redeem for 500 points'
+},
+{
+        id:5,
+        img:'/icons/noon.jpg',
+        prize:'$30 Gift Card',
+        points:'redeem for 600 points'
+},
+{
+        id:6,
+        img:'/icons/talabat.png',
+        prize:'$35 Gift Card',
+        points:'redeem for 700 points'
+},
+{
+        id:7,
+        img:'/icons/noon.jpg',
+        prize:'$40 Gift Card',
+        points:'redeem for 800 points'
+},
+{
+        id:8,   
+        img:'/icons/talabat.png',
+        prize:'$45 Gift Card',
+        points:'redeem for 900 points'  
+},
+{
+        id:9,
+        img:'/icons/noon.jpg',
+        prize:'$50 Gift Card',
+        points:'redeem for 1000 points'
+},{
+        id:10,
+        img:'/icons/talabat.png',
+        prize:'$55 Gift Card',
+        points:'redeem for 1100 points'
+},
+{
+        id:11,
+        img:'/icons/noon.jpg',  
+        prize:'$60 Gift Card',
+        points:'redeem for 1200 points'
+
+    },
+{
+        id:12,
+        img:'/icons/talabat.png',
+        prize:'$65 Gift Card',
+        points:'redeem for 1300 points'
+
+},
+{
+        id:13,
+        img:'/icons/noon.jpg',
+        prize:'$70 Gift Card',
+        points:'redeem for 1400 points' 
+},
+{
+        id:14,      
+        img:'/icons/talabat.png',
+        prize:'$75 Gift Card',
+        points:'redeem for 1500 points'
+},
+{
+        id:15,  
+        img:'/icons/noon.jpg',  
+        prize:'$80 Gift Card',
+        points:'redeem for 1600 points'
+}]
     const [open,setOpen]=useState(false)
     const [description,setDescription]=useState(true)
     const [howToRedeem,setHowToRedeem]=useState(false)
@@ -86,201 +178,31 @@ open&&(
             <hr />
 
             <div className="mt-4 grid grid-cols-5 gap-3">
-        <div className="border mr-10 bg-white shadow-xl px-3 w-50 gap-5 rounded-2xl flex flex-col items-center py-3">
+       {
+        data.map((item)=>
+        {
+            return(
+                <>
+                 <div className="border mr-10 bg-white shadow-xl px-3 w-50 gap-5 rounded-2xl flex flex-col items-center py-3">
    <div className="flex justify-between">
     <div className="flex-1 justify-center items-center flex flex-col w-full gap-3 ">
     <img src="/icons/frame.png" alt="" width={70} /> 
-   <img src="/icons/noon.jpg" className="rounded-xl" alt="" />
-    <p className=' text-black  font-bold'>$10 Gift Card</p>
-    <p className="text-gray-400  underline text-sm"> 200 points to redeem</p>
+   <img src={item.img} className="rounded-xl" alt="" />
+    <p className=' text-black  font-bold'>{item.prize}</p>
+    <p className="text-gray-400  underline text-sm"> {item.points} </p>
     
     </div>
         <button onClick={()=>setOpen(true)} className='flex m-1 cursor-pointer items-start mt-1'> <img src="/icons/link123.png" alt="" width={15}  /></button>
 
         </div>
         </div>
-        <div className="border bg-white mr-10 shadow-xl px-3 w-50 gap-5 rounded-2xl flex flex-col items-center py-3">
-   <div className="flex justify-between">
-    <div className="flex-1 justify-center items-center flex flex-col w-full gap-3 ">
-    <img src="/icons/frame.png" alt="" width={70} /> 
-   <img src="/icons/talabat.png" className="rounded-xl" alt="" />
-    <p className=' text-black  font-bold'>$10 Gift Card</p>
-    <p className="text-blue-600 mt-2 underline text-sm">redeem for 200 points</p>
+                </>
+            )            
+        })
+       }
+       
     
-    </div>
-        <button onClick={()=>setOpen(true)} className='flex m-1 cursor-pointer items-start mt-1'> <img src="/icons/link123.png" alt="" width={15}  /></button>
-
-        </div>
-        </div>
-           <div className="border mr-10 bg-white shadow-xl px-3 w-50 gap-5 rounded-2xl flex flex-col items-center py-3">
-   <div className="flex justify-between">
-    <div className="flex-1 justify-center items-center flex flex-col w-full gap-3 ">
-    <img src="/icons/frame.png" alt="" width={70} /> 
-   <img src="/icons/noon.jpg" className="rounded-xl" alt="" />
-    <p className=' text-black  font-bold'>$10 Gift Card</p>
-    <p className="text-gray-400  underline text-sm"> 200 points to redeem</p>
-    
-    </div>
-        <button onClick={()=>setOpen(true)} className='flex m-1 cursor-pointer items-start mt-1'> <img src="/icons/link123.png" alt="" width={15}  /></button>
-
-        </div>
-        </div>
-        <div className="border bg-white mr-10 shadow-xl px-3 w-50 gap-5 rounded-2xl flex flex-col items-center py-3">
-   <div className="flex justify-between">
-    <div className="flex-1 justify-center items-center flex flex-col w-full gap-3 ">
-    <img src="/icons/frame.png" alt="" width={70} /> 
-   <img src="/icons/talabat.png" className="rounded-xl" alt="" />
-    <p className=' text-black  font-bold'>$10 Gift Card</p>
-    <p className="text-blue-600 mt-2 underline text-sm">redeem for 200 points</p>
-    
-    </div>
-        <button onClick={()=>setOpen(true)} className='flex m-1 cursor-pointer items-start mt-1'> <img src="/icons/link123.png" alt="" width={15}  /></button>
-
-        </div>
-        </div>
-           <div className="border mr-10 bg-white shadow-xl px-3 w-50 gap-5 rounded-2xl flex flex-col items-center py-3">
-   <div className="flex justify-between">
-    <div className="flex-1 justify-center items-center flex flex-col w-full gap-3 ">
-    <img src="/icons/frame.png" alt="" width={70} /> 
-   <img src="/icons/noon.jpg" className="rounded-xl" alt="" />
-    <p className=' text-black  font-bold'>$10 Gift Card</p>
-    <p className="text-gray-400  underline text-sm"> 200 points to redeem</p>
-    
-    </div>
-        <button onClick={()=>setOpen(true)} className='flex m-1 cursor-pointer items-start mt-1'> <img src="/icons/link123.png" alt="" width={15}  /></button>
-
-        </div>
-        </div>
-          <div className="border bg-white mr-10 shadow-xl px-3 w-50 gap-5 rounded-2xl flex flex-col items-center py-3">
-   <div className="flex justify-between">
-    <div className="flex-1 justify-center items-center flex flex-col w-full gap-3 ">
-    <img src="/icons/frame.png" alt="" width={70} /> 
-   <img src="/icons/talabat.png" className="rounded-xl" alt="" />
-    <p className=' text-black  font-bold'>$10 Gift Card</p>
-    <p className="text-blue-600 mt-2 underline text-sm">redeem for 200 points</p>
-    
-    </div>
-        <button onClick={()=>setOpen(true)} className='flex m-1 cursor-pointer items-start mt-1'> <img src="/icons/link123.png" alt="" width={15}  /></button>
-
-        </div>
-        </div>
-             <div className="border mr-10 bg-white shadow-xl px-3 w-50 gap-5 rounded-2xl flex flex-col items-center py-3">
-   <div className="flex justify-between">
-    <div className="flex-1 justify-center items-center flex flex-col w-full gap-3 ">
-    <img src="/icons/frame.png" alt="" width={70} /> 
-   <img src="/icons/noon.jpg" className="rounded-xl" alt="" />
-    <p className=' text-black  font-bold'>$10 Gift Card</p>
-    <p className="text-gray-400  underline text-sm"> 200 points to redeem</p>
-    
-    </div>
-        <button onClick={()=>setOpen(true)} className='flex m-1 cursor-pointer items-start mt-1'> <img src="/icons/link123.png" alt="" width={15}  /></button>
-
-        </div>
-        </div>
-           <div className="border bg-white mr-10 shadow-xl px-3 w-50 gap-5 rounded-2xl flex flex-col items-center py-3">
-   <div className="flex justify-between">
-    <div className="flex-1 justify-center items-center flex flex-col w-full gap-3 ">
-    <img src="/icons/frame.png" alt="" width={70} /> 
-   <img src="/icons/talabat.png" className="rounded-xl" alt="" />
-    <p className=' text-black  font-bold'>$10 Gift Card</p>
-    <p className="text-blue-600 mt-2 underline text-sm">redeem for 200 points</p>
-    
-    </div>
-        <button onClick={()=>setOpen(true)} className='flex m-1 cursor-pointer items-start mt-1'> <img src="/icons/link123.png" alt="" width={15}  /></button>
-
-        </div>
-        </div>
-                <div className="border mr-10 bg-white shadow-xl px-3 w-50 gap-5 rounded-2xl flex flex-col items-center py-3">
-   <div className="flex justify-between">
-    <div className="flex-1 justify-center items-center flex flex-col w-full gap-3 ">
-    <img src="/icons/frame.png" alt="" width={70} /> 
-   <img src="/icons/noon.jpg" className="rounded-xl" alt="" />
-    <p className=' text-black  font-bold'>$10 Gift Card</p>
-    <p className="text-gray-400  underline text-sm"> 200 points to redeem</p>
-    
-    </div>
-        <button onClick={()=>setOpen(true)} className='flex m-1 cursor-pointer items-start mt-1'> <img src="/icons/link123.png" alt="" width={15}  /></button>
-
-        </div>
-        </div>
-           <div className="border bg-white mr-10 shadow-xl px-3 w-50 gap-5 rounded-2xl flex flex-col items-center py-3">
-   <div className="flex justify-between">
-    <div className="flex-1 justify-center items-center flex flex-col w-full gap-3 ">
-    <img src="/icons/frame.png" alt="" width={70} /> 
-   <img src="/icons/talabat.png" className="rounded-xl" alt="" />
-    <p className=' text-black  font-bold'>$10 Gift Card</p>
-    <p className="text-blue-600 mt-2 underline text-sm">redeem for 200 points</p>
-    
-    </div>
-        <button onClick={()=>setOpen(true)} className='flex m-1 cursor-pointer items-start mt-1'> <img src="/icons/link123.png" alt="" width={15}  /></button>
-
-        </div>
-        </div>
-                <div className="border mr-10 bg-white shadow-xl px-3 w-50 gap-5 rounded-2xl flex flex-col items-center py-3">
-   <div className="flex justify-between">
-    <div className="flex-1 justify-center items-center flex flex-col w-full gap-3 ">
-    <img src="/icons/frame.png" alt="" width={70} /> 
-   <img src="/icons/noon.jpg" className="rounded-xl" alt="" />
-    <p className=' text-black  font-bold'>$10 Gift Card</p>
-    <p className="text-gray-400  underline text-sm"> 200 points to redeem</p>
-    
-    </div>
-        <button onClick={()=>setOpen(true)} className='flex m-1 cursor-pointer items-start mt-1'> <img src="/icons/link123.png" alt="" width={15}  /></button>
-
-        </div>
-        </div>
-        <div className="border bg-white mr-10 shadow-xl px-3 w-50 gap-5 rounded-2xl flex flex-col items-center py-3">
-   <div className="flex justify-between">
-    <div className="flex-1 justify-center items-center flex flex-col w-full gap-3 ">
-    <img src="/icons/frame.png" alt="" width={70} /> 
-   <img src="/icons/talabat.png" className="rounded-xl" alt="" />
-    <p className=' text-black  font-bold'>$10 Gift Card</p>
-    <p className="text-blue-600 mt-2 underline text-sm">redeem for 200 points</p>
-    
-    </div>
-        <button onClick={()=>setOpen(true)} className='flex m-1 cursor-pointer items-start mt-1'> <img src="/icons/link123.png" alt="" width={15}  /></button>
-
-        </div>
-        </div>
-          <div className="border mr-10 bg-white shadow-xl px-3 w-50 gap-5 rounded-2xl flex flex-col items-center py-3">
-   <div className="flex justify-between">
-    <div className="flex-1 justify-center items-center flex flex-col w-full gap-3 ">
-    <img src="/icons/frame.png" alt="" width={70} /> 
-   <img src="/icons/noon.jpg" className="rounded-xl" alt="" />
-    <p className=' text-black  font-bold'>$10 Gift Card</p>
-    <p className="text-gray-400  underline text-sm"> 200 points to redeem</p>
-    
-    </div>
-        <button onClick={()=>setOpen(true)} className='flex m-1 cursor-pointer items-start mt-1'> <img src="/icons/link123.png" alt="" width={15}  /></button>
-
-        </div>
-        </div>
-         <div className="border bg-white mr-10 shadow-xl px-3 w-50 gap-5 rounded-2xl flex flex-col items-center py-3">
-   <div className="flex justify-between">
-    <div className="flex-1 justify-center items-center flex flex-col w-full gap-3 ">
-    <img src="/icons/frame.png" alt="" width={70} /> 
-   <img src="/icons/talabat.png" className="rounded-xl" alt="" />
-    <p className=' text-black  font-bold'>$10 Gift Card</p>
-    <p className="text-blue-600 mt-2 underline text-sm">redeem for 200 points</p>
-    
-    </div>
-        <button onClick={()=>setOpen(true)} className='flex m-1 cursor-pointer items-start mt-1'> <img src="/icons/link123.png" alt="" width={15}  /></button>
-
-        </div>
-        </div>
-            <div className="border mr-10 bg-white shadow-xl px-3 w-50 gap-5 rounded-2xl flex flex-col items-center py-3">
-   <div className="flex justify-between">
-    <div className="flex-1 justify-center items-center flex flex-col w-full gap-3 ">
-    <img src="/icons/frame.png" alt="" width={70} /> 
-   <img src="/icons/noon.jpg" className="rounded-xl" alt="" />
-    <p className=' text-black  font-bold'>$10 Gift Card</p>
-    <p className="text-gray-400  underline text-sm"> 200 points to redeem</p>
-    
-    </div>
-        <button onClick={()=>setOpen(true)} className='flex m-1 cursor-pointer items-start mt-1'> <img src="/icons/link123.png" alt="" width={15}  /></button>
-
-        </div>
-        </div>
+       
             </div>
             
                 </div>
