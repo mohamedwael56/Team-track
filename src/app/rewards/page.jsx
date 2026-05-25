@@ -182,8 +182,8 @@ open&&(
         data.map((item)=>
         {
             return(
-                <>
-                 <div className="border mr-10 bg-white shadow-xl px-3 w-50 gap-5 rounded-2xl flex flex-col items-center py-3">
+                
+                 <div key={item.id} className="border mr-10 bg-white shadow-xl px-3 w-50 gap-5 rounded-2xl flex flex-col items-center py-3">
    <div className="flex justify-between">
     <div className="flex-1 justify-center items-center flex flex-col w-full gap-3 ">
     <img src="/icons/frame.png" alt="" width={70} /> 
@@ -196,7 +196,7 @@ open&&(
 
         </div>
         </div>
-                </>
+                
             )            
         })
        }

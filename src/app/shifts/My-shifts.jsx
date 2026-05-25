@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { useState } from 'react';
 import ShiftsRequests from './ShiftsRequests';
 function MyShifts({myAvailability,setMyAvailability}) {
@@ -437,10 +437,12 @@ Saturday.13 june
              {
                 shifts.map((shift)=>{
                   return(
-                    <><ShiftsRequests data={data} /></>
-                )  }
-              )
-             }
+                    <Fragment key={shift.id}>
+                      <ShiftsRequests data={data} />
+                    </Fragment>
+                  )
+                })
+              }
             
            
             </div>

@@ -1,17 +1,10 @@
 "use client";
-import Header from "@/components/header";
 import React from "react";
-import Sidebar from "@/components/sidebar";
-import Link from "next/link";
-import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import { useState } from "react";
-import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
-import { Doughnut } from "react-chartjs-2";
 import { Chart as ChartJs, Tooltip, Legend, ArcElement } from "chart.js";
 ChartJs.register(ArcElement, Tooltip, Legend);
 function Page() {
@@ -19,68 +12,91 @@ function Page() {
     id:1,
     name:'mohamed ahmed',
     avatar:'/mohamed.png',
+    type:'overtime'
 
   },{
     id:2,
-    name:'mohamed ahmed',
+    name:' ahmed mohamed',
     avatar:'/mohamed.png',
+    type:'leave'
 
   },{
     id:3,
-    name:'mohamed ahmed',
+    name:'mohamed ali',
     avatar:'/mohamed.png',
+    type:'remote'
 
   },{
     id:4,
-    name:'mohamed ahmed',
+    name:'ali ahmed',
     avatar:'/mohamed.png',
+    type:'loan'
 
   },{
     id:5,
-    name:'mohamed ahmed',
+    name:'ibrahem ahmed',
     avatar:'/mohamed.png',
+    type:'reimbursement'
 
   },{
     id:6,
-    name:'mohamed ahmed',
+    name:'ghaly ahmed',
     avatar:'/mohamed.png',
+    type:'leave'
 
   },{
     id:7,
     name:'mohamed ahmed',
     avatar:'/mohamed.png',
+    type:'overtime'
 
   },{
     id:8,
     name:'mohamed ahmed',
     avatar:'/mohamed.png',
+    type:'remote'
 
   },{
     id:9,
     name:'mohamed ahmed',
     avatar:'/mohamed.png',
+    type:'loan'
 
   },{
     id:10,
     name:'mohamed ahmed',
     avatar:'/mohamed.png',
+    type:'reimbursement'
 
   },{
     id:11,
     name:'mohamed ahmed',
     avatar:'/mohamed.png',
+    type:'leave'
 
   },{
     id:12,
     name:'mohamed ahmed',
     avatar:'/mohamed.png',
+    type:'overtime'
 
   },
 ]
   const [open, setOpen] = useState(false);
   const [activeOption, setActiveOption] = useState("accepted");
   const [requestDetails, setRequestDetails] = useState(false);
-  
+  const [searchTerm, setSearchTerm] = useState('');
+const [activeFilter, setActiveFilter] = useState('all');
+const filteredRequests=requests.filter((request)=>{
+  const searchFilter=
+   request.name.toLowerCase().includes(searchTerm.toLowerCase());
+   const buttonFilter=
+   activeFilter==='all'||
+   request.type.includes(activeFilter)
+
+   return searchFilter && buttonFilter;
+
+})
 
   const data = {
     labels: ["matric 1", "matric 2", "matric 3", "matric 4", "matric 5"],
@@ -98,6 +114,38 @@ function Page() {
     ],
   };
   return (
+    <>
+    <div className=" flex justify-between mb-5 items-center mt-5 gap-5">
+ <div className="  w-full  relative">
+                <button className='cursor-pointer'>
+                <img src="/icons/search.png" alt="" className='absolute left-4 top-3 ' />
+            </button>
+            <input value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} type="text" placeholder="Search tasks..." className="border border-gray-300 text-zinc-950 rounded-xl px-4 py-2 w-full pl-12" />
+       </div>
+       <div className="  w-150">
+      <button className='border flex gap-2 items-center shadow-sm rounded-xl py-2 px-6 cursor-pointer'>
+                <img src="/icons/calendar.png" alt="" />
+                <p className='text-black'>this week : 09/30/2024 - 10/06/2024 </p>
+            </button>
+            </div>
+   </div>
+   <div className="flex mb-5 justify-between items-center">
+<div className=" flex gap-9 text-black capitalize items-center flex-row">
+    <button onClick={()=>setActiveFilter('all')} className={`cursor-pointer ${activeFilter === 'all' ? 'px-7 py-1 rounded-3xl bg-violet-50 border text-violet-500' : 'px-3 rounded-3xl '}`}>All</button>
+    <button onClick={()=>setActiveFilter('leave')} className={`cursor-pointer ${activeFilter === 'leave' ? 'px-7 py-1 rounded-3xl bg-violet-50 border text-violet-500' : 'px-3 rounded-3xl '}`}>Leave</button>
+    <button onClick={()=>setActiveFilter('overtime')} className={`cursor-pointer ${activeFilter === 'overtime' ? 'px-7 py-1 rounded-3xl bg-violet-50 border text-violet-500' : 'px-3 rounded-3xl '}`}>Over Time </button>
+    <button onClick={()=>setActiveFilter('remote')} className={`cursor-pointer ${activeFilter === 'remote' ? 'px-7 py-1 rounded-3xl bg-violet-50 border text-violet-500' : 'px-3 rounded-3xl '}`}>Remote Work</button>
+    <button onClick={()=>setActiveFilter('loan')} className={`cursor-pointer ${activeFilter === 'loan' ? 'px-7 py-1 rounded-3xl bg-violet-50 border text-violet-500' : 'px-3 rounded-3xl '}`}>Loan Of Use</button>
+    <button onClick={()=>setActiveFilter('reimbursement')} className={`cursor-pointer ${activeFilter === 'reimbursement' ? 'px-7 py-1 rounded-3xl bg-violet-50 border text-violet-500' : 'px-3 rounded-3xl '}`}> Reimbursement</button>
+</div>
+<div onClick={()=>{router.push('/requests/add-request')}} className='bg-blue-900 cursor-pointer flex items-center px-6 py-1 text-white rounded-xl'>
+    <p className='mr-4 text-lg'>+</p>
+    <p>Add Request</p>
+      
+</div>
+
+   </div>
+    
     <div className="grid grid-cols-3 gap-5">
       {requestDetails && (
         <>
@@ -246,18 +294,18 @@ function Page() {
         </>
       )}
    {
-    requests.map((request)=>{
+    filteredRequests.map((request)=>{
       return(
-        <>
+        
   <div key={request.id} className=" flex flex-col border rounded-xl p-5">
         <div className="flex items-center flex-row gap-2">
           <img
             onClick={() => setRequestDetails(true)}
             className="cursor-pointer"
-            src="/mohamed.png"
+            src={request.avatar}
           />
           <div className="flex flex-col text-black">
-            <h1 className="text-xl"> mohamed ahmed</h1>
+            <h1 className="text-xl capitalize"> {request.name}</h1>
             <p className="text-gray-400 text-sm text-nowrap">
               09/30/2024 - 10/06/2024
             </p>
@@ -285,10 +333,11 @@ function Page() {
         </div>
       </div>
 
-        </>
+        
    )})}
     
     </div>
+  </>
   );
 }
 
