@@ -5,6 +5,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import { useState } from "react";
+import { useRouter } from 'next/navigation';
 import { Chart as ChartJs, Tooltip, Legend, ArcElement } from "chart.js";
 ChartJs.register(ArcElement, Tooltip, Legend);
 function Page() {
@@ -87,6 +88,8 @@ function Page() {
   const [requestDetails, setRequestDetails] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
 const [activeFilter, setActiveFilter] = useState('all');
+  const router = useRouter();
+
 const filteredRequests=requests.filter((request)=>{
   const searchFilter=
    request.name.toLowerCase().includes(searchTerm.toLowerCase());

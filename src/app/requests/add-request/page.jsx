@@ -15,8 +15,6 @@ import OverTime from './overTime.jsx';
 import RemoteWork from './RemoteWork.jsx/';
 import Loan from './Loan.jsx';
 import Reimbursement from './Reimbursement.jsx';
-import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
-import { Doughnut } from 'react-chartjs-2'
 import { useRouter } from 'next/navigation';
 import { Chart as ChartJs,Tooltip,Legend,ArcElement } from 'chart.js'
 ChartJs.register(ArcElement,Tooltip,Legend)
