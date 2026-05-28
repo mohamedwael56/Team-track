@@ -2,7 +2,7 @@
 import Header from '@/components/header'
 import Sidebar from '@/components/sidebar'
 import Link from 'next/link'
-import React from 'react'
+import React, { Fragment } from 'react'
 import { useState } from 'react'
 
 function Page() {
@@ -134,7 +134,7 @@ openMessage&&(
     {
         invitationRequests.map((request)=>{
             return(
-                <>
+                <Fragment key={request.id}>
                   <div className="border text-xs shadow-sm flex flex-col rounded-2xl p-5">
 <div className="flex justify-between items-center">
     <div className="flex gap-2 flex-row items-center">
@@ -153,7 +153,7 @@ openMessage&&(
     <button className='flex-1 bg-blue-900 rounded-2xl cursor-pointer py-2 px-5 text-white'>accept</button>
 </div>
 </div>
-                </>
+                </Fragment>
             )
     })}
      

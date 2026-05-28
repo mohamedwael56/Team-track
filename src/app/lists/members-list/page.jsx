@@ -15,6 +15,129 @@ import { Doughnut } from 'react-chartjs-2'
 import { Chart as ChartJs,Tooltip,Legend,ArcElement } from 'chart.js'
 ChartJs.register(ArcElement,Tooltip,Legend)
 function Page() {
+  const members=[
+    {
+      id:1,
+      name:'saif mohamed',
+      avatar:'/profile/avatar.png',
+      performance:88
+    },
+    {
+      id:2,
+      name:'sayed mohamed',
+      avatar:'/profile/avatar.png', 
+      performance:80 
+    },  
+
+    {
+      id:3,
+      name:'mohamed mohamed',       
+      avatar:'/profile/avatar.png', 
+      performance:85  
+    },              
+    {       
+
+      id:4, 
+
+      name:'ahmed mohamed',
+      avatar:'/profile/avatar.png', 
+      performance:90  
+    },              
+    {     
+      id:5, 
+      name:'yousef mohamed',  
+      avatar:'/profile/avatar.png', 
+      performance:75        
+    },  
+    { 
+      id:6,   
+      name:'omar mohamed',
+      avatar:'/profile/avatar.png', 
+      performance:80  
+    },      
+      { 
+      id:7, 
+      name:'ali mohamed', 
+      avatar:'/profile/avatar.png',
+      performance:85  
+    },  
+      { 
+      id:8,
+      name:'hassan mohamed',  
+      avatar:'/profile/avatar.png', 
+      performance:90  
+    },    
+      { 
+      id:9, 
+      name:'mohamed mohamed',
+      avatar:'/profile/avatar.png', 
+      performance:80  
+    },  
+      { 
+      id:10,
+      name:'hassan mohamed',      
+      avatar:'/profile/avatar.png', 
+      performance:85
+      },    
+      { 
+      id:11,
+      name:'mohamed mohamed',
+      avatar:'/profile/avatar.png', 
+      performance:90  
+      },
+      { 
+
+      id:12,    
+      name:'hassan mohamed',              
+      avatar:'/profile/avatar.png', 
+      performance:80  
+    },
+    {
+      id:13,
+
+        name:'mohamed mohamed', 
+
+      avatar:'/profile/avatar.png',   
+
+      performance:85
+      
+      
+    },
+    {
+      id:14,
+
+        name:'hassan mohamed',
+
+      avatar:'/profile/avatar.png', 
+      performance:90  
+                      
+    }
+    ,{
+      id:15,  
+      name:'mohamed mohamed',   
+      avatar:'/profile/avatar.png', 
+      performance:80  
+      },  
+      {   
+      id:16,  
+      name:'hala mohamed',
+      avatar:'/profile/avatar.png', 
+      performance:85
+        
+      },  
+      { 
+      id:17,      
+      name: 'layla ali',
+      avatar:'/profile/avatar.png',
+        performance:45
+        },
+        {
+          id:18,
+          name:'sara mohamed',
+          avatar:'/profile/avatar.png',
+          performance:90
+    }
+  ]
     const percentage = 66;
 
   const data={
@@ -94,7 +217,11 @@ const [confirmDeleteMessage,setConfirmDeleteMessage]=useState(false)
             <input type="text" placeholder="Search tasks..." className="border border-gray-300 text-zinc-950 rounded-xl px-4 py-2 w-full pl-12" />
        </div>
        <div className="grid grid-cols-3 gap-5">
-         <div className="group flex overflow-hidden  hover:bg-zinc-600 relative items-center gap-2 p-1 shadow rounded-2xl border">
+        {
+          members.map((member)=>{
+            return(
+           
+               <div key={member.id} className="group flex overflow-hidden  hover:bg-zinc-600 relative items-center gap-2 p-1 shadow rounded-2xl border">
          <Link  href="/profile/team-profile" className=' flex hover:brightness-75'>
           <img src="/profile/avatar.png" alt="" />
           <div className="flex w-full flex-col my-2">
@@ -110,210 +237,10 @@ flutter developer
           </Link>
           <button onClick={()=>setConfirmDeleteMessage(true)} className='absolute object-cover bg-red-500 text-white right-0 px-6 cursor-pointer opacity-0 translate-x-full group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500 ease-in-out  py-8 rounded-xl'>Delete</button>
         </div>
-         <Link href="/profile/team-profile" className="flex relative items-center gap-2 p-1 shadow rounded-2xl border">
-          <img src="/profile/avatar.png" alt="" />
-          <div className="flex w-full flex-col my-2">
-            <div className="flex justify-between my-2 items-center">
-            <h1 className='text-black text-nowrap font-sm font-bold'>mohamed ahmed</h1>
-          <p className='text-orange-500 font-bold bg-orange-200 rounded-xl px-3'>sent</p>
-            </div>
-            <div className=" text-black rounded-full">
-flutter developer
-            </div>
-          </div>
-        </Link>
-         <Link href="/profile/team-profile" className="flex relative items-center gap-2 p-1 shadow rounded-2xl border">
-          <img src="/profile/avatar.png" alt="" />
-          <div className="flex w-full flex-col my-2">
-            <div className="flex justify-between my-2 items-center">
-            <h1 className='text-black text-nowrap font-sm font-bold'>mohamed ahmed</h1>
-          <p className='text-green-500 font-bold bg-green-200 rounded-xl px-3'>member</p>
-            </div>
-            <div className=" text-black rounded-full">
-flutter developer
-            </div>
-          </div>
-        </Link>
-         <Link href="/profile/team-profile" className="flex relative items-center gap-2 p-1 shadow rounded-2xl border">
-          <img src="/profile/avatar.png" alt="" />
-          <div className="flex w-full flex-col my-2">
-            <div className="flex justify-between my-2 items-center">
-            <h1 className='text-black text-nowrap font-sm font-bold'>mohamed ahmed</h1>
-          <p className='text-green-500 font-bold bg-green-200 rounded-xl px-3'>member</p>
-            </div>
-            <div className=" text-black rounded-full">
-flutter developer
-            </div>
-          </div>
-        </Link>
-         <Link href="/profile/team-profile" className="flex relative items-center gap-2 p-1 shadow rounded-2xl border">
-          <img src="/profile/avatar.png" alt="" />
-          <div className="flex w-full flex-col my-2">
-            <div className="flex justify-between my-2 items-center">
-            <h1 className='text-black text-nowrap font-sm font-bold'>mohamed ahmed</h1>
-          <p className='text-green-500 font-bold bg-green-200 rounded-xl px-3'>member</p>
-            </div>
-            <div className=" text-black rounded-full">
-flutter developer
-            </div>
-          </div>
-        </Link>
-         <Link href="/profile/team-profile" className="flex relative items-center gap-2 p-1 shadow rounded-2xl border">
-          <img src="/profile/avatar.png" alt="" />
-          <div className="flex w-full flex-col my-2">
-            <div className="flex justify-between my-2 items-center">
-            <h1 className='text-black text-nowrap font-sm font-bold'>mohamed ahmed</h1>
-          <p className='text-green-500 font-bold bg-green-200 rounded-xl px-3'>member</p>
-            </div>
-            <div className=" text-black rounded-full">
-flutter developer
-            </div>
-          </div>
-        </Link>
-         <Link href="/profile/team-profile" className="flex relative items-center gap-2 p-1 shadow rounded-2xl border">
-          <img src="/profile/avatar.png" alt="" />
-          <div className="flex w-full flex-col my-2">
-            <div className="flex justify-between my-2 items-center">
-            <h1 className='text-black text-nowrap font-sm font-bold'>mohamed ahmed</h1>
-          <p className='text-green-500 font-bold bg-green-200 rounded-xl px-3'>member</p>
-            </div>
-            <div className=" text-black rounded-full">
-flutter developer
-            </div>
-          </div>
-        </Link>
-         <Link href="/profile/team-profile" className="flex relative items-center gap-2 p-1 shadow rounded-2xl border">
-          <img src="/profile/avatar.png" alt="" />
-          <div className="flex w-full flex-col my-2">
-            <div className="flex justify-between my-2 items-center">
-            <h1 className='text-black text-nowrap font-sm font-bold'>mohamed ahmed</h1>
-          <p className='text-orange-500 font-bold bg-orange-200 rounded-xl px-3'>sent</p>
-            </div>
-            <div className=" text-black rounded-full">
-flutter developer
-            </div>
-          </div>
-        </Link>
-         <Link href="/profile/team-profile" className="flex relative items-center gap-2 p-1 shadow rounded-2xl border">
-          <img src="/profile/avatar.png" alt="" />
-          <div className="flex w-full flex-col my-2">
-            <div className="flex justify-between my-2 items-center">
-            <h1 className='text-black text-nowrap font-sm font-bold'>mohamed ahmed</h1>
-          <p className='text-orange-500 font-bold bg-orange-200 rounded-xl px-3'>sent</p>
-            </div>
-            <div className=" text-black rounded-full">
-flutter developer
-            </div>
-          </div>
-        </Link>
-         <Link href="/profile/team-profile" className="flex relative items-center gap-2 p-1 shadow rounded-2xl border">
-          <img src="/profile/avatar.png" alt="" />
-          <div className="flex w-full flex-col my-2">
-            <div className="flex justify-between my-2 items-center">
-            <h1 className='text-black text-nowrap font-sm font-bold'>mohamed ahmed</h1>
-          <p className='text-green-500 font-bold bg-green-200 rounded-xl px-3'>member</p>
-            </div>
-            <div className=" text-black rounded-full">
-flutter developer
-            </div>
-          </div>
-        </Link>
-         <Link href="/profile/team-profile" className="flex relative items-center gap-2 p-1 shadow rounded-2xl border">
-          <img src="/profile/avatar.png" alt="" />
-          <div className="flex w-full flex-col my-2">
-            <div className="flex justify-between my-2 items-center">
-            <h1 className='text-black text-nowrap font-sm font-bold'>mohamed ahmed</h1>
-          <p className='text-green-500 font-bold bg-green-200 rounded-xl px-3'>member</p>
-            </div>
-            <div className=" text-black rounded-full">
-flutter developer
-            </div>
-          </div>
-        </Link>
-         <Link href="/profile/team-profile" className="flex relative items-center gap-2 p-1 shadow rounded-2xl border">
-          <img src="/profile/avatar.png" alt="" />
-          <div className="flex w-full flex-col my-2">
-            <div className="flex justify-between my-2 items-center">
-            <h1 className='text-black text-nowrap font-sm font-bold'>mohamed ahmed</h1>
-          <p className='text-green-500 font-bold bg-green-200 rounded-xl px-3'>member</p>
-            </div>
-            <div className=" text-black rounded-full">
-flutter developer
-            </div>
-          </div>
-        </Link>
-         <Link href="/profile/team-profile" className="flex relative items-center gap-2 p-1 shadow rounded-2xl border">
-          <img src="/profile/avatar.png" alt="" />
-          <div className="flex w-full flex-col my-2">
-            <div className="flex justify-between my-2 items-center">
-            <h1 className='text-black text-nowrap font-sm font-bold'>mohamed ahmed</h1>
-          <p className='text-green-500 font-bold bg-green-200 rounded-xl px-3'>member</p>
-            </div>
-            <div className=" text-black rounded-full">
-flutter developer
-            </div>
-          </div>
-        </Link>
-         <Link href="/profile/team-profile" className="flex relative items-center gap-2 p-1 shadow rounded-2xl border">
-          <img src="/profile/avatar.png" alt="" />
-          <div className="flex w-full flex-col my-2">
-            <div className="flex justify-between my-2 items-center">
-            <h1 className='text-black text-nowrap font-sm font-bold'>mohamed ahmed</h1>
-          <p className='text-green-500 font-bold bg-green-200 rounded-xl px-3'>member</p>
-            </div>
-            <div className=" text-black rounded-full">
-flutter developer
-            </div>
-          </div>
-        </Link>
-         <Link href="/profile/team-profile" className="flex relative items-center gap-2 p-1 shadow rounded-2xl border">
-          <img src="/profile/avatar.png" alt="" />
-          <div className="flex w-full flex-col my-2">
-            <div className="flex justify-between my-2 items-center">
-            <h1 className='text-black text-nowrap font-sm font-bold'>mohamed ahmed</h1>
-          <p className='text-green-500 font-bold bg-green-200 rounded-xl px-3'>member</p>
-            </div>
-            <div className=" text-black rounded-full">
-flutter developer
-            </div>
-          </div>
-        </Link>
-         <Link href="/profile/team-profile" className="flex relative items-center gap-2 p-1 shadow rounded-2xl border">
-          <img src="/profile/avatar.png" alt="" />
-          <div className="flex w-full flex-col my-2">
-            <div className="flex justify-between my-2 items-center">
-            <h1 className='text-black text-nowrap font-sm font-bold'>mohamed ahmed</h1>
-          <p className='text-green-500 font-bold bg-green-200 rounded-xl px-3'>member</p>
-            </div>
-            <div className=" text-black rounded-full">
-flutter developer
-            </div>
-          </div>
-        </Link>
-         <Link href="/profile/team-profile" className="flex relative items-center gap-2 p-1 shadow rounded-2xl border">
-          <img src="/profile/avatar.png" alt="" />
-          <div className="flex w-full flex-col my-2">
-            <div className="flex justify-between my-2 items-center">
-            <h1 className='text-black text-nowrap font-sm font-bold'>mohamed ahmed</h1>
-          <p className='text-green-500 font-bold bg-green-200 rounded-xl px-3'>member</p>
-            </div>
-            <div className=" text-black rounded-full">
-flutter developer
-            </div>
-          </div>
-        </Link>
-         <Link href="/profile/team-profile" className="flex relative items-center gap-2 p-1 shadow rounded-2xl border">
-          <img src="/profile/avatar.png" alt="" />
-          <div className="flex w-full flex-col my-2">
-            <div className="flex justify-between my-2 items-center">
-            <h1 className='text-black text-nowrap font-sm font-bold'>mohamed ahmed</h1>
-          <p className='text-green-500 font-bold bg-green-200 rounded-xl px-3'>member</p>
-            </div>
-            <div className=" text-black rounded-full">
-flutter developer
-            </div>
-          </div>
-        </Link>
+            
+            )})  }
+        
+        
        
        
        </div>
