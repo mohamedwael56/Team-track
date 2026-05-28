@@ -89,7 +89,7 @@ function AttendanceData({setOpen}) {
     <>
       {attendanceData.map((attendance) => {
         return (
-          <>
+          
             <button
               key={attendance.id}
               onClick={() => setOpen(true)}
@@ -159,7 +159,7 @@ function AttendanceData({setOpen}) {
                 </div>
               </div>
             </button>
-          </>
+      
         );
       })}
     </>
