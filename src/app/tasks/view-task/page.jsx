@@ -46,9 +46,9 @@ function Page() {
         comments&&(<>
             <div className='fixed z-60 inset-0 bg-black opacity-50'></div>
       <div className=" z-60 inset-0 flex justify-end sticky">
-<div className="bg-gray-100 flex flex-col h-screen w-200 p-5 mr-5 rounded-xl">
+<div className="bg-gray-100 flex flex-col h-screen lg:w-200 p-5 mr-5 rounded-xl">
     <div className="flex justify-between items-center">
-<h1 className='text-black text-xl select-none'>comments</h1>
+<h1 className='text-black lg:text-xl text-base select-none'>comments</h1>
 <button onClick={()=>setComments(false)} className='text-zinc-900 cursor-pointer text-3xl'>×</button>
     </div>
     

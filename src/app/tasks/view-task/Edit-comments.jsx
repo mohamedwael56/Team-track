@@ -20,10 +20,10 @@ function EditComments({comment,modalType,setModalType}) {
   return (
     <>
    <div className="flex gap-2 items-center">
-<img src={comment.img} alt="" />
+<img src={comment.img} alt="" className='lg:w-fit w-10' />
 <div className="flex flex-col">
-    <h1 className='text-black font-bold'>{comment.name}</h1>
-    <p className='text-zinc-800'>{text}</p>
+    <h1 className='text-black lg:text-base text-xs font-bold'>{comment.name}</h1>
+    <p className='text-zinc-800  lg:text-base text-xs'>{text}</p>
 {
     clickedEdit&&(
        <>
@@ -42,7 +42,7 @@ function EditComments({comment,modalType,setModalType}) {
         
             
             <div className="flex flex-col items-end">
-    <div className="flex gap-5 items-center text-gray-400">
+    <div className="flex lg:text-base text-xs gap-5 items-center text-gray-400">
 <p>3m ago</p>
 <button onClick={()=>setOpen(!open)} className='cursor-pointer text-xl' >⋮</button>
     </div>
@@ -61,12 +61,12 @@ function EditComments({comment,modalType,setModalType}) {
       )}
 
     <div className="flex gap-5 mr-5 text-black items-center">
-       <div className="flex gap-2 items-center">
-        <img src="/tasks/like.png" alt="" />
+       <div className="flex gap-2 lg:text-base text-xs items-center">
+        <img src="/tasks/like.png" alt="" className='lg:w-fit w-3' />
         <p>7.9M</p>
        </div>
-       <div className="flex gap-2 items-center">
-        <img src="/tasks/vector.png" alt="" />
+       <div className="flex gap-2 lg:text-base text-xs items-center">
+        <img src="/tasks/vector.png" alt="" className='lg:w-fit w-3' />
         <p>reply</p>
        </div>
     </div>
