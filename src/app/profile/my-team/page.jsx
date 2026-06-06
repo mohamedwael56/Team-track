@@ -151,7 +151,6 @@ function page() {
   return (
 <div className="flex">
   <div className="flex-1 ml-69">
-    <Header />
     <main>
       <div className="bg-gray-100 flex flex-col rounded-2xl p-5 my-4">
     <div className="flex items-center mb-5 justify-between">
@@ -202,7 +201,6 @@ function page() {
 
     </main>
   </div>
-  <Sidebar />
 </div>
 
   )

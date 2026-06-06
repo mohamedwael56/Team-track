@@ -1,0 +1,12 @@
+@media (max-width: 768px) {
+    .side-sliders{
+        display: none;
+    }
+ .login-parent{
+margin: 20px;
+height: 100vh;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+}

@@ -29,8 +29,8 @@ title:'Change the icons to font awesome icons.',
   return (
 <div className='border shadow-xl flex flex-col rounded-2xl p-3'>
 <div className='flex justify-between items-center text-black'>
-<p className='text-xl mr-3'>Revision 1: Fixing Navbar at Dashboard Page</p>
-<button className="cursor-pointer ml-5 border-none text-blue-900 hover:text-blue-700 px-4 py-2 rounded-lg  text-lg">+ Add subtask</button>
+<p className='lg:text-xl text-sm mr-3'>Revision 1: Fixing Navbar at Dashboard Page</p>
+<button className="cursor-pointer ml-5 border-none text-blue-900 hover:text-blue-700 px-4 py-2 rounded-lg text-sm text-nowrap  lg:text-lg">+ Add subtask</button>
 </div>
 {
     subTasks.map((task)=>{

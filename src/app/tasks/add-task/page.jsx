@@ -68,11 +68,10 @@ id:'1',
 
     return (
     <div className='flex '>
-      <div className='flex-1 ml-69 p-5 gap-5 '>
-<Header />
+      <div className='flex-1 lg:ml-69 p-5 gap-5 '>
 <main>
    
-    <div className='flex flex-col bg-gray-100 p-5 rounded-2xl'>
+    <div className='flex flex-col w-80 lg:w-full bg-gray-100 p-5 rounded-2xl'>
   <div className='flex items-center gap-3 mb-5'>
         <Link href="/tasks" className='text-md text-blue-700'>← Back</Link>
         <h1 className='text-xl text-black'>Add  Task</h1>
@@ -90,7 +89,7 @@ id:'1',
 
 </form>
 
-<div className='grid grid-cols-3 gap-3'>
+<div className='grid grid-cols-1 lg:grid-cols-3 gap-3'>
 {
     lists.map((list)=>{
 return(
@@ -107,7 +106,6 @@ return(
     </div>
 </main>
       </div>
-      <Sidebar />
     </div>
   )
 }

@@ -35,8 +35,7 @@ const changeDate=(newValue)=>{
 
     <div className='flex'>
 
-<div className='flex-1 ml-69'>
-<Header />
+<div className='flex-1 lg:ml-69'>
 <main>
    
 <PopUp open={open}
@@ -46,20 +45,20 @@ const changeDate=(newValue)=>{
   tempDate={tempDate}
   changeDate={changeDate}
   confirmDate={confirmDate} />
-<div className='flex flex-col gap-5 m-5 bg-gray-100 rounded-2xl p-5'>
+<div className='flex flex-col lg:w-full w-80 gap-5 m-5 bg-gray-100 rounded-2xl p-5'>
 
 <div className='flex justify-between mb-2'>
 <div className='flex gap-3 items-center'>
-<Link href="/tasks" className="text-blue-900 hover:text-blue-700">Back</Link>
-<p className='text-2xl text-black '>Edit task</p>
+<Link href="/tasks" className="lg:text-base text-[9px] text-blue-900 hover:text-blue-700">Back</Link>
+<p className='lg:text-2xl text-base text-black text-nowrap '>Edit task</p>
 </div>
 <div className='flex gap-2 '>
-<button onClick={()=>setModalType('discardChange')} className="cursor-pointer text-red-500 px-4 py-2 rounded-lg">discard</button>
-<button onClick={()=>setModalType('success')} className= "cursor-pointer bg-blue-900 text-white px-4 py-2 rounded-lg">Save Changes</button>
+<button onClick={()=>setModalType('discardChange')} className="cursor-pointer lg:text-base text-sm text-red-500 px-4 py-2 rounded-lg">discard</button>
+<button onClick={()=>setModalType('success')} className= "cursor-pointer bg-blue-900 lg:text-base text-sm text-white px-2 text-nowrap lg:px-4 py-2 rounded-lg">Save Changes</button>
 </div>
 </div>
 <hr />
-<div className='flex justify-between mt-2'>
+<div className='flex lg:flex-row flex-col justify-between mt-2'>
     <div className='flex flex-col'>
 <SubTaskList setModalType={setModalType} />
 <Description />
@@ -75,7 +74,6 @@ const changeDate=(newValue)=>{
 
 </main>
 </div>
-<Sidebar />
     </div>
 
 )

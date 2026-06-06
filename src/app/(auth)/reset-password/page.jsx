@@ -4,6 +4,7 @@ import { useRouter } from 'next/navigation'
 import { useState } from 'react';
 import { redirect } from 'next/dist/server/api-utils';
 import { supabase } from '../../../../lib/supabase';
+import './reset-password.css'
 function Page() {
   const router = useRouter()
 const [message,setMessage]=useState()
@@ -19,7 +20,7 @@ await supabase.auth.resetPasswordForEmail(email,{
   
 }
   return (
-      <div className='flex capitalize flex-1 flex-col gap-10 items-center justify-center mt-20 mb-30'>
+      <div className='flex reset-password-parent  capitalize flex-1 flex-col gap-10 items-center justify-center mt-20 mb-30'>
 
     {message && (
       <div className="fixed  z-50 inset-0 opacity-100 flex items-center justify-center ">

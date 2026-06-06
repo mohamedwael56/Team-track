@@ -85,7 +85,7 @@ const [showInvitations, setShowInvitations] = useState(false)
     return (
     <div className='flex'>
     <div className="flex-1 ml-69">
-        <Header />
+      
         <main>
     
     {
@@ -216,7 +216,7 @@ showInvitations?(
             </div>
         </main>
         </div>
-        <Sidebar />    
+           
     </div>
   )
 }

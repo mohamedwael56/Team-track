@@ -15,7 +15,7 @@ function Attendance() {
  
       return (
   
-    <div>   
+    <div className='lg:w-140 w-85 text-[7px] lg:text-xs'>   
                 {
       working?(
         <>
@@ -77,11 +77,11 @@ function Attendance() {
             <div className="flex justify-between ">
           
         <div className="p-5  flex-col">
-          <h1 className="text-2xl text-black">attendance</h1>
+          <h1 className="lg:text-2xl text-sm text-black">attendance</h1>
           <p className="text-gray-600">Get to work, but don’t forget to have a break.</p>
           <div className="flex items-center gap-5 mt-5">
             <img src="/icons/fingerprint.png" alt="attendance icon" />
-            <p className="flex break-words text-gray-600">You’ve not marked yourself as present today.</p>
+            <p className="flex  text-gray-600">You’ve not marked yourself as present today.</p>
           </div>
           <div className="flex items-center gap-5 mt-5">
             <div className="flex items-center gap-2">
@@ -94,7 +94,7 @@ function Attendance() {
             </div>
           </div>
           </div>
-          <div className="flex relative w-40 justify-center bg-gray-100 rounded-2xl p-5">
+          <div className="flex relative lg:w-40 w-35 justify-center bg-gray-100 rounded-2xl p-5">
             <CircularProgressbar
   value='0'
   styles={buildStyles({
@@ -106,15 +106,15 @@ function Attendance() {
   })}
 />;
   <div className="absolute inset-0 flex flex-col items-center justify-center">
-    <span className="text-lg text-black font-bold">00.00</span>
-    <span className="text-xs text-black">worked today</span>
+    <span className="lg:text-lg text-[10px] text-black font-bold">00.00</span>
+    <span className="lg:text-xs text-[10px] text-black">worked today</span>
   </div>
 
 
           </div>
              
           </div>
-                 <button onClick={()=>setWorking(true)} className="bg-blue-900 text-white cursor-pointer py-4 px-5 rounded-xl mt-5 w-full">
+                 <button onClick={()=>setWorking(true)} className="bg-blue-900 text-white cursor-pointer lg:py-4 py-3 px-5 rounded-xl mt-5 w-full">
             clock in
           </button>
 

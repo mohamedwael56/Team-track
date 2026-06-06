@@ -43,7 +43,7 @@ function ListDetails({dueDate,setOpen}) {
   { label: 'draft tasks for dev ops', year: 1991 },
   ]
   return (
-<div className='ml-5 border shadow-xl flex flex-col w-200 rounded-2xl p-3'>
+<div className='ml-5 border shadow-xl flex flex-col lg:mt-0 mt-5 lg:w-200 rounded-2xl p-3'>
     <div>
         <p className='text-black mb-2'>List Name</p>
          <Autocomplete

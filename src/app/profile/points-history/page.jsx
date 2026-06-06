@@ -30,7 +30,6 @@ function Page() {
   return (
     <div className='flex'>
         <div className="flex-1 ml-69">
-            <Header />
             <main>
                  {openCalender&& (
                     <>
@@ -88,7 +87,6 @@ function Page() {
                 </div>
             </main>
         </div>
-        <Sidebar />
     </div>
   )
 }

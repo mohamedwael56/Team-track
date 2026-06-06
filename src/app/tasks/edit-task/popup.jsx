@@ -6,7 +6,8 @@ import SuccessMessage from '@/components/SuccessMessage';
 import DeleteMessage from '@/components/DeleteMessage';
 import ConfirmMessage from '@/components/ConfirmMessage';
 import DiscardChange from '@/components/discardChange';
-function PopUp({open,setOpen,modalType,setModalType, tempDate, changeDate, confirmDate}) {
+import DatePopUp from '@/components/DatePopUp';
+function PopUp({open,setOpen,modalType,setModalType,  confirmDate}) {
   return (
 <>
    <SuccessMessage text={{ title: 'Task updated successfully ?', description: 'Congratulations,the changes you made is saved successfully' }} show={modalType==='success'} onClose={() => setModalType(null)} />
@@ -15,21 +16,7 @@ function PopUp({open,setOpen,modalType,setModalType, tempDate, changeDate, confi
   <DiscardChange show={modalType==='discardChange'} onClose={() => setModalType(null)} onConfirm={() => setModalType(null)} />
     
     
-     {open&& (
-        <>
-        <div  className="fixed inset-0 bg-black opacity-50 z-60 " ></div>
-           <div className="fixed inset-0  flex justify-center items-center z-60 " >
-    <LocalizationProvider dateAdapter={AdapterDayjs}>
-      <StaticDateTimePicker
-        orientation="landscape"
-        value={tempDate}
-        onChange={changeDate}
-        onAccept={confirmDate}
-        onClose={() => setOpen(false)}
-      />
-    </LocalizationProvider>
-   </div>
-   </> )}
+  <DatePopUp setDueDate={confirmDate}  show={open} Closing={()=>setOpen(false)}  />
   </>
   )
 }

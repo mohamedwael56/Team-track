@@ -1,7 +1,8 @@
 import React from 'react'
 import { Geist, Geist_Mono } from "next/font/google";
 import "../globals.css";
-
+import Sidebar from '@/components/sidebar'
+import Header from '@/components/header';
 
 
 const geistMono = Geist_Mono({
@@ -18,6 +19,12 @@ function layout({ children }) {
   return (
     <html lang="en">
         <body>
+                 <div className="flex"><Sidebar/></div>
+                 
+ <div className='flex-1 ml-69'>
+          <Header />
+        </div>
+
                 <div className="layout-container">
       {children}
     </div>

@@ -104,7 +104,7 @@ function Page() {
   return (
     <div className='flex'>
         <div className="flex-1 ml-69">
-            <Header />
+          
             <main>
                 {
 openMessage&&(
@@ -162,7 +162,6 @@ openMessage&&(
                 </div>
             </main>
         </div>
-        <Sidebar />
     </div>
   )
 }

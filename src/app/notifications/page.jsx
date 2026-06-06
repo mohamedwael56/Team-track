@@ -72,7 +72,7 @@ function page() {
   return (
     <div className='flex'>
         <div className='flex-1 ml-69'>
-        <Header />
+      
         <main>
             <div className='p-5 flex flex-col bg-gray-100 rounded-2xl '>
             <div className='mb-4 text-black text-xl'> 
@@ -106,7 +106,6 @@ function page() {
             </div>
         </main>
         </div>
-        <Sidebar />
     </div>
   )
 }

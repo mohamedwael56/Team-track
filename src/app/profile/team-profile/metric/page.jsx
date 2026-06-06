@@ -37,7 +37,6 @@ const data={
     
 <div className="flex">
   <div className="flex-1 ml-69">
-    <Header />
     <main>
       {
       open&&(
@@ -109,7 +108,6 @@ const data={
 
     </main>
   </div>
-  <Sidebar />
 </div>
 
   )

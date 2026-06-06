@@ -17,7 +17,6 @@ function Page() {
   return (
     <div className="flex">
       <div className="flex-1 ml-69">
-        <Header />
         <main>
          
           <div className="flex flex-col bg-gray-100 p-5 rounded-2xl">
@@ -55,7 +54,6 @@ function Page() {
           </div>
         </main>
       </div>
-      <Sidebar />
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "../globals.css";
-
+import './page.css'
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -24,7 +24,7 @@ export default function RootLayout({ children,siteDefinition }) {
       >
     <div className="flex justify-between bg-white">
         {children}
-        <div className="w-100 mr-5 flex items-center">
+        <div className="side-sliders w-100 mr-5 flex items-center">
      {siteDefinition}
      </div>
    </div>

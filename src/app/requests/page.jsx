@@ -26,7 +26,6 @@ function Page() {
   return (
 <div className="flex">
   <div className="flex-1 ml-69">
-    <Header />
     <main>
       <div className="bg-gray-100 flex flex-col rounded-2xl p-5 my-4">
    <div className="flex mb-5 justify-between items-center">
@@ -56,7 +55,6 @@ activeTab === 'team-requests' && <TeamRequests />
 
     </main>
   </div>
-  <Sidebar />
 </div>
 
   )

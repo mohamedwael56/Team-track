@@ -2,31 +2,31 @@ import React from 'react'
 
 function Attachments() {
   return (
-  <div className='border object-cover shadow-xl p-3 rounded-xl'>
-    <div className='text-black'>Attachments</div>
+ <div className='border object-cover shadow-xl p-3 rounded-xl'>
+    <div className='lg:text-xl text-sm text-black'>Attachment</div>
     <div className='flex gap-2'>
 <button className='bg-violet-200 cursor-pointer mt-2 px-5 py-2 text-violet-500 rounded-xl'>
-<div className='flex lg:text-base text-[8px] gap-2 items-center'>
+<div className='flex lg:text-base text-[9px] gap-2 items-center'>
 <p>+</p>
-<p className='text-nowrap'>upload more items </p>
+<p className='text-nowrap  '>upload more items </p>
 </div>
 </button>
-<div className='border text-base  rounded-xl px-2 lg:px-3  shadow-xl'>
+<div className='border rounded-xl px-3  shadow-xl'>
 <div className='flex justify-between'>
 <div className='flex items-center'>
     <img src="/frame.svg" alt="" className='lg:w-full w-3' />
     <div  className='flex  flex-col ml-2'>
-<p className='text-black text-[8px] lg:text-sm text-nowrap'>devs presentation.pdf</p>
-<p className='flex justify-start text-[8px] lg:text-sm'>1.5 MB</p>
+<p className='text-black text-[9px] lg:text-sm text-nowrap'>devs presentation.pdf</p>
+<p className='flex justify-start text-[9px] lg:text-sm'>1.5 MB</p>
     </div>
 </div>
 <div className='flex items-center gap-1 lg:gap-2 ml-3'>
-    <button className='cursor-pointer lg:w-full w-2'><img src="/icons/view.png" alt="" /></button>
-    <button className='cursor-pointer lg:w-full w-2'><img src="/icons/delete-03.png" alt="" /></button>
+    <button className='cursor-pointer lg:w-full w-3'><img src="/icons/view.png" alt="" /></button>
+    <button className='cursor-pointer lg:w-full w-3'><img src="/icons/delete-03.png" alt="" /></button>
 </div>
 </div>
 </div>
-<div className='border rounded-xl px-3  lg:block hidden  shadow-xl'>
+<div className='border rounded-xl px-3 lg:block hidden  shadow-xl'>
 <div className='flex justify-between'>
 <div className='flex items-center'>
     <img src="/frame.svg" alt="" />
@@ -57,8 +57,7 @@ function Attachments() {
 </div>
 </div>
     </div>
-    </div>
-  )
+    </div>  )
 }
 
 export default Attachments

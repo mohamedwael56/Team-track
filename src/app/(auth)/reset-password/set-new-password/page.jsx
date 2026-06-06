@@ -3,6 +3,7 @@ import React from 'react'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react';
 import { supabase } from '../../../../../lib/supabase';
+import './set-new-password.css'
 
 function Page() {
   const router = useRouter()
@@ -42,7 +43,7 @@ setConfirmPassword('')
       </div>
       </div>
     )}
-      <div className='flex capitalize flex-1 flex-col gap-10 items-center justify-center mb-30'>
+      <div className='set-new-password-parent flex capitalize flex-1 flex-col gap-10 items-center justify-center mb-30'>
         <img src="/icons/Buy2logo.png" alt="Buy2 Logo" className='mb-10' />
         <p className='text-black text-xl font-bold'>set new password</p>
         <p className='text-gray-400'>please enter your new password and confirm it</p>

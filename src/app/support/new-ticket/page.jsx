@@ -1,6 +1,5 @@
 'use client'
-import Header from '@/components/header'
-import Sidebar from '@/components/sidebar'
+
 import React from 'react'
 import Link from 'next/link'
 import { useState } from 'react'
@@ -12,7 +11,6 @@ function Page() {
   return (
     <div className='flex'>
         <div className="flex-1 ml-69">
-            <Header />
             <main>
                 {open&&(
                     <>
@@ -115,7 +113,6 @@ function Page() {
                 </div>
             </main>
         </div>
-        <Sidebar />
     </div>
   )
 }

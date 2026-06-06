@@ -1,47 +1,25 @@
 import React from 'react'
 import { useState } from 'react';
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
-import { StaticDateTimePicker } from '@mui/x-date-pickers/StaticDateTimePicker';
+import DatePopUp from '@/components/DatePopUp';
 import { useRouter } from 'next/navigation';
+import DeleteMessage from '@/components/DeleteMessage';
+import { Title } from 'chart.js';
 function TaskCard({list}) {
     const router = useRouter()
-const [tempDate,setTempDate]= useState(null)
 const [dueDate, setDueDate] = useState(null); 
 const [open, setOpen] = useState(false);
-
-const confirmDate=()=>{
-    setDueDate(tempDate)
-    setOpen(false)
-}
-const changeDate=(newValue)=>{
- setTempDate(newValue)
-}
+const [deleteMessage,setDeleteMessage]=useState(false)
 
   return (
     <>
- {open&& (
-        <>
-        <div  className="fixed inset-0 bg-black opacity-50 z-60 " ></div>
-           <div className="fixed inset-0  flex justify-center items-center z-60 " >
-    <LocalizationProvider dateAdapter={AdapterDayjs}>
-      <StaticDateTimePicker
-        orientation="landscape"
-        value={tempDate}
-        onChange={changeDate}
-        onAccept={confirmDate}
-        onClose={() => setOpen(false)}
-      />
-    </LocalizationProvider>
-   </div>
-   </> )}
-
+<DatePopUp setDueDate={setDueDate}  show={open} Closing={()=>setOpen(false)} />
+<DeleteMessage show={deleteMessage} text={{title:'Delete Task ?',description:'Are you sure you want to delete this task?'}} onConfirm={()=>setDeleteMessage(false)} onClose={()=>setDeleteMessage(false)} />
  <div  className='flex flex-col gap-2 border rounded-2xl p-3 shadow-xl'>
     <div className='flex justify-between mb-3'>
     <span className='bg-violet-200 text-violet-500 px-3  rounded-2xl'> list name</ span>
     <div className='flex gap-2'>
 <button className='cursor-pointer' onClick={()=>{router.push('/tasks/edit-task')}} >{dueDate? <img src='/icons/checkmark-square-03.png' /> :<img src="/icons/edit-02.png" alt="" />}</button>
-<button className='cursor-pointer' ><img src="/icons/delete-03.png" alt="" /></button>
+<button className='cursor-pointer' onClick={()=>setDeleteMessage(true)} ><img src="/icons/delete-03.png" alt="" /></button>
 <button className='cursor-pointer' onClick={()=>{router.push('/tasks/view-task')}} ><img src="/icons/view.png" alt="" /></button>
     </div>
     </div>

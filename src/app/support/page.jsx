@@ -1,6 +1,5 @@
 'use client'
 import Header from '@/components/header'
-import Sidebar from '@/components/sidebar'
 import React from 'react'
 import { useState } from 'react'
 import Questions from './Questions'
@@ -10,7 +9,6 @@ function Page() {
   return (
     <div className='flex'>
         <div className="flex-1 ml-69">
-            <Header />
             <main>
                 <div className="bg-gray-100 p-5 flex flex-col rounded-2xl h-screen">
             <div className="text-black flex justify-between mb-5 text-2xl font-bold">
@@ -31,7 +29,6 @@ function Page() {
                 </div>
             </main>
         </div>
-        <Sidebar />
     </div>
   )
 }

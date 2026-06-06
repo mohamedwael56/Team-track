@@ -3,11 +3,12 @@ import React from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
-function Sidebar() {
+function Sidebar({ isSidebarOpen, setIsSidebarOpen }) {
     const pathname = usePathname();
   return (
     
- <aside className='gap-5 m-3 w-64 inset-0 fixed bg-gray-100 h-screen rounded-2xl z-40 shadow-lg '>
+ <aside className={`${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'} text-xs lg:text-lg lg:translate-x-0  transition-transform duration-800 lg:block  gap-5 m-3 w-48 lg:w-64 inset-0 fixed bg-gray-100 h-screen rounded-2xl z-40 shadow-lg`}>
+       
             <div className='flex flex-col gap-5 mt-5 '>
                <div className=' select-none flex  justify-start ml-8'>
                 <img src="/icons/buy2logo.png" alt="Logo" width={100}  />

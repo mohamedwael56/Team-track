@@ -2,12 +2,17 @@
 import React from 'react'
 import Link from 'next/link'
 import { useState } from 'react'
-function Header() {
+function Header({setIsSidebarOpen,isSidebarOpen}) {
   const [open, setOpen]=useState(false);
+  
   return (
    
       <header>
-          <div className="flex justify-between items-center">
+           <button onClick={()=>setIsSidebarOpen(!isSidebarOpen)} className="cursor-pointer lg:hidden">
+  ☰
+</button>
+          <div className="hidden justify-between  lg:flex items-center">
+            
             <div className="relative pr-5">
               <button className="absolute top-3 left-2 cursor-pointer">
                 <img src="/icons/search.png" alt="" width={15} />

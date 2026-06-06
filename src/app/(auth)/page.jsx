@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { useState } from 'react'
 import { supabase } from '../../../lib/supabase';
 import { useRouter } from 'next/navigation';
+import './page.css'
 function Page() {
 const router=useRouter()
 const [showPassword,setShowPassword]= useState(false);
@@ -40,7 +41,7 @@ router.push('/home')
       </div>
 </div>
       )}
-  <div className='flex capitalize ml-50 overflow-hidden mt-20 flex-col gap-10 items-center justify-center mb-30'>
+  <div className='flex login-parent capitalize ml-50 overflow-hidden mt-20 flex-col gap-10 items-center justify-center mb-30'>
     
     <div className='mb-10'>
   <img src="/icons/Buy2logo.png" alt="Buy2 Logo" />

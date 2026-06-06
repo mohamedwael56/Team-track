@@ -2,7 +2,6 @@
 import Header from '@/components/header'
 import React from 'react'
 import Link from 'next/link'
-import Sidebar from '@/components/sidebar'
 import { useState } from 'react'
 function Page() {
     const data=[{
@@ -119,7 +118,6 @@ function Page() {
     return (
     <div className='flex'>
         <div className="flex-1 ml-69">
-            <Header />
             <main>
                 {
 open&&(
@@ -208,7 +206,6 @@ open&&(
                 </div>
             </main>
         </div>
-        <Sidebar />
     </div>
   )
 }

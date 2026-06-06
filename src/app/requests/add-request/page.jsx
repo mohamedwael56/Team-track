@@ -33,7 +33,6 @@ const router = useRouter();
   return (
 <div className="flex">
   <div className="flex-1 ml-69">
-    <Header />
     <main>
       {
         sendRequest&&(
@@ -103,7 +102,6 @@ Request Type
 
     </main>
   </div>
-  <Sidebar />
 </div>
 
   )

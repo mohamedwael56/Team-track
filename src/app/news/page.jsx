@@ -5,9 +5,8 @@ import Link from 'next/link'
 function page() {
   return (
     <div className='flex'>
-        <Sidebar />
+        
 <div className='flex-1 ml-69'>
-            <Header />
 <main>
     <div className='flex mt-5 flex-col bg-gray-100 rounded-2xl p-5 justify-between mb-9'>
     <div className='flex mb-3 gap-3 items-center'>

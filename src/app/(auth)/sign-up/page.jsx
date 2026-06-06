@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { useState } from 'react'
 import { supabase } from '../../../../lib/supabase';
 import { useRouter } from 'next/navigation';
+import './sign-up.css'
 function Page() {
 const router=useRouter()
 const [showPassword,setShowPassword]= useState(false);
@@ -33,7 +34,7 @@ if(error){console.error(error,'something went wrong!')}else{
   return (
 
     <>
-  <div className='flex capitalize ml-60 overflow-hidden mt-20 flex-col gap-10 items-center justify-center mb-30'>
+  <div className='flex sign-up-parent capitalize ml-60 overflow-hidden mt-20 flex-col gap-10 items-center justify-center mb-30'>
     {showMessage&&(
       <div className='flex fixed z-50 bg-black flex-col animate-overlayFadeIn inset-0 items-center justify-center'>
         <div className="bg-gray-100 flex flex-col gap-2 rounded-xl animate-fadeIn text-red-600 p-5 text-center ">
@@ -65,7 +66,7 @@ confirmMessage?(
       please sign up to continue
     </p>
   </div>
-  <form onSubmit={signUpButton}>
+  <form  onSubmit={signUpButton}>
   <div className='flex flex-col gap-5 mt-10 relative'>
     <div className='flex flex-col'>
     <label htmlFor="email" className='font-bold text-black'>Email address</label>
@@ -101,6 +102,7 @@ confirmMessage?(
   </div>
   
   </form>
+  
   </>
 )
     }

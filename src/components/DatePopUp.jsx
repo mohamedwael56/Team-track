@@ -21,6 +21,7 @@ const changeDate=(newValue)=>{
  <>
         <div  className="fixed inset-0 bg-black opacity-50 z-60 " ></div>
            <div className="fixed inset-0  flex justify-center items-center z-70 " >
+            <div className=" scale-55 lg:scale-100">
     <LocalizationProvider dateAdapter={AdapterDayjs}>
       <StaticDateTimePicker
         orientation="landscape"
@@ -30,6 +31,7 @@ const changeDate=(newValue)=>{
         onClose={() => Closing()}
       />
     </LocalizationProvider>
+    </div>
    </div>
    </>  )
 }

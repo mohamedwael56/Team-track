@@ -1,8 +1,9 @@
 import React from 'react'
 import { Geist, Geist_Mono } from "next/font/google";
 import "../globals.css";
-
-
+import Sidebar from '@/components/sidebar'
+import Header from '@/components/header';
+import DashboardShell from '@/components/DashboardShell';
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
@@ -16,15 +17,9 @@ export const metadata = {
 
 function layout({ children }) {
   return (
-    <html lang="en">
-        <body>
-                <div className="layout-container">
+    <DashboardShell>
       {children}
-    </div>
-    
-        </body>
-
-    </html>
+    </DashboardShell>
   )
 }
 
