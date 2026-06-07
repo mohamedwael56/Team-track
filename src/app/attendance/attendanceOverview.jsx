@@ -7,7 +7,7 @@ function AttendanceOverview({open,setOpen}) {
 <>
 <div className="fixed z-60 bg-black opacity-50 inset-0"></div>
 <div className="fixed flex z-70 justify-end items-center inset-0 ">
-<div className="bg-white w-100 flex flex-col rounded-2xl p-5">
+<div className="bg-white w-75 lg:w-100 flex flex-col rounded-2xl p-5">
 <div className="flex items-center text-xl text-black justify-between">
     <h1>overview</h1>
     <button onClick={()=>setOpen(false)} className='cursor-pointer text-3xl'>×</button>

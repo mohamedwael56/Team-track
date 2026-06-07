@@ -29,8 +29,7 @@ const [open,setOpen]=useState(false)
     const percentage=66;
   return (
     <div className='flex'>
-        <div className="flex-1 ml-69">
-        <Header />
+        <div className="flex-1 lg:ml-69">
         <main>
               {openCalender&& (
                     <>
@@ -54,53 +53,53 @@ const [open,setOpen]=useState(false)
                </> )}
     <AttendanceOverview open={open} setOpen={setOpen} />
     
-            <div className='flex flex-col bg-white p-5 rounded-2xl'>
+            <div className='flex flex-col lg:w-full w-80 bg-white p-5 rounded-2xl'>
             <div className="flex justify-between items-center">
-                <h1 className='text-black text-2xl'>attendance</h1>
+                <h1 className='text-black text-sm lg:text-2xl'>attendance</h1>
             <div className='flex gap-3'>
-            <button className='border flex gap-2 items-center shadow-sm rounded-2xl py-3 px-4 cursor-pointer'>
-                <img src="/icons/filter.png" alt="" />
-                <p className='text-black'>filter</p>
+            <button className='border flex gap-2 items-center shadow-sm rounded-2xl lg:py-3 lg:px-4 px-1 cursor-pointer'>
+                <img src="/icons/filter.png" alt="" className='w-3 lg:w-fit' />
+                <p className='text-black lg:text-base text-xs'>filter</p>
             </button>
-            <button onClick={()=>setOpenCalender(true)} className='border flex gap-2 items-center shadow-sm rounded-2xl py-3 px-4 cursor-pointer'>
-                <img src="/icons/calendar.png" alt="" />
-                <p className='text-black'> {dueStartDate && dueEndDate ? `${dueStartDate.format('MM/DD/YYYY')} - ${dueEndDate.format('MM/DD/YYYY')}` : '09/30/2024 - 10/06/2024'} </p>
+            <button onClick={()=>setOpenCalender(true)} className='border flex gap-2 items-center shadow-sm rounded-2xl lg:py-3 lg:px-4 px-1 cursor-pointer'>
+                <img src="/icons/calendar.png" className='w-3 lg:w-fit' alt="" />
+                <p className='lg:text-base text-[9px] text-black'> {dueStartDate && dueEndDate ? `${dueStartDate.format('MM/DD/YYYY')} - ${dueEndDate.format('MM/DD/YYYY')}` : '09/30/2024 - 10/06/2024'} </p>
             </button>
             
             </div>
             </div>
-            <div className='grid grid-cols-4 my-4 gap-3'>
+            <div className='grid grid-cols-1 lg:grid-cols-4 my-4 gap-3'>
         <div className="bg-gray-200 p-3 rounded-2xl flex gap-3 items-center">
         <img src="/attendance/finger-print.png"  alt="" />
         <div className='flex flex-col'>
-<h1 className='text-2xl text-black'>28:23:56</h1>
-<p className='text-gray-600'>Total working hours</p>
+<h1 className='lg:text-2xl text-sm text-black'>28:23:56</h1>
+<p className='text-gray-600 lg:text-base text-xs '>Total working hours</p>
         </div>
         </div>
         <div className="bg-gray-200 p-3 rounded-2xl flex gap-3 items-center">
         <img src="/attendance/lateness.png"  alt="" />
         <div className='flex flex-col'>
-<h1 className='text-2xl text-black'>27:00</h1>
-<p className='text-gray-600'>Total hours late</p>
+<h1 className='lg:text-2xl text-sm text-black'>27:00</h1>
+<p className='lg:text-base text-xs text-gray-600'>Total hours late</p>
         </div>
         </div>
         <div className="bg-gray-200 p-3 rounded-2xl flex gap-3 items-center">
         <img src="/attendance/dollar.png"  alt="" />
         <div className='flex flex-col'>
-<h1 className='text-2xl text-black'>205 $</h1>
-<p className='text-gray-600 text-nowrap text-sm'>Month salary deductions</p>
+<h1 className='lg:text-2xl text-sm  text-black'>205 $</h1>
+<p className='text-gray-600 lg:text-base text-xs text-nowrap '>Month salary deductions</p>
         </div>
         </div>
         <div className="bg-gray-200 p-3 rounded-2xl flex gap-3 items-center">
         <img src="/attendance/timer.png"  alt="" />
         <div className='flex flex-col'>
-<h1 className='text-2xl text-black'>21:05</h1>
-<p className='text-gray-600'>Remaining hours</p>
+<h1 className='lg:text-2xl text-sm text-black'>21:05</h1>
+<p className='text-gray-600 lg:text-base text-xs'>Remaining hours</p>
         </div>
         </div>
             </div>
             <hr />
-            <div className="grid grid-cols-4 gap-3">
+            <div className="grid grid-cols-1 lg:grid-cols-4 gap-3">
  
  
  <AttendanceData setOpen={setOpen} />

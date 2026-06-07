@@ -6,9 +6,9 @@ function page() {
   return (
     <div className='flex'>
         
-<div className='flex-1 ml-69'>
+<div className='flex-1 lg:ml-69'>
 <main>
-    <div className='flex mt-5 flex-col bg-gray-100 rounded-2xl p-5 justify-between mb-9'>
+    <div className='flex mt-5 flex-col w bg-gray-100 rounded-2xl p-5 justify-between mb-9'>
     <div className='flex mb-3 gap-3 items-center'>
 <Link href="/home" className="text-blue-900 text-sm hover:text-blue-700 transition duration-300">Back</Link>
     <p className='text-black'>the start of the al-ahly</p>

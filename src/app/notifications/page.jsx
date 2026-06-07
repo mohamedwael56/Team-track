@@ -71,7 +71,7 @@ function page() {
         
   return (
     <div className='flex'>
-        <div className='flex-1 ml-69'>
+        <div className='flex-1 lg:ml-69'>
       
         <main>
             <div className='p-5 flex flex-col bg-gray-100 rounded-2xl '>

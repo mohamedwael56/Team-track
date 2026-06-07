@@ -117,7 +117,7 @@ function Page() {
   }
     return (
     <div className='flex'>
-        <div className="flex-1 ml-69">
+        <div className="flex-1 lg:ml-69">
             <main>
                 {
 open&&(
@@ -175,7 +175,7 @@ open&&(
             </div>
             <hr />
 
-            <div className="mt-4 grid grid-cols-5 gap-3">
+            <div className="mt-4 grid grid-cols-1 lg:grid-cols-5 gap-3">
        {
         data.map((item)=>
         {

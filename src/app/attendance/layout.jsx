@@ -1,6 +1,7 @@
 import React from 'react'
 import { Geist, Geist_Mono } from "next/font/google";
 import "../globals.css";
+import DashboardPage from '../../components/DashboardShell';
 
 
 
@@ -16,15 +17,9 @@ export const metadata = {
 
 function layout({ children }) {
   return (
-    <html lang="en">
-        <body>
-                <div className="layout-container">
+    <DashboardPage>
       {children}
-    </div>
-    
-        </body>
-
-    </html>
+    </DashboardPage>
   )
 }
 

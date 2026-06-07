@@ -68,7 +68,7 @@ function page() {
   ]
   return (
     <div className='flex'>
-<div className='flex-1 ml-69'>
+<div className='flex-1 lg:ml-69'>
 <main>
 <div className='flex flex-col gap-5 m-5 bg-gray-100 p-5 rounded-2xl'>
 <div className='flex gap-3 items-center'>
@@ -78,7 +78,7 @@ function page() {
 
 <hr />
 
-<div className='grid grid-cols-3 gap-3'>
+<div className='grid grid-cols-2 lg:grid-cols-3 gap-3'>
     {
       Recognitions.map((recognition)=>{
         return(
