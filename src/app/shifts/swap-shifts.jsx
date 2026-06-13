@@ -1,3 +1,4 @@
+"use client";
 import React from 'react'
 import { Doughnut } from "react-chartjs-2";
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';

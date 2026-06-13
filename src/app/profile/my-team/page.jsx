@@ -1,4 +1,5 @@
 'use client';
+"use client";
 import Header from '@/components/header'
 import React from 'react'
 import Sidebar from '@/components/sidebar'

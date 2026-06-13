@@ -1,3 +1,4 @@
+"use client";
 import React from 'react'
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
