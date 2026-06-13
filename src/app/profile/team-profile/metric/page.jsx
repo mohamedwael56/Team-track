@@ -81,7 +81,7 @@ const data={
                     </div>
                     </>
                 )}
-      <div className="bg-gray-100 lg:W-full w-80 flex flex-col rounded-2xl p-5 my-4">
+      <div className="bg-gray-100 lg:w-full w-80 flex flex-col rounded-2xl p-5 my-4">
     <div className="flex items-center mb-5 justify-between">
     <div className="flex gap-5 items-center flex-row">
     <Link href='/profile/team-profile' className='text-blue-500 lg:text-base text-xs'>
