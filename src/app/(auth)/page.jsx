@@ -30,16 +30,17 @@ e.preventDefault()
   return (
 
     <>
-    {message&&(
-      <div className="fixed flex items-center justify-center inset-0 bg-black z-50 animate-overlayFadeIn">
+    {message&&(<>
+      <div className="fixed flex items-center justify-center inset-0 bg-black z-50 opacity-50"></div>
+        <div className='fixed flex items-center justify-center inset-0 z-60'>
       <div className={`border flex flex-col rounded-xl p-5 items-center justify-center text-center bg-gray-100 animate-fadeIn border-red-100 text-red-600`}>
         <span>❌</span>
         <p> {message}</p>
         <button onClick={()=>{setMessage()}} className='border rounded-xl px-5 my-1 cursor-pointer py-1'>Try Again</button>
         <button onClick={()=>{router.push('/sign-up')}} className='border rounded-xl px-5 my-1 cursor-pointer py-1 '>register an account</button>
       </div>
-</div>
-      )}
+    </div> 
+    </> )}
   <div className='flex login-parent capitalize ml-50 overflow-hidden mt-20 flex-col gap-10 items-center justify-center mb-30'>
     
     <div className='mb-10'>

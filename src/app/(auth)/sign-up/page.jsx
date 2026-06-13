@@ -38,14 +38,16 @@ const signUpButton= async (e)=>{
     <>
   <div className='flex sign-up-parent capitalize ml-60 overflow-hidden mt-20 flex-col gap-10 items-center justify-center mb-30'>
     {showMessage&&(
-      <div className='flex fixed z-50 bg-black flex-col animate-overlayFadeIn inset-0 items-center justify-center'>
+      <>
+      <div className='flex fixed z-50 bg-black flex-col opacity-50 inset-0 items-center justify-center'></div>
+        <div className="flex fixed z-60  flex-col inset-0 items-center justify-center">
         <div className="bg-gray-100 flex flex-col gap-2 rounded-xl animate-fadeIn text-red-600 p-5 text-center ">
         <span>❌</span>
       <p>{showMessage}</p>
       <button className='px-5 py-1 cursor-pointer bg-red-600 rounded-xl text-white ' onClick={()=>{setShowMessage()}}>Try Again</button>
         </div>
       </div>
-    )}
+    </>)}
     {
 confirmMessage?(
   <div className="mb-10 text-black flex flex-col items-center gap-2">
