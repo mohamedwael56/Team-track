@@ -46,7 +46,7 @@ setConfirmPassword('')
       </div>
     )}
       <div className='set-new-password-parent flex capitalize flex-1 flex-col gap-10 items-center justify-center mb-30'>
-        <img src="/icons/Buy2logo.png" alt="Buy2 Logo" className='mb-10' />
+        <img src="/icons/buy2logo.png" alt="Buy2 Logo" className='mb-10' />
         <p className='text-black text-xl font-bold'>set new password</p>
         <p className='text-gray-400'>please enter your new password and confirm it</p>
 

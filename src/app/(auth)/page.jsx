@@ -43,7 +43,7 @@ e.preventDefault()
   <div className='flex login-parent capitalize ml-50 overflow-hidden mt-20 flex-col gap-10 items-center justify-center mb-30'>
     
     <div className='mb-10'>
-  <img src="/icons/Buy2logo.png" alt="Buy2 Logo" />
+  <img src="/icons/buy2logo.png" alt="Buy2 Logo" />
   </div>
   <div className='flex items-center flex-col'>
     <h1 className="text-3xl font-bold text-black">

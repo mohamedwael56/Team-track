@@ -34,7 +34,7 @@ await supabase.auth.resetPasswordForEmail(email,{
       </div>
     )}
     <form onSubmit={sentEmail}>
- <img src="/icons/Buy2logo.png" alt="Buy2 Logo" className='mb-10' />
+ <img src="/icons/buy2logo.png" alt="Buy2 Logo" className='mb-10' />
  <p className='text-black text-xl font-bold'>forget password</p>
    <p className='text-gray-400'>please enter the email associated to your account</p>
     <div className='flex flex-col relative gap-2'>

@@ -47,7 +47,7 @@ if(error){console.error(error,'something went wrong!')}else{
     {
 confirmMessage?(
   <div className="mb-10 text-black flex flex-col items-center gap-2">
- <img src="/icons/Buy2logo.png" alt="Buy2 Logo" />
+ <img src="/icons/buy2logo.png" alt="Buy2 Logo" />
  <img src="/icons/icon.png" alt="" className='mt-5' />
 <p className='text-3xl capitalize mt-8'>{confirmMessage}</p>
 <p className='text-gray-400 capitalize mb-3'>account has been registered successfully</p>
@@ -56,7 +56,7 @@ confirmMessage?(
 ):(
   <>
  <div className='mb-10'>
-  <img src="/icons/Buy2logo.png" alt="Buy2 Logo" />
+  <img src="/icons/buy2logo.png" alt="Buy2 Logo" />
   </div>
   <div className='flex items-center flex-col'>
     <h1 className="text-3xl font-bold text-black">
