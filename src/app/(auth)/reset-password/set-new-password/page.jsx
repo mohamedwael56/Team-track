@@ -2,7 +2,7 @@
 import React from 'react'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react';
-import { supabase } from '../../../../../lib/supabase';
+import { getSupabaseClient } from '../../../../../lib/supabase';
 import './set-new-password.css'
 
 function Page() {
@@ -18,8 +18,10 @@ setConfirmPassword('')
     if (newPassword !== confirmPassword) return setMessage({text:'Passwords do not match'})
     if (newPassword.length < 6) return setMessage({text:'Password must be at least 6 characters'})
  
-   const {data,error}= await supabase.auth.updateUser({
-        password:newPassword
+     const supabase = getSupabaseClient();
+     if (!supabase) return setMessage({type:'error',text:'Authentication service unavailable'})
+     const {data,error}= await supabase.auth.updateUser({
+      password:newPassword
     })
     if(error){setMessage({type:"error",text:error})}
     setMessage({

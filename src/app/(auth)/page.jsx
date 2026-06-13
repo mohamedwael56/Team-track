@@ -2,7 +2,7 @@
 import React from 'react'
 import Link from 'next/link'
 import { useState } from 'react'
-import { supabase } from '../../../lib/supabase';
+import { getSupabaseClient } from '../../../lib/supabase';
 import { useRouter } from 'next/navigation';
 import './page.css'
 function Page() {
@@ -16,15 +16,14 @@ const showingPasswordButton =()=>{
 }
 const logInButton= async (e)=>{
 e.preventDefault()
+  const supabase = getSupabaseClient();
+  if (!supabase) return setMessage('Authentication service unavailable');
   const {data,error}=await supabase.auth.signInWithPassword({
-  email,
-  password
-})
-if (error){setMessage('Email or Password is incorrect')}
-else{
-router.push('/home')
-
-}
+    email,
+    password
+  })
+  if (error){setMessage('Email or Password is incorrect')}
+  else{router.push('/home')}
 
 }
 

@@ -3,7 +3,7 @@ import React from 'react'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react';
 import { redirect } from 'next/dist/server/api-utils';
-import { supabase } from '../../../../lib/supabase';
+import { getSupabaseClient } from '../../../../lib/supabase';
 import './reset-password.css'
 function Page() {
   const router = useRouter()
@@ -13,9 +13,11 @@ const sentEmail=async (e)=>{
 e.preventDefault()
 if (!email){ return setMessage('please fill out the blank input')}
 
+const supabase = getSupabaseClient();
+if (!supabase) return setMessage('Password reset service unavailable');
 await supabase.auth.resetPasswordForEmail(email,{
   redirectTo:"http://localhost:3000/reset-password/set-new-password"
-})&& setMessage('Check your Email to change your password!')
+}) && setMessage('Check your Email to change your password!')
 
   
 }
