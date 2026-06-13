@@ -10,7 +10,7 @@ function Page() {
     const [status, setStatus] = useState('successful')
   return (
     <div className='flex'>
-        <div className="flex-1 ml-69">
+        <div className="flex-1 lg:ml-69">
             <main>
                 {open&&(
                     <>
@@ -32,15 +32,15 @@ function Page() {
                     </div>
                     </>
                 )}
-                <div className="p-5 flex flex-col bg-gray-100 rounded-2xl">
+                <div className="p-5 flex flex-col w-80 lg:w-full bg-gray-100 rounded-2xl">
             <div className="flex mb-5 justify-between gap-2">
                 <div className=" flex items-center gap-2">
-<Link href='#' onClick={()=>router.back()} className='text-blue-500'> back</Link>
-<p className='text-black text-xl font-bold'>New Ticket</p>
+<Link href='#' onClick={()=>router.back()} className='lg:text-base text-xs text-blue-500'> back</Link>
+<p className='text-black lg:text-xl text-sm font-bold'>New Ticket</p>
                 </div>
                 <div className=" flex gap-3 mx-5">
-                <button onClick={()=>router.back()} className='cursor-pointer text-red-500'>discard</button>
-                <button onClick={()=>setOpen(true)} className='text-white bg-blue-900 px-4 py-2 rounded-xl cursor-pointer'>submit ticket</button>
+                <button onClick={()=>router.back()} className='cursor-pointer text-xs lg:text-base text-red-500'>discard</button>
+                <button onClick={()=>setOpen(true)} className='text-white bg-blue-900 text-[9px] lg:text-base lg:px-4 lg:py-2 px-2 py-1 rounded-xl cursor-pointer'>submit ticket</button>
                 </div>
             </div>
             <hr />
@@ -49,24 +49,24 @@ function Page() {
             <div className="flex my-2 justify-between">
             <div className="flex-col w-full flex ">
             <p className='text-zinc-950'>subject</p>
-            <label htmlFor="select-file" className='border px-2 cursor-pointer mt-2  text-start py-2 rounded-xl text-black'> select file</label>
+            <label htmlFor="select-file" className='border px-2 cursor-pointer mt-2 w-full lg:w-120 text-start py-2 rounded-xl lg:text-base text-xs text-black'> select file</label>
             <input type="file" placeholder='select' id="select-file" hidden className='rounded-xl p-2 border' />
             </div>
            <div className="flex-col flex-1 mx-4 w-full flex ">
             <p className='text-zinc-950'>description</p>
-            <label htmlFor="select-file" className='border px-2 cursor-pointer mt-2 w-120 text-start py-2 rounded-xl text-black'> select file</label>
+            <label htmlFor="select-file" className='border px-2 cursor-pointer mt-2 w-30 lg:w-120 text-start py-2 rounded-xl lg:text-base text-xs text-black'> select file</label>
             <input type="file" placeholder='select' id="select-file" hidden className='rounded-xl p-2 border' />
             </div>
             </div>
           <div className="flex my-2 justify-between">
             <div className="flex-col w-full flex ">
             <p className='text-zinc-950'>category</p>
-            <label htmlFor="select-file" className='border px-2 cursor-pointer mt-2  text-start py-2 rounded-xl text-black'> select file</label>
+            <label htmlFor="select-file" className='border px-2 cursor-pointer mt-2 text-xs lg:text-base   text-start py-2 rounded-xl text-black'> select file</label>
             <input type="file" placeholder='select' id="select-file" hidden className='rounded-xl p-2 border' />
             </div>
            <div className="flex-col flex-1 mx-4 w-full flex ">
             <p className='text-zinc-950'>priority</p>
-            <label htmlFor="select-file" className='border px-2 cursor-pointer mt-2 w-120 text-start py-2 rounded-xl text-black'> select file</label>
+            <label htmlFor="select-file" className='border px-2 cursor-pointer mt-2 lg:w-120 w-30 lg:text-base text-xs text-start py-2 rounded-xl text-black'> select file</label>
             <input type="file" placeholder='select' id="select-file" hidden className='rounded-xl p-2 border' />
             </div>
             </div>
@@ -75,16 +75,16 @@ function Page() {
 <button className='bg-violet-200 cursor-pointer mt-2 px-5 py-2 text-violet-500 rounded-xl'>
 <div className='flex gap-2 items-center'>
 <p>+</p>
-<p className='text-nowrap'>upload more items </p>
+<p className='text-nowrap lg:text-base text-[8px]'>upload more items </p>
 </div>
 </button>
-<div className='border rounded-xl px-3  shadow-xl'>
+<div className='border rounded-xl px-3 shadow-xl'>
 <div className='flex justify-between'>
 <div className='flex items-center'>
-    <img src="/frame.svg" alt="" />
+    <img src="/frame.svg" alt="" className='w-3' />
     <div  className='flex  flex-col ml-2'>
-<p className='text-black text-sm text-nowrap'>devs presentation.pdf</p>
-<p className='flex justify-start text-sm'>1.5 MB</p>
+<p className='text-black lg:text-sm text-[8px] text-nowrap'>devs presentation.pdf</p>
+<p className='flex justify-start text-[9px] lg:text-sm'>1.5 MB</p>
     </div>
 </div>
 <div className='flex items-center gap-2 ml-3'>
@@ -93,7 +93,7 @@ function Page() {
 </div>
 </div>
 </div>
-<div className='border rounded-xl px-3  shadow-xl'>
+<div className='border lg:block hidden rounded-xl px-3  shadow-xl'>
 <div className='flex justify-between'>
 <div className='flex items-center'>
     <img src="/frame.svg" alt="" />

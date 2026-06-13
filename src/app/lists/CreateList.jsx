@@ -17,7 +17,7 @@ function CreateList({title,setEditList,editList,show,createList,setCreateList}) 
        <>
                                 <div className='bg-black opacity-50 inset-0 fixed z-50'></div>
                     <div className="flex items-center justify-center z-50 fixed mr-5 inset-0">
-<div className="bg-white capitalize w-130 flex flex-col p-5 rounded-2xl">
+<div className="bg-white capitalize w-80 lg:w-130 flex flex-col p-5 rounded-2xl">
 <div className="flex justify-between items-center">
 <h1 className='text-black'>{title}</h1>
 <p onClick={()=>setCreateList(false)} className='cursor-pointer text-black text-2xl'>×</p>
@@ -42,15 +42,15 @@ function CreateList({title,setEditList,editList,show,createList,setCreateList}) 
     <div className="flex flex-col gap-4 my-4">
 <h1 className='text-black'>color</h1>
 <div className="flex gap-2">
-    <div className="rounded-full p-6 cursor-pointer bg-blue-500"></div>
-    <div className="rounded-full p-6 cursor-pointer bg-black"></div>
-    <div className="rounded-full p-6 cursor-pointer bg-green-800"></div>
-    <div className="rounded-full p-6 cursor-pointer bg-blue-800"></div>
-    <div className="rounded-full p-6 cursor-pointer bg-yellow-500"></div>
-    <div className="rounded-full p-6 cursor-pointer bg-indigo-600"></div>
-    <div className="rounded-full p-6 cursor-pointer bg-stone-600"></div>
-    <div className="rounded-full p-6 cursor-pointer bg-slate-600"></div>
-    <div className="rounded-full p-6 cursor-pointer bg-pink-500"></div>
+    <div className="rounded-full p-3 lg:p-6 cursor-pointer bg-blue-500"></div>
+    <div className="rounded-full p-3 lg:p-6 cursor-pointer bg-black"></div>
+    <div className="rounded-full p-3 lg:p-6 cursor-pointer bg-green-800"></div>
+    <div className="rounded-full p-3 lg:p-6 cursor-pointer bg-blue-800"></div>
+    <div className="rounded-full p-3 lg:p-6 cursor-pointer bg-yellow-500"></div>
+    <div className="rounded-full p-3 lg:p-6 cursor-pointer bg-indigo-600"></div>
+    <div className="rounded-full p-3 lg:p-6 cursor-pointer bg-stone-600"></div>
+    <div className="rounded-full p-3 lg:p-6 cursor-pointer bg-slate-600"></div>
+    <div className="rounded-full p-3 lg:p-6 cursor-pointer bg-pink-500"></div>
 </div>
 </div>
 <div className="w-full gap-2 mt-5 flex">

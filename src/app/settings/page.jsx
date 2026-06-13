@@ -57,13 +57,13 @@ const privacyPolicyClicked=()=>{
 
   return (
     <div className='flex'>
-        <div className="flex-1 ml-69">
+        <div className="flex-1 lg:ml-69">
             <main>
-                <div className="bg-gray-100 p-5 flex flex-col rounded-2xl h-screen">
+                <div className="bg-gray-100 p-5 flex lg:w-full w-80 flex-col rounded-2xl h-screen">
             <div className="text-black text-2xl font-bold">
                 settings
             </div>
-            <div className="flex my-5 text-black flex-row gap-4">
+            <div className="flex my-5 text-black flex-wrap lg:flex-row gap-4">
                 <button onClick={passwordClicked} className={`border ${password ? 'border-violet-400 text-violet-500' : 'border-gray-300'}   px-5 py-1  rounded-2xl cursor-pointer`}>password</button>
                 <button onClick={languageClicked} className={`border ${language ? 'border-violet-400 text-violet-500' : 'border-gray-300'}   px-5 py-1  rounded-2xl cursor-pointer`}>language</button>
                 <button onClick={aboutBuy2Clicked} className={`border ${aboutBuy2 ? 'border-violet-400 text-violet-500' : 'border-gray-300'}   px-5 py-1  rounded-2xl cursor-pointer`}>about buy2</button>

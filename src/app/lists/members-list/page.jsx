@@ -151,7 +151,7 @@ const [confirmDeleteMessage,setConfirmDeleteMessage]=useState(false)
  const [deleteMessage,setDeleteMessage]=useState(false)
  return (
 <div className="flex">
-  <div className="flex-1 ml-69">
+  <div className="flex-1 lg:ml-69">
    
     <main>
       {
@@ -202,11 +202,11 @@ const [confirmDeleteMessage,setConfirmDeleteMessage]=useState(false)
     <Link href='/profile/team-profile' className='text-blue-500'>
     back
     </Link>
-    <h1 className='text-black text-xl font-bold'>My team</h1>
+    <h1 className='text-black lg:text-xl text-sm font-bold'>My team</h1>
     </div>
     <div className="flex flex-row items-center gap-5">
         <button className='text-red-500 cursor-pointer'>discard</button>
-        <button className='bg-blue-900 rounded-xl cursor-pointer text-white px-5 py-2'>Submit KPI</button>
+        <button className='bg-blue-900 rounded-xl cursor-pointer text-white lg:text-base text-xs px-5 py-2'>Submit KPI</button>
     </div>
     </div>
     <hr />
@@ -216,7 +216,7 @@ const [confirmDeleteMessage,setConfirmDeleteMessage]=useState(false)
             </button>
             <input type="text" placeholder="Search tasks..." className="border border-gray-300 text-zinc-950 rounded-xl px-4 py-2 w-full pl-12" />
        </div>
-       <div className="grid grid-cols-3 gap-5">
+       <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
         {
           members.map((member)=>{
             return(

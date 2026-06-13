@@ -152,7 +152,7 @@ const shifts=[
               <div className="bg-black opacity-50 z-50 inset-0 fixed"></div>
 
               <div className="flex justify-end items-center z-50 absolute top-80 inset-0">
-                <div className="bg-white w-120 p-5 mr-5 rounded-2xl flex flex-col ">
+                <div className="bg-white w-80 lg:w-120 p-5 mr-5 rounded-2xl flex flex-col ">
 <div className="flex justify-between items-center ">
   <div className="flex items-center">
     <button onClick={()=>{setMyAvailability(true)
@@ -206,8 +206,8 @@ const shifts=[
             myAvailability&&(
               <>
               <div className="bg-black opacity-50 z-50 inset-0 fixed"></div>
-              <div className="flex justify-end items-center z-50 absolute top-80 inset-0">
-                <div className="bg-white w-120 p-5 mr-5 rounded-2xl flex flex-col ">
+              <div className="flex justify-end items-center z-50 absolute top-130 lg:top-80 inset-0">
+                <div className="bg-white w-80 lg:w-120 p-5 mr-5 rounded-2xl flex flex-col ">
               <div className="flex mb-7 justify-between">
                 <h1 className="text-black text-xl">My Availability</h1>
                 <button onClick={()=>setMyAvailability(false)} className="text-gray-400 text-2xl cursor-pointer">&times;</button>
@@ -433,7 +433,7 @@ Saturday.13 june
       
         
           
-     <div className="grid grid-cols-4 gap-3">
+     <div className="grid grid-cols-1 lg:grid-cols-4 gap-3">
              {
                 shifts.map((shift)=>{
                   return(

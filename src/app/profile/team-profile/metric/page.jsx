@@ -36,7 +36,7 @@ const data={
   return (
     
 <div className="flex">
-  <div className="flex-1 ml-69">
+  <div className="flex-1 lg:ml-69">
     <main>
       {
       open&&(
@@ -81,17 +81,17 @@ const data={
                     </div>
                     </>
                 )}
-      <div className="bg-gray-100 flex flex-col rounded-2xl p-5 my-4">
+      <div className="bg-gray-100 lg:W-full w-80 flex flex-col rounded-2xl p-5 my-4">
     <div className="flex items-center mb-5 justify-between">
     <div className="flex gap-5 items-center flex-row">
-    <Link href='/profile/team-profile' className='text-blue-500'>
+    <Link href='/profile/team-profile' className='text-blue-500 lg:text-base text-xs'>
     back
     </Link>
-    <h1 className='text-black text-xl'>Add KPI</h1>
+    <h1 className='text-black lg:text-xl text-base'>Add KPI</h1>
     </div>
     <div className="flex flex-row items-center gap-5">
-        <button onClick={()=>router.back()} className='text-red-500 cursor-pointer'>discard</button>
-        <button onClick={()=>setSubmitted(true)} className='bg-blue-900 rounded-xl cursor-pointer text-white px-5 py-2'>Submit KPI</button>
+        <button onClick={()=>router.back()} className='text-red-500 cursor-pointer text-xs lg:text-base'>discard</button>
+        <button onClick={()=>setSubmitted(true)} className='bg-blue-900 rounded-xl cursor-pointer text-white lg:px-5 px-2 text-xs lg:text-base py-2'>Submit KPI</button>
     </div>
     </div>
     <hr />

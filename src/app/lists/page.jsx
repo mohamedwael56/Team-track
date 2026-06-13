@@ -84,7 +84,7 @@ const [showInvitations, setShowInvitations] = useState(false)
 
     return (
     <div className='flex'>
-    <div className="flex-1 ml-69">
+    <div className="flex-1 lg:ml-69">
       
         <main>
     
@@ -150,10 +150,10 @@ const [showInvitations, setShowInvitations] = useState(false)
                     </>
                 )
             }
-            <div className="bg-gray-100 flex flex-col p-5 rounded-2xl">
+            <div className="bg-gray-100 w-80 lg:w-full flex flex-col p-5 rounded-2xl">
        <div className="flex justify-between mb-5 items-center">
-        <h1 className='text-black font-bold text-xl'>lists</h1>
-<button onClick={()=>setCreateList('create')} className='bg-blue-900 cursor-pointer text-white px-6 py-2 rounded-2xl'>+ Add List</button>
+        <h1 className='text-black font-bold text-base lg:text-xl'>lists</h1>
+<button onClick={()=>setCreateList('create')} className='bg-blue-900 cursor-pointer text-white lg:text-base text-[10px] px-6 py-2 rounded-2xl'>+ Add List</button>
        </div>
        <hr />
        <div className="flex gap-5 my-5 justify-between items-center">
@@ -172,12 +172,12 @@ const [showInvitations, setShowInvitations] = useState(false)
        </div>
        <div className="flex flex-col my-5 shadow-md p-5 rounded-2xl border gap-5">
 <div className="flex items-center justify-between">
-    <div className="text-black">
+    <div className="text-xs lg:text-base text-black">
         list invitations
     </div>
-    <div className="text-blue-500 flex flex-row gap-4">
-        <button onClick={()=>setShowInvitations(!showInvitations)} className='cursor-pointer'>{showInvitations?'Hide':'Show'} invitations</button>
-       <button onClick={()=>router.push('/lists/lists-invitations')} className='cursor-pointer'>View All</button>
+    <div className="text-blue-500 flex flex-row gap-1 lg:gap-4">
+        <button onClick={()=>setShowInvitations(!showInvitations)} className='cursor-pointer lg:text-base text-[10px]'>{showInvitations?'Hide':'Show'} invitations</button>
+       <button onClick={()=>router.push('/lists/lists-invitations')} className='cursor-pointer lg:text-base text-[10px]'>View All</button>
     </div>
 </div>
 
@@ -190,7 +190,7 @@ showInvitations?(
 
 
        </div>
-       <div className="grid grid-cols-4 gap-3">
+       <div className="grid grid-cols-1 lg:grid-cols-4 gap-3">
      
       {
         lists.map((list)=>{

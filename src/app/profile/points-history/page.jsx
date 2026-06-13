@@ -29,13 +29,13 @@ function Page() {
     const [deductions,setDeductions]=useState(false)
   return (
     <div className='flex'>
-        <div className="flex-1 ml-69">
+        <div className="flex-1 lg:ml-69">
             <main>
                  {openCalender&& (
                     <>
                     <div  className="fixed inset-0 bg-black opacity-50 z-60 " ></div>
                        <div className="fixed inset-0  flex justify-center items-center z-60 " >
-                        <div className="bg-white rounded-2xl p-5">
+                        <div className="bg-white w-80 lg:w-full rounded-2xl p-5">
                 <LocalizationProvider dateAdapter={AdapterDayjs}>
                 <DemoContainer 
                     components={['DateRangePicker']}
@@ -51,23 +51,23 @@ function Page() {
                 </div>
                </div>
                </> )}
-                <div className="bg-gray-100 rounded-2xl p-5 flex flex-col">
-<div className="flex justify-between mb-3">
+                <div className="bg-gray-100 lg:w-full w-80 rounded-2xl p-5 flex flex-col">
+<div className="flex justify-between lg:gap-60 mb-3">
     <div className="flex items-center gap-3">
-        <Link href="#" className="text-blue-600 hover:text-blue-500">
+        <Link href="#" className="text-blue-600 lg:text-base text-[8px] hover:text-blue-500">
        Back
         </Link>
-        <h1 className='text-xl text-black'>points history</h1>
+        <h1 className='lg:text-xl text-xs text-nowrap text-black'>points history</h1>
     </div>
-    <div className="flex items-center mb-3">
-        <button onClick={()=>setDeductions(false)} className={`${!deductions ? 'bg-blue-900 py-2 text-white' : 'bg-gray-200 py-3'} border text-black border-gray-300 flex gap-2 items-center shadow-sm rounded-2xl  px-15 cursor-pointer`}>
+    <div className="flex flex-wrap w-full  items-center mb-3">
+        <button onClick={()=>setDeductions(false)} className={`${!deductions ? 'bg-blue-900 py-2 text-white' : 'bg-gray-200 py-3'} border text-black border-gray-300 lg:text-base text-[9px] flex gap-2 items-center shadow-sm rounded-2xl px-5  lg:px-15 cursor-pointer`}>
             rewards
         </button>
-        <button onClick={()=>setDeductions(true)} className={`${deductions ? 'bg-blue-900 py-2 text-white' : 'bg-gray-200 py-3'} border text-black border-gray-300 flex gap-2 items-center shadow-sm rounded-2xl  px-10 cursor-pointer`}>
+        <button onClick={()=>setDeductions(true)} className={`${deductions ? 'bg-blue-900 py-2 text-white' : 'bg-gray-200 py-3'} border text-black border-gray-300 lg:text-base text-[9px] flex gap-2 items-center shadow-sm rounded-2xl  px-3  lg:px-15 cursor-pointer`}>
             deductions
         </button>
-         <button onClick={()=>setOpenCalender(true)} className='border ml-5 flex gap-2 items-center shadow-sm rounded-2xl py-3 px-4 cursor-pointer'>
-                <img src="/icons/calendar.png" alt="" />
+         <button onClick={()=>setOpenCalender(true)} className='border ml-5 mt-2 flex gap-2 items-center shadow-sm rounded-2xl py-3 lg:text-base text-[8px] block-inline px-4 cursor-pointer'>
+                <img src="/icons/calendar.png" alt="" className='lg:w-fit w-3' />
                 <p className='text-black'>this week {dueStartDate && dueEndDate ? `${dueStartDate.format('MM/DD/YYYY')} - ${dueEndDate.format('MM/DD/YYYY')}` : 'Select dates'}</p>
             </button>
     </div>

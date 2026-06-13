@@ -5,12 +5,12 @@ import Link from 'next/link'
 function page() {
   return (
     <div className='flex'>
-    <div className='flex-1 ml-69'>
+    <div className='flex-1 lg:ml-69'>
         
-        <div className='m-5 p-5 rounded-2xl bg-gray-100'>
+        <div className='m-5 p-5 rounded-2xl w-80 lg:w-full bg-gray-100'>
             <main>
-                <div className='flex justify-between mb-5'>
-                <h1 className='text-2xl text-black '>project library</h1>
+                <div className='flex items-center font-bold justify-between mb-5'>
+                <h1 className='lg:text-2xl text-sm text-black '>project library</h1>
                  <div className="flex items-center gap-3 mt-3">
                <div className="text-blue-700 cursor-pointer ">
                   + Invite

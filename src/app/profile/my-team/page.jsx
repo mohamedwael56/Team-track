@@ -150,15 +150,15 @@ function page() {
   }
   return (
 <div className="flex">
-  <div className="flex-1 ml-69">
+  <div className="flex-1 lg:ml-69">
     <main>
       <div className="bg-gray-100 flex flex-col rounded-2xl p-5 my-4">
     <div className="flex items-center mb-5 justify-between">
     <div className="flex gap-5 items-center flex-row">
-    <Link href='/profile/team-profile' className='text-blue-500'>
+    <Link href='/profile/team-profile' className='text-blue-500 lg:text-base text-xs'>
     back
     </Link>
-    <h1 className='text-black text-xl font-bold'>My team</h1>
+    <h1 className='text-black lg:text-xl font-bold text-xs'>My team</h1>
     </div>
     <div className="flex flex-row items-center gap-5">
         <button className='text-red-500 cursor-pointer'>discard</button>
@@ -172,11 +172,11 @@ function page() {
             </button>
             <input type="text" placeholder="Search tasks..." className="border border-gray-300 text-zinc-950 rounded-xl px-4 py-2 w-full pl-12" />
        </div>
-       <div className="grid grid-cols-3 gap-5">
+       <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
    {
     teamMembers.map((member)=>{
       return(
-        <>
+        
  <Link key={member.id} href="/profile/team-profile" className="flex relative items-center gap-2  shadow rounded-2xl border">
           <img src={member.avatar} alt="" />
           <div className="flex w-full flex-col my-2">
@@ -189,7 +189,7 @@ function page() {
             </div>
           </div>
         </Link>
-      </>)
+      )
    })
    }
         

@@ -8,8 +8,8 @@ const Rewards = () => {
 <h1 className='font-bold text-3xl'>07</h1>
 <p>DEC,2024</p>
     </div>
-    <div className='flex gap-3'>
-    <div className="border p-5 my-5 w-80 flex justify-between rounded-2xl shadow-md">
+    <div className='flex lg:flex-row flex-col gap-3'>
+    <div className="border p-5 my-5 lg:w-80 w-70 flex justify-between rounded-2xl shadow-md">
     <div className="flex items-center gap-3">
 <img src="/icons/frame(1).png" alt="" />
 <div className="flex flex-col">
@@ -21,7 +21,7 @@ const Rewards = () => {
 320
     </div>
     </div>
-    <div className="border p-5 my-5 w-80 flex justify-between rounded-2xl shadow-md">
+    <div className="border p-5 my-5 lg:w-80 w-70 flex justify-between rounded-2xl shadow-md">
     <div className="flex items-center gap-3">
 <img src="/icons/frame(1).png" alt="" />
 <div className="flex flex-col">
@@ -40,8 +40,8 @@ const Rewards = () => {
 <h1 className='font-bold text-3xl'>06</h1>
 <p>DEC,2024</p>
     </div>
-    <div className='flex gap-3'>
-    <div className="border p-5 my-5 w-80 flex justify-between rounded-2xl shadow-md">
+    <div className='flex lg:flex-row flex-col gap-3'>
+    <div className="border p-5 my-5 lg:w-80 w-70 flex justify-between rounded-2xl shadow-md">
     <div className="flex items-center gap-3">
 <img src="/icons/frame(1).png" alt="" />
 <div className="flex flex-col">
@@ -53,7 +53,7 @@ const Rewards = () => {
 280
     </div>
     </div>
-    <div className="border p-5 my-5 w-80 flex justify-between rounded-2xl shadow-md">
+    <div className="border p-5 my-5 lg:w-80 w-70 flex justify-between rounded-2xl shadow-md">
     <div className="flex items-center gap-3">
 <img src="/icons/frame(1).png" alt="" />
 <div className="flex flex-col">
@@ -72,8 +72,8 @@ const Rewards = () => {
 <h1 className='font-bold text-3xl'>04</h1>
 <p>DEC,2024</p>
     </div>
-    <div className='flex gap-3'>
-    <div className="border p-5 my-5 w-80 flex justify-between rounded-2xl shadow-md">
+    <div className='flex lg:flex-row flex-col gap-3'>
+    <div className="border p-5 my-5 lg:w-80 w-70 flex justify-between rounded-2xl shadow-md">
     <div className="flex items-center gap-3">
 <img src="/icons/frame(1).png" alt="" />
 <div className="flex flex-col">
@@ -85,7 +85,7 @@ const Rewards = () => {
 240
     </div>
     </div>
-    <div className="border p-5 my-5 w-80 flex justify-between rounded-2xl shadow-md">
+    <div className="border p-5 my-5 lg:w-80 w-70 flex justify-between rounded-2xl shadow-md">
     <div className="flex items-center gap-3">
 <img src="/icons/frame(1).png" alt="" />
 <div className="flex flex-col">
@@ -97,7 +97,7 @@ const Rewards = () => {
 220
     </div>
     </div>
-    <div className="border p-5 my-5 w-80 flex justify-between rounded-2xl shadow-md">
+    <div className="border p-5 my-5 w-70 lg:w-80 flex justify-between rounded-2xl shadow-md">
     <div className="flex items-center gap-3">
 <img src="/icons/frame(1).png" alt="" />
 <div className="flex flex-col">

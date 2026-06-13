@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "../globals.css";
 import Sidebar from "@/components/sidebar";
 import Header from '@/components/header';
+import DashboardPage from '../../components/DashboardShell';
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
@@ -16,21 +17,9 @@ export const metadata = {
 
 function layout({ children }) {
   return (
-    <html lang="en">
-        <body>
-            <div className="flex"><Sidebar/></div>
-                 
- <div className='flex-1 ml-69'>
-          <Header />
-        </div>
-
-                <div className="layout-container">
-      {children}
-    </div>
-    
-        </body>
-
-    </html>
+   <DashboardPage>
+     {children}
+   </DashboardPage>
   )
 }
 

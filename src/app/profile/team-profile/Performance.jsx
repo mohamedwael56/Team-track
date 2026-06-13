@@ -11,7 +11,7 @@ function Performance() {
     }]
   }
   return (
-<div className='bg-gray-100  flex flex-col rounded-2xl p-5 my-4'>
+<div className='bg-gray-100 lg:ml-0 -ml-13 lg:w-fit w-80 flex flex-col rounded-2xl p-5 my-4'>
 <div className='flex flex-col'>
 <h1 className='text-black'>performance</h1>
 <p className='text-gray-400'>Your monthly analized performance.</p>

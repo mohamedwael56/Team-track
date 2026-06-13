@@ -11,7 +11,7 @@ function WorkQuality({actualField,inputValue,percentageValue,setOpen}) {
 <div className="border mb-5 flex flex-col shadow-xl rounded-xl p-5 mt-5">
 <h1 className='text-gray-600 font-bold text-xl '>work quality</h1>
 <p className='text-black text-sm mb-3 mt-1'>mar 23 ,2023</p>
-<div className="flex flex-row gap-5 mt-2">
+<div className="flex lg:flex-row flex-col gap-5 mt-2">
     <div className="bg-gray-200 w-full items-center flex p-5 justify-between rounded-2xl">
         <p className='text-black font-bold'>target</p>
         <div className="flex w-20 relative text-sm text-nowrap items-center text-black flex-col">

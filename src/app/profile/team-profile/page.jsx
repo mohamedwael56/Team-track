@@ -19,20 +19,20 @@ function page() {
  
   return (
 <div className="flex">
-  <div className="flex-1 ml-69">
+  <div className="flex-1 lg:ml-69">
     <main>
     
     <MyProfile />
    
 <div className=" rounded-2xl p-5  my-4">
-<div className="flex gap-10 justify-between">
+<div className="flex lg:flex-row flex-col gap-10 justify-between">
  
 <Rewards />
 <Tasks />
   
   </div>
 </div>
-<div className="flex  justify-between items-center">
+<div className="flex lg:flex-row flex-col justify-between items-center">
   
   <Performance />
 

@@ -44,7 +44,7 @@ openMessage&&(
 )
     }
     
-<div className="grid grid-cols-3 gap-5 p-5">
+<div className="grid grid-cols-1 lg:grid-cols-3 gap-5 p-5">
     {
         invitationRequests.map((request)=>{
             return(
@@ -54,13 +54,13 @@ openMessage&&(
     <div className="flex gap-2 flex-row items-center">
         <img src="/profile/view-circle.png" className='w-5' alt="" />
         <img src={request.avatar} className='w-8' alt="" />
-        <p className='text-black font-bold'>{request.name}</p>
+        <p className='text-black lg:text-base text-[8px] font-bold'>{request.name}</p>
     </div>
-    <div className="text-gray-400">{request.time}</div>
+    <div className="text-gray-400 lg:text-base text-[8px]  ">{request.time}</div>
 </div>
 <div className="flex gap-1 my-2">
-    <p className='text-gray-400'>Sent you a collaboration invite to</p>
-    <Link href='/lists/lists-invitations' className='font-bold text-blue-500'> My List</Link>
+    <p className='text-gray-400 lg:text-base text-[8px]'>Sent you a collaboration invite to</p>
+    <Link href='/lists/lists-invitations' className='font-bold lg:text-base text-[8px] text-blue-500'> My List</Link>
 </div>
 <div className="flex gap-2">
     <button onClick={()=>setOpenMessage(true)} className='flex-1 bg-red-200 rounded-2xl text-red-500 py-2 px-5 cursor-pointer'>reject</button>

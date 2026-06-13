@@ -118,38 +118,38 @@ const filteredRequests=requests.filter((request)=>{
   };
   return (
     <>
-    <div className=" flex justify-between mb-5 items-center mt-5 gap-5">
+      <div className=" flex justify-between mb-5 items-center mt-5 gap-5">
  <div className="  w-full  relative">
                 <button className='cursor-pointer'>
-                <img src="/icons/search.png" alt="" className='absolute left-4 top-3 ' />
+                <img src="/icons/search.png" alt="" className='absolute left-2 lg:left-4 lg:top-3 top-3 w-2 lg:w-fit ' />
             </button>
-            <input value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} type="text" placeholder="Search tasks..." className="border border-gray-300 text-zinc-950 rounded-xl px-4 py-2 w-full pl-12" />
+            <input value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} type="text" placeholder="Search tasks..." className="border border-gray-300 text-zinc-950 rounded-xl px-4 py-2 w-full lg:text-base text-[7px] pl-5 lg:pl-12" />
        </div>
-       <div className="  w-150">
+       <div className=" w-60 lg:w-150">
       <button className='border flex gap-2 items-center shadow-sm rounded-xl py-2 px-6 cursor-pointer'>
-                <img src="/icons/calendar.png" alt="" />
-                <p className='text-black'>this week : 09/30/2024 - 10/06/2024 </p>
+                <img src="/icons/calendar.png" alt="" className='lg:w-fit w-3' />
+                <p className='lg:text-base text-[8px] text-nowrap text-black'>this week : 09/30/2024 - 10/06/2024 </p>
             </button>
             </div>
    </div>
-   <div className="flex mb-5 justify-between items-center">
-<div className=" flex gap-9 text-black capitalize items-center flex-row">
-    <button onClick={()=>setActiveFilter('all')} className={`cursor-pointer ${activeFilter === 'all' ? 'px-7 py-1 rounded-3xl bg-violet-50 border text-violet-500' : 'px-3 rounded-3xl '}`}>All</button>
-    <button onClick={()=>setActiveFilter('leave')} className={`cursor-pointer ${activeFilter === 'leave' ? 'px-7 py-1 rounded-3xl bg-violet-50 border text-violet-500' : 'px-3 rounded-3xl '}`}>Leave</button>
-    <button onClick={()=>setActiveFilter('overtime')} className={`cursor-pointer ${activeFilter === 'overtime' ? 'px-7 py-1 rounded-3xl bg-violet-50 border text-violet-500' : 'px-3 rounded-3xl '}`}>Over Time </button>
-    <button onClick={()=>setActiveFilter('remote')} className={`cursor-pointer ${activeFilter === 'remote' ? 'px-7 py-1 rounded-3xl bg-violet-50 border text-violet-500' : 'px-3 rounded-3xl '}`}>Remote Work</button>
-    <button onClick={()=>setActiveFilter('loan')} className={`cursor-pointer ${activeFilter === 'loan' ? 'px-7 py-1 rounded-3xl bg-violet-50 border text-violet-500' : 'px-3 rounded-3xl '}`}>Loan Of Use</button>
-    <button onClick={()=>setActiveFilter('reimbursement')} className={`cursor-pointer ${activeFilter === 'reimbursement' ? 'px-7 py-1 rounded-3xl bg-violet-50 border text-violet-500' : 'px-3 rounded-3xl '}`}> Reimbursement</button>
+   <div className="flex mb-5 gap-2 justify-between lg:flex-row flex-wrap items-center">
+<div className=" flex gap-2 lg:gap-9 text-black capitalize items-center lg:flex-row flex-wrap">
+    <button onClick={()=>setActiveFilter('all')} className={`cursor-pointer lg:text-base text-[8px] rounded-3xl ${activeFilter === 'all' ? 'px-7 bg-violet-50 border text-violet-500 py-1 ' : '  px-4'}`}>All</button>
+    <button onClick={()=>setActiveFilter('leave')} className={`rounded-3xl lg:text-base text-[8px] cursor-pointer ${activeFilter === 'leave' ? 'px-7 bg-violet-50 border text-violet-500 py-1' : '   px-4'}`}>Leave</button>
+    <button onClick={()=>setActiveFilter('overtime')} className={`rounded-3xl lg:text-base text-[8px] cursor-pointer ${activeFilter === 'overtime' ? 'px-7 bg-violet-50 border text-violet-500 py-1' : '   px-4'}`}>Over Time </button>
+    <button onClick={()=>setActiveFilter('remote')} className={`rounded-3xl lg:text-base text-[8px] cursor-pointer ${activeFilter === 'remote' ? 'px-7 bg-violet-50 border text-violet-500 py-1' : '   px-4'}`}>Remote Work</button>
+    <button onClick={()=>setActiveFilter('loan')} className={`rounded-3xl lg:text-base text-[8px] cursor-pointer ${activeFilter === 'loan' ? 'px-7 bg-violet-50 border text-violet-500 py-1' : '   px-4'}`}>Loan Of Use</button>
+    <button onClick={()=>setActiveFilter('reimbursement')} className={`rounded-3xl lg:text-base text-[8px] cursor-pointer ${activeFilter === 'reimbursement' ? 'px-7 bg-violet-50 border text-violet-500 py-1' : '   px-4'}`}> Reimbursement</button>
 </div>
-<div onClick={()=>{router.push('/requests/add-request')}} className='bg-blue-900 cursor-pointer flex items-center px-6 py-1 text-white rounded-xl'>
-    <p className='mr-4 text-lg'>+</p>
-    <p>Add Request</p>
+<div onClick={()=>{router.push('/requests/add-request')}} className='bg-blue-900 cursor-pointer flex items-center px-6 py-2 text-white rounded-xl'>
+    <p className='mr-4 text-[8px] lg:text-lg'>+</p>
+    <p className='text-[8px] lg:text-lg text-nowrap'>Add Request</p>
       
 </div>
 
    </div>
     
-    <div className="grid grid-cols-3 gap-5">
+    <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
       {requestDetails && (
         <>
           <div className="bg-black opacity-50 fixed inset-0 z-50"></div>

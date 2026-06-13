@@ -2,7 +2,7 @@ import React from 'react'
 
 function FeedBack() {
   return (
-<div className="flex gap-5 justify-between items-center">
+<div className="flex gap-5 flex-col lg:flex-row justify-between items-center">
         <div className="border w-full p-5 shadow-md rounded-xl text-zinc-800">
             Lorem ipsum, dolor sit amet consectetur
              adipisicing elit. Fuga ipsa molestiae

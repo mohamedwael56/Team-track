@@ -11,12 +11,12 @@ function Performance() {
     }]
   }
   return (
- <div className='bg-gray-100  flex flex-col rounded-2xl p-5 my-4'>
+ <div className='bg-gray-100 lg:w-fit w-80 lg:ml-0 -ml-5 flex flex-col rounded-2xl p-5 my-4'>
 <div className='flex flex-col'>
-<h1 className='text-black'>performance</h1>
-<p className='text-gray-400'>Your monthly analized performance.</p>
+<h1 className='text-black lg:text-base text-xs'>performance</h1>
+<p className='text-gray-400 lg:text-base text-[10px]'>Your monthly analized performance.</p>
 </div>
-<div className='w-80 h-80 my-4'>
+<div className='lg:w-80 lg:h-80 w-60 h-60 my-4'>
 <Doughnut
 data={data}
 options={{cutout:'0%',plugins:{legend:{position:'bottom'}}}}
@@ -24,15 +24,15 @@ options={{cutout:'0%',plugins:{legend:{position:'bottom'}}}}
 </div>
 <div className='flex flex-col w-full text-black'>
  <div className="flex justify-between mb-2 ">
-<h1>performance</h1>
-<p className='text-green-500 font-bold'>88</p>
+<h1 className='lg:text-base text-xs'>performance</h1>
+<p className='text-green-500 font-bold lg:text-base text-xs'>88</p>
  </div>
   
-  <div className=' relative my-2 bg-green-200 rounded-2xl h-3'>
-    <div className=" absolute top-1/2 -translate-y-1/2 w-5 h-5 bg-green-600 rounded-full transition-all duration-500" style={{left:'66%'}}>
+  <div className=' relative my-2 bg-green-200 rounded-2xl lg:h-3 h-2'>
+    <div className=" absolute top-1/2 -translate-y-1/2 lg:w-5 lg:h-5 w-3 h-3 bg-green-600 rounded-full transition-all duration-500" style={{left:'66%'}}>
     </div>
     </div>
-    <div className="grid grid-cols-6 w-full my-2 gap-10">
+    <div className="grid grid-cols-6 w-full lg:text-base text-xs my-2 gap-10">
       <div>0</div>
       <div>20</div>
       <div>40</div>
@@ -40,7 +40,7 @@ options={{cutout:'0%',plugins:{legend:{position:'bottom'}}}}
       <div>80</div>
       <div>100</div>
   </div>
-  <div className="bg-green-200 capitalize p-5 flex items-center justify-center rounded-xl text-green-600">
+  <div className="bg-green-200 lg:text-base text-xs capitalize p-5 flex items-center justify-center rounded-xl text-green-600">
     good performance
   </div>
 </div>

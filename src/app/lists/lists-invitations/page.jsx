@@ -103,7 +103,7 @@ function Page() {
     
   return (
     <div className='flex'>
-        <div className="flex-1 ml-69">
+        <div className="flex-1 lg:ml-69">
           
             <main>
                 {
@@ -124,13 +124,13 @@ openMessage&&(
 </>
 )
     }
-                <div className="flex flex-col bg-gray-100 p-5 rounded-2xl">
+                <div className="flex flex-col lg:w-full w-80 bg-gray-100 p-5 rounded-2xl">
 <div className="flex items-center gap-5 mb-5">
 <Link href="/lists" className='text-blue-500'>back</Link>
 <p className='text-black font-bold text-xl'>lists invitations</p>
 </div>
 <hr />
-<div className="grid grid-cols-3 mt-5 gap-5">
+<div className="grid grid-cols-1 lg:grid-cols-3 mt-5 gap-5">
     {
         invitationRequests.map((request)=>{
             return(

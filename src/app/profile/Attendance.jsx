@@ -2,19 +2,19 @@ import React from 'react'
 
 function Attendance() {
   return (
-<div className="bg-gray-100  flex flex-col rounded-2xl p-5 mt-5">
+<div className="bg-gray-100 -ml-5 lg:w-full w-80 flex flex-col rounded-2xl p-5 mt-5">
 <div className="flex justify-between items-center">
   <div className='flex flex-col'>
-    <h1 className='text-black'>attendance</h1>
-    <p className='text-gray-400'>Attendance history analized during the month.</p>
+    <h1 className='text-black lg:text-base text-xs'>attendance</h1>
+    <p className='text-gray-400 lg:text-base text-[8px]'>Attendance history analized during the month.</p>
   </div>
   <div className="flex ml-20 ">
-    <button className='cursor-pointer text-black bg-gray-200 py-1 px-2 rounded-2xl'>All time</button>
-    <button className='cursor-pointer text-gray-400 bg-gray-200 py-1 px-2 rounded-2xl'>30 days</button>
-    <button className='cursor-pointer text-gray-400 bg-gray-200 py-1 px-2 rounded-2xl'>90 days</button>
+    <button className='cursor-pointer lg:text-base text-[8px] text-black bg-gray-200 py-1 px-2 rounded-2xl'>All time</button>
+    <button className='cursor-pointer lg:text-base text-[8px] text-gray-400 bg-gray-200 py-1 px-2 rounded-2xl'>30 days</button>
+    <button className='cursor-pointer lg:text-base text-[8px] text-gray-400 bg-gray-200 py-1 px-2 rounded-2xl'>90 days</button>
   </div>
 </div>
-<div className="mt-2 grid grid-cols-2 gap-3">
+<div className="mt-2 grid grid-cols-1 lg:grid-cols-2 gap-3">
 <div className="rounded-xl flex flex-col border shadow-md p-3">
 <div className="flex justify-between items-center">
 <h1 className='text-zinc-700'>attendance rate</h1>

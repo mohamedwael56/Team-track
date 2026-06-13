@@ -21,7 +21,7 @@ function Page() {
  
   return (
 <div className="flex">
-  <div className="flex-1 ml-69">
+  <div className="flex-1 lg:ml-69">
   
     <main>
       {
@@ -29,7 +29,7 @@ function Page() {
           <>
           <div className="fixed inset-0 bg-black opacity-50 z-60"></div>
           <div className="sticky inset-0 flex justify-end mr-5 items-center z-60">
-            <div className="bg-white flex flex-col rounded-2xl p-5 w-100">
+            <div className="bg-white flex flex-col rounded-2xl p-5 w-80 lg:w-100">
             <div className="flex justify-between">
  <h1 className='text-black text-2xl font-bold'>More details</h1>
  <p onClick={()=>setOpen(false)} className='cursor-pointer text-3xl text-black'>×</p>
@@ -82,7 +82,7 @@ function Page() {
     <MyProfile setOpen={setOpen} />
  <MyTeam />
 <Rewards />
-<div className="flex  justify-between items-center">
+<div className="flex lg:flex-row flex-col  justify-between items-center">
  <Performance />
   
   <div className="flex flex-col">

@@ -20,10 +20,10 @@ function ShiftsRequests({data}) {
               <>
               <div className="fixed inset-0 bg-black z-50 opacity-50"></div>
             <div className="fixed flex inset-0 items-center justify-center z-50">
-              <div className="bg-white h-95 flex flex-col items-center rounded-2xl p-5 ">
+              <div className="bg-white lg:w-full w-80 h-95 flex flex-col items-center rounded-2xl p-5 ">
              <img src="icons/icon(4).png" alt="" />
              <h1 className="text-black my-auto text-xl w-[300px] text-center">Are you sure you want to request coverage for this shift?</h1>
-              <p className="my-auto w-[400px] text-gray-400 text-center">the selected shift will be published the shift market for other eligible employees to claim.</p>
+              <p className="my-auto lg:w-[400px] w-[300px] text-gray-400 text-center">the selected shift will be published the shift market for other eligible employees to claim.</p>
                 <div className="w-full gap-3 mt-auto flex">
                   <button onClick={()=>setCoverage(false)} className="border cursor-pointer border-gray-400 text-gray-400 flex-1 py-2 rounded-2xl ">cancel</button>
                   <button onClick={()=>{setCoverage(false) 

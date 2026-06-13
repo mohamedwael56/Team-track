@@ -8,7 +8,7 @@ function Page() {
   const [activeTab, setActiveTab] = useState('questions');
   return (
     <div className='flex'>
-        <div className="flex-1 ml-69">
+        <div className="flex-1 lg:ml-69">
             <main>
                 <div className="bg-gray-100 p-5 flex flex-col rounded-2xl h-screen">
             <div className="text-black flex justify-between mb-5 text-2xl font-bold">

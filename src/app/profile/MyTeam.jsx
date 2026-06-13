@@ -2,24 +2,35 @@ import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 import Link from 'next/link'
-
+import 'swiper/css';
+import 'swiper/css/pagination';
 function MyTeam() {
   return (
-     <div className="bg-gray-100 w-full flex flex-col rounded-2xl p-5 my-4">
+     <div className="bg-gray-100 w-80 lg:w-full flex flex-col rounded-2xl p-5 my-4">
         <div className="flex items-center justify-between">
 <div className="flex flex-col">
-  <h1 className='text-black'>My team</h1>
-  <p className='text-gray-400'>Here you can see all the members at your team.</p>
+  <h1 className='text-black lg:text-base text-xs'>My team</h1>
+  <p className='text-gray-400 lg:text-base text-[10px]'>Here you can see all the members at your team.</p>
 </div>
 <div className="">
-  <Link href='/profile/my-team' className='text-blue-500'>view all</Link>
+  <Link href='/profile/my-team' className='text-blue-500 lg:text-base text-[8px]'>view all</Link>
 </div>
         </div>
-        <div className='w-250'>
+        <div className='lg:w-250 w-full'>
          <Swiper
       modules={[Navigation, Pagination, Scrollbar, A11y]}
       spaceBetween={10}
-      slidesPerView={3}
+      breakpoints={{
+        0:{
+          slidesPerView: 1},
+        768:{
+          slidesPerView: 2,
+        },
+        1024:{
+          slidesPerView:3,
+
+        }
+      }}
       pagination={{ clickable: true }}
     >
       <SwiperSlide> 

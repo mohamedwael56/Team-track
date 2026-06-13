@@ -2,22 +2,22 @@ import React from 'react'
 
 function TaskProductivity() {
   return (
-<div className="bg-gray-100  flex flex-col rounded-2xl p-5 my-4">
+<div className="bg-gray-100 w-80 lg:ml-0 -ml-5 lg:w-full flex flex-col rounded-2xl p-5 my-4">
 <div className="flex justify-between items-center">
   <div className='flex flex-col'>
-    <h1 className='text-black'>task productivity</h1>
-    <p className='text-gray-400'>Task Productivity analized during the month.</p>
+    <h1 className='text-black lg:text-base text-xs'>task productivity</h1>
+    <p className='text-gray-400 lg:text-base text-[8px]'>Task Productivity analized during the month.</p>
   </div>
   <div className="flex ml-20 ">
-    <button className='cursor-pointer text-black bg-gray-200 py-1 px-2 rounded-2xl'>All time</button>
-    <button className='cursor-pointer text-gray-400 bg-gray-200 py-1 px-2 rounded-2xl'>30 days</button>
-    <button className='cursor-pointer text-gray-400 bg-gray-200 py-1 px-2 rounded-2xl'>90 days</button>
+    <button className='cursor-pointer text-black bg-gray-200 py-1 px-2 rounded-2xl lg:text-base text-[8px]'>All time</button>
+    <button className='cursor-pointer text-gray-400 bg-gray-200 py-1 px-2 rounded-2xl lg:text-base text-[8px]'>30 days</button>
+    <button className='cursor-pointer text-gray-400 bg-gray-200 py-1 px-2 rounded-2xl lg:text-base text-[8px]'>90 days</button>
   </div>
 </div>
-<div className="rounded-xl flex flex-col border shadow-md p-3">
+<div className="rounded-xl my-1 flex flex-col border shadow-md p-3">
   <div className="flex justify-between mb-3">
-    <h1 className='text-gray-400'>deadline compliance</h1>
-    <p className='text-black'>34</p>
+    <h1 className='text-gray-400 lg:text-base text-[8px]'>deadline compliance</h1>
+    <p className='text-black lg:text-base text-[8px]'>34</p>
   </div>
 <div className="relative w-full bg-red-200 rounded-full h-2">
   <div className="bg-red-600 rounded-full h-2" style={{width:'35%'}} />
@@ -25,7 +25,7 @@ function TaskProductivity() {
   34</div>
 </div>
 </div>
-<div className="flex items-center justify-between">
+<div className="flex lg:flex-row flex-col items-center justify-between">
   <div className="rounded-xl my-2 flex flex-col border shadow-md p-3">
 <div className="flex justify-between items-center">
   <h1 className='text-gray-400'>Task Completion Rate</h1>
@@ -42,7 +42,7 @@ function TaskProductivity() {
   <p className='text-gray-400'>100 Tasks</p>
 </div>
   </div>
-  <div className="rounded-xl flex-1 h-24 bg-gray-200 items-center ml-2 flex justify-between border shadow-md p-3">
+  <div className="rounded-xl w-full flex-1 h-24 bg-gray-200 items-center ml-2 flex justify-between border shadow-md p-3">
     <div className="flex flex-col text-black">
       <h1>Average Tasks</h1>
       <p>Delay (in days)</p>

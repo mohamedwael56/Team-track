@@ -32,7 +32,7 @@ const router = useRouter();
   }
   return (
 <div className="flex">
-  <div className="flex-1 ml-69">
+  <div className="flex-1 lg:ml-69">
     <main>
       {
         sendRequest&&(
@@ -49,18 +49,18 @@ const router = useRouter();
 </>
         )
       }
-      <div className="bg-gray-100 flex flex-col rounded-2xl p-5 my-4">
+      <div className="bg-gray-100 w-80 lg:w-full flex flex-col rounded-2xl p-5 my-4">
    <div className="flex mb-5 justify-between items-center">
    <div className="flex flex-row gap-5 items-center">
-    <Link href='' className='text-blue-500'>back</Link>
-    <div className="text-black text-xl font-bold">
+    <Link href='' className='text-blue-500 text-[8px] lg:text-base'>back</Link>
+    <div className="text-black lg:text-xl text-[9px] font-bold">
 Add Requests
     </div>
    </div>
     
     <div className="flex gap-5 mr-5">
-<button onClick={()=>router.push('/requests')} className='text-red-500 cursor-pointer text-lg'>Discard</button>
-        <button onClick={()=>setSendRequest(true)} className='px-9 cursor-pointer py-2 text-white bg-blue-900 rounded-2xl'>Send request</button>
+<button onClick={()=>router.push('/requests')} className='text-red-500 cursor-pointer text-[9px] lg:text-lg'>Discard</button>
+        <button onClick={()=>setSendRequest(true)} className='lg:px-9 px-3 cursor-pointer py-2 text-white text-[9px] lg:text-base bg-blue-900 rounded-2xl'>Send request</button>
       
     </div>
    </div>
@@ -68,7 +68,7 @@ Add Requests
    <div className="mb-3 font-bold items-center text-black mt-5 gap-5">
 Request Type
    </div>
-<div className=" mb-5 gap-5 w-full text-black grid grid-cols-5">
+<div className=" mb-5 gap-2 lg:gap-5 w-full text-black grid lg:grid-cols-5">
     <button onClick={()=>setActiveTab('Leave')} className={`${activeTab === 'Leave' ? 'bg-blue-900 text-white' : 'bg-gray-200 text-black'} cursor-pointer px-7 py-5 rounded-xl `}>
         <img src="/requests/stopwatch-minus.png" alt="" />
         <p className='text-start mt-1'>Leave</p>
@@ -90,13 +90,11 @@ Request Type
         <p className='text-start mt-1'>Reimbursement</p>
         </button>
 </div>
-
 {activeTab === 'Leave' && <Leave />}
 {activeTab === 'Over Time' && <OverTime />}
 {activeTab === 'Remote Work' && <RemoteWork />}
 {activeTab === 'Loan' && <Loan />}
 {activeTab === 'Reimbursement' && <Reimbursement />}
-
    </div>
 
 
