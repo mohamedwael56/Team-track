@@ -6,7 +6,7 @@ import { useState } from 'react'
 function Page() {
     const data=[{
         id:1,
-        img:'/icons/noon.jpg',
+        img:'/icons/Noon.jpg',
         prize:'$10 Gift Card',
         points:'200 points to redeem'
 
@@ -19,7 +19,7 @@ function Page() {
 },
 {
         id:3,
-        img:'/icons/noon.jpg',
+        img:'/icons/Noon.jpg',
         prize:'$20 Gift Card',
         points:'redeem for 400 points'
 },
@@ -31,7 +31,7 @@ function Page() {
 },
 {
         id:5,
-        img:'/icons/noon.jpg',
+        img:'/icons/Noon.jpg',
         prize:'$30 Gift Card',
         points:'redeem for 600 points'
 },
@@ -43,7 +43,7 @@ function Page() {
 },
 {
         id:7,
-        img:'/icons/noon.jpg',
+        img:'/icons/Noon.jpg',
         prize:'$40 Gift Card',
         points:'redeem for 800 points'
 },
@@ -55,7 +55,7 @@ function Page() {
 },
 {
         id:9,
-        img:'/icons/noon.jpg',
+        img:'/icons/Noon.jpg',
         prize:'$50 Gift Card',
         points:'redeem for 1000 points'
 },{
@@ -66,7 +66,7 @@ function Page() {
 },
 {
         id:11,
-        img:'/icons/noon.jpg',  
+        img:'/icons/Noon.jpg',  
         prize:'$60 Gift Card',
         points:'redeem for 1200 points'
 
@@ -80,7 +80,7 @@ function Page() {
 },
 {
         id:13,
-        img:'/icons/noon.jpg',
+        img:'/icons/Noon.jpg',
         prize:'$70 Gift Card',
         points:'redeem for 1400 points' 
 },
@@ -92,7 +92,7 @@ function Page() {
 },
 {
         id:15,  
-        img:'/icons/noon.jpg',  
+        img:'/icons/Noon.jpg',  
         prize:'$80 Gift Card',
         points:'redeem for 1600 points'
 }]
@@ -184,7 +184,7 @@ open&&(
                  <div key={item.id} className="border mr-10 bg-white shadow-xl px-3 w-50 gap-5 rounded-2xl flex flex-col items-center py-3">
    <div className="flex justify-between">
     <div className="flex-1 justify-center items-center flex flex-col w-full gap-3 ">
-    <img src="/icons/frame.png" alt="" width={70} /> 
+    <img src="/icons/Frame.png" alt="" width={70} /> 
    <img src={item.img} className="rounded-xl" alt="" />
     <p className=' text-black  font-bold'>{item.prize}</p>
     <p className="text-gray-400  underline text-sm"> {item.points} </p>

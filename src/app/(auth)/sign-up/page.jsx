@@ -2,7 +2,7 @@
 import React from 'react'
 import Link from 'next/link'
 import { useState } from 'react'
-import { supabase } from '../../../../lib/supabase';
+import { getSupabaseClient } from '../../../../lib/supabase';
 import { useRouter } from 'next/navigation';
 import './sign-up.css'
 function Page() {
@@ -20,13 +20,15 @@ const signUpButton= async (e)=>{
   e.preventDefault()
   if(!password||!confirmPassword||!email){return setShowMessage('please fill out the blank inputs')}
   if(password!==confirmPassword){return setShowMessage('password does not match confirm password')}
+  const supabase = getSupabaseClient();
+  if (!supabase) return setShowMessage('Registration service unavailable');
   const {data,error}=await supabase.auth.signUp({
-  email:email.trim(),
-  password
-})
-if(error){console.error(error,'something went wrong!')}else{
-  setConfirmMessage('Congratulation!')
-}
+    email:email.trim(),
+    password
+  })
+  if(error){console.error(error,'something went wrong!'); setShowMessage('Registration failed')}else{
+    setConfirmMessage('Congratulation!')
+  }
 }
 
 

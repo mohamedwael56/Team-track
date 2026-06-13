@@ -94,7 +94,7 @@ function page() {
 </div>
 <div className='flex w-full text-black justify-between'>
   <div className='flex items-center gap-2'>
-  <img src="/icons/vector2.png" alt="" />
+  <img src="/icons/Vector2.png" alt="" />
 <span>{recognition.points}</span>
 </div>
 <span className="ml-2">{recognition.date}</span>

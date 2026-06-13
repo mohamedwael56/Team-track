@@ -11,7 +11,7 @@ function DiscardChange({show,onClose,onConfirm}) {
         <div className='fixed flex justify-center items-center z-60 p-5 inset-0'>
         <div className="flex flex-col items-center justify-center bg-gray-100 p-5 rounded-2xl">
        
-        <img src="/icons/icon(2).png" alt="" className='my-5' />
+        <img src="/icons/Icon(2).png" alt="" className='my-5' />
     <h1 className='text-black my-3 font-bold'>Discard Change ?</h1>
         <p className='text-gray-500 mx-5'>Are you sure you want to Discard the changes  </p>
         <p className='text-gray-500 '>you made for this task?</p>

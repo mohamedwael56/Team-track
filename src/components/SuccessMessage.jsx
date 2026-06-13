@@ -11,7 +11,7 @@ function SuccessMessage({ show,onClose,text }) {
         <div className='fixed flex justify-center items-center z-60 p-5 inset-0'>
         <div className="flex flex-col items-center justify-center bg-gray-100 p-5 rounded-2xl">
        
-        <img src="/icons/icon(5).png" alt="" className='my-5' />
+        <img src="/icons/Icon(5).png" alt="" className='my-5' />
     <h1 className='text-black my-3 font-bold'>{text.title}</h1>
     <p className='text-gray-500 mx-5 w-[300px] text-center'> {text.description} </p>
     <button onClick={()=>onClose(false)} className='w-full cursor-pointer border rounded-2xl mt-7 bg-blue-900 py-3'>Got it</button>
