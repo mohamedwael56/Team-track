@@ -43,7 +43,7 @@ const data={
         <>
         <div className='fixed bg-black opacity-50 inset-0 z-50'></div>
         <div className="fixed inset-0 z-50 flex items-center justify-center">
-          <div className="bg-white p-2 flex-col w-120 rounded-2xl">
+          <div className="bg-white p-2 flex-col lg:w-120 w-80 rounded-2xl">
             <div className="flex justify-between mb-5 items-center">
           <h1 className='text-black'>add actual field</h1>
           <button onClick={()=>setOpen(false)} className='text-2xl cursor-pointer text-black'>×</button>
@@ -65,7 +65,7 @@ const data={
                     <>
                     <div className="bg-black opacity-50 fixed inset-0 z-50"></div>
                     <div className="fixed inset-0 flex items-center justify-center z-50">
-                    <div className="bg-white p-5 items-center flex flex-col rounded-2xl ">
+                    <div className="bg-white p-5 items-center lg:w-full w-80flex flex-col rounded-2xl ">
                     <img src={status === 'successful' ? "/icons/icon.png" : "/icons/icon(2).png"} width={70} />
                     <div className="flex flex-col items-center justify-center">
                     <div className="mt-5  text-black"> {status === 'successful' ? ' successful submission' : ' submission failed'}</div>
