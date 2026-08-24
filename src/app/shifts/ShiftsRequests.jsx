@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image';
 import { Doughnut } from "react-chartjs-2";
 import { useState } from 'react';
 function ShiftsRequests({data}) {
@@ -21,7 +22,7 @@ function ShiftsRequests({data}) {
               <div className="fixed inset-0 bg-black z-50 opacity-50"></div>
             <div className="fixed flex inset-0 items-center justify-center z-50">
               <div className="bg-white lg:w-full w-80 h-95 flex flex-col items-center rounded-2xl p-5 ">
-             <img src="icons/icon(4).png" alt="" />
+             <Image width={120} height={120} src="/icons/icon(4).png" alt="" />
              <h1 className="text-black my-auto text-xl w-[300px] text-center">Are you sure you want to request coverage for this shift?</h1>
               <p className="my-auto lg:w-[400px] w-[300px] text-gray-400 text-center">the selected shift will be published the shift market for other eligible employees to claim.</p>
                 <div className="w-full gap-3 mt-auto flex">
@@ -41,7 +42,7 @@ function ShiftsRequests({data}) {
                <div className="fixed inset-0 bg-black z-50 opacity-50"></div>
             <div className="fixed flex inset-0 items-center justify-center z-50">
               <div className="bg-white flex flex-col items-center rounded-2xl p-5 ">
-             <img src="icons/icon.png" alt="" width={120} />
+             <Image width={120} height={120} src="/icons/icon.png" alt="" />
              <h1 className="text-black my-2 text-2xl w-[300px] text-center"> successful request!</h1>
               <p className="my-2 w-[400px] text-gray-400 text-center"> coverage request submitted successfully.</p>
                 <div className="w-full gap-3 mt-2 flex">
@@ -75,12 +76,12 @@ function ShiftsRequests({data}) {
                   <div className="flex flex-col items-center gap-2 text-sm">
                   
                     <div className="flex items-center gap-3">
-                      <img src="/icons/green-sign.png" alt="" />
+                      <Image width={4}  height={4} className='mr-1' src="/icons/green-sign.png" alt="" />
                       <span>clock in</span>
                       <span className="text-green-600">09:00 AM</span>
                     </div>
                     <div className="flex items-center gap-3">
-                      <img src="/icons/red-sign.png" alt="" />
+                      <Image width={4} height={4} src="/icons/red-sign.png" alt="" />
                       <span className="text-nowrap">clock out</span>
                       <span className="text-red-600 text-nowrap">05:00 PM</span>
                     </div>
@@ -90,21 +91,21 @@ function ShiftsRequests({data}) {
                 <div className="flex ml-3 mb-2 gap-2 w-full flex-col text-sm  ">
                  <div className="flex  items-start gap-15">
                     <div className="flex gap-1 items-center">
-                        <img src="/shifts/briefcase.png" alt="" />
+                        <Image width={15} height={20} src="/shifts/briefcase.png" alt="" />
                         <p className="text-gray-400">site</p>
                     </div>
                     <div className="text-black">Capital Restaurant</div>
                  </div>
                  <div className="flex items-start gap-15 ">
                     <div className="flex gap-1 items-center">
-                        <img src="/shifts/briefcase.png" alt="" />
+                        <Image width={15} height={20} src="/shifts/briefcase.png" alt="" />
                         <p className="text-gray-400">role</p>
                     </div>
                     <div className="text-black text-start ">waiter</div>
                  </div>
                  <div className="flex items-start gap-12">
                     <div className="flex gap-1 items-center">
-                        <img src="/shifts/alarm-clock.png" alt="" />
+                        <Image width={15} height={20} src="/shifts/alarm-clock.png" alt="" />
                         <p className="text-gray-400">break</p>
                     </div>
                     <div className="text-black">09:00 - 09:15 am</div>

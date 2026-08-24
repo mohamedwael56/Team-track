@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import { useState } from 'react';
+import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 
 function Lists({list,setCreateList}) {
@@ -20,7 +21,7 @@ const [listOption, setListOption] = useState(false);
         <div className='fixed flex justify-center items-center z-60 p-5 inset-0'>
         <div className="flex flex-col items-center justify-center bg-gray-100 p-5 rounded-2xl">
        
-        <img src="/icons/delete-03.png" alt="" className='bg-red-100 p-5 rounded-full my-5 ' />
+        <Image width={60} height={60} src="/icons/delete-03.png" alt="" className='bg-red-100 p-5 rounded-full my-5 ' />
     <h1 className='text-black my-3 font-bold'>Delete List ?</h1>
         <p className='text-gray-500 '>Are you sure you want to delete this List ? </p>
         <p className='text-gray-500 '>this action is irreversible</p>
@@ -43,17 +44,17 @@ setDeleteTask(false)}} className='w-full bg-red-500 py-3 rounded-xl text-white c
         <div className="bg-white absolute border flex flex-col gap-2 px-3 mt-7 right-3 w-25 text-black border-gray-300 py-2 z-50 shadow-xl rounded-xl">
        <button onClick={()=>{setListOption(false)
         setCreateList('edit')}} className='cursor-pointer flex items-center gap-2 '>
-        <img className='w-4' src="/icons/edit-02.png" alt="" />
+        <Image width={16} height={16} src="/icons/edit-02.png" alt="" />
         Edit</button>
        <button onClick={()=>setDeleteTask(true)} className='cursor-pointer flex items-center gap-2'>
-        <img className='w-4' src="/icons/delete-03.png" alt="" />
+        <Image width={16} height={16} src="/icons/delete-03.png" alt="" />
         Delete</button>
         {confirmDeleteTask&&(
         <>
         <div className='fixed inset-0 bg-black z-60 opacity-50 '></div>
         <div className='fixed flex justify-center items-center z-60 p-5 inset-0'>
         <div className="flex flex-col items-center justify-center w-100 bg-gray-100 p-5 rounded-2xl">
-        <img src="/icons/icon(5).png" alt="" className='my-5' />
+        <Image width={90} height={90} src="/icons/icon(5).png" alt="" className='my-5' />
     <h1 className='text-black my-3 font-bold'>Done!</h1>
     <p className='text-gray-500 mx-5 '> List is deleted successfully  </p>
     <button onClick={()=>setConfirmDeleteTask(false)} className='w-full text-white cursor-pointer border rounded-2xl mt-7 bg-blue-900 py-3'>Got it</button>     

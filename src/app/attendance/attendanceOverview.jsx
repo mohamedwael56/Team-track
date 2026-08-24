@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-
+import Image from 'next/image'
 function AttendanceOverview({open,setOpen}) {
   return (
     <>
@@ -25,12 +25,16 @@ function AttendanceOverview({open,setOpen}) {
 <hr className='my-3' />
 <div className="flex flex-col text-black gap-3">
 <div className="flex w-full items-center gap-1">
-<img src="/icons/green-sign.png" alt="" />
+<div className="relative h-5 w-1">
+<Image fill src="/icons/green-sign.png" alt="" />
+</div>
 <div> Clock in</div>
 <div className="flex-1 text-center text-green-700">--</div>
 </div>
 <div className="flex w-full items-center gap-1">
-<img src="/icons/red-sign.png" alt="" />
+<div className="relative h-5 w-1">
+<Image fill src="/icons/red-sign.png" alt="" />
+</div>
 <div> Clock out</div>
 <div className="flex-1 text-center mr-2 text-red-700">--</div>
 </div>
@@ -62,21 +66,27 @@ function AttendanceOverview({open,setOpen}) {
     <div className="flex text-black flex-col gap-2">
 
 <div className="flex items-center gap-3 ml-5">
-    <img src="/attendance/finger-print.png" alt="" />
+   <div className="relative w-13 h-13 object-cover">
+    <Image src="/attendance/finger-print.png" fill objectFit="cover" />
+   </div>
     <div className="flex gap-1 flex-col">
         <h1>00:00</h1>
         <p>total working hours</p>
     </div>
 </div>
 <div className="flex gap-3 ml-5">
-    <img src="/attendance/break.png" width={55} />
+     <div className="relative object-cover h-13 w-13">
+    <Image src="/attendance/break.png" fill objectFit='cover' />
+</div>
     <div className="flex gap-1 flex-col">
         <h1>00:00</h1>
         <p>total break hours</p>
     </div>
 </div>
 <div className="flex items-center gap-3 ml-5">
-    <img src="/attendance/lateness.png" alt="" />
+  <div className="relative h-13 w-13">
+    <Image src="/attendance/lateness.png" fill />
+    </div>
     <div className="flex gap-1 flex-col">
         <h1>00:00</h1>
         <p>total lateness hours</p>

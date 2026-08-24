@@ -2,6 +2,7 @@ import Header from '@/components/header'
 import Sidebar from '@/components/sidebar'
 import React from 'react'
 import { useState } from 'react'
+import Image from 'next/image'
 function Page() {
 
   const [open ,setOpen]=useState(false)
@@ -30,13 +31,13 @@ function Page() {
 <div className="flex items-center gap-2 mt-2 text-lg">
 <input type="radio" name="language" id="arabic" checked={checked==='arabic'} onChange={()=>setChecked('arabic')} className='w-4 h-4'  />
 <label htmlFor="arabic" className='flex gap-2 items-center'>
-    <img src="/icons/SA.png" alt=""  />
+    <Image width={25} height={40} src="/icons/SA.png" alt=""  />
      Arabic</label>
 </div>
 <div className="flex items-center gap-2 my-4 text-lg">
 <input type="radio" checked={checked==='english'}  onChange={()=>setChecked('english')} name="language" id="english" className='w-4 h-4' />
 <label className='flex gap-2 items-center' htmlFor="english">
-    <img src="/icons/GB.png" alt="" />
+    <Image width={25} height={40} src="/icons/GB.png" alt="" />
      English</label>
 </div>
                       <button onClick={()=>setOpen(true)} className='bg-blue-900 mt-4 w-full rounded-2xl py-2 text-white cursor-pointer'>apply changes</button>

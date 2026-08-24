@@ -5,8 +5,11 @@ import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import Image from 'next/image';
 import 'swiper/css/scrollbar';
 import Link from 'next/link';
+
+
 function Meetings() {
   const meetings=[{
     id:1,
@@ -81,15 +84,15 @@ function Meetings() {
    <div className="flex justify-between">
               <div className="flex items-center gap-3 mt-3">
                 <div className="flex items-center mt-1 -space-x-2">
-              <img src="Oval.png" alt="" />
-              <img src="Oval2.png" alt="" />
-              <img src="Oval3.png" alt="" />
+              <Image  src="/Oval.png" width={20} height={20} alt="" />
+              <Image  src="/Oval2.png" width={20} height={20} alt="" />
+              <Image  src="/Oval3.png" width={20} height={20} alt="" />
                 </div>
                 <div className="text-blue-700  lg:text-md text-xs ">
                   +20 attending
                 </div>
               </div>
-              <div className="text-violet-500 text-nowrap rounded-2xl text-center lg:py-1 lg:text-md text-[9px]  lg:px-3 px-3  bg-violet-200">
+              <div className="text-violet-500 text-nowrap rounded-2xl text-center lg:py-1 lg:text-base text-[9px]  lg:px-3 px-3  bg-violet-200">
                 3 days left 
               </div>
                 </div>

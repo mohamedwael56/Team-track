@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react'
 import { useState } from 'react';
+import Image from 'next/image';
 import ShiftsRequests from './ShiftsRequests';
 function MyShifts({myAvailability,setMyAvailability}) {
 const shifts=[
@@ -127,6 +128,51 @@ const shifts=[
     coverageStatus:'covered',
   },
 ]
+const myAvailabilityData=[
+  {
+    id:1,
+    date:'15 Nov',
+    from:'09:00 Am',
+    to:'05:00 PM',
+  },
+  {
+    id:2,
+    date:'15 Nov',
+    from:'09:00 Am',
+    to:'05:00 PM',
+  },
+  {
+    id:3,
+    date:'15 Nov',
+    from:'09:00 Am',
+    to:'05:00 PM',
+  },
+  {
+    id:4,
+    date:'15 Nov',
+    from:'09:00 Am',
+    to:'05:00 PM',
+  },
+  {
+    id:5,
+    date:'15 Nov',
+    from:'09:00 Am',
+    to:'05:00 PM',
+  },
+  {
+    id:6,
+    date:'15 Nov',
+    from:'09:00 Am',
+    to:'05:00 PM',
+  },
+  {
+    id:7,
+    date:'15 Nov',
+    from:'09:00 Am',
+    to:'05:00 PM',
+  },
+]
+  
 
   const data = {
     labels: ["Working", "Break", "Late"],
@@ -168,21 +214,27 @@ const shifts=[
       <label className="text-black">date</label>
       <button className="border flex justify-between text-start border-gray-400 text-gray-800 py-2 px-4 rounded-xl cursor-pointer" >
         <p>Select date</p>
-        <img src="/icons/calendar.png" alt="" />
+        <div className="relative w-5 h-5">
+        <Image fill src="/icons/calendar.png" alt="" />
+    </div>
       </button>
       </div>
     <div className="flex mt-5 flex-col gap-3">
       <label className="text-black">From</label>
       <button className="border flex justify-between text-start border-gray-400 text-gray-800 py-2 px-4 rounded-xl cursor-pointer" >
 <p>00:00</p>
-        <img src="/icons/clock-circle.png" alt="" />
+<div className="relative w-5 h-5">
+        <Image fill src="/icons/clock-circle.png" alt="" />
+      </div>
       </button>
       </div>
     <div className="flex mt-5 flex-col gap-3">
       <label className="text-black">To</label>
       <button className="border flex justify-between text-start border-gray-400 text-gray-800 py-2 px-4 rounded-xl cursor-pointer" >
         <p>00:00</p>
-        <img src="/icons/clock-circle.png" alt="" />
+        <div className="relative w-5 h-5">
+          <Image fill src="/icons/clock-circle.png" alt="" />
+        </div>
       </button>
       </div>
   </div>
@@ -213,7 +265,10 @@ const shifts=[
                 <button onClick={()=>setMyAvailability(false)} className="text-gray-400 text-2xl cursor-pointer">&times;</button>
               </div>
               <div className="border border-gray-400 rounded-xl flex flex-col">
-                <div className="flex items-center gap-3 p-3">
+    {myAvailabilityData.map((shift) => {
+      return(
+        <Fragment key={shift.id}>
+          <div className="flex items-center gap-3 p-3">
                   <div className="py-4 px-9 bg-indigo-100 text-indigo-500 rounded-xl justify-center ">
 Saturday.13 june
                   </div>
@@ -221,11 +276,11 @@ Saturday.13 june
                 <div className="flex gap-7 items-center">
                   <div className="flex flex-col gap-1">
                   <div className="flex gap-1 items-center">
-                    <img src="icons/green-sign.png" alt="" />
+                    <Image width={4} height={5} src="/icons/green-sign.png" alt="" />
                     <p className="text-black">from</p>
                   </div>
                   <div className="flex gap-1 items-center">
-                    <img src="icons/red-sign.png" alt="" />
+                    <Image width={4} height={5} src="/icons/red-sign.png" alt="" />
                     <p className="text-black">to</p>
                   </div>
                   </div>
@@ -235,167 +290,16 @@ Saturday.13 june
                   </div>
                   <button onClick={()=>{setMyAvailability(false)
                     setEditAvailability(true)}} className="cursor-pointer">
-                  <img className="ml-9" src="/icons/edit-02.png" alt=""  />
+                  <Image width={20} height={20} className='ml-9' src="/icons/edit-02.png" alt=""  />
                 </button>
                 </div>
                   </div>
                   </div>
-                <div className="flex items-center gap-3 p-3">
-                  <div className="py-4 px-9 bg-indigo-100 text-indigo-500 rounded-xl justify-center ">
-Saturday.13 june
-                  </div>
-                  <div className="flex flex-col gap-1">
-                <div className="flex gap-7 items-center">
-                  <div className="flex flex-col gap-1">
-                  <div className="flex gap-1 items-center">
-                    <img src="icons/green-sign.png" alt="" />
-                    <p className="text-black">from</p>
-                  </div>
-                  <div className="flex gap-1 items-center">
-                    <img src="icons/red-sign.png" alt="" />
-                    <p className="text-black">to</p>
-                  </div>
-                  </div>
-                  <div className="flex flex-col gap-1">
-                    <p className="text-lime-500">9:00 am</p>
-                    <p className="text-red-500">5:00 pm</p>
-                  </div>
-                  <button className="cursor-pointer">
-                  <img className="ml-9" src="/icons/edit-02.png" alt=""  />
-                </button>
-                </div>
-                  </div>
-                  </div>
-                <div className="flex items-center gap-3 p-3">
-                  <div className="py-4 px-9 bg-indigo-100 text-indigo-500 rounded-xl justify-center ">
-Saturday.13 june
-                  </div>
-                  <div className="flex flex-col gap-1">
-                <div className="flex gap-7 items-center">
-                  <div className="flex flex-col gap-1">
-                  <div className="flex gap-1 items-center">
-                    <img src="icons/green-sign.png" alt="" />
-                    <p className="text-black">from</p>
-                  </div>
-                  <div className="flex gap-1 items-center">
-                    <img src="icons/red-sign.png" alt="" />
-                    <p className="text-black">to</p>
-                  </div>
-                  </div>
-                  <div className="flex flex-col gap-1">
-                    <p className="text-lime-500">9:00 am</p>
-                    <p className="text-red-500">5:00 pm</p>
-                  </div>
-                  <button className="cursor-pointer">
-                  <img className="ml-9" src="/icons/edit-02.png" alt=""  />
-                </button>
-                </div>
-                  </div>
-                  </div>
-                <div className="flex items-center gap-3 p-3">
-                  <div className="py-4 px-9 bg-indigo-100 text-indigo-500 rounded-xl justify-center ">
-Saturday.13 june
-                  </div>
-                  <div className="flex flex-col gap-1">
-                <div className="flex gap-7 items-center">
-                  <div className="flex flex-col gap-1">
-                  <div className="flex gap-1 items-center">
-                    <img src="icons/green-sign.png" alt="" />
-                    <p className="text-black">from</p>
-                  </div>
-                  <div className="flex gap-1 items-center">
-                    <img src="icons/red-sign.png" alt="" />
-                    <p className="text-black">to</p>
-                  </div>
-                  </div>
-                  <div className="flex flex-col gap-1">
-                    <p className="text-lime-500">9:00 am</p>
-                    <p className="text-red-500">5:00 pm</p>
-                  </div>
-                  <button className="cursor-pointer">
-                  <img className="ml-9" src="/icons/edit-02.png" alt=""  />
-                </button>
-                </div>
-                  </div>
-                  </div>
-                <div className="flex items-center gap-3 p-3">
-                  <div className="py-4 px-9 bg-indigo-100 text-indigo-500 rounded-xl justify-center ">
-Saturday.13 june
-                  </div>
-                  <div className="flex flex-col gap-1">
-                <div className="flex gap-7 items-center">
-                  <div className="flex flex-col gap-1">
-                  <div className="flex gap-1 items-center">
-                    <img src="icons/green-sign.png" alt="" />
-                    <p className="text-black">from</p>
-                  </div>
-                  <div className="flex gap-1 items-center">
-                    <img src="icons/red-sign.png" alt="" />
-                    <p className="text-black">to</p>
-                  </div>
-                  </div>
-                  <div className="flex flex-col gap-1">
-                    <p className="text-lime-500">9:00 am</p>
-                    <p className="text-red-500">5:00 pm</p>
-                  </div>
-                  <button className="cursor-pointer">
-                  <img className="ml-9" src="/icons/edit-02.png" alt=""  />
-                </button>
-                </div>
-                  </div>
-                  </div>
-                <div className="flex items-center gap-3 p-3">
-                  <div className="py-4 px-9 bg-indigo-100 text-indigo-500 rounded-xl justify-center ">
-Saturday.13 june
-                  </div>
-                  <div className="flex flex-col gap-1">
-                <div className="flex gap-7 items-center">
-                  <div className="flex flex-col gap-1">
-                  <div className="flex gap-1 items-center">
-                    <img src="icons/green-sign.png" alt="" />
-                    <p className="text-black">from</p>
-                  </div>
-                  <div className="flex gap-1 items-center">
-                    <img src="icons/red-sign.png" alt="" />
-                    <p className="text-black">to</p>
-                  </div>
-                  </div>
-                  <div className="flex flex-col gap-1">
-                    <p className="text-lime-500">9:00 am</p>
-                    <p className="text-red-500">5:00 pm</p>
-                  </div>
-                  <button className="cursor-pointer">
-                  <img className="ml-9" src="/icons/edit-02.png" alt=""  />
-                </button>
-                </div>
-                  </div>
-                  </div>
-                <div className="flex items-center gap-3 p-3">
-                  <div className="py-4 px-9 bg-indigo-100 text-indigo-500 rounded-xl justify-center ">
-Saturday.13 june
-                  </div>
-                  <div className="flex flex-col gap-1">
-                <div className="flex gap-7 items-center">
-                  <div className="flex flex-col gap-1">
-                  <div className="flex gap-1 items-center">
-                    <img src="icons/green-sign.png" alt="" />
-                    <p className="text-black">from</p>
-                  </div>
-                  <div className="flex gap-1 items-center">
-                    <img src="icons/red-sign.png" alt="" />
-                    <p className="text-black">to</p>
-                  </div>
-                  </div>
-                  <div className="flex flex-col gap-1">
-                    <p className="text-lime-500">9:00 am</p>
-                    <p className="text-red-500">5:00 pm</p>
-                  </div>
-                  <button className="cursor-pointer">
-                  <img className="ml-9" src="/icons/edit-02.png" alt=""  />
-                </button>
-                </div>
-                  </div>
-                  </div>
+                  </Fragment>
+      )
+    })}
+              
+              
                   
               </div>
 
@@ -418,7 +322,7 @@ Saturday.13 june
                <div className="fixed inset-0 bg-black z-50 opacity-50"></div>
             <div className="fixed flex inset-0 items-center justify-center z-50">
               <div className="bg-white flex flex-col items-center rounded-2xl p-5 ">
-             <img src="icons/icon.png" alt="" width={120} />
+             <Image width={100} height={120} src="/icons/icon.png" alt="" />
              <h1 className="text-black my-2 text-2xl w-[300px] text-center"> successful request!</h1>
               <p className="my-2 w-[400px] text-gray-400 text-center"> availability request submitted successfully.</p>
                 <div className="w-full gap-3 mt-2 flex">

@@ -3,6 +3,7 @@ import Sidebar from '@/components/sidebar'
 import React from 'react'
 import Header from '@/components/header'
 import { useState } from 'react';
+import Image from 'next/image';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker'
@@ -58,11 +59,15 @@ const [open,setOpen]=useState(false)
                 <h1 className='text-black text-sm lg:text-2xl'>attendance</h1>
             <div className='flex gap-3'>
             <button className='border flex gap-2 items-center shadow-sm rounded-2xl lg:py-3 lg:px-4 px-1 cursor-pointer'>
-                <img src="/icons/filter.png" alt="" className='w-3 lg:w-fit' />
+               <div className=" relative w-3 h-3 lg:w-4 lg:h-4">
+                <Image fill src="/icons/filter.png" sizes='5px' alt="" />
+               </div>
                 <p className='text-black lg:text-base text-xs'>filter</p>
             </button>
             <button onClick={()=>setOpenCalender(true)} className='border flex gap-2 items-center shadow-sm rounded-2xl lg:py-3 lg:px-4 px-1 cursor-pointer'>
-                <img src="/icons/calendar.png" className='w-3 lg:w-fit' alt="" />
+                              <div className=" relative w-3 h-3 lg:w-5 lg:h-5">
+                <Image fill src="/icons/calendar.png" alt="" />
+               </div>
                 <p className='lg:text-base text-[9px] text-black'> {dueStartDate && dueEndDate ? `${dueStartDate.format('MM/DD/YYYY')} - ${dueEndDate.format('MM/DD/YYYY')}` : '09/30/2024 - 10/06/2024'} </p>
             </button>
             
@@ -70,28 +75,35 @@ const [open,setOpen]=useState(false)
             </div>
             <div className='grid grid-cols-1 lg:grid-cols-4 my-4 gap-3'>
         <div className="bg-gray-200 p-3 rounded-2xl flex gap-3 items-center">
-        <img src="/attendance/finger-print.png"  alt="" />
+       <div className="relative w-13 h-13">
+        <Image fill src="/attendance/finger-print.png"  alt="" />
+       </div>
         <div className='flex flex-col'>
 <h1 className='lg:text-2xl text-sm text-black'>28:23:56</h1>
 <p className='text-gray-600 lg:text-base text-xs '>Total working hours</p>
         </div>
         </div>
         <div className="bg-gray-200 p-3 rounded-2xl flex gap-3 items-center">
-        <img src="/attendance/lateness.png"  alt="" />
+       <div className="relative w-13 h-13">
+        <Image fill src="/attendance/lateness.png"  alt="" />
+       </div>
         <div className='flex flex-col'>
 <h1 className='lg:text-2xl text-sm text-black'>27:00</h1>
 <p className='lg:text-base text-xs text-gray-600'>Total hours late</p>
         </div>
         </div>
         <div className="bg-gray-200 p-3 rounded-2xl flex gap-3 items-center">
-        <img src="/attendance/dollar.png"  alt="" />
+        
+         <Image  src="/attendance/dollar.png"  width={50} height={50}   alt="" />
         <div className='flex flex-col'>
 <h1 className='lg:text-2xl text-sm  text-black'>205 $</h1>
 <p className='text-gray-600 lg:text-base text-xs text-nowrap '>Month salary deductions</p>
         </div>
         </div>
         <div className="bg-gray-200 p-3 rounded-2xl flex gap-3 items-center">
-        <img src="/attendance/timer.png"  alt="" />
+       <div className="relative w-13 h-13">
+        <Image fill src="/attendance/timer.png"  alt="" />
+       </div>
         <div className='flex flex-col'>
 <h1 className='lg:text-2xl text-sm text-black'>21:05</h1>
 <p className='text-gray-600 lg:text-base text-xs'>Remaining hours</p>

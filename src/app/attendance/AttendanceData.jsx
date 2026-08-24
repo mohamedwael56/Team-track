@@ -1,5 +1,6 @@
 import React from "react";
 import { Doughnut } from "react-chartjs-2";
+import Image from "next/image";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -110,19 +111,24 @@ function AttendanceData({setOpen}) {
                     <span className="capitalize">{attendance.date}</span>
                   </div>
                 </div>
-                <div className="flex flex-col items-center gap-2">
+                <div className="flex flex-col items-start gap-2">
                   <p className={`${attendance.status === 'completed' ? 'bg-green-200 text-green-600' : 'bg-red-200 text-red-600'} px-3 rounded-2xl`}>
                     {" "}
                     {attendance.status}
                   </p>
                   <div className="flex items-center gap-3">
-                    <img src="/icons/green-sign.png" alt="" />
+                   <div className="relative  h-4 w-1">
+                    <Image fill src="/icons/green-sign.png" alt="" />
+
+                   </div>
                     <span>clock in</span>
                     <span className="text-green-600">{attendance.clockIn}</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <img src="/icons/red-sign.png" alt="" />
-                    <span>clock out</span>
+<div className="relative h-4 w-[4px]">
+                    <Image fill src="/icons/red-sign.png" alt="" />
+
+                   </div>                    <span>clock out</span>
                     <span className="text-red-600">{attendance.clockOut}</span>
                   </div>
                 </div>
@@ -132,7 +138,9 @@ function AttendanceData({setOpen}) {
               <div className="flex w-full flex-col text-black mt-2">
                 <div className=" flex p-2 justify-between mb-2">
                   <div className="flex items-center gap-1">
-                    <img src="/icons/green-sign.png" alt="" />
+                    <div className="relative h-4 w-1">
+                    <Image fill src="/icons/green-sign.png" alt="" />
+                    </div>
                     <p>working hrs</p>
                   </div>
                   <div>
@@ -141,7 +149,9 @@ function AttendanceData({setOpen}) {
                 </div>
                 <div className=" flex p-2 justify-between mb-2">
                   <div className="flex items-center gap-1">
-                    <img src="/icons/purple-sign.png" alt="" />
+                    <div className="relative h-4 w-1">
+                    <Image fill src="/icons/purple-sign.png" alt="" />
+                    </div>
                     <p>break hrs</p>
                   </div>
                   <div>
@@ -150,7 +160,9 @@ function AttendanceData({setOpen}) {
                 </div>
                 <div className=" flex p-2 justify-between mb-2">
                   <div className="flex items-center gap-1">
-                    <img src="/icons/orange-sign.png" alt="" />
+                    <div className="relative h-4 w-1">
+                    <Image fill src="/icons/orange-sign.png" alt="" />
+                    </div>
                     <p>late hrs</p>
                   </div>
                   <div>

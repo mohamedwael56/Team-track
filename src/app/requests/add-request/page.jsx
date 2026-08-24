@@ -10,6 +10,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import { useState } from 'react';
+import Image from 'next/image';
 import Leave from './Leave.jsx';
 import OverTime from './overTime.jsx';
 import RemoteWork from './RemoteWork.jsx/';
@@ -40,7 +41,7 @@ const router = useRouter();
 <div className="bg-black z-50 opacity-50 fixed inset-0"></div>
 <div className="z-50 fixed inset-0 flex items-center justify-center">
 <div className="bg-white w-100 items-center gap-5 rounded-2xl p-5 flex flex-col">
-  <img src="/icons/icon.png" alt="" width={120} />
+  <Image width={120} height={120} src="/icons/icon.png" alt="" />
   <h1 className='text-xl text-black font-bold'>request submitted!</h1>
   <p className='text-gray-400'>Your request has been submitted successfully.</p>
   <button onClick={()=>setSendRequest(false)} className='cursor-pointer  w-full bg-blue-900 text-white rounded-2xl py-3'>Got it</button>
@@ -70,23 +71,33 @@ Request Type
    </div>
 <div className=" mb-5 gap-2 lg:gap-5 w-full text-black grid lg:grid-cols-5">
     <button onClick={()=>setActiveTab('Leave')} className={`${activeTab === 'Leave' ? 'bg-blue-900 text-white' : 'bg-gray-200 text-black'} cursor-pointer px-7 py-5 rounded-xl `}>
-        <img src="/requests/stopwatch-minus.png" alt="" />
+        <div className="relative w-6 h-6">
+        <Image fill  src="/requests/stopwatch-minus.png" alt="" />
+       </div>
         <p className='text-start mt-1'>Leave</p>
         </button>
     <button onClick={()=>setActiveTab('Over Time')} className={`${activeTab === 'Over Time' ? 'bg-blue-900 text-white' : 'bg-gray-200 text-black'} cursor-pointer px-7 py-5 rounded-xl `}>
-        <img src="/requests/stopwatch-add.png" alt="" />
+       <div className="relative w-6 h-6">
+        <Image fill src="/requests/stopwatch-add.png" alt="" />
+       </div>
         <p className='text-start mt-1'>Over Time</p>
          </button>
     <button onClick={()=>setActiveTab('Remote Work')} className={`${activeTab === 'Remote Work' ? 'bg-blue-900 text-white' : 'bg-gray-200 text-black'} cursor-pointer px-7 py-5 rounded-xl `}>
-<img src="/requests/home03.png" alt="" />
+       <div className="relative w-6 h-6">
+        <Image fill  src="/requests/home03.png" alt="" />
+       </div>
 <p className='text-start mt-1'>Remote Work</p>
         </button>
     <button onClick={()=>setActiveTab('Loan')} className={`${activeTab === 'Loan' ? 'bg-blue-900 text-white' : 'bg-gray-200 text-black'} cursor-pointer px-7 py-5 rounded-xl `}>
-<img src="/requests/money-minus.png" alt="" />
+       <div className="relative w-6 h-6">
+        <Image fill src="/requests/money-minus.png" alt="" />
+       </div>
         <p className='text-start mt-1'>Loan</p> 
         </button>
     <button onClick={()=>setActiveTab('Reimbursement')} className={`${activeTab === 'Reimbursement' ? 'bg-blue-900 text-white' : 'bg-gray-200 text-black'} cursor-pointer px-7 py-5 rounded-xl `}> 
-        <img src="/requests/profit.png" alt="" />
+        <div className="relative w-6 h-6">
+        <Image fill src="/requests/profit.png" alt="" />
+        </div>
         <p className='text-start mt-1'>Reimbursement</p>
         </button>
 </div>

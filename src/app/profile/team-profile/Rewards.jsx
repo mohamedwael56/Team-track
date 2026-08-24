@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-
+import Image from 'next/image'
 function Rewards() {
   return (
  <div className="flex flex-1  lg:w-full w-80 bg-gray-100 p-5 lg:ml-0 -ml-5 rounded-2xl border flex-col ">
@@ -14,14 +14,14 @@ function Rewards() {
 </div>
     </div>
     <div className='mt-3 flex flex-wrap gap-3 mx-5'>
-    <img src="/profile/waffarha.png" alt="" />
-    <img src="/profile/amazon.png" alt="" />
-    <img src="/profile/spotify.png" alt="" />
-    <img src="/profile/netflix.png" alt="" />
-    <img src="/profile/waffarha.png" alt="" />
-    <img src="/profile/amazon.png" alt="" />
-    <img src="/profile/spotify.png" alt="" />
-    <img src="/profile/netflix.png" alt="" />
+    <Image width={60} height={60} src="/profile/waffarha.png" alt="" />
+    <Image width={60} height={60} src="/profile/amazon.png" alt="" />
+    <Image width={60} height={60} src="/profile/spotify.png" alt="" />
+    <Image width={60} height={60} src="/profile/netflix.png" alt="" />
+    <Image width={60} height={60} src="/profile/waffarha.png" alt="" />
+    <Image width={60} height={60} src="/profile/amazon.png" alt="" />
+    <Image width={60} height={60} src="/profile/spotify.png" alt="" />
+    <Image width={60} height={60} src="/profile/netflix.png" alt="" />
    
     </div>
   </div>  )

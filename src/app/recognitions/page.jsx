@@ -2,6 +2,7 @@ import Header from '@/components/header'
 import Sidebar from '@/components/sidebar'
 import React, { Fragment } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 function page() {
   const Recognitions=[{
@@ -87,14 +88,14 @@ function page() {
 
 <div className="flex flex-col w-full items-center">
 <h1 className=" font-bold text-xl text-amber-500 items-start"> mr.punctuality</h1>
-  <img src="/icons/rectangle.png" alt="" />
+  <Image width={60} height={80} src="/icons/rectangle.png" alt="" />
 
-<img src={recognition.img} alt="" />
+<Image width={150} height={100} src={recognition.img} alt="" />
 <div className="flex text-zinc-800 flex-row mt-2 items-center gap-2">
 </div>
 <div className='flex w-full text-black justify-between'>
   <div className='flex items-center gap-2'>
-  <img src="/icons/Vector2.png" alt="" />
+  <Image width={18} height={20} src="/icons/Vector2.png" alt="" />
 <span>{recognition.points}</span>
 </div>
 <span className="ml-2">{recognition.date}</span>

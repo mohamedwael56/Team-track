@@ -1,7 +1,7 @@
 import Header from '@/components/header'
 import Sidebar from '@/components/sidebar'
 import React from 'react'
-
+import Image from 'next/image'
 function page() {
   return (
       <>
@@ -12,7 +12,7 @@ function page() {
            
        <div className="bg-gray-200 p-5 rounded-2xl flex flex-col">
 <div className="flex gap-2 items-center">
-    <img src="/setting/twitter.png" alt="" className='w-10' />
+    <Image width={35} height={40} src="/setting/twitter.png" alt="" className='w-10' />
     <p className='text-xl'>who are we ?</p>
 </div>
 <p className='mt-2'>Lorem ipsum dolor sit amet consectetur
@@ -30,7 +30,7 @@ function page() {
        </div>
        <div className="bg-gray-200 mt-4 p-5 rounded-2xl flex flex-col">
 <div className="flex gap-2 items-center">
-    <img src="/setting/twitter(1).png" alt="" className='w-10' />
+    <Image width={35} height={40} src="/setting/twitter(1).png" alt="" className='w-10' />
     <p className='text-xl'>our vision</p>
 </div>
 <p className='mt-2'>Lorem ipsum dolor sit amet consectetur
@@ -48,7 +48,7 @@ function page() {
        </div>
        <div className="bg-gray-200 mt-4 mb-10 p-5 rounded-2xl flex flex-col">
 <div className="flex gap-2 items-center">
-    <img src="/setting/twitter(2).png" alt="" className='w-10' />
+    <Image width={35} height={40} src="/setting/twitter(2).png" alt="" className='w-10' />
     <p className='text-xl'>our mission</p>
 </div>
 <p className='mt-2'>Lorem ipsum dolor sit amet consectetur

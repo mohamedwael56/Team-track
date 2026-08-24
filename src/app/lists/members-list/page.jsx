@@ -10,6 +10,7 @@ import { useState } from 'react';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
+import Image from 'next/image';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import { Doughnut } from 'react-chartjs-2'
 import { Chart as ChartJs,Tooltip,Legend,ArcElement } from 'chart.js'
@@ -160,7 +161,7 @@ const [confirmDeleteMessage,setConfirmDeleteMessage]=useState(false)
           <div className="bg-black opacity-50 fixed inset-0 z-50"></div>
           <div className="fixed inset-0 z-50 flex items-center justify-center">
             <div className="bg-white w-120 items-center flex flex-col rounded-2xl p-5">
-<img src="/icons/delete.png" className='mb-5' alt="" width={100}/>
+<Image width={100} height={100} src="/icons/delete.png" className='mb-5' alt="" />
         <p className='text-black text-xl mb-5'>remove member?</p>
         <p className='text-gray-400 text-center w-[400px]'>are you sure you want to remove this member?, this action is irreversible!</p>
         <div className="w-full flex gap-2 my-5">
@@ -182,7 +183,7 @@ const [confirmDeleteMessage,setConfirmDeleteMessage]=useState(false)
                     <div className="bg-black opacity-50 fixed inset-0 z-50"></div>
           <div className="fixed inset-0 z-50 flex items-center justify-center">
             <div className="bg-white w-100 items-center flex flex-col rounded-2xl p-5">
-<img src="/icons/icon.png" className='mb-5' alt="" width={100}/>
+<Image width={100} height={100} src="/icons/icon.png" className='mb-5' alt="" />
         <p className='text-black text-xl mb-5'> member removed!</p>
         <p className='text-gray-400 text-center w-[350px]'>this member has been successfully removed from your list.</p>
         <div className="w-full flex gap-2 my-5">
@@ -212,7 +213,7 @@ const [confirmDeleteMessage,setConfirmDeleteMessage]=useState(false)
     <hr />
     <div className="flex-1 mb-5 relative">
                 <button className='cursor-pointer'>
-                <img src="/icons/search.png" alt="" className='absolute left-4 top-3 ' />
+                <Image width={20} height={20} src="/icons/search.png" alt="" className='absolute left-4 top-3 ' />
             </button>
             <input type="text" placeholder="Search tasks..." className="border border-gray-300 text-zinc-950 rounded-xl px-4 py-2 w-full pl-12" />
        </div>
@@ -223,7 +224,7 @@ const [confirmDeleteMessage,setConfirmDeleteMessage]=useState(false)
            
                <div key={member.id} className="group flex overflow-hidden  hover:bg-zinc-600 relative items-center gap-2 p-1 shadow rounded-2xl border">
          <Link  href="/profile/team-profile" className=' flex hover:brightness-75'>
-          <img src="/profile/avatar.png" alt="" />
+          <Image width={80} height={70} src="/profile/avatar.png" alt="" />
           <div className="flex w-full flex-col my-2">
             <div className="flex justify-between my-2 items-center">
             <h1 className='text-black text-nowrap font-sm font-bold'>mohamed ahmed</h1>

@@ -1,5 +1,5 @@
 'use client'
-
+import Image from 'next/image'
 import React from 'react'
 import Link from 'next/link'
 import { useState } from 'react'
@@ -17,7 +17,7 @@ function Page() {
                     <div className="bg-black opacity-50 fixed inset-0 z-50"></div>
                     <div className="fixed inset-0 flex items-center justify-center z-50">
                     <div className="bg-white p-5 items-center flex flex-col rounded-2xl ">
-                    <img src={status === 'successful' ? "/icons/icon.png" : "/icons/icon(2).png"} width={70} />
+                    <Image width={100} height={70} src={status === 'successful' ? "/icons/icon.png" : "/icons/icon(2).png"}  />
                     <div className="flex flex-col items-center justify-center">
                     <div className="mt-5  text-black"> {status === 'successful' ? ' successful submission' : ' submission failed'}</div>
                     <div className="my-5 text-center text-gray-400 w-[300px] text-sm "> {`${status === 'successful' ? 'Your support ticket has been submitted successfully. Our support team will contact you shortly.' : 'Your support ticket submission failed. Please try again later.'}`}</div>
@@ -81,30 +81,30 @@ function Page() {
 <div className='border rounded-xl px-3 shadow-xl'>
 <div className='flex justify-between'>
 <div className='flex items-center'>
-    <img src="/frame.svg" alt="" className='w-3' />
+    <Image width={20} height={20} src="/frame.svg" alt=""  />
     <div  className='flex  flex-col ml-2'>
 <p className='text-black lg:text-sm text-[8px] text-nowrap'>devs presentation.pdf</p>
 <p className='flex justify-start text-[9px] lg:text-sm'>1.5 MB</p>
     </div>
 </div>
 <div className='flex items-center gap-2 ml-3'>
-    <button className='cursor-pointer'><img src="/icons/view.png" alt="" /></button>
-    <button className='cursor-pointer'><img src="/icons/delete-03.png" alt="" /></button>
+    <button className='cursor-pointer'><Image width={15} height={20} src="/icons/view.png" alt="" /></button>
+    <button className='cursor-pointer'><Image width={15} height={20} src="/icons/delete-03.png" alt="" /></button>
 </div>
 </div>
 </div>
 <div className='border lg:block hidden rounded-xl px-3  shadow-xl'>
 <div className='flex justify-between'>
 <div className='flex items-center'>
-    <img src="/frame.svg" alt="" />
+    <Image width={20} height={20} src="/frame.svg" alt="" />
     <div className='flex  flex-col ml-2'>
 <p className='text-black text-nowrap text-sm'>devs presentation.pdf</p>
 <p className='flex justify-start text-sm'>1.5 MB</p>
     </div>
 </div>
 <div className='flex items-center gap-2 ml-3'>
-    <button className='cursor-pointer'><img src="/icons/view.png" alt="" /></button>
-    <button className='cursor-pointer'><img src="/icons/delete-03.png" alt="" /></button>
+    <button className='cursor-pointer'><Image width={15} height={20} src="/icons/view.png" alt="" /></button>
+    <button className='cursor-pointer'><Image width={15} height={20} src="/icons/delete-03.png" alt="" /></button>
 </div>
 </div>
 </div>

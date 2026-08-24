@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 import Link from 'next/link'
 import 'swiper/css';
+import Image from 'next/image';
 import 'swiper/css/pagination';
 function MyTeam() {
   return (
@@ -36,7 +37,7 @@ function MyTeam() {
     >
       <SwiperSlide> 
         <Link href='/profile/team-profile' className="flex items-center gap-2 my-5 shadow rounded-2xl border">
-          <img src="/profile/avatar.png" alt="" />
+          <Image width={85} height={85} src="/profile/avatar.png" alt="" />
           <div className="flex w-full flex-col my-2">
              <div className="flex justify-between my-2 items-center">
             <h1 className='text-black font-bold'>saif mohamed</h1>
@@ -50,7 +51,7 @@ function MyTeam() {
         </SwiperSlide>
       <SwiperSlide>
          <Link href='/profile/team-profile' className="flex items-center gap-2 my-5 shadow rounded-2xl border">
-          <img src="/profile/avatar.png" alt="" />
+          <Image width={85} height={85} src="/profile/avatar.png" alt="" />
           <div className="flex w-full flex-col my-2">
             <div className="flex justify-between my-2 items-center">
             <h1 className='text-black font-bold'>saif mohamed</h1>
@@ -64,7 +65,7 @@ function MyTeam() {
         </SwiperSlide>
       <SwiperSlide>
          <Link href='/profile/team-profile' className="flex items-center gap-2 my-5 shadow rounded-2xl border">
-          <img src="/profile/avatar.png" alt="" />
+          <Image width={85} height={85} src="/profile/avatar.png" alt="" />
           <div className="flex w-full flex-col my-2">
   <div className="flex justify-between my-2 items-center">
             <h1 className='text-black font-bold'>saif mohamed</h1>
@@ -78,7 +79,7 @@ function MyTeam() {
         </SwiperSlide>
       <SwiperSlide>
          <Link href='/profile/team-profile' className="flex items-center gap-2 my-5 shadow rounded-2xl border">
-          <img src="/profile/avatar.png" alt="" />
+          <Image width={85} height={85} src="/profile/avatar.png" alt="" />
           <div className="flex w-full flex-col my-2">
   <div className="flex justify-between my-2 items-center">
             <h1 className='text-black font-bold'>saif mohamed</h1>

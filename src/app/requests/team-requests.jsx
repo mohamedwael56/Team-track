@@ -5,6 +5,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import { useState } from "react";
+import Image from "next/image";
 import { useRouter } from 'next/navigation';
 import { Chart as ChartJs, Tooltip, Legend, ArcElement } from "chart.js";
 ChartJs.register(ArcElement, Tooltip, Legend);
@@ -121,13 +122,16 @@ const filteredRequests=requests.filter((request)=>{
       <div className=" flex justify-between mb-5 items-center mt-5 gap-5">
  <div className="  w-full  relative">
                 <button className='cursor-pointer'>
-                <img src="/icons/search.png" alt="" className='absolute left-2 lg:left-4 lg:top-3 top-3 w-2 lg:w-fit ' />
+                <Image width={10} height={10} src="/icons/search.png" alt="" className='absolute left-2 lg:left-4 lg:top-3 top-3 lg:w-fit ' />
             </button>
             <input value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} type="text" placeholder="Search tasks..." className="border border-gray-300 text-zinc-950 rounded-xl px-4 py-2 w-full lg:text-base text-[7px] pl-5 lg:pl-12" />
        </div>
        <div className=" w-60 lg:w-150">
       <button className='border flex gap-2 items-center shadow-sm rounded-xl py-2 px-6 cursor-pointer'>
-                <img src="/icons/calendar.png" alt="" className='lg:w-fit w-3' />
+               <div className="relative w-5 h-5">
+                <Image fill src="/icons/calendar.png" alt="" />
+
+               </div>
                 <p className='lg:text-base text-[8px] text-nowrap text-black'>this week : 09/30/2024 - 10/06/2024 </p>
             </button>
             </div>
@@ -209,7 +213,7 @@ const filteredRequests=requests.filter((request)=>{
                   <p className="text-gray-400">file</p>
                   <div className="flex border px-2 rounded-xl border-grey-400 justify-between">
                     <div className="flex items-center">
-                      <img src="/frame.svg" alt="" />
+                      <Image width={25} height={20} src="/frame.svg" alt="" />
                       <div className="flex  flex-col ml-2">
                         <p className="text-black text-nowrap text-sm">
                           devs presentation.pdf
@@ -219,10 +223,10 @@ const filteredRequests=requests.filter((request)=>{
                     </div>
                     <div className="flex items-center gap-2 ml-3">
                       <button className="cursor-pointer">
-                        <img src="/icons/view.png" alt="" />
+                        <Image width={15} height={20} src="/icons/view.png" alt="" />
                       </button>
                       <button className="cursor-pointer">
-                        <img src="/icons/delete-03.png" alt="" />
+                        <Image width={15} height={20} src="/icons/delete-03.png" alt="" />
                       </button>
                     </div>
                   </div>
@@ -302,10 +306,12 @@ const filteredRequests=requests.filter((request)=>{
         
   <div key={request.id} className=" flex flex-col border rounded-xl p-5">
         <div className="flex items-center flex-row gap-2">
-          <img
+          <Image
             onClick={() => setRequestDetails(true)}
             className="cursor-pointer"
             src={request.avatar}
+            width={50}
+            height={40}
           />
           <div className="flex flex-col text-black">
             <h1 className="text-xl capitalize"> {request.name}</h1>

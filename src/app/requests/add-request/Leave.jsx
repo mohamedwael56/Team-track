@@ -1,5 +1,5 @@
 import React from 'react'
-
+import Image from 'next/image'
 function Leave() {
   return (
 <div className="">
@@ -28,7 +28,9 @@ function Leave() {
     <p className='text-black'>leave date</p>
     <button  className='px-5 py-2 flex justify-between border cursor-pointer rounded-xl '>
         <p>select date</p>
-        <img src="/icons/calendar.png" alt="" />
+        <div className=" relative w-5 h-5">
+        <Image fill  src="/icons/calendar.png" alt="" />
+   </div>
         </button>
 
         </div>
@@ -36,7 +38,9 @@ function Leave() {
         <p className='text-black'>leave date</p>
     <button  className='px-5 py-2 flex justify-between border cursor-pointer rounded-xl '>
         <p>select date</p>
-        <img src="/icons/calendar.png" alt="" />
+        <div className="relative w-5 h-5">
+        <Image fill  src="/icons/calendar.png" alt="" />
+   </div>
         </button>
 
 </div>

@@ -1,6 +1,7 @@
 import Sidebar from '@/components/sidebar'
 import React, { Fragment } from 'react'
 import Header from '@/components/header'
+import Image from 'next/image'
 function page() {
     const notifications=[
         {
@@ -87,7 +88,7 @@ function page() {
                     <Fragment key={notification.id}>
      <div className="flex my-5 items-center gap-2">
             <div>
-                <img src="/icons/alert-outline.svg" alt="" />
+                <Image width={20} height={20} src="/icons/alert-outline.svg" alt="" />
             </div>
             <div className='flex flex-col'>
             <h1 className='text-black'>UI Task less than 8 days</h1>

@@ -1,6 +1,6 @@
 import React from 'react'
 import { useRouter } from 'next/navigation';
-
+import Image from 'next/image'
 const MyProfile = ({setOpen}) => {
 
       const router=useRouter()
@@ -9,7 +9,7 @@ const MyProfile = ({setOpen}) => {
   <div className="bg-gray-100 lg:w-full w-80 rounded-2xl p-5 my-4">
         <div className='flex justify-between items-start lg:items-center'>
         <div className='flex items-center lg:gap-4 gap-6'>
-      <img src="/profile/avatar.png" alt="" className='lg:w-fit w-7' />
+      <Image width={85} height={85}  src="/profile/avatar.png" alt=""  />
       <div className='flex flex-col'>
     <div className='flex gap-2 items-center'>
       <h1 className='text-black lg:text-2xl text-xs font-bold'>mohamed wael</h1>
@@ -34,7 +34,7 @@ const MyProfile = ({setOpen}) => {
 
 
         <button onClick={()=>router.push('/profile/points-history')} className='cursor-pointer bg-gray-200 gap-2 rounded-2xl lg:p-3 p-1 flex items-center'>
-      <img src="/profile/frame.png" alt="" className='lg:w-fit w-3' />
+      <Image width={40} height={40} src="/profile/frame.png" alt="" className='lg:w-fit w-3' />
       <div className='flex flex-col'>
 <p className='text-black text-[8px] lg:text-base'> Total points</p>
 <p className='text-violet-600 lg:text-base text-[8px] text-start'>2580</p>

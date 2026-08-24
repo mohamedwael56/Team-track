@@ -2,6 +2,7 @@
 import React from 'react'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react';
+import Image from 'next/image';
 import { redirect } from 'next/dist/server/api-utils';
 import { getSupabaseClient } from '../../../../lib/supabase';
 import './reset-password.css'
@@ -34,14 +35,18 @@ await supabase.auth.resetPasswordForEmail(email,{
       </div>
     )}
     <form onSubmit={sentEmail}>
- <img src="/icons/buy2logo.png" alt="Buy2 Logo" className='mb-10' />
- <p className='text-black text-xl font-bold'>forget password</p>
-   <p className='text-gray-400'>please enter the email associated to your account</p>
+      <div className="relative w-40 h-20 my-2">
+ <Image fill src="/icons/buy2logo.png" alt="Buy2 Logo" className='mb-10' />
+ </div>
+ <p className='text-black my-1 text-xl font-bold'>forget password</p>
+   <p className='text-gray-400 my-1'>please enter the email associated to your account</p>
     <div className='flex flex-col relative gap-2'>
     <label htmlFor="email" className='font-bold text-black'>Email address</label>
     <input id="email" value={email} onChange={(e)=>{setEmail(e.target.value)}} type="text" placeholder='Email' className='border w-full border-gray-200 text-black rounded-xl p-2 ' />
    <button type='button' className='absolute top-11 right-3 cursor-pointer'>
-    <img src="/icons/mail.png" alt="Mail Icon" />
+    <div className="relative w-5 h-5">
+    <Image fill src="/icons/mail.png" alt="Mail Icon" />
+   </div>
    </button>
     <button className='text-white mt-7 cursor-pointer bg-blue-900 rounded-2xl px-8 py-2 '>send an email</button>
     </div>

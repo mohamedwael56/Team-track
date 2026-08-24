@@ -6,6 +6,7 @@ import React from 'react'
 import Rewards from './Rewards'
 import { useState } from 'react'
 import Deductions from './Deductions'
+import Image from 'next/image'
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker'
 import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
@@ -67,7 +68,9 @@ function Page() {
             deductions
         </button>
          <button onClick={()=>setOpenCalender(true)} className='border ml-5 mt-2 flex gap-2 items-center shadow-sm rounded-2xl py-3 lg:text-base text-[8px] block-inline px-4 cursor-pointer'>
-                <img src="/icons/calendar.png" alt="" className='lg:w-fit w-3' />
+                <div className="relative lg:w-5 lg:h-5 w-2 h-2">
+                <Image fill src="/icons/calendar.png" alt=""  />
+               </div>
                 <p className='text-black'>this week {dueStartDate && dueEndDate ? `${dueStartDate.format('MM/DD/YYYY')} - ${dueEndDate.format('MM/DD/YYYY')}` : 'Select dates'}</p>
             </button>
     </div>

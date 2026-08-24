@@ -1,5 +1,6 @@
 'use client'
 import React from 'react'
+import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
 import { getSupabaseClient } from '../../../../lib/supabase';
@@ -51,16 +52,20 @@ const signUpButton= async (e)=>{
     {
 confirmMessage?(
   <div className="mb-10 text-black flex flex-col items-center gap-2">
- <img src="/icons/buy2logo.png" alt="Buy2 Logo" />
- <img src="/icons/icon.png" alt="" className='mt-5' />
+ <div className="relative h-20 w-40">
+ <Image fill src="/icons/buy2logo.png" alt="Buy2 Logo" />
+ </div>
+ <div className="relative h-30 w-30">
+ <Image fill src="/icons/icon.png" alt="" className='mt-5' />
+</div>
 <p className='text-3xl capitalize mt-8'>{confirmMessage}</p>
 <p className='text-gray-400 capitalize mb-3'>account has been registered successfully</p>
 <button onClick={()=>{router.push('/home')}} className='cursor-pointer capitalize bg-blue-900 text-white rounded-xl px-15 py-2 mt-2'>go to home page</button>
   </div>
 ):(
   <>
- <div className='mb-10'>
-  <img src="/icons/buy2logo.png" alt="Buy2 Logo" />
+ <div className='mb-10 relative w-40 h-20 '>
+  <Image fill src="/icons/buy2logo.png" alt="Buy2 Logo" />
   </div>
   <div className='flex items-center flex-col'>
     <h1 className="text-3xl font-bold text-black">
@@ -76,21 +81,27 @@ confirmMessage?(
     <label htmlFor="email" className='font-bold text-black'>Email address</label>
     <input id="email" onChange={(e)=>{setEmail(e.target.value)}} value={email} type="text" placeholder='Email' className='border border-gray-200 text-black rounded-xl p-2 w-80' />
    <button type='button' className='absolute top-9 right-3 cursor-pointer'>
-    <img src="/icons/mail.png" alt="Mail Icon" />
+   <div className="relative w-5 h-5">
+    <Image fill src="/icons/mail.png" alt="Mail Icon" />
+   </div>
    </button>
     </div>
     <div className='flex flex-col relative'>
     <label htmlFor="password" className='font-bold text-black'>Password</label>
     <input id="password" type={showPassword ? 'text' : 'password'} placeholder='password' onChange={(e)=>{setPassword(e.target.value)}} value={password} className='border border-gray-200 text-black rounded-xl p-2 w-80' />
     <button type='button' onClick={showingPasswordButton} className=' cursor-pointer absolute right-4 top-9'>
-      <img src="/icons/eye.png" alt="Eye Icon" />
+        <div className="relative h-5 w-5">
+      <Image fill src="/icons/eye.png" alt="Eye Icon" />
+   </div>
     </button>
     </div>
     <div className='flex flex-col relative'>
     <label htmlFor="confirm-password" className='font-bold text-black'>confirm Password</label>
     <input id="confirm-password" type={showPassword ? 'text' : 'password'} placeholder='confirm password' onChange={(e)=>{setConfirmPassword(e.target.value)}} value={confirmPassword} className='border border-gray-200 text-black rounded-xl p-2 w-80' />
     <button type='button' onClick={showingPasswordButton} className=' cursor-pointer absolute right-4 top-9'>
-      <img src="/icons/eye.png" alt="Eye Icon" />
+   <div className="relative h-5 w-5">
+      <Image fill src="/icons/eye.png" alt="Eye Icon" />
+    </div>
     </button>
     </div>
     <div className='flex justify-between'>

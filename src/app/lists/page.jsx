@@ -7,6 +7,7 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Invitations from './invitations';
 import Lists from './lists';
+import Image from 'next/image'
 import CreateList from './CreateList';
 function Page() {
 
@@ -159,12 +160,12 @@ const [showInvitations, setShowInvitations] = useState(false)
        <div className="flex gap-5 my-5 justify-between items-center">
     <div className="  w-full  relative">
                 <button className='cursor-pointer'>
-                <img src="/icons/search.png" alt="" className='absolute left-4 top-3 ' />
+                <Image width={20} height={20} src="/icons/search.png" alt="" className='absolute left-4 top-3 ' />
             </button>
             <input type="text" placeholder="Search..." className="border border-gray-300 text-zinc-950 rounded-xl px-4 py-2 w-full pl-12" />
        </div>
        <button onClick={()=>setSortOption(true)} className='cursor-pointer relative'>
-            <img src="/icons/arrow-sort.png" alt="" className='absolute left-5 top-4 '  />
+            <Image width={18} height={18} src="/icons/arrow-sort.png" alt="" className='absolute left-5 top-4 '  />
             <div className=' border-gray-300 border rounded-xl px-6 pl-8 py-3 text-zinc-950 ml-2'>
            Sort
             </div>

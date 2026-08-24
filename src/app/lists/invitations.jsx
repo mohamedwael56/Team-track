@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import { useState } from 'react';
+import Image from 'next/image';
 function Invitations() {
     const invitationRequests=[
         {
@@ -31,7 +32,7 @@ openMessage&&(
 <div className="bg-black fixed inset-0 opacity-50 z-50"></div>
 <div className="absolute inset-0 z-50 flex items-center justify-center">
     <div className="bg-white items-center flex flex-col p-5 rounded-2xl">
-   <img src="/icons/icon(2).png" alt="" />
+   <Image width={90} height={90} src="/icons/icon(2).png" alt="" />
    <h1 className='text-black my-5 text-xl'>reject invitation!</h1>
    <p className='text-gray-400'>are you sure you want to reject this invitation ?</p>
    <div className="w-full flex gap-5 mt-5">
@@ -51,16 +52,16 @@ openMessage&&(
                 <>
                   <div className="border text-xs shadow-sm flex flex-col rounded-2xl p-5">
 <div className="flex justify-between items-center">
-    <div className="flex gap-2 flex-row items-center">
-        <img src="/profile/view-circle.png" className='w-5' alt="" />
-        <img src={request.avatar} className='w-8' alt="" />
-        <p className='text-black lg:text-base text-[8px] font-bold'>{request.name}</p>
+    <div className="flex gap-2 mb-1 flex-row items-center">
+        <Image width={17} height={17} src="/profile/view-circle.png"  alt="" />
+        <Image width={32} height={32} src={request.avatar}  alt="" />
+        <p className='text-black lg:text-sm text-[8px] font-bold'>{request.name}</p>
     </div>
-    <div className="text-gray-400 lg:text-base text-[8px]  ">{request.time}</div>
+    <div className="text-gray-400 lg:text-sm text-[8px]  ">{request.time}</div>
 </div>
-<div className="flex gap-1 my-2">
-    <p className='text-gray-400 lg:text-base text-[8px]'>Sent you a collaboration invite to</p>
-    <Link href='/lists/lists-invitations' className='font-bold lg:text-base text-[8px] text-blue-500'> My List</Link>
+<div className="flex gap-1 justify-between items-center my-2">
+    <p className='text-gray-400 lg:text-xs text-[8px]'>Sent you a collaboration invite to</p>
+    <Link href='/lists/lists-invitations' className='font-bold lg:text-sm text-[8px] text-blue-500'> My List</Link>
 </div>
 <div className="flex gap-2">
     <button onClick={()=>setOpenMessage(true)} className='flex-1 bg-red-200 rounded-2xl text-red-500 py-2 px-5 cursor-pointer'>reject</button>

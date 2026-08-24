@@ -1,8 +1,10 @@
 'use client'
 import Header from '@/components/header'
 import React from 'react'
+import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
+
 function Page() {
     const data=[{
         id:1,
@@ -129,7 +131,9 @@ open&&(
 <h1 className='text-black  font-bold'>Rewards overview</h1>
 <button onClick={()=>setOpen(false)} className='cursor-pointer text-black text-3xl'>×</button>
         </div>
-<img src="/icons/talabat.png" className="w-full border rounded-xl mb-2 h-auto" />
+        <div className="w-100 h-50 relative object-cover">
+<Image fill src="/icons/talabat.png" className=" border rounded-xl mb-2" />
+</div>
 <p className='rounded-xl border border-dashed px-3 bg-gray-200 text-center py-1 text-blue-700 border-gray-500'>$10 gift card</p>
 <div className="mt-4 flex gap-3 flex-col border rounded-xl p-5">
 <div className="flex w-full">

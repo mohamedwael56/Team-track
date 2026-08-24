@@ -1,6 +1,7 @@
 'use client';
 import Header from '@/components/header'
 import React from 'react'
+import Image from 'next/image';
 import Sidebar from '@/components/sidebar'
 import Link from 'next/link'
 import { useState } from 'react'
@@ -65,8 +66,8 @@ const data={
                     <>
                     <div className="bg-black opacity-50 fixed inset-0 z-50"></div>
                     <div className="fixed inset-0 flex items-center justify-center z-50">
-                    <div className="bg-white p-5 items-center lg:w-full w-80flex flex-col rounded-2xl ">
-                    <img src={status === 'successful' ? "/icons/icon.png" : "/icons/icon(2).png"} width={70} />
+                    <div className="bg-white p-5 items-center  lg:w-150 w-80 flex flex-col rounded-2xl ">
+                    <Image alt='' src={status === 'successful' ? "/icons/icon.png" : "/icons/icon(2).png"} width={90} height={90}  />
                     <div className="flex flex-col items-center justify-center">
                     <div className="mt-5  text-black"> {status === 'successful' ? ' successful submission' : ' submission failed'}</div>
                     <div className="my-5 text-center text-gray-400 w-[300px] text-sm "> {`${status === 'successful' ? 'Your support ticket has been submitted successfully. Our support team will contact you shortly.' : 'Your support ticket submission failed. Please try again later.'}`}</div>

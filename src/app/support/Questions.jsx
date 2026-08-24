@@ -1,5 +1,5 @@
 import React from 'react'
-
+import Image from 'next/image'
 const Questions = () => {
   return (
 
@@ -7,17 +7,17 @@ const Questions = () => {
 
        <div className="w-full relative mt-5">
                 <button className='cursor-pointer'>
-                <img src="/icons/search.png" alt="" className='absolute left-4 top-3 ' />
+                <Image width={20} height={20} src="/icons/search.png" alt="" className='absolute left-4 top-3 ' />
             </button>
             <input type="text" placeholder="Search tasks..." className="border border-gray-300 text-zinc-950 rounded-xl px-4 py-2 w-full pl-12" />
        </div>
        <div className=" my-5 text-white flex flex-row gap-3">
 <div className="bg-blue-900 w-50 py-5 px-4 flex flex-col gap-4 rounded-2xl">
-<img src="/support/group.png" alt="" className='w-5' />
+<Image width={20} height={20} src="/support/group.png" alt="" className='w-5' />
 <p className='text-xl'>Questions about getting started</p>
 </div>
 <div className="bg-violet-400 w-50 py-5 px-4 flex flex-col gap-4 rounded-2xl">
-<img src="/support/settings.png" alt="" className='w-5'  />
+<Image width={20} height={20} src="/support/settings.png" alt="" className='w-5'  />
 <p>Questions about privacy</p>
 </div>
        </div>

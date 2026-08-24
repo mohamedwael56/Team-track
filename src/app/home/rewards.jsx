@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 function Rewards() {
   const rewards=[{
     id:1,
@@ -43,9 +44,9 @@ function Rewards() {
     return(
       <Fragment key={reward.id}>
 <div className="flex my-1 items-center bg-gray-200 p-3 rounded-2xl">
-
-  <img src="/icons/Noon.jpg" alt="" className="lg:w-40 w-20 rounded-2xl" />
-
+<div className="relative w-40 h-20  ">
+  <Image fill src="/icons/Noon.jpg" alt="" className=" rounded-2xl object-contain" />
+</div>
 
   <div className="border border-dashed border-gray-300 h-20 ml-1 mr-3"></div>
 

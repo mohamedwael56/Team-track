@@ -2,6 +2,7 @@ import Sidebar from '@/components/sidebar'
 import React from 'react'
 import Header from '@/components/header'
 import Link from 'next/link'
+import Image from 'next/image'
 function page() {
   return (
     <div className='flex'>
@@ -14,8 +15,8 @@ function page() {
     <p className='text-black'>the start of the al-ahly</p>
     </div>
     <hr />
-    <div className='flex mt-3 gap-3 items-center'>
-        <img src="/icons/al-ahly.png" alt="" />
+    <div className='flex mt-3 w-full h-100 relative gap-3 items-center'>
+        <Image fill src="/icons/al-ahly.png" alt="" />
     </div>
     <div className='flex text-black flex-col mb-9 gap-3 mt-4 items-center'>
 <p>
@@ -41,13 +42,13 @@ function page() {
     <div className='flex mt-5 gap-4 items-center'>
 <div className='flex items-center gap-4 text-black'>
 <button className='cursor-pointer'>
-<img src="/icons/like.png" alt="" />
+<Image width={20} height={20} src="/icons/like.png" alt="" />
 </button>
 <p>7.9 M</p>
 </div>
 <div className='flex items-center gap-4 text-black'>
 <button className='cursor-pointer'>
-<img src="/icons/commentS.svg" alt="" />
+<Image width={20} height={20} src="/icons/commentS.svg" alt="" />
 </button>
 <p>155.6K</p>
 </div>

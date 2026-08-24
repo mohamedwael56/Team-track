@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-
+import Image from 'next/image'
 function Rewards() {
   return (
 <div className="bg-gray-100 rounded-2xl p-5 w-80 lg:w-full my-4">
@@ -15,18 +15,18 @@ function Rewards() {
 </div>
     </div>
     <div className='mt-3 flex flex-row lg:gap-3 gap-2'>
-    <img src="/profile/waffarha.png" alt="" className='lg:w-fit w-7 h-7 lg:h-fit ' />
-    <img src="/profile/amazon.png" alt="" className='lg:w-fit w-7 h-7 lg:h-fit ' />
-    <img src="/profile/spotify.png" alt="" className='lg:w-fit w-7 h-7 lg:h-fit ' />
-    <img src="/profile/netflix.png" alt="" className='lg:w-fit w-7 h-7 lg:h-fit ' />
-    <img src="/profile/waffarha.png" alt="" className='lg:w-fit w-7 h-7 lg:h-fit ' />
-    <img src="/profile/amazon.png" alt="" className='lg:w-fit w-7 h-7 lg:h-fit ' />
-    <img src="/profile/spotify.png" alt="" className='lg:w-fit w-7 h-7 lg:h-fit ' />
-    <img src="/profile/netflix.png" alt="" className='lg:w-fit w-7 h-7 lg:h-fit ' />
-    <img src="/profile/waffarha.png" alt="" className='lg:w-fit w-7 h-7 lg:h-fit hidden lg:block' />
-    <img src="/profile/amazon.png" alt="" className='lg:w-fit w-7 h-7 lg:h-fit hidden lg:block  ' />
-    <img src="/profile/spotify.png" alt="" className='lg:w-fit w-7 h-7 lg:h-fit hidden lg:block ' />
-    <img src="/profile/netflix.png" alt="" className='lg:w-fit w-7 h-7 lg:h-fit hidden lg:block' />
+    <Image width={60} height={60} src="/profile/waffarha.png" alt="" className='lg:w-fit w-7 h-7 lg:h-fit ' />
+    <Image width={60} height={60} src="/profile/amazon.png" alt="" className='lg:w-fit w-7 h-7 lg:h-fit ' />
+    <Image width={60} height={60} src="/profile/spotify.png" alt="" className='lg:w-fit w-7 h-7 lg:h-fit ' />
+    <Image width={60} height={60} src="/profile/netflix.png" alt="" className='lg:w-fit w-7 h-7 lg:h-fit ' />
+    <Image width={60} height={60} src="/profile/waffarha.png" alt="" className='lg:w-fit w-7 h-7 lg:h-fit ' />
+    <Image width={60} height={60} src="/profile/amazon.png" alt="" className='lg:w-fit w-7 h-7 lg:h-fit ' />
+    <Image width={60} height={60} src="/profile/spotify.png" alt="" className='lg:w-fit w-7 h-7 lg:h-fit ' />
+    <Image width={60} height={60} src="/profile/netflix.png" alt="" className='lg:w-fit w-7 h-7 lg:h-fit ' />
+    <Image width={60} height={60} src="/profile/waffarha.png" alt="" className='lg:w-fit w-7 h-7 lg:h-fit hidden lg:block' />
+    <Image width={60} height={60} src="/profile/amazon.png" alt="" className='lg:w-fit w-7 h-7 lg:h-fit hidden lg:block  ' />
+    <Image width={60} height={60} src="/profile/spotify.png" alt="" className='lg:w-fit w-7 h-7 lg:h-fit hidden lg:block ' />
+    <Image width={60} height={60} src="/profile/netflix.png" alt="" className='lg:w-fit w-7 h-7 lg:h-fit hidden lg:block' />
     </div>
   </div>
 </div>

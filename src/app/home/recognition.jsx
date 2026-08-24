@@ -2,6 +2,7 @@ import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 import Link from 'next/link';
+import Image from 'next/image';
 function Recognition() {
   const recognitions=[{
     id:1,
@@ -59,15 +60,21 @@ function Recognition() {
              <SwiperSlide key={recognition.id}>
         <div className="flex items-center bg-orange-100 py-2 px-3 rounded-xl gap-3 mt-3">
 <div>
-  <img src="/icons/rectangle.png" className=' lg:w-full w-9 ' alt="" />
+  <div className="relative w-13 h-13">
+  <Image fill src="/icons/rectangle.png" className=' lg:w-full w-9 ' alt="" />
+</div>
 </div>
 <div className="flex flex-col items-center">
 <h1 className=" font-bold lg:text-xl text-[8px] text-amber-500 items-start"> mr.punctuality</h1>
-<img src="/icons/award.png" alt="" className='lg:w-full w-15' />
+<div className="relative w-40 h-7 ">
+  <Image fill src="/icons/award.png" className='lg:w-full w-15 object-contain' alt="" />
+</div>
 <div className="flex text-zinc-800 flex-row mt-2 items-center gap-2">
-<img src="/icons/vector2.png" className='lg:w-fit w-2' alt="" />
-<span className='lg:text-base text-[5px]'>+20</span>
-<span className="ml-2 lg:text-base text-nowrap text-[5px]">Tue 27 Aug 2024</span>
+  <div className="relative w-3 h-3">
+    <Image fill src="/icons/vector2.png" className='lg:w-fit w-2' alt="" />
+  </div>
+  <span className='lg:text-base text-[5px]'>+20</span>
+  <span className="ml-2 lg:text-base text-nowrap text-[5px]">Tue 27 Aug 2024</span>
 </div>
 </div>
 </div>

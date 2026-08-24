@@ -13,6 +13,7 @@ import { useState } from 'react';
 import MyProfile from './MyProfile';
 import MyTeam from './MyTeam';
 import Rewards from './Rewards.jsx';
+import Image from 'next/image';
 import Performance from './Performance.jsx';
 import Attendance from './Attendance';
 import Productivity from './Productivity';
@@ -37,8 +38,8 @@ function Page() {
              
 <div className="border flex mb-3 items-center gap-4 rounded-xl p-4 mt-5">
 <button className='relative cursor-pointer'>
-<img src="/profile/avatar.png" alt="" width={70} />
-<img className='absolute bottom-1 right-1' src="/profile/edit.png" alt="" />
+      <Image width={70} height={70} src="/profile/avatar.png" alt="" />
+<Image width={20} height={20} className='absolute bottom-1 right-1' src="/profile/edit.png" alt="" />
 </button>
 <div className="flex flex-col">
   <h1 className='text-black font-bold'>mohamed ahmed</h1>
@@ -47,27 +48,27 @@ function Page() {
 
 </div>
 <div className="border flex items-start flex-col mb-3 rounded-xl p-4 mt-5">
-  <img src="/profile/name-tag.png" alt="" className='my-5' />
+  <Image width={20} height={50} src="/profile/name-tag.png" alt="" className='my-5' />
   <div className='text-gray-400'>role</div>
   <div className='text-black'>flutter developer</div>
-  <img src="/profile/phone-rounded.png" alt="" className='my-5' />
+  <Image width={20} height={50} src="/profile/phone-rounded.png" alt="" className='my-5' />
   <div className='text-gray-400'>phone number</div>
   <div className='text-black'>(+20)123456789</div>
-  <img src="/profile/mail-02.png" alt="" className='my-5' />
+  <Image width={20} height={50} src="/profile/mail-02.png" alt="" className='my-5' />
   <div className='text-gray-400'>email address</div>
   <div className='text-black'>mohamedahmed@grandtech.io</div>
 </div>
 <div className="border flex items-start flex-col mb-3 rounded-xl p-4 mt-5">
-<img src="/profile/elements.png" className='my-5'  alt="" />
+  <Image width={20} height={20} src="/profile/elements.png" className='my-5'  alt="" />
   <div className='text-gray-400'>Birthdate</div>
   <div className='text-black'>october1,1996</div>
-<img src="/profile/location-10.png" className='my-5' alt="" />
-<div className='text-gray-400'>location</div>
-<div className='text-black'>Cairo, Egypt</div>
+  <Image width={20} height={20} src="/profile/location-10.png" className='my-5' alt="" />
+  <div className='text-gray-400'>location</div>
+  <div className='text-black'>Cairo, Egypt</div>
 
 </div>
 <div className="bg-sky-100 items-start p-5 gap-2 rounded-xl mt-5 flex">
-          <img src="/profile/left-icon.png" alt="" />
+          <Image width={20} height={20} src="/profile/left-icon.png" alt="" />
 <div className="flex flex-col">
 <div className="text-black">important notice</div>
 <div className="text-gray-500 text-xs">If any of the presented details is incorrect, please contact HR to adjust.</div>

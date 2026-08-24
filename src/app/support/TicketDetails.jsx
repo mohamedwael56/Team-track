@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image'
 
 function ticketDetails({setOpen}) {
   return (
@@ -47,15 +48,15 @@ function ticketDetails({setOpen}) {
                                 
                                 <div className='flex border rounded-xl px-3 justify-between'>
                             <div className='flex items-center'>
-                                <img src="/frame.svg" alt="" />
+                                <Image width={20} height={20} src="/frame.svg" alt="" />
                                 <div className='flex  flex-col ml-2'>
                             <p className='text-black text-nowrap text-sm'>devs presentation.pdf</p>
                             <p className='flex justify-start text-xs'>1.5 MB</p>
                                 </div>
                             </div>
                             <div className='flex items-center gap-2 ml-3'>
-                                <button className='cursor-pointer'><img src="/icons/view.png" alt="" /></button>
-                                <button className='cursor-pointer'><img src="/icons/delete-03.png" alt="" /></button>
+                                <button className='cursor-pointer'><Image width={15} height={15} src="/icons/view.png" alt="" /></button>
+                                <button className='cursor-pointer'><Image width={15} height={15} src="/icons/delete-03.png" alt="" /></button>
                             </div>
                             </div>
                                 </div>
@@ -75,7 +76,7 @@ function ticketDetails({setOpen}) {
                               <div className="flex flex-col border rounded-xl px-5 mt-4">
                                 <div className="flex justify-between items-center mt-5">
                                 <div className="flex items-center">
-                                    <img src="/icons/customer-service.png" alt="" />
+                                    <Image width={20} height={20} src="/icons/customer-service.png" alt="" />
                                     <h1 className='text-black ml-2'>deanna jones</h1>
                                 </div>
                                 <p className='text-gray-400'>3m ago</p>

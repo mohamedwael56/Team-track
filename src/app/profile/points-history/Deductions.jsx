@@ -1,5 +1,5 @@
 import React from 'react'
-
+import Image from 'next/image'
 const Deductions = () => {
   return (
    <>
@@ -11,7 +11,7 @@ const Deductions = () => {
     <div className='flex lg:flex-row flex-col gap-3'>
     <div className="border p-5 my-5 lg:w-80 w-70 flex justify-between rounded-2xl shadow-md">
     <div className="flex items-center gap-3">
-<img src="/icons/deducted-points.png" alt="" />
+<Image width={55} height={55} src="/icons/deducted-points.png" alt="" />
 <div className="flex flex-col">
     <p className='text-red-500 font-bold'>-20</p>
     <p className='text-black'>commitment</p>
@@ -23,7 +23,7 @@ const Deductions = () => {
     </div>
     <div className="border p-5 my-5 lg:w-80 w-70 flex justify-between rounded-2xl shadow-md">
     <div className="flex items-center gap-3">
-<img src="/icons/deducted-points.png" alt="" />
+<Image width={55} height={55} src="/icons/deducted-points.png" alt="" />
 <div className="flex flex-col">
     <p className='text-red-500 font-bold'>-20</p>
     <p className='text-black'>commitment</p>
@@ -43,7 +43,7 @@ const Deductions = () => {
     <div className='flex lg:flex-row flex-col gap-3'>
     <div className="border p-5 my-5 lg:w-80 w-70 flex justify-between rounded-2xl shadow-md">
     <div className="flex items-center gap-3">
-<img src="/icons/deducted-points.png" alt="" />
+<Image width={55} height={55} src="/icons/deducted-points.png" alt="" />
 <div className="flex flex-col">
     <p className='text-red-500 font-bold'>-20</p>
     <p className='text-black'>commitment</p>
@@ -55,7 +55,7 @@ const Deductions = () => {
     </div>
     <div className="border p-5 my-5 lg:w-80 w-70 flex justify-between rounded-2xl shadow-md">
     <div className="flex items-center gap-3">
-<img src="/icons/deducted-points.png" alt="" />
+<Image width={55} height={55} src="/icons/deducted-points.png" alt="" />
 <div className="flex flex-col">
     <p className='text-red-500 font-bold'>-20</p>
     <p className='text-black'>commitment</p>
@@ -75,7 +75,7 @@ const Deductions = () => {
     <div className='flex lg:flex-row flex-col gap-3'>
     <div className="border p-5 my-5 lg:w-80 w-70 flex justify-between rounded-2xl shadow-md">
     <div className="flex items-center gap-3">
-<img src="/icons/deducted-points.png" alt="" />
+<Image width={55} height={55} src="/icons/deducted-points.png" alt="" />
 <div className="flex flex-col">
     <p className='text-red-500 font-bold'>-20</p>
     <p className='text-black'>commitment</p>
@@ -87,7 +87,7 @@ const Deductions = () => {
     </div>
     <div className="border p-5 my-5 lg:w-80 w-70 flex justify-between rounded-2xl shadow-md">
     <div className="flex items-center gap-3">
-<img src="/icons/deducted-points.png" alt="" />
+<Image width={55} height={55} src="/icons/deducted-points.png" alt="" />
 <div className="flex flex-col">
     <p className='text-red-500 font-bold'>-20</p>
     <p className='text-black'>commitment</p>
@@ -99,7 +99,7 @@ const Deductions = () => {
     </div>
     <div className="border p-5 my-5 lg:w-80 w-70 flex justify-between rounded-2xl shadow-md">
     <div className="flex items-center gap-3">
-<img src="/icons/deducted-points.png" alt="" />
+<Image width={55} height={55} src="/icons/deducted-points.png" alt="" />
 <div className="flex flex-col">
     <p className='text-red-500 font-bold'>-20</p>
     <p className='text-black'>commitment</p>
@@ -120,7 +120,7 @@ const Deductions = () => {
    
     <div className="border p-5 my-5 lg:w-80 w-70 flex justify-between rounded-2xl shadow-md">
     <div className="flex items-center gap-3">
-<img src="/icons/deducted-points.png" alt="" />
+<Image width={55} height={55} src="/icons/deducted-points.png" alt="" />
 <div className="flex flex-col">
     <p className='text-red-500 font-bold'>-20</p>
     <p className='text-black'>commitment</p>

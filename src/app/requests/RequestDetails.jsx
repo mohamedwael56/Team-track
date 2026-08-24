@@ -1,5 +1,5 @@
 import React from 'react'
-
+import Image from 'next/image'
 function RequestDetails({requestDetails, setRequestDetails}) {
   return (
     <>
@@ -62,7 +62,7 @@ function RequestDetails({requestDetails, setRequestDetails}) {
                   <p className="text-gray-400">file</p>
                   <div className="flex border px-2 rounded-xl border-grey-400 justify-between">
                     <div className="flex items-center">
-                      <img src="/frame.svg" alt="" />
+                      <Image width={25} height={20} src="/frame.svg" alt="" />
                       <div className="flex  flex-col ml-2">
                         <p className="text-black text-nowrap text-sm">
                           devs presentation.pdf
@@ -72,10 +72,10 @@ function RequestDetails({requestDetails, setRequestDetails}) {
                     </div>
                     <div className="flex items-center gap-2 ml-3">
                       <button className="cursor-pointer">
-                        <img src="/icons/view.png" alt="" />
+                        <Image width={15} height={20} src="/icons/view.png" alt="" />
                       </button>
                       <button className="cursor-pointer">
-                        <img src="/icons/delete-03.png" alt="" />
+                        <Image width={15} height={20} src="/icons/delete-03.png" alt="" />
                       </button>
                     </div>
                   </div>

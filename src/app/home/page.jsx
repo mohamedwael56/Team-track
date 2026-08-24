@@ -6,7 +6,7 @@ import Requests from "./requests.jsx";
 import Recognition from "./recognition.jsx";
 import Rewards from "./rewards.jsx";
 import News from "./news.jsx";
-
+import Image from "next/image";
 function Page() {
   return (
     <div className="flex">
@@ -21,7 +21,7 @@ function Page() {
               </div>
               <div className="bg-gray-100 lg:block hidden  mr-8 flex items-center gap-5 py-2 px-5 rounded-xl">
                 <div>
-                  <img src="/icons/clock-icon.png" alt="" />
+                  <Image width={30} height={30} src="/icons/clock-icon.png" alt="" />
                 </div>
                 <div>
                   <p className="text-gray-600 text-sm select-none">

@@ -2,6 +2,7 @@
 import {useState} from 'react'
 import { useRouter } from 'next/navigation'
 import TicketDetails from './TicketDetails'
+import Image from 'next/image'
 function Issues() {
 
     const issues=[{
@@ -154,13 +155,13 @@ function Issues() {
             <div className="flex w-full items-center mt-5 justify-between">
              <div className="flex-1 relative">
                 <button className='cursor-pointer'>
-                <img src="/icons/search.png" alt="" className='absolute left-4 top-3 ' />
+                <Image width={20} height={20} src="/icons/search.png" alt="" className='absolute left-4 top-3 ' />
             </button>
             <input type="text" placeholder="Search tasks..." className="border border-gray-300 text-zinc-950 rounded-xl px-4 py-2 w-full pl-12" />
        </div>
        <div className='flex items-center ml-5 gap-3'>
         <button className='border flex gap-2 items-center rounded-2xl py-3 px-4 cursor-pointer'>
-                <img src="/icons/filter.png" alt="" />
+                <Image width={15} height={10} src="/icons/filter.png" alt="" />
                 <p className='text-black'>filter</p>
             </button>
         <button onClick={()=>router.push('/support/new-ticket')} className='border bg-blue-900 flex gap-2 items-center rounded-2xl py-3 px-5 cursor-pointer'>
@@ -178,7 +179,7 @@ function Issues() {
                 <>
                       <button key={card.id} onClick={()=>setOpen(true)} className=" cursor-pointer shadow-ms py-5 px-4 border flex justify-between rounded-xl">
         <div className=" flex items-center gap-3">
-<img src="/support/frame-1.png" alt="" />
+<Image width={20} height={20} src="/support/frame-1.png" alt="" />
 <div className="flex flex-col ">
 <p className='text-black font-bold'>{card.subject}</p>
 <p className='text-gray-400 text-start'>{card.ticketId}</p>

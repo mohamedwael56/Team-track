@@ -2,6 +2,7 @@
 import React, { Fragment } from 'react'
 import { useRouter } from 'next/navigation';
 import { useState } from 'react'
+import Image from 'next/image';
 import RequestDetails from './RequestDetails';
 function MyRequests() {
   
@@ -210,13 +211,16 @@ console.log(filteredRequests)
     <div className=" flex justify-between mb-5 items-center mt-5 gap-5">
  <div className="  w-full  relative">
                 <button className='cursor-pointer'>
-                <img src="/icons/search.png" alt="" className='absolute left-2 lg:left-4 lg:top-3 top-3 w-2 lg:w-fit ' />
+                <Image width={5} height={5} src="/icons/search.png" alt="" className='absolute left-2 lg:left-4 lg:top-3 top-3 w-2 lg:w-fit ' />
             </button>
             <input value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} type="text" placeholder="Search tasks..." className="border border-gray-300 text-zinc-950 rounded-xl px-4 py-2 w-full lg:text-base text-[7px] pl-5 lg:pl-12" />
        </div>
        <div className=" w-60 lg:w-150">
       <button className='border flex gap-2 items-center shadow-sm rounded-xl py-2 px-6 cursor-pointer'>
-                <img src="/icons/calendar.png" alt="" className='lg:w-fit w-3' />
+               <div className="relative w-3 h-3 lg:w-5 lg:h-5">
+                <Image fill src="/icons/calendar.png" alt=""  />
+
+               </div>
                 <p className='lg:text-base text-[8px] text-nowrap text-black'>this week : 09/30/2024 - 10/06/2024 </p>
             </button>
             </div>
