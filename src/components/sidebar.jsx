@@ -8,7 +8,7 @@ function Sidebar({ isSidebarOpen, setIsSidebarOpen }) {
     const pathname = usePathname();
   return (
     
- <aside className={`${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'} text-xs lg:text-lg lg:translate-x-0  transition-transform duration-800 lg:block  gap-5 m-3 w-48 lg:w-64 inset-0 fixed bg-gray-100 h-screen rounded-2xl z-40 shadow-lg`}>
+ <aside className={`${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'} text-xs lg:text-lg lg:translate-x-0  transition-transform duration-800 lg:block  gap-5 m-3 w-48 lg:w-64 inset-0 absolute bg-gray-100 h-400 rounded-2xl z-40 shadow-lg`}>
        
             <div className='flex flex-col gap-5 mt-5 '>
                <div className=' w-30 h-15 relative select-none flex  justify-start ml-8'>
@@ -17,7 +17,7 @@ function Sidebar({ isSidebarOpen, setIsSidebarOpen }) {
                 <div className='flex justify-start ml-8 mt-5 capitalize'>
                 <ul className= 'flex flex-col  gap-8 text-gray-500'>
                   <li>
-                    <Link href="/home" className={pathname === '/home' ? 'flex items-center gap-2 text-blue-900 bg-gray-400 py-2 px-8 rounded-2xl ' : 'flex items-center gap-2 text-gray-500'}>
+                    <Link href="/home" className={pathname.startsWith('/home') ? 'flex items-center gap-2 text-blue-900 bg-gray-400 py-2 px-8 rounded-2xl ' : 'flex items-center gap-2 text-gray-500'}>
                      <div className="relative w-5 h-5">
                       <Image fill src="/icons/apps.png" alt="Dashboard Icon" />
                  </div>
@@ -25,7 +25,7 @@ function Sidebar({ isSidebarOpen, setIsSidebarOpen }) {
                     </Link>
                   </li>
                   <li>
-                    <Link href="/tasks" className={pathname === '/tasks' ? 'flex items-center gap-2 text-blue-900 bg-gray-400 py-2 px-8 rounded-2xl ' : 'flex items-center gap-2 text-gray-500'}>
+                    <Link href="/tasks" className={pathname.startsWith('/tasks') ? 'flex items-center gap-2 text-blue-900 bg-gray-400 py-2 px-8 rounded-2xl ' : 'flex items-center gap-2 text-gray-500'}>
                  
                      <div className="relative w-5 h-5">
                       <Image fill src="/icons/Vector.png" alt="Projects Icon" />
@@ -33,56 +33,56 @@ function Sidebar({ isSidebarOpen, setIsSidebarOpen }) {
                     My tasks</Link>
                   </li>
                   <li>
-                    <Link href="/lists" className='flex items-center gap-2 text-gray-500'>
+                    <Link href="/lists"  className={pathname.startsWith('/lists') ? 'flex items-center gap-2 text-blue-900 bg-gray-400 py-2 px-8 rounded-2xl ' : 'flex items-center gap-2 text-gray-500'}>
                     <div className="relative w-5 h-5">
                       <Image fill src="/icons/lists.png" alt="Team Icon" />
                     </div>
                     lists</Link>
                   </li>
                   <li>
-                    <Link href="/attendance" className='flex items-center gap-2 text-gray-500'>
+                    <Link href="/attendance" className={pathname.startsWith('/attendance') ? 'flex items-center gap-2 text-blue-900 bg-gray-400 py-2 px-8 rounded-2xl ' : 'flex items-center gap-2 text-gray-500'}>
                      <div className="relative w-5 h-5">
                       <Image fill src="/icons/calendar.png" alt="Team Icon" />
                      </div>
                     attendance</Link>
                   </li>
                   <li>
-                    <Link href="/requests" className='flex items-center gap-2 text-gray-500'>
+                    <Link href="/requests" className={pathname.startsWith('/requests') ? 'flex items-center gap-2 text-blue-900 bg-gray-400 py-2 px-8 rounded-2xl ' : 'flex items-center gap-2 text-gray-500'}>
                      <div className="relative w-5 h-5">
                       <Image fill src="/icons/post.png" alt="Team Icon" />
                      </div>
                     requests</Link>
                   </li>
                   <li>
-                    <Link href="/shifts" className='flex items-center gap-2 text-gray-500'>
+                    <Link href="/shifts" className={pathname.startsWith('/shifts') ? 'flex items-center gap-2 text-blue-900 bg-gray-400 py-2 px-8 rounded-2xl ' : 'flex items-center gap-2 text-gray-500'}>
                      <div className="relative w-5 h-5">
                       <Image fill src="/icons/clock-circle.png" alt="Team Icon" />
                      </div>
                     shifts</Link>
                   </li>
                   <li>
-                    <Link href="/rewards" className='flex items-center gap-2 text-gray-500'>
+                    <Link href="/rewards" className={pathname.startsWith('/rewards') ? 'flex items-center gap-2 text-blue-900 bg-gray-400 py-2 px-8 rounded-2xl ' : 'flex items-center gap-2 text-gray-500'}>
                      <div className="relative w-5 h-5">
                       <Image fill src="/icons/store.png" alt="Team Icon" />
                      </div>
                     store</Link>
                   </li>
                   <li>
-                    <Link href="/settings" className='flex items-center gap-2 text-gray-500'>
+                    <Link href="/settings" className={pathname.startsWith('/settings') ? 'flex items-center gap-2 text-blue-900 bg-gray-400 py-2 px-8 rounded-2xl ' : 'flex items-center gap-2 text-gray-500'}>
                      <div className="relative w-5 h-5">
                       <Image fill src="/icons/setting.png" alt="Team Icon" />
                      </div>
                     settings</Link>
                   </li>
                   <li>
-                    <Link href="/support" className='flex items-center gap-2 text-gray-500'>
+                    <Link href="/support" className={pathname.startsWith('/support') ? 'flex items-center gap-2 text-blue-900 bg-gray-400 py-2 px-8 rounded-2xl ' : 'flex items-center gap-2 text-gray-500'}>
                      <div className="relative w-5 h-5"  >
                       <Image fill src="/icons/help.png" alt="Team Icon" />
                      </div>
                     support</Link>
                   </li>
                   <li>
-                    <Link href="/team" className='flex items-center mt-20 gap-2 text-red-700'>
+                    <Link href="/team" className={pathname === '/team' ? 'flex items-center mt-20 gap-2 text-blue-900 bg-gray-400 py-2 px-8 rounded-2xl ' : 'flex items-center mt-20 gap-2 text-red-700'}>
                      <div className="relative w-5 h-5"  >
                       <Image fill src="/icons/help.png" alt="Team Icon" />
                      </div>
