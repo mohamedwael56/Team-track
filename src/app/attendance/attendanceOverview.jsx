@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 import Image from 'next/image'
-function AttendanceOverview({open,setOpen}) {
+function AttendanceOverview({setOpen,open}) {
   return (
     <>
         {open&&(
@@ -67,7 +67,7 @@ function AttendanceOverview({open,setOpen}) {
 
 <div className="flex items-center gap-3 ml-5">
    <div className="relative w-13 h-13 object-cover">
-    <Image src="/attendance/finger-print.png" fill objectFit="cover" />
+    <Image src="/attendance/finger-print.png" fill objectFit="cover" alt="" />
    </div>
     <div className="flex gap-1 flex-col">
         <h1>00:00</h1>
@@ -76,7 +76,7 @@ function AttendanceOverview({open,setOpen}) {
 </div>
 <div className="flex gap-3 ml-5">
      <div className="relative object-cover h-13 w-13">
-    <Image src="/attendance/break.png" fill objectFit='cover' />
+    <Image src="/attendance/break.png" fill objectFit='cover' alt="" />
 </div>
     <div className="flex gap-1 flex-col">
         <h1>00:00</h1>
@@ -85,7 +85,7 @@ function AttendanceOverview({open,setOpen}) {
 </div>
 <div className="flex items-center gap-3 ml-5">
   <div className="relative h-13 w-13">
-    <Image src="/attendance/lateness.png" fill />
+    <Image src="/attendance/lateness.png" fill alt="" />
     </div>
     <div className="flex gap-1 flex-col">
         <h1>00:00</h1>
@@ -100,7 +100,9 @@ function AttendanceOverview({open,setOpen}) {
 </div>
 </div>
 </>
-          )}  </>  )
+          )} 
+          
+           </>  )
 }
 
 export default AttendanceOverview

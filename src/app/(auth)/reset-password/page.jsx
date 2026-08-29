@@ -3,7 +3,6 @@ import React from 'react'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react';
 import Image from 'next/image';
-import { redirect } from 'next/dist/server/api-utils';
 import { getSupabaseClient } from '../../../../lib/supabase';
 import './reset-password.css'
 function Page() {
