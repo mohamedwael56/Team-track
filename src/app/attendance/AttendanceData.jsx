@@ -1,10 +1,12 @@
 import React from "react";
 import { Doughnut } from "react-chartjs-2";
 import Image from "next/image";
+import { attendanceData } from "@/Data/attendanceDate";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 function AttendanceData({setOpen}) {
+
   const data = {
     labels: ["Working", "Break", "Late"],
     datasets: [
@@ -14,78 +16,7 @@ function AttendanceData({setOpen}) {
       },
     ],
   };
-  const attendanceData = [
-    {
-      id: "1",
-      date: "13Mar",
-      status: "completed",
-      clockIn: "09:00",
-      clockOut: "05:00",
-      workingHours: "07:55",
-      breakHours: "07:55",
-      lateHours: "07:55",
-    },
-    {
-      id: "2",
-      date: "13Mar",
-      status: "completed",
-      clockIn: "09:00",
-      clockOut: "05:00",
-      workingHours: "07:55",
-      breakHours: "07:55",
-      lateHours: "07:55",
-    },
-    {
-      id: "3",
-      date: "13Mar",
-      status: "completed",
-      clockIn: "09:00",
-      clockOut: "05:00",
-      workingHours: "07:55",
-      breakHours: "07:55",
-      lateHours: "07:55",
-    },
-    {
-      id: "4",
-      date: "13Mar ",
-      status: "completed",
-      clockIn: "09:00",
-      clockOut: "05:00",
-      workingHours: "07:55",
-      breakHours: "07:55",
-      lateHours: "07:55",
-    },
-    {
-      id: "5",
-      date: "13Mar",
-      status: "completed",
-      clockIn: "09:00",
-      clockOut: "05:00",
-      workingHours: "07:55",
-      breakHours: "07:55",
-      lateHours: "07:55",
-    },
-    {
-      id: "6",
-      date: "13Mar",
-      status: "completed",
-      clockIn: "09:00",
-      clockOut: "05:00",
-      workingHours: "07:55",
-      breakHours: "07:55",
-      lateHours: "07:55",
-    },
-    {
-      id: "7",
-      date: "13Mar",
-      status: "InCompleted",
-      clockIn: "09:00",
-      clockOut: "-- --",
-      workingHours: "07:55",
-      breakHours: "07:55",
-      lateHours: "07:55",
-    },
-  ];
+ 
   return (
     <>
       {attendanceData.map((attendance) => {
