@@ -1,5 +1,4 @@
-import Header from '@/components/header'
-import Sidebar from '@/components/sidebar'
+"use client"
 import React from 'react'
 import { useState } from 'react'
 import Image from 'next/image'
