@@ -1,4 +1,3 @@
-"use client";
 import Attendance from "./attendance.jsx";
 import Tasks from "./tasks.jsx";
 import Meetings from "./meetings.jsx";
