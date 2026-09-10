@@ -1,3 +1,4 @@
+"use client"
 import React from 'react'
 import Autocomplete from '@mui/joy/Autocomplete';
 import { useState } from 'react';
