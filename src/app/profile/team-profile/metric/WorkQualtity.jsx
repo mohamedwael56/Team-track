@@ -1,9 +1,7 @@
 "use client";
 import React from 'react'
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Doughnut } from 'react-chartjs-2'
+
 
 function WorkQuality({actualField,inputValue,percentageValue,setOpen}) {
         const percentage = 66;

@@ -1,11 +1,4 @@
-'use client';
-import Header from '@/components/header'
 import React from 'react'
-import Sidebar from '@/components/sidebar'
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
 import { Chart as ChartJs,Tooltip,Legend,ArcElement } from 'chart.js'
 import MyProfile from './MyProfile';
 import Rewards from './Rewards.jsx';
@@ -36,7 +29,7 @@ function page() {
   
   <Performance />
 
-  <div className="flex flex-col">
+  <div className="flex flex-col ml-10">
 <Attendance />
 
 <TaskProductivity />

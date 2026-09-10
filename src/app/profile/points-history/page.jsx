@@ -1,6 +1,5 @@
 'use client'
-import Header from '@/components/header'
-import Sidebar from '@/components/sidebar'
+
 import Link from 'next/link'
 import React from 'react'
 import Rewards from './Rewards'
