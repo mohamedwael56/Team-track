@@ -13,7 +13,8 @@ function Page() {
   <div className="flex-1 lg:ml-69">
     <main>
    
-<AddRequestTabs Leave={<Leave />} OverTime={<OverTime />} RemoteWork={<RemoteWork />} Loan={<Loan />} Reimbursement={<Reimbursement />} />
+<AddRequestTabs Leave={<Leave />} OverTime={<OverTime />}
+ RemoteWork={<RemoteWork />} Loan={<Loan />} Reimbursement={<Reimbursement />} />
     </main>
   </div>
 </div>

@@ -1,6 +1,4 @@
-import Sidebar from '@/components/sidebar'
 import React from 'react'
-import Header from '@/components/header'
 import Link from 'next/link'
 import Image from 'next/image'
 function page() {
