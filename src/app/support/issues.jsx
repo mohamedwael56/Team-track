@@ -3,138 +3,10 @@ import {useState} from 'react'
 import { useRouter } from 'next/navigation'
 import TicketDetails from './TicketDetails'
 import Image from 'next/image'
+import {issues} from "@/Data/issuesData"
 function Issues() {
 
-    const issues=[{
-        id:1,
-        subject:'How to uninstall the...',
-        ticketId:'334533',
-        status:'open',
-        submitted:'mar23,2022'
-    },
-{
-        id:2,
-        subject:'How to uninstall the...',
-        ticketId:'334533',
-        status:'open',
-        submitted:'mar23,2022'
-    },
-{
-        id:3,
-        subject:'How to uninstall the...',
-        ticketId:'334533',
-        status:'open',
-        submitted:'mar23,2022'
-
-},
-{
-        id:4,
-        subject:'How to uninstall the...',
-        ticketId:'334533',
-        status:'in progress',
-        submitted:'mar23,2022'
-    },
-{
-        id:5,
-        subject:'How to uninstall the...',
-        ticketId:'334533',
-        status:'in progress',
-        submitted:'mar23,2022'
-    },
-{
-        id:6,
-        subject:'How to uninstall the...',
-        ticketId:'334533',
-        status:'in progress',
-        submitted:'mar23,2022'
-    },
-{
-        id:7,
-        subject:'How to uninstall the...',
-        ticketId:'334533',
-        status:'Solved',
-        submitted:'mar23,2022'
-    },
-{
-        id:8,
-        subject:'How to uninstall the...',
-        ticketId:'334533',
-        status:'Solved',
-        submitted:'mar23,2022'
-    },
-{
-        id:9,
-        subject:'How to uninstall the...',
-        ticketId:'334533',
-        status:'Solved',
-        submitted:'mar23,2022'
-    },
-    {
-        id:10,
-        subject:'How to uninstall the...',
-        ticketId:'334533',
-        status:'open',
-        submitted:'mar23,2022'
-    },
-{
-        id:11,
-        subject:'How to uninstall the...',
-        ticketId:'334533',
-        status:'open',
-        submitted:'mar23,2022'
-    },
-{
-        id:12,
-        subject:'How to uninstall the...',
-        ticketId:'334533',
-        status:'open',
-        submitted:'mar23,2022'
-
-},
-{
-        id:13,
-        subject:'How to uninstall the...',
-        ticketId:'334533',
-        status:'in progress',
-        submitted:'mar23,2022'
-    },
-{
-        id:14,
-        subject:'How to uninstall the...',
-        ticketId:'334533',
-        status:'in progress',
-        submitted:'mar23,2022'
-    },
-{
-        id:15,
-        subject:'How to uninstall the...',
-        ticketId:'334533',
-        status:'in progress',
-        submitted:'mar23,2022'
-    },
-{
-        id:16,
-        subject:'How to uninstall the...',
-        ticketId:'334533',
-        status:'Solved',
-        submitted:'mar23,2022'
-    },
-{
-        id:17,
-        subject:'How to uninstall the...',
-        ticketId:'334533',
-        status:'Solved',
-        submitted:'mar23,2022'
-    },
-{
-        id:18,
-        subject:'How to uninstall the...',
-        ticketId:'334533',
-        status:'Solved',
-        submitted:'mar23,2022'
-    },
-
-]
+   
     const router = useRouter();
     const [open , setOpen] = useState(false)
   return (
@@ -176,7 +48,7 @@ function Issues() {
            {
             issues.map((card)=>{
                 return(
-                <>
+                
                       <button key={card.id} onClick={()=>setOpen(true)} className=" cursor-pointer shadow-ms py-5 px-4 border flex justify-between rounded-xl">
         <div className=" flex items-center gap-3">
 <Image width={20} height={20} src="/support/frame-1.png" alt="" />
@@ -190,7 +62,7 @@ function Issues() {
         <p className='text-gray-400'>{card.submitted}</p>
         </div>
             </button>
-                </>
+                
                 )
             })
            }
