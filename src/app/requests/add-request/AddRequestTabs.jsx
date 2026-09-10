@@ -1,0 +1,89 @@
+"use client"
+import React from 'react'
+import { useRouter } from 'next/navigation';
+import Link from 'next/link'
+import Image from 'next/image';
+import { useState } from 'react';
+function AddRequestTabs({Loan,Reimbursement,Leave,OverTime,RemoteWork}) {
+    const [sendRequest, setSendRequest] = useState(false);
+    const [activeTab, setActiveTab] = useState('Leave');
+const router = useRouter();
+  return (
+    <>
+   {
+        sendRequest&&(
+          <>
+<div className="bg-black z-50 opacity-50 fixed inset-0"></div>
+<div className="z-50 fixed inset-0 flex items-center justify-center">
+<div className="bg-white w-100 items-center gap-5 rounded-2xl p-5 flex flex-col">
+  <Image width={120} height={120} src="/icons/icon.png" alt="" />
+  <h1 className='text-xl text-black font-bold'>request submitted!</h1>
+  <p className='text-gray-400'>Your request has been submitted successfully.</p>
+  <button onClick={()=>setSendRequest(false)} className='cursor-pointer  w-full bg-blue-900 text-white rounded-2xl py-3'>Got it</button>
+</div>
+</div>
+</>
+        )
+      }
+      <div className="bg-gray-100 w-80 lg:w-full flex flex-col rounded-2xl p-5 my-4">
+   <div className="flex mb-5 justify-between items-center">
+   <div className="flex flex-row gap-5 items-center">
+    <Link href='' className='text-blue-500 text-[8px] lg:text-base'>back</Link>
+    <div className="text-black lg:text-xl text-[9px] font-bold">
+Add Requests
+    </div>
+   </div>
+    
+    <div className="flex gap-5 mr-5">
+<button onClick={()=>router.push('/requests')} className='text-red-500 cursor-pointer text-[9px] lg:text-lg'>Discard</button>
+        <button onClick={()=>setSendRequest(true)} className='lg:px-9 px-3 cursor-pointer py-2 text-white text-[9px] lg:text-base bg-blue-900 rounded-2xl'>Send request</button>
+      
+    </div>
+   </div>
+   <hr />
+   <div className="mb-3 font-bold items-center text-black mt-5 gap-5">
+Request Type
+   </div>
+<div className=" mb-5 gap-2 lg:gap-5 w-full text-black grid lg:grid-cols-5">
+    <button onClick={()=>setActiveTab('Leave')} className={`${activeTab === 'Leave' ? 'bg-blue-900 text-white' : 'bg-gray-200 text-black'} cursor-pointer px-7 py-5 rounded-xl `}>
+        <div className="relative w-6 h-6">
+        <Image fill  src="/requests/stopwatch-minus.png" alt="" />
+       </div>
+        <p className='text-start mt-1'>Leave</p>
+        </button>
+    <button onClick={()=>setActiveTab('Over Time')} className={`${activeTab === 'Over Time' ? 'bg-blue-900 text-white' : 'bg-gray-200 text-black'} cursor-pointer px-7 py-5 rounded-xl `}>
+       <div className="relative w-6 h-6">
+        <Image fill src="/requests/stopwatch-add.png" alt="" />
+       </div>
+        <p className='text-start mt-1'>Over Time</p>
+         </button>
+    <button onClick={()=>setActiveTab('Remote Work')} className={`${activeTab === 'Remote Work' ? 'bg-blue-900 text-white' : 'bg-gray-200 text-black'} cursor-pointer px-7 py-5 rounded-xl `}>
+       <div className="relative w-6 h-6">
+        <Image fill  src="/requests/home03.png" alt="" />
+       </div>
+<p className='text-start mt-1'>Remote Work</p>
+        </button>
+    <button onClick={()=>setActiveTab('Loan')} className={`${activeTab === 'Loan' ? 'bg-blue-900 text-white' : 'bg-gray-200 text-black'} cursor-pointer px-7 py-5 rounded-xl `}>
+       <div className="relative w-6 h-6">
+        <Image fill src="/requests/money-minus.png" alt="" />
+       </div>
+        <p className='text-start mt-1'>Loan</p> 
+        </button>
+    <button onClick={()=>setActiveTab('Reimbursement')} className={`${activeTab === 'Reimbursement' ? 'bg-blue-900 text-white' : 'bg-gray-200 text-black'} cursor-pointer px-7 py-5 rounded-xl `}> 
+        <div className="relative w-6 h-6">
+        <Image fill src="/requests/profit.png" alt="" />
+        </div>
+        <p className='text-start mt-1'>Reimbursement</p>
+        </button>
+</div>
+{activeTab === 'Leave' && Leave }
+{activeTab === 'Over Time' && OverTime }
+{activeTab === 'Remote Work' && RemoteWork}
+{activeTab === 'Loan' && Loan }
+{activeTab === 'Reimbursement' && Reimbursement}
+   </div>
+</>
+)
+}
+
+export default AddRequestTabs

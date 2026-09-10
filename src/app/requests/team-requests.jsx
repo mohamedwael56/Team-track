@@ -1,14 +1,8 @@
 "use client";
 import React from "react";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/scrollbar";
 import { useState } from "react";
 import Image from "next/image";
 import { useRouter } from 'next/navigation';
-import { Chart as ChartJs, Tooltip, Legend, ArcElement } from "chart.js";
-ChartJs.register(ArcElement, Tooltip, Legend);
 function Page() {
   const requests=[{
     id:1,
@@ -312,6 +306,7 @@ const filteredRequests=requests.filter((request)=>{
             src={request.avatar}
             width={50}
             height={40}
+            alt=""
           />
           <div className="flex flex-col text-black">
             <h1 className="text-xl capitalize"> {request.name}</h1>
