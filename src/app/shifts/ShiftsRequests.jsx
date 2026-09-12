@@ -3,6 +3,8 @@ import React from 'react'
 import Image from 'next/image';
 import { Doughnut } from "react-chartjs-2";
 import { useState } from 'react';
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
+ChartJS.register(ArcElement, Tooltip, Legend);
 function ShiftsRequests({data}) {
    const [submittedCoverage, setSubmittedCoverage] = useState(false);
          const [coverage, setCoverage] =useState(false);
