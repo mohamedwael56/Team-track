@@ -11,6 +11,8 @@ const router=useRouter()
 const [showPassword,setShowPassword]= useState(false);
 const [password,setPassword]=useState('')
 const [email,setEmail]=useState('')
+const [name,setName]=useState('')
+const[title,setTitle]=useState('')
 const [confirmPassword,setConfirmPassword]=useState('')
 const[showMessage,setShowMessage]=useState()
 const [confirmMessage,setConfirmMessage]=useState()
@@ -19,13 +21,19 @@ const showingPasswordButton =()=>{
 }
 const signUpButton= async (e)=>{
   e.preventDefault()
-  if(!password||!confirmPassword||!email){return setShowMessage('please fill out the blank inputs')}
+  if(!password||!confirmPassword||!email ||!name){return setShowMessage('please fill out the blank inputs')}
   if(password!==confirmPassword){return setShowMessage('password does not match confirm password')}
   const supabase = getSupabaseClient();
   if (!supabase) return setShowMessage('Registration service unavailable');
   const {data,error}=await supabase.auth.signUp({
     email:email.trim(),
-    password
+    password,
+    options:{
+      data:{
+        name:name.trim(),
+        title:title.trim()
+      }
+    }
   })
   if(error){console.error(error,'something went wrong!'); setShowMessage('Registration failed')}else{
     setConfirmMessage('Congratulation!')
@@ -78,8 +86,16 @@ confirmMessage?(
   <form  onSubmit={signUpButton}>
   <div className='flex flex-col gap-5 mt-10 relative'>
     <div className='flex flex-col'>
+    <label htmlFor="name" className='font-bold text-black'>Name</label>
+    <input id="name" name='name' autoComplete='name' onChange={(e)=>{setName(e.target.value)}} value={name} type="text" placeholder='Name' className='border border-gray-200 text-black rounded-xl p-2 w-80' />
+    </div>
+    <div className='flex flex-col'>
+    <label htmlFor="title" className='font-bold text-black'>Position</label>
+    <input id="title" name='title' autoComplete='title' onChange={(e)=>{setTitle(e.target.value)}} value={title} type="text" placeholder='Position' className='border border-gray-200 text-black rounded-xl p-2 w-80' />
+    </div>
+    <div className='flex relative flex-col'>
     <label htmlFor="email" className='font-bold text-black'>Email address</label>
-    <input id="email" onChange={(e)=>{setEmail(e.target.value)}} value={email} type="text" placeholder='Email' className='border border-gray-200 text-black rounded-xl p-2 w-80' />
+    <input id="email" name='email' autoComplete='email' onChange={(e)=>{setEmail(e.target.value)}} value={email} type="text" placeholder='Email' className='border border-gray-200 text-black rounded-xl p-2 w-80' />
    <button type='button' className='absolute top-9 right-3 cursor-pointer'>
    <div className="relative w-5 h-5">
     <Image fill src="/icons/mail.png" alt="Mail Icon" />

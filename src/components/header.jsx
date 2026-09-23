@@ -1,10 +1,21 @@
 'use client'
-import React from 'react'
+import React, { useEffect } from 'react'
 import Link from 'next/link'
 import { useState } from 'react'
-function Header({setIsSidebarOpen,isSidebarOpen}) {
+import { ClientProfileData } from '../../lib/ClientprofileData'
+ function Header({setIsSidebarOpen,isSidebarOpen}) {
   const [open, setOpen]=useState(false);
+  const [profile, setProfile] = useState({});
+  useEffect(() => {
+    const getProfileData = async () => {
+      const profile = await ClientProfileData();
+      setProfile(profile);
+      console.log(profile, "profile");
+    };
+    getProfileData();
+  }, []);
   
+console.log(profile, "profile"); 
   return (
    
       <header>
@@ -102,8 +113,8 @@ function Header({setIsSidebarOpen,isSidebarOpen}) {
                   className="bg-gray-300 py-2 px-3 w-10 rounded-xl"
                 />
                 <div className="flex items-start flex-col">
-                  <h1 className="text-xl text-black">mohamed wael</h1>
-                  <p className="text-gray-400 text-sm">flutter developer</p>
+                  <h1 className="text-xl text-black capitalize">{profile?.name}</h1>
+                  <p className="text-gray-400 text-sm capitalize">{profile?.title}</p>
                 </div>
               </Link>
             </nav>

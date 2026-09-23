@@ -9,6 +9,7 @@ import Rewards from './Rewards.jsx';
 import Performance from './Performance.jsx';
 import Attendance from './Attendance';
 import Productivity from './Productivity';
+
 function Page() {
  
   return (

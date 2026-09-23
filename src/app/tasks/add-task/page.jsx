@@ -1,75 +1,27 @@
 'use client';
 import React, { useState } from 'react'
 import Link from 'next/link'
-import Sidebar from '@/components/sidebar'
-import Header from '@/components/header'
 import Autocomplete from '@mui/joy/Autocomplete';
 import TaskCard from './TaskCard';
-
+import {lists} from '../../../Data/listsData';
+import {ClientProfileData} from '../../../../lib/ClientprofileData';
 function Page() {
     
-     const lists=[
-{
-id:'1',
-            label:'Revision 1: My design requests',
-            name:'ahmed mohamed',
-            img:"/ellipse.png"
-},
-{
-    id:'2',
-            label:'Revision 2: development team tasks',
-            name:'ahmed mohamed',
-            img:"/ellipse.png"
-},
-{
-    id:'3',
-            label:'Revision 3: backend bugs team',
-            name:'ahmed mohamed',
-            img:"/ellipse.png"
-},
-{
-    id:'4',
-            label:'Revision 4: list for developers',
-            name:'ahmed mohamed',
-            img:"/ellipse.png"
-},
-{
-    id:'5',
-            label:'Revision 5: any list for now',
-            name:'ahmed mohamed',
-            img:"/ellipse.png"
-},
-{
-    id:'6',
-            label:'Revision 6: draft tasks for dev ops',
-            name:'ahmed mohamed',
-            img:"/ellipse.png"
-},
-{
-    id:'7',
-            label:'Revision 7: list for developers',
-            name:'ahmed mohamed',
-            img:"/ellipse.png"
-},
-{
-    id:'8',
-            label:'Revision 8: Fixing Navbar at Dashboard Page',
-            name:'ahmed mohamed',
-            img:"/ellipse.png"
-},
-{
-      id:'9',
-            label:'Revision 9: Fixing Navbar at Dashboard Page',
-            name:'ahmed mohamed',
-            img:"/ellipse.png"
-},
-
-    ]
+const [profile,setProfile]=useState(null)
+  React.useEffect(()=>{
+    const fetchProfile=async()=>{
+        const data=await ClientProfileData();
+        setProfile(data)
+    }
+    fetchProfile()
+    },[])
+    console.log(profile)
 
     return (
     <div className='flex '>
       <div className='flex-1 lg:ml-69 p-5 gap-5 '>
 <main>
+    {profile?.role==="employee"?
    
     <div className='flex flex-col w-80 lg:w-full bg-gray-100 p-5 rounded-2xl'>
   <div className='flex items-center gap-3 mb-5'>
@@ -104,6 +56,9 @@ return(
 </div>
 
     </div>
+   : <div className='flex items-center justify-center h-screen'>
+        <p className='text-lg  text-black'>You are not authorized to add tasks.</p>
+      </div> }
 </main>
       </div>
     </div>

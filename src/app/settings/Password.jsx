@@ -1,7 +1,7 @@
 "use client"
 import React, { act, useEffect } from 'react'
 import { useState } from 'react'
-import { supabase } from '../../../lib/supabase'
+import { getSupabaseClient } from '../../../lib/supabase'
 const Password = () => {
     const [open ,setOpen]=useState(false)
     const [password,setPassword]=useState('')
@@ -9,7 +9,12 @@ const [activeId,setActiveId]=useState('1')
 const [newPassword,setNewPassword]=useState('')
 const [confirmPassword,setConfirmPassword]=useState('')
  const fetchPassword=async()=>{
-
+    const supabase=getSupabaseClient()
+    if(!supabase){
+        console.error("Supabase client is not initialized.");
+        return;
+    }
+    
     const {data,error}=await supabase.auth.signInWithPassword({
         email:'123456@gmail.com',
         password

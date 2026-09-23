@@ -5,8 +5,10 @@ import Requests from "./requests.jsx";
 import Recognition from "./recognition.jsx";
 import Rewards from "./rewards.jsx";
 import News from "./news.jsx";
+import {ServerProfileData} from "../../../lib/ServerProfileData"
 import Image from "next/image";
-function Page() {
+async function Page() {
+  const profile = await ServerProfileData();
   return (
     <div className="flex">
       <div className="flex-1 lg:ml-69 ml-0">
@@ -15,8 +17,8 @@ function Page() {
           <main>
             <div className="flex justify-between mb-9">
               <div className="ml-2">
-                <h1 className="text-2xl text-black mb-1">Hello Mohamed 👋🏻</h1>
-                <p className="text-gray-600"> Good morning</p>
+                <h1 className="text-2xl text-black mb-1">Hello {profile.name.split(' ')[0]} 👋🏻</h1>
+                <p className="text-gray-600 capitalize"> Good morning</p>
               </div>
               <div className="bg-gray-100 lg:block hidden  mr-8 flex items-center gap-5 py-2 px-5 rounded-xl">
                 <div>

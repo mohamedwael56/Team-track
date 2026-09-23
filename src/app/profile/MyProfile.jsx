@@ -2,8 +2,20 @@
 import React from 'react'
 import { useRouter } from 'next/navigation';
 import Image from 'next/image'
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
+import {ClientProfileData} from '../../../lib/ClientprofileData'
 const MyProfile = () => {
+  const [profile,setProfile]=useState({})
+
+  useEffect(()=>{
+    const fetchData=async()=>{
+      const data=await ClientProfileData()
+      setProfile(data)
+    }
+    fetchData()
+    console.log(profile)
+  },[])
+
   const [open,setOpen]=useState(false)
 
       const router=useRouter()
@@ -27,7 +39,7 @@ const MyProfile = () => {
 <Image width={20} height={20} className='absolute bottom-1 right-1' src="/profile/edit.png" alt="" />
 </button>
 <div className="flex flex-col">
-  <h1 className='text-black font-bold'>mohamed ahmed</h1>
+  <h1 className='text-black font-bold'>{profile.name}</h1>
   <p className='text-gray-400'>joined : 20-03-2020</p>
 </div>
 
@@ -35,13 +47,13 @@ const MyProfile = () => {
 <div className="border flex items-start flex-col mb-3 rounded-xl p-4 mt-5">
   <Image width={20} height={50} src="/profile/name-tag.png" alt="" className='my-5' />
   <div className='text-gray-400'>role</div>
-  <div className='text-black'>flutter developer</div>
+  <div className='text-black'>{profile.title}</div>
   <Image width={20} height={50} src="/profile/phone-rounded.png" alt="" className='my-5' />
   <div className='text-gray-400'>phone number</div>
   <div className='text-black'>(+20)123456789</div>
   <Image width={20} height={50} src="/profile/mail-02.png" alt="" className='my-5' />
   <div className='text-gray-400'>email address</div>
-  <div className='text-black'>mohamedahmed@grandtech.io</div>
+  <div className='text-black'>{profile.email}</div>
 </div>
 <div className="border flex items-start flex-col mb-3 rounded-xl p-4 mt-5">
   <Image width={20} height={20} src="/profile/elements.png" className='my-5'  alt="" />
@@ -71,13 +83,13 @@ const MyProfile = () => {
       <Image width={85} height={85}  src="/profile/avatar.png" alt=""  />
       <div className='flex flex-col'>
     <div className='flex gap-2 items-center'>
-      <h1 className='text-black lg:text-2xl text-xs font-bold'>mohamed wael</h1>
+      <h1 className='text-black lg:text-2xl text-xs font-bold'>{profile.name}</h1>
       <button onClick={()=>setOpen(true)} className='cursor-pointer text-[8px] lg:text-base text-blue-600'> full info</button>
     </div>
     <div className="flex flex-row capitalize mt-4 lg:gap-20 gap-2 items-center">
       <div className="flex flex-col ">
         <p className='text-gray-500 lg:text-base text-xs'>role</p>
-        <p className='text-black lg:text-base text-[8px]'>flutter developer</p>
+        <p className='text-black lg:text-base text-[8px]'>{profile.title}</p>
       </div>
       <div className="flex flex-col ">
         <p className='text-gray-500 lg:text-base text-xs'>phone number</p>
@@ -85,7 +97,7 @@ const MyProfile = () => {
       </div>
       <div className="flex flex-col ">
         <p className='text-gray-500 lg:text-base text-xs'>email address</p>
-        <p className='text-black lg:text-base text-[8px]'>mohamedahmed@grandtech.io</p>
+        <p className='text-black lg:text-base text-[8px]'>{profile.email}</p>
       </div>
     </div>
       </div>
