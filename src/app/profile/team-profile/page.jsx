@@ -30,6 +30,7 @@ function page() {
   <Performance />
 
   <div className="flex flex-col ml-10">
+
 <Attendance />
 
 <TaskProductivity />
