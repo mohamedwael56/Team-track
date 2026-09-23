@@ -2,6 +2,7 @@ import React from 'react'
 import DeleteMessage from '@/components/DeleteMessage'
 import ConfirmMessage from '@/components/ConfirmMessage'
 import { useState } from 'react'
+import Image from 'next/image'
 function EditComments({comment,modalType,setModalType}) {
 
 
@@ -20,7 +21,7 @@ function EditComments({comment,modalType,setModalType}) {
   return (
     <>
    <div className="flex gap-2 items-center">
-<img src={comment.img} alt="" className='lg:w-fit w-10' />
+<Image width={40} height={40} src={comment.img} alt="" className='lg:w-fit w-10' />
 <div className="flex flex-col">
     <h1 className='text-black lg:text-base text-xs font-bold'>{comment.name}</h1>
     <p className='text-zinc-800  lg:text-base text-xs'>{text}</p>
@@ -49,10 +50,10 @@ function EditComments({comment,modalType,setModalType}) {
      {open && (
         <div className="bg-white border flex flex-col gap-2 px-3 absolute mt-6 right-10 w-25  border-gray-300 py-2 z-50 shadow-xl rounded-xl">
        <button onClick={()=>setClickedEdit(true)} className='cursor-pointer text-black flex items-center gap-2 '>
-        <img className='w-4' src="/icons/edit-02.png" alt="" />
+        <Image width={16} height={16} src="/icons/edit-02.png" alt="" />
         Edit</button>
        <button onClick={()=>setModalType('deleteComment')} className='cursor-pointer text-black flex items-center gap-2'>
-        <img className='w-4' src="/icons/delete-03.png" alt="" />
+        <Image width={16} height={16} src="/icons/delete-03.png" alt="" />
         Delete</button>
        <ConfirmMessage show={modalType==='confirmDeleteComment'} onClose={() => setModalType(null)} />
          <DeleteMessage text={{ title: 'Delete Comment ?', description: 'Are you sure you want to delete this comment ?' }} show={modalType==='deleteComment'} onClose={() => setModalType(null)} onConfirm={() => {setModalType('confirmDeleteComment')}}  />
@@ -62,11 +63,11 @@ function EditComments({comment,modalType,setModalType}) {
 
     <div className="flex gap-5 mr-5 text-black items-center">
        <div className="flex gap-2 lg:text-base text-xs items-center">
-        <img src="/tasks/like.png" alt="" className='lg:w-fit w-3' />
+        <Image width={12} height={12} src="/tasks/like.png" alt="" className='lg:w-fit w-3' />
         <p>7.9M</p>
        </div>
        <div className="flex gap-2 lg:text-base text-xs items-center">
-        <img src="/tasks/vector.png" alt="" className='lg:w-fit w-3' />
+        <Image width={12} height={12} src="/tasks/vector.png" alt="" className='lg:w-fit w-3' />
         <p>reply</p>
        </div>
     </div>

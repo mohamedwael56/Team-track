@@ -1,6 +1,7 @@
 import React from 'react'
 import Autocomplete from '@mui/joy/Autocomplete';
 import { List } from '@mui/material';
+import Image from 'next/image';
 
 function ListDetails({dueDate,setOpen}) {
 
@@ -66,7 +67,7 @@ function ListDetails({dueDate,setOpen}) {
         <p className='text-black mb-2'>due date</p>
         <button onClick={()=>setOpen(true)} className=' flex border-gray-300 justify-between border rounded-xl mb-3 px-4 cursor-pointer py-2 text-black bg-gray-100 w-full'>
             <p className='flex items-start'>{dueDate?dueDate.format('MMMM DD,YYYY'):'Select Date'}</p>
-            <img src="/icons/calendar.png" alt="calendar icon" />
+            <Image width={25} height={20} src="/icons/calendar.png" alt="calendar icon" />
         </button>
     </div>
     <div>
@@ -89,7 +90,7 @@ function ListDetails({dueDate,setOpen}) {
         <p className='text-black mb-2'>Remind Me</p>
         <button onClick={()=>setOpen(true)} className=' flex border-gray-300 justify-between border rounded-xl mb-3 px-4 cursor-pointer py-2 text-black bg-gray-100 w-full'>
             <p className='flex items-start'>{dueDate?dueDate.format('MMMM DD,YYYY,hh:mm A'):'Select Date'}</p>
-            <img src="/icons/calendar.png" alt="calendar icon" />
+            <Image width={25} height={20} src="/icons/calendar.png" alt="calendar icon" />
         </button>
     </div>
     <div>

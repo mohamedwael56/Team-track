@@ -1,5 +1,5 @@
 import React from 'react'
-
+import Image from 'next/image'
 function ListDetails() {
   return (
 <div className='ml-5 border shadow-xl flex flex-col rounded-2xl p-3'>
@@ -20,13 +20,13 @@ function ListDetails() {
         <p className='text-black mb-2'>due date</p>
         <button className=' flex text-lime-500 border-gray-300 justify-between border rounded-xl mb-3 px-4 cursor-pointer py-2  bg-gray-50 w-full'>
             <p className='flex items-start'>20/02/2024</p>
-            <img src="/icons/calendar.png" alt="calendar icon" />
+            <Image width={25} height={15} src="/icons/calendar.png" alt="calendar icon" />
         </button>
     </div>
     <div>
         <p className='text-black mb-2'>Assigned To</p>
         <div className='border flex gap-2 border-gray-300 rounded-xl mb-3 w-full px-3 py-2 text-black bg-gray-50'>
-           <img src="/Ellipse-12.png" alt="" />
+           <Image width={25} height={20} src="/Ellipse-12.png" alt="" />
            <p>mohamed ahmed</p>
            </div>
     </div>

@@ -1,5 +1,5 @@
 import React from 'react'
-
+import Image from 'next/image'
 function SubTaskList({setModalType}) {
   const subTasks=[
     
@@ -39,7 +39,7 @@ title:'Change the icons to font awesome icons.',
 <div key={task.id} className='bg-gray-200 rounded-2xl items-center p-3 mt-3 justify-between flex text-black'>
 <p>{task.title}</p>
 <button onClick={() => setModalType('delete')} className='cursor-pointer'>
-<img src={task.img} alt=""  />
+<Image width={17} height={20} src={task.img} alt=""  />
 </button>
 </div>
 

@@ -1,7 +1,7 @@
 'use client'
-import Header from '@/components/header'
-import Sidebar from '@/components/sidebar'
+
 import React, { useState } from 'react'
+import Image from 'next/image'
 import Link from 'next/link'
 import Filter from './Filter';
 import Lists from './lists';
@@ -38,27 +38,27 @@ const [dueDate, setDueDate] = useState(null);
            <div className='flex justify-between items-center gap-2 mt-5 mb-5'>
             <div className="w-full  relative">
                 <button className='cursor-pointer'>
-                <img src="/icons/search.png" alt="" className='absolute w-3 lg:w-4 lg:left-4 left-3 lg:top-3 top-2 ' />
+                <Image width={20} height={20} src="/icons/search.png" alt="" className='absolute w-3 lg:w-4 lg:left-4 left-3 lg:top-3 top-2 ' />
             </button>
             <input onChange={(a)=>{setSearch(a.target.value)}} value={search} type="text" placeholder="Search tasks..." className="border border-gray-300 text-zinc-950 rounded-xl px-1 lg:px-4 py-2 w-25 text-[8px] lg:text-base lg:w-full pl-9 lg:pl-12" />
        </div>
           <div className='text-[9px] lg:text-base relative '>
-            <img src="/icons/filter.png" alt="" className='absolute w-3 lg:w-5 left-7 top-3 lg:top-4 '  />
+            <Image width={20} height={20} src="/icons/filter.png" alt="" className='absolute w-3 lg:w-4 left-7 top-3 lg:top-4 '  />
               <button  onClick={()=>setModalType('filter')}  className=' cursor-pointer border-gray-300 border rounded-xl px-5 pl-7 py-3 text-zinc-950 ml-6'>
                 Filter
             </button>
           </div>
           <div className='text-[9px] lg:text-base relative'>
-            <img src="/icons/arrow-sort.png" alt="" className='absolute w-3 lg:w-5 left-5 top-3 lg:top-4 '  />
+            <Image width={20} height={20} src="/icons/arrow-sort.png" alt="" className='absolute w-3 lg:w-5 left-5 top-3 lg:top-4 '  />
             <button onClick={()=>setModalType('sort')} className='cursor-pointer border-gray-300 border rounded-xl px-6 pl-8 py-3 text-zinc-950 ml-2'>
 sort
             </button>
             </div>
             <button className='cursor-pointer lg:block hidden bg-gray-200 text-black px-4 py-2 rounded-xl'>
-                <img src="/icons/grid.png" alt="" width={40} />
+                <Image width={40} height={40} src="/icons/grid.png" alt="" />
             </button>
             <button className='cursor-pointer lg:block hidden bg-gray-200 text-black px-4 py-2 rounded-xl'>
-                <img src="/icons/table.png" alt="" width={40} />
+                <Image width={40} height={40} src="/icons/table.png" alt="" />
             </button>
            </div>
 
