@@ -3,9 +3,25 @@ import React from 'react'
 import Header from './header'
 import Sidebar from './sidebar'
 import { useState } from 'react'
+import Link from 'next/link'
+import { ClientProfileData } from '../../lib/ClientProfileData'
 function DashboardShell({ children }) {
 const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+const [profile, setProfile] = useState(null);
+  React.useEffect(() => {
+    const getProfileData = async () => {
+      const profile = await ClientProfileData();
+      setProfile(profile);
+    };
+    getProfileData();
+  }, []);
+     if (!profile) {
+    return(
+      <div className="h-screen w-screen flex items-center justify-center">
+     <Link href="/" className='text-3xl text-white bg-blue-800 p-2 rounded-xl hover:scale-105 transition-transform duration-300 '>Sign in</Link>;
+  </div>)}
   return (
+ 
 <html lang="en">
         <body className=''>
             <div className="flex">

@@ -2,7 +2,7 @@
 import React, { useEffect } from 'react'
 import Link from 'next/link'
 import { useState } from 'react'
-import { ClientProfileData } from '../../lib/ClientprofileData'
+import { ClientProfileData } from '../../lib/ClientProfileData'
  function Header({setIsSidebarOpen,isSidebarOpen}) {
   const [open, setOpen]=useState(false);
   const [profile, setProfile] = useState({});
@@ -108,7 +108,7 @@ console.log(profile, "profile");
                 className="text-gray-500 hover:text-gray-700 transition duration-300 flex gap-4 items-center"
               >
                 <img
-                  src="/icons/avatar.png"
+                  src="/icons/Avatar.png"
                   alt=""
                   className="bg-gray-300 py-2 px-3 w-10 rounded-xl"
                 />

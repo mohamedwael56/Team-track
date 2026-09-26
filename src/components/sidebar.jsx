@@ -3,8 +3,23 @@ import Image from 'next/image';
 import React from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { getSupabaseClient } from '../../lib/supabase';
+import { redirect } from 'next/navigation';
 
 function Sidebar({ isSidebarOpen, setIsSidebarOpen }) {
+  const logOut = async () => {
+  const supabase = getSupabaseClient();
+if(!supabase) {
+  console.error('Supabase client is not initialized');
+  return;
+}
+
+  const {error} = await supabase.auth.signOut();
+  if (error) {
+    console.error('Error signing out:', error.message);
+  }
+  redirect('/');
+};
     const pathname = usePathname();
   return (
     
@@ -82,11 +97,11 @@ function Sidebar({ isSidebarOpen, setIsSidebarOpen }) {
                     support</Link>
                   </li>
                   <li>
-                    <Link href="/team" className={pathname === '/team' ? 'flex items-center mt-20 gap-2 text-blue-900 bg-gray-400 py-2 px-8 rounded-2xl ' : 'flex items-center mt-20 gap-2 text-red-700'}>
+                    <button onClick={logOut} className='flex items-center mt-20 gap-2 cursor-pointer text-red-700'>
                      <div className="relative w-5 h-5"  >
                       <Image fill src="/icons/help.png" alt="Team Icon" />
                      </div>
-                    log out</Link>
+                    log out</button>
                   </li>
                 </ul>
                 </div>
