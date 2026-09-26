@@ -4,7 +4,7 @@ import Header from './header'
 import Sidebar from './sidebar'
 import { useState } from 'react'
 import Link from 'next/link'
-import { ClientProfileData } from '../../lib/ClientProfileData'
+import { ClientProfileData } from '../../lib/ClientProfileData.jsx'
 function DashboardShell({ children }) {
 const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 const [profile, setProfile] = useState(null);

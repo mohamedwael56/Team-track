@@ -4,7 +4,7 @@ import Link from 'next/link'
 import Autocomplete from '@mui/joy/Autocomplete';
 import TaskCard from './TaskCard';
 import {lists} from '../../../Data/listsData';
-import {ClientProfileData} from '../../../../lib/ClientProfileData';
+import {ClientProfileData} from '../../../../lib/ClientProfileData.jsx';
 function Page() {
     
 const [profile,setProfile]=useState(null)
