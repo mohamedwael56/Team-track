@@ -3,7 +3,7 @@ import React from 'react'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react';
 import Image from 'next/image';
-import { getSupabaseClient } from '../../../../lib/supabase';
+import { getSupabaseClient } from '../../../lib/supabase';
 import './reset-password.css'
 function Page() {
   const router = useRouter()

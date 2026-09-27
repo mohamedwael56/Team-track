@@ -2,7 +2,7 @@
 import React from 'react'
 import Link from 'next/link'
 import { useState } from 'react'
-import { getSupabaseClient } from '../../../lib/supabase';
+import { getSupabaseClient } from '../../lib/supabase';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import './page.css'

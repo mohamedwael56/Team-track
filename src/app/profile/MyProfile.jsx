@@ -3,7 +3,7 @@ import React from 'react'
 import { useRouter } from 'next/navigation';
 import Image from 'next/image'
 import { useState,useEffect } from 'react';
-import {ClientProfileData} from '../../../lib/ClientProfileData.jsx'
+import {ClientProfileData} from '@/lib/ClientProfileData'
 const MyProfile = () => {
   const [profile,setProfile]=useState({})
 

@@ -5,7 +5,7 @@ import Requests from "./requests.jsx";
 import Recognition from "./recognition.jsx";
 import Rewards from "./rewards.jsx";
 import News from "./news.jsx";
-import {ServerProfileData} from "../../../lib/ServerProfileData"
+import {ServerProfileData} from "../../lib/ServerProfileData.jsx"
 import Image from "next/image";
 async function Page() {
   const profile = await ServerProfileData();

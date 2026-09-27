@@ -1,7 +1,7 @@
 "use client"
 import React, { act, useEffect } from 'react'
 import { useState } from 'react'
-import { getSupabaseClient } from '../../../lib/supabase'
+import { getSupabaseClient } from '../../lib/supabase'
 const Password = () => {
     const [open ,setOpen]=useState(false)
     const [password,setPassword]=useState('')
