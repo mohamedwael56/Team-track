@@ -2,7 +2,7 @@
 import React, { useEffect } from 'react'
 import Link from 'next/link'
 import { useState } from 'react'
-import { ClientProfileData } from '../../lib/ClientProfileData.jsx';
+import { ClientProfileData } from '@/lib/ClientProfileData';
  function Header({setIsSidebarOpen,isSidebarOpen}) {
   const [open, setOpen]=useState(false);
   const [profile, setProfile] = useState({});

@@ -3,7 +3,7 @@ import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
-import { getSupabaseClient } from '../../../../lib/supabase';
+import { getSupabaseClient } from '../../../lib/supabase';
 import { useRouter } from 'next/navigation';
 import './sign-up.css'
 function Page() {

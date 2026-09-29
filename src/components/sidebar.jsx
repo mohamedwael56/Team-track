@@ -3,7 +3,7 @@ import Image from 'next/image';
 import React from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { getSupabaseClient } from '../../lib/supabase';
+import { getSupabaseClient } from '../lib/supabase';
 import { redirect } from 'next/navigation';
 
 function Sidebar({ isSidebarOpen, setIsSidebarOpen }) {
