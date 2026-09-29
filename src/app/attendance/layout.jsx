@@ -17,9 +17,14 @@ export const metadata = {
 
 function layout({ children }) {
   return (
-    <DashboardPage>
+    <html>
+      <body>
+           <DashboardPage>
       {children}
     </DashboardPage>
+      </body>
+    </html>
+ 
   )
 }
 

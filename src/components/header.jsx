@@ -2,20 +2,10 @@
 import React, { useEffect } from 'react'
 import Link from 'next/link'
 import { useState } from 'react'
-import { ClientProfileData } from '@/lib/ClientProfileData';
- function Header({setIsSidebarOpen,isSidebarOpen}) {
+import Image from 'next/image'
+ function Header({setIsSidebarOpen,isSidebarOpen,profile}) {
   const [open, setOpen]=useState(false);
-  const [profile, setProfile] = useState({});
-  useEffect(() => {
-    const getProfileData = async () => {
-      const profile = await ClientProfileData();
-      setProfile(profile);
-      console.log(profile, "profile");
-    };
-    getProfileData();
-  }, []);
   
-console.log(profile, "profile"); 
   return (
    
       <header>
@@ -26,21 +16,21 @@ console.log(profile, "profile");
             
             <div className="relative pr-5">
               <button className="absolute top-3 left-2 cursor-pointer">
-                <img src="/icons/search.png" alt="" width={15} />
+                <Image width={15} height={15} src="/icons/search.png" alt="" />
              </button>
 
               <input type="text" placeholder="Search" className="bg-gray-100 pl-8 pr-5 py-2 rounded-xl text-black"/>
             </div>
             <div className='flex items-center gap-3'>
               <button onClick={()=>setOpen(!open)} className="bg-gray-100 cursor-pointer rounded-2xl p-3">
-                <img src="/icons/notification.png" alt="" />
+                <Image width={20} height={20} src="/icons/notification.png" alt="" />
 {
     open &&(
       <>
       <div className='absolute right-23 mt-4 z-50 bg-white rounded-xl shadow-xl p-4 '>
 <div className="flex flex-col ">
 <div className="flex items-start gap-3 mb-2">
-    <img src="/icons/alert-outline.png" alt="" />
+    <Image width={15} height={15} src="/icons/alert-outline.png" alt="" />
     <div className="flex items-start flex-col">
       <h1 className=" text-black text-sm">UI Task less than 8 days</h1>
       <p className="text-gray-400 text-sm w-[350px] text-start">Phillip, your assignment is less than 8 days away from reaching</p>
@@ -51,7 +41,7 @@ console.log(profile, "profile");
   <hr className='mb-2' />       
 <div className="flex flex-col ">
 <div className="flex items-start gap-3 mb-2">
-    <img src="/icons/alert-outline.png" alt="" />
+    <Image width={15} height={15} src="/icons/alert-outline.png" alt="" />
     <div className="flex items-start flex-col">
       <h1 className=" text-black text-sm">UI Task less than 8 days</h1>
       <p className="text-gray-400 text-sm w-[350px] text-start">Phillip, your assignment is less than 8 days away from reaching</p>
@@ -62,7 +52,7 @@ console.log(profile, "profile");
   <hr className='mb-2' />       
 <div className="flex flex-col ">
 <div className="flex items-start gap-3 mb-2">
-    <img src="/icons/alert-outline.png" alt="" />
+    <Image width={15} height={15} src="/icons/alert-outline.png" alt="" />
     <div className="flex items-start flex-col">
       <h1 className=" text-black text-sm">UI Task less than 8 days</h1>
       <p className="text-gray-400 text-sm w-[350px] text-start">Phillip, your assignment is less than 8 days away from reaching</p>
@@ -73,7 +63,7 @@ console.log(profile, "profile");
   <hr className='mb-2' />       
 <div className="flex flex-col ">
 <div className="flex items-start gap-3 mb-2">
-    <img src="/icons/alert-outline.png" alt="" />
+    <Image width={15} height={15} src="/icons/alert-outline.png" alt="" />
     <div className="flex items-start flex-col">
       <h1 className=" text-black text-sm">UI Task less than 8 days</h1>
       <p className="text-gray-400 text-sm w-[350px] text-start">Phillip, your assignment is less than 8 days away from reaching</p>
@@ -84,7 +74,7 @@ console.log(profile, "profile");
   <hr className='mb-2' />       
 <div className="flex flex-col ">
 <div className="flex items-start gap-3 mb-2">
-    <img src="/icons/alert-outline.png" alt="" />
+    <Image width={15} height={15} src="/icons/alert-outline.png" alt="" />
     <div className="flex items-start flex-col">
       <h1 className=" text-black text-sm">UI Task less than 8 days</h1>
       <p className="text-gray-400 text-sm w-[350px] text-start">Phillip, your assignment is less than 8 days away from reaching</p>
@@ -107,10 +97,10 @@ console.log(profile, "profile");
                 href="/profile"
                 className="text-gray-500 hover:text-gray-700 transition duration-300 flex gap-4 items-center"
               >
-                <img
-                  src="/icons/Avatar.png"
+                <Image width={50} height={50}
+                  src={`${profile?.avatarUrl || "/icons/Avatar.png"}`}
                   alt=""
-                  className="bg-gray-300 py-2 px-3 w-10 rounded-xl"
+                  className=" rounded-full "
                 />
                 <div className="flex items-start flex-col">
                   <h1 className="text-xl text-black capitalize">{profile?.name}</h1>

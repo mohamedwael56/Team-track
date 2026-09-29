@@ -2,12 +2,56 @@
 import React from 'react'
 import { useRouter } from 'next/navigation';
 import Image from 'next/image'
-import { useState,useEffect } from 'react';
-import {ClientProfileData} from '@/lib/ClientProfileData'
+import { useState,useEffect,useRef } from 'react';
+import {ClientProfileData} from '@/lib/ClientProfileData';
+import {getSupabaseClient} from"@/lib/supabase";
+import { redirect } from 'next/navigation';
 const MyProfile = () => {
   const [profile,setProfile]=useState({})
 
-  useEffect(()=>{
+
+
+  const [open,setOpen]=useState(false)
+
+      const router=useRouter()
+
+      const fileInputRef=useRef(null)
+
+      const handleFileChange=async (e)=>{
+        const file=e.target.files[0]
+        if(!file) return
+        console.log('Selected file:',file)
+
+        const supabase=getSupabaseClient()
+        const {data:{user}} = await supabase.auth.getUser()
+        console.log('User data:',user)
+        if(!user){
+          console.error('User not authenticated')
+          return
+        }
+        const fileName=`${user.id }-${Date.now()}`
+        const {error}=await supabase.storage.from('profiles-pictures').upload(fileName,file)
+        if(error){
+          console.error('Error uploading file:',error)
+          return
+        }else{
+          console.log('File uploaded successfully')
+        }
+        const {data}=await supabase.storage.from('profiles-pictures').getPublicUrl(fileName)
+        const publicUrl=data.publicUrl
+        console.log('Public URL:',publicUrl)
+        const {error:updateError}=await supabase.from('profiles').update({avatarUrl:publicUrl}).eq('id',user.id).select()
+        if(updateError){
+          console.error('Error updating profile:',updateError)
+          return;
+        }else{
+          console.log('Profile picture updated successfully')
+          setProfile(prevProfile=>({...prevProfile,avatarUrl:publicUrl}))
+          console.log('Updated profile:',profile)
+        }
+window.location.reload()
+      }
+        useEffect(()=>{
     const fetchData=async()=>{
       const data=await ClientProfileData()
       setProfile(data)
@@ -15,10 +59,6 @@ const MyProfile = () => {
     fetchData()
     console.log(profile)
   },[])
-
-  const [open,setOpen]=useState(false)
-
-      const router=useRouter()
     
   return (
     <>
@@ -34,9 +74,9 @@ const MyProfile = () => {
             </div>
              
 <div className="border flex mb-3 items-center gap-4 rounded-xl p-4 mt-5">
-<button className='relative cursor-pointer'>
-      <Image width={70} height={70} src="/profile/avatar.png" alt="" />
-<Image width={20} height={20} className='absolute bottom-1 right-1' src="/profile/edit.png" alt="" />
+<button onClick={()=> fileInputRef.current.click()}  className='relative cursor-pointer'>
+      <Image className='rounded-full' width={70} height={70} src={`${profile?.avatarUrl || "/profile/Avatar.png"}`} alt="" />
+<Image width={20} height={20} className='absolute bottom-1 right-1' src={`/profile/edit.png`} alt="" />
 </button>
 <div className="flex flex-col">
   <h1 className='text-black font-bold'>{profile.name}</h1>
@@ -65,13 +105,20 @@ const MyProfile = () => {
 
 </div>
 <div className="bg-sky-100 items-start p-5 gap-2 rounded-xl mt-5 flex">
-          <Image width={20} height={20} src="/profile/left-icon.png" alt="" />
+          <Image width={20} height={20} src="/profile/Left-icon.png" alt="" />
 <div className="flex flex-col">
 <div className="text-black">important notice</div>
 <div className="text-gray-500 text-xs">If any of the presented details is incorrect, please contact HR to adjust.</div>
 
 </div>
 </div>
+<input
+ref={fileInputRef}
+type="file"
+accept="image/*"
+ className="hidden"
+ onChange={handleFileChange}
+/>
             </div>
           </div>
           </>
@@ -80,7 +127,7 @@ const MyProfile = () => {
   <div className="bg-gray-100 lg:w-full w-80 rounded-2xl p-5 my-4">
         <div className='flex justify-between items-start lg:items-center'>
         <div className='flex items-center lg:gap-4 gap-6'>
-      <Image width={85} height={85}  src="/profile/avatar.png" alt=""  />
+      <Image className='rounded-full' width={85} height={85}  src={`${profile?.avatarUrl || "/profile/Avatar.png"}`} alt=""  />
       <div className='flex flex-col'>
     <div className='flex gap-2 items-center'>
       <h1 className='text-black lg:text-2xl text-xs font-bold'>{profile.name}</h1>
@@ -105,7 +152,7 @@ const MyProfile = () => {
 
 
         <button onClick={()=>router.push('/profile/points-history')} className='cursor-pointer bg-gray-200 gap-2 rounded-2xl lg:p-3 p-1 flex items-center'>
-      <Image width={40} height={40} src="/profile/frame.png" alt="" className='lg:w-fit w-3' />
+      <Image width={40} height={40} src="/profile/Frame.png" alt="" className='lg:w-fit w-3' />
       <div className='flex flex-col'>
 <p className='text-black text-[8px] lg:text-base'> Total points</p>
 <p className='text-violet-600 lg:text-base text-[8px] text-start'>2580</p>
