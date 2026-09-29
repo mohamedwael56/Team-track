@@ -8,13 +8,22 @@ import { ClientProfileData } from '../../lib/ClientProfileData.jsx'
 function DashboardShell({ children }) {
 const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 const [profile, setProfile] = useState(null);
+const [loading, setLoading] = useState(true);
   React.useEffect(() => {
     const getProfileData = async () => {
       const profile = await ClientProfileData();
       setProfile(profile);
+      setLoading(false);
     };
     getProfileData();
   }, []);
+  if (loading) {
+    return (
+      <div className="h-screen w-screen flex items-center justify-center">
+        <div className="text-black text-3xl animate-pulse ">Loading</div>
+      </div>
+    );
+  }
      if (!profile) {
     return(
       <div className="h-screen w-screen flex items-center justify-center">
