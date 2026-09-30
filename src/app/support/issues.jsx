@@ -44,7 +44,7 @@ function Issues() {
     </div>
     <div className="mt-5 flex flex-col">
         <h1 className='text-black font-bold'>my tickets</h1>
-        <div className="grid grid-cols-3 gap-2">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-2">
            {
             issues.map((card)=>{
                 return(
